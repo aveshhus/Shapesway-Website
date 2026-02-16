@@ -1,0 +1,9 @@
+/* 
+   Emptying default Vite styles to prevent conflicts with our 
+   custom design system in global.css and design-system.css 
+*/
+#root {
+  width: 100%;
+  margin: 0;
+  padding: 0;
+}

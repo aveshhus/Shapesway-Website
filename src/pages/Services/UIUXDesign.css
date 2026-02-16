@@ -1,0 +1,937 @@
+/* UIUXDesign.css - Light Theme */
+
+.uiux-page-wrap {
+    background: #ffffff;
+    color: #111;
+    overflow-x: hidden;
+    font-family: 'Inter', sans-serif;
+    position: relative;
+    /* Designer Grid Background */
+    background-image:
+        linear-gradient(rgba(0, 0, 0, 0.02) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(0, 0, 0, 0.02) 1px, transparent 1px);
+    background-size: 50px 50px;
+    scrollbar-width: thin;
+    scrollbar-color: #2563eb #f8fafc;
+}
+
+.floating-blob-bg {
+    position: absolute;
+    width: 600px;
+    height: 600px;
+    background: radial-gradient(circle, rgba(37, 99, 235, 0.03) 0%, transparent 70%);
+    filter: blur(100px);
+    z-index: -1;
+    pointer-events: none;
+    animation: blobMove 20s infinite alternate ease-in-out;
+}
+
+@keyframes blobMove {
+    0% {
+        transform: translate(-10%, -10%) scale(1);
+    }
+
+    100% {
+        transform: translate(10%, 10%) scale(1.2);
+    }
+}
+
+/* Grain / Noise Overlay for cinematic feel */
+.uiux-page-wrap::before {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+    opacity: 0.035;
+    pointer-events: none;
+    z-index: 9999;
+}
+
+/* Custom Scrollbar for Chrome/Safari */
+.uiux-page-wrap::-webkit-scrollbar {
+    width: 8px;
+}
+
+.uiux-page-wrap::-webkit-scrollbar-track {
+    background: #f8fafc;
+}
+
+.uiux-page-wrap::-webkit-scrollbar-thumb {
+    background: #2563eb;
+    border-radius: 20px;
+    border: 2px solid #f8fafc;
+}
+
+.container {
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 0 40px;
+}
+
+/* --- 1. Hero Section --- */
+.uiux-hero {
+    min-height: 95vh;
+    display: flex;
+    align-items: center;
+    position: relative;
+    padding-top: 100px;
+    background: radial-gradient(circle at 70% 30%, rgba(37, 99, 235, 0.08) 0%, transparent 50%),
+        radial-gradient(circle at 20% 70%, rgba(37, 99, 235, 0.05) 0%, transparent 50%);
+}
+
+.uiux-hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url("data:image/svg+xml,%3Csvg width='20' height='20' viewBox='0 0 20 20' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0 0h1v1H0V0zm10 10h1v1h-1v-1z' fill='%23000' fill-opacity='.05' fill-rule='evenodd'/%3E%3C/svg%3E");
+    opacity: 0.5;
+    pointer-events: none;
+}
+
+.uiux-hero::after {
+    content: '';
+    position: absolute;
+    top: 10%;
+    right: 10%;
+    width: 300px;
+    height: 300px;
+    background: radial-gradient(circle, rgba(37, 99, 235, 0.2) 0%, transparent 70%);
+    filter: blur(80px);
+    pointer-events: none;
+    z-index: 1;
+    animation: flareFloat 10s infinite alternate ease-in-out;
+}
+
+@keyframes flareFloat {
+    0% {
+        transform: translate(0, 0);
+        opacity: 0.5;
+    }
+
+    100% {
+        transform: translate(-50px, 30px);
+        opacity: 0.8;
+    }
+}
+
+.uiux-hero-content {
+    max-width: 800px;
+    z-index: 2;
+}
+
+.uiux-hero-tag {
+    font-family: 'JetBrains Mono', monospace;
+    color: #2563eb;
+    letter-spacing: 4px;
+    font-size: 0.8rem;
+    font-weight: 700;
+    margin-bottom: 25px;
+    display: block;
+}
+
+.uiux-hero-title {
+    font-size: clamp(3rem, 8vw, 5.5rem);
+    line-height: 1.05;
+    font-weight: 800;
+    letter-spacing: -3px;
+    margin-bottom: 35px;
+    color: #000;
+}
+
+.uiux-hero-title .gradient-text {
+    background: linear-gradient(to right, #000000 30%, #2563eb 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.uiux-hero-desc {
+    font-size: 1.25rem;
+    color: rgba(0, 0, 0, 0.6);
+    line-height: 1.6;
+    margin-bottom: 50px;
+    max-width: 600px;
+    border-left: 2px solid #2563eb;
+    padding-left: 25px;
+}
+
+.hero-btns {
+    display: flex;
+    gap: 20px;
+}
+
+/* --- 2. Why UI/UX Matters --- */
+.uiux-why-section {
+    padding: 140px 0;
+    background: #f8fafc;
+}
+
+.section-label {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.75rem;
+    color: #2563eb;
+    letter-spacing: 2px;
+    margin-bottom: 15px;
+    display: block;
+    text-transform: uppercase;
+}
+
+.section-title-wrap {
+    margin-bottom: 80px;
+}
+
+.section-title {
+    font-size: 3.5rem;
+    font-weight: 700;
+    letter-spacing: -1.5px;
+    margin-bottom: 20px;
+    color: #000;
+}
+
+.why-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+}
+
+.why-card {
+    background: #ffffff;
+    border: 1px solid rgba(0, 0, 0, 0.05);
+    padding: 40px;
+    border-radius: 20px;
+    transition: 0.4s ease;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.02);
+}
+
+.why-card:hover {
+    background: #ffffff;
+    border-color: rgba(37, 99, 235, 0.3);
+    transform: translateY(-10px);
+    box-shadow: 0 20px 40px rgba(37, 99, 235, 0.1);
+}
+
+.why-icon {
+    font-size: 2.5rem;
+    color: #2563eb;
+    margin-bottom: 25px;
+}
+
+.why-card h3 {
+    font-size: 1.5rem;
+    margin-bottom: 15px;
+    color: #000;
+}
+
+.why-card p {
+    color: rgba(0, 0, 0, 0.5);
+    line-height: 1.6;
+}
+
+.stats-row {
+    margin-top: 100px;
+    display: flex;
+    gap: 60px;
+    border-top: 1px solid rgba(0, 0, 0, 0.05);
+    padding-top: 60px;
+}
+
+.stat-item h4 {
+    font-size: 4rem;
+    font-weight: 800;
+    color: #000;
+    margin-bottom: 10px;
+}
+
+.stat-item p {
+    color: #2563eb;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.9rem;
+    text-transform: uppercase;
+}
+
+/* --- 3. Our UI/UX Services --- */
+.uiux-services-section {
+    padding: 140px 0;
+    background: #ffffff;
+}
+
+.services-bento {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    grid-template-rows: repeat(2, 350px);
+    gap: 24px;
+}
+
+/* --- Vibrant Vector-Style Card Design --- */
+.service-bento-card {
+    background: #ffffff;
+    border-radius: 32px;
+    padding: 40px;
+    position: relative;
+    overflow: hidden;
+    /* Crucial for background graphics */
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 20px 40px -10px rgba(0, 0, 0, 0.05);
+    /* Soft, elevated shadow */
+    transition: all 0.5s cubic-bezier(0.2, 0.8, 0.2, 1);
+    z-index: 1;
+    /* Establish stacking context */
+    border: 1px solid rgba(0, 0, 0, 0.04);
+}
+
+.service-bento-card:hover {
+    transform: translateY(-12px) scale(1.02);
+    box-shadow: 0 40px 80px -20px rgba(0, 0, 0, 0.15);
+    /* Deep lift on hover */
+    z-index: 10;
+}
+
+/* --- Vibrant Background Blends --- */
+/* Each card gets a unique, large gradient blob in the top-right corner */
+.service-bento-card::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    right: -50%;
+    width: 120%;
+    height: 120%;
+    background: var(--bg-gradient);
+    border-radius: 50%;
+    opacity: 0.15;
+    /* Subtle tint in default state */
+    filter: blur(80px);
+    /* Soft, diffuse vector feel */
+    transition: all 0.6s ease;
+    z-index: -1;
+    pointer-events: none;
+}
+
+.service-bento-card:hover::before {
+    opacity: 0.4;
+    /* Pop on hover */
+    transform: translate(-10%, 10%) scale(1.1);
+    /* Moving background effect */
+}
+
+
+/* --- CSS Vector Graphics --- */
+/* Abstract geometric shapes representing UI/UX concepts */
+.card-gradient-overlay {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    width: 140px;
+    height: 140px;
+    background: var(--bg-gradient);
+    mask-image: var(--vector-mask);
+    -webkit-mask-image: var(--vector-mask);
+    mask-size: contain;
+    -webkit-mask-size: contain;
+    mask-repeat: no-repeat;
+    -webkit-mask-repeat: no-repeat;
+    mask-position: center;
+    -webkit-mask-position: center;
+    opacity: 0.8;
+    transition: all 0.5s ease;
+    z-index: 0;
+}
+
+.service-bento-card:hover .card-gradient-overlay {
+    transform: scale(1.1) rotate(5deg);
+    /* playful movement */
+    opacity: 1;
+}
+
+/* Define Variables Per Card */
+/* 1. UX Research - Blue (Magnifying Glass / Data Points Concept) */
+.gradient-card-blue {
+    --bg-gradient: linear-gradient(135deg, #3b82f6 0%, #06b6d4 100%);
+    --accent-color: #0284c7;
+    --vector-mask: url("data:image/svg+xml,%3Csvg viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M12 2C6.48 2 2 6.48 2 12C2 17.52 6.48 22 12 22C17.52 22 22 17.52 22 12C22 6.48 17.52 2 12 2ZM12 20C7.59 20 4 16.41 4 12C4 7.59 7.59 4 12 4C16.41 4 20 7.59 20 12C20 16.41 16.41 20 12 20ZM12.88 15.76L14.83 17.17L11 21L7.17 17.17L9.12 15.76L11 17.64V8H13V17.64L12.88 15.76Z'/%3E%3C/svg%3E");
+    /* Abstract Data Search */
+}
+
+/* 2. UI Design - Purple (Layers / Layout Concept) */
+.gradient-card-purple {
+    --bg-gradient: linear-gradient(135deg, #8b5cf6 0%, #d946ef 100%);
+    --accent-color: #7c3aed;
+    --vector-mask: url("data:image/svg+xml,%3Csvg viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M3 3H21V21H3V3ZM5 5V19H19V5H5Z'/%3E%3Crect x='7' y='7' width='4' height='4'/%3E%3Crect x='13' y='7' width='4' height='4'/%3E%3Crect x='7' y='13' width='4' height='4'/%3E%3Crect x='13' y='13' width='4' height='4'/%3E%3C/svg%3E");
+    /* Grid Layout */
+}
+
+/* 3. Product Design - Orange (Cube / 3D Concept) */
+.gradient-card-orange {
+    --bg-gradient: linear-gradient(135deg, #f97316 0%, #facc15 100%);
+    --accent-color: #ea580c;
+    --vector-mask: url("data:image/svg+xml,%3Csvg viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M12 2L2 7L12 12L22 7L12 2Z' /%3E%3Cpath d='M2 17L12 22L22 17' fill='none' stroke='currentColor' stroke-width='2'/%3E%3Cpath d='M2 12L12 17L22 12' fill='none' stroke='currentColor' stroke-width='2'/%3E%3C/svg%3E");
+    /* 3D Box */
+}
+
+/* 4. UX Optimization - Pink (Growth / Chart Concept) */
+.gradient-card-pink {
+    --bg-gradient: linear-gradient(135deg, #db2777 0%, #f43f5e 100%);
+    --accent-color: #be185d;
+    --vector-mask: url("data:image/svg+xml,%3Csvg viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M16 6L18.29 8.29L13.41 13.17L9.41 9.17L2 16.59L3.41 18L9.41 12L13.41 16L19.71 9.71L22 12V6H16Z'/%3E%3C/svg%3E");
+    /* Trending Up */
+}
+
+
+/* --- Typography & Content --- */
+.service-bento-card h3 {
+    font-size: 2rem;
+    margin-bottom: 24px;
+    z-index: 2;
+    color: #1a1a1a;
+    position: relative;
+    font-weight: 800;
+    letter-spacing: -0.03em;
+    line-height: 1.1;
+}
+
+/* Gradient Text Effect on Hover */
+.service-bento-card:hover h3 {
+    background: var(--bg-gradient);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.service-list {
+    list-style: none;
+    z-index: 2;
+    position: relative;
+    padding-left: 0;
+    margin-top: auto;
+    /* Push list to bottom of flex container */
+}
+
+.service-list li {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 12px;
+    color: #525252;
+    font-size: 1rem;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    padding: 8px 12px;
+    background: rgba(255, 255, 255, 0.5);
+    /* Glassy pill background */
+    border-radius: 12px;
+    backdrop-filter: blur(4px);
+    width: fit-content;
+    /* Only as wide as content */
+}
+
+.service-list li:hover {
+    background: #fff;
+    transform: translateX(8px) scale(1.02);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    /* Lift effect */
+    color: var(--accent-color);
+}
+
+
+/* Icon Styles */
+.service-list li svg {
+    font-size: 1.25rem;
+    flex-shrink: 0;
+    color: var(--accent-color);
+    /* Always colored */
+    filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.1));
+}
+
+
+/* Specs Label - Floating tag style */
+.spec-overlay {
+    position: absolute;
+    bottom: 24px;
+    right: 24px;
+    background: var(--bg-gradient);
+    color: #fff;
+    padding: 6px 16px;
+    border-radius: 20px;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.7rem;
+    font-weight: 700;
+    letter-spacing: 0.05em;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    z-index: 10;
+    transform: translateY(0);
+    /* Always visible */
+    opacity: 0.8;
+    transition: all 0.3s ease;
+}
+
+.service-bento-card:hover .spec-overlay {
+    transform: scale(1.1);
+    opacity: 1;
+}
+
+/* Remove old decorative elements */
+.service-bento-card::after {
+    display: none;
+}
+
+.bento-1 {
+    grid-column: span 8;
+}
+
+.bento-2 {
+    grid-column: span 4;
+}
+
+.bento-3 {
+    grid-column: span 5;
+}
+
+.bento-4 {
+    grid-column: span 7;
+}
+
+.service-bento-card h3 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+    z-index: 2;
+    color: #000;
+}
+
+.service-list {
+    list-style: none;
+    z-index: 2;
+}
+
+.service-list li {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 12px;
+    color: rgba(0, 0, 0, 0.6);
+    font-size: 1.1rem;
+}
+
+.service-list li svg {
+    color: #2563eb;
+}
+
+/* --- 4. Design Process --- */
+.uiux-process-section {
+    padding: 140px 0;
+    background: #f8fafc;
+}
+
+.process-timeline {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 30px;
+    margin-top: 80px;
+    position: relative;
+    padding-bottom: 20px;
+}
+
+.process-timeline::after {
+    content: '';
+    position: absolute;
+    top: 50px;
+    left: 0;
+    width: 100%;
+    height: 1px;
+    background: repeating-linear-gradient(to right, #2563eb 0, #2563eb 10px, transparent 10px, transparent 20px);
+    opacity: 0.15;
+}
+
+.process-step {
+    flex: 1;
+    text-align: center;
+    padding: 0 20px;
+    position: relative;
+    z-index: 2;
+}
+
+.step-number {
+    width: 100px;
+    height: 100px;
+    background: #ffffff;
+    border: 1px solid rgba(236, 72, 153, 0.2);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 30px;
+    font-size: 2rem;
+    font-weight: 800;
+    color: #2563eb;
+    box-shadow: 0 10px 30px rgba(37, 99, 235, 0.1);
+}
+
+.process-step h4 {
+    font-size: 1.5rem;
+    margin-bottom: 15px;
+    color: #000;
+}
+
+.process-step p {
+    color: rgba(0, 0, 0, 0.5);
+    font-size: 0.95rem;
+    line-height: 1.6;
+    font-family: 'JetBrains Mono', monospace;
+}
+
+.process-step:hover .step-number {
+    transform: scale(1.1);
+    background: #2563eb;
+    color: white;
+    box-shadow: 0 15px 35px rgba(37, 99, 235, 0.3);
+}
+
+/* --- 5. Portfolio --- */
+.uiux-portfolio-section {
+    padding: 140px 0;
+    background: #ffffff;
+}
+
+.portfolio-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 40px;
+}
+
+.portfolio-item {
+    border-radius: 30px;
+    overflow: hidden;
+    background: #ffffff;
+    position: relative;
+    cursor: pointer;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.05);
+    border: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.portfolio-img-wrap {
+    height: 450px;
+    background: #f1f5f9;
+    overflow: hidden;
+}
+
+.portfolio-img-wrap img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: 0.8s cubic-bezier(0.2, 1, 0.3, 1);
+}
+
+.portfolio-item:hover img {
+    transform: scale(1.05);
+}
+
+.portfolio-info {
+    padding: 40px;
+}
+
+.portfolio-info h3 {
+    color: #000;
+    margin-bottom: 10px;
+}
+
+.portfolio-info p {
+    color: rgba(0, 0, 0, 0.6);
+}
+
+.portfolio-results {
+    display: flex;
+    gap: 30px;
+    margin-top: 25px;
+    border-top: 1px solid rgba(0, 0, 0, 0.05);
+    padding-top: 25px;
+}
+
+.res-item span:first-child {
+    display: block;
+    font-size: 1.5rem;
+    font-weight: 800;
+    color: #2563eb;
+}
+
+.res-item span:last-child {
+    font-size: 0.75rem;
+    color: rgba(0, 0, 0, 0.4);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+/* --- 6. Industries --- */
+.industries-ticker {
+    padding: 80px 0;
+    background: #f8fafc;
+    overflow: hidden;
+    position: relative;
+}
+
+.industries-ticker::before,
+.industries-ticker::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    width: 250px;
+    height: 100%;
+    z-index: 2;
+    pointer-events: none;
+}
+
+.industries-ticker::before {
+    left: 0;
+    background: linear-gradient(to right, #f8fafc, transparent);
+}
+
+.industries-ticker::after {
+    right: 0;
+    background: linear-gradient(to left, #f8fafc, transparent);
+}
+
+.ticker-wrap {
+    display: flex;
+    gap: 100px;
+    animation: ticker 40s linear infinite;
+    width: max-content;
+}
+
+@keyframes ticker {
+    0% {
+        transform: translateX(0);
+    }
+
+    100% {
+        transform: translateX(-50%);
+    }
+}
+
+.ticker-item {
+    font-size: 2.5rem;
+    font-weight: 800;
+    white-space: nowrap;
+    color: rgba(0, 0, 0, 0.05);
+    transition: 0.3s;
+}
+
+.ticker-item:hover {
+    color: #2563eb;
+}
+
+/* --- 7. Tools --- */
+.uiux-tools-section {
+    padding: 100px 0;
+    text-align: center;
+    background: #ffffff;
+}
+
+.tools-flex {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 50px;
+    margin-top: 60px;
+    opacity: 0.8;
+}
+
+.tool-logo {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+    color: #111;
+}
+
+.tool-logo svg {
+    font-size: 3rem;
+}
+
+/* --- 9. FAQ --- */
+.faq-section {
+    padding: 140px 0;
+    background: #ffffff;
+}
+
+.faq-grid {
+    max-width: 800px;
+    margin: 60px auto 0;
+}
+
+.faq-item {
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+    padding: 30px 0;
+}
+
+.faq-question {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+    color: #000;
+}
+
+.faq-question h4 {
+    font-size: 1.25rem;
+}
+
+.faq-answer {
+    padding-top: 20px;
+    color: rgba(0, 0, 0, 0.6);
+    line-height: 1.6;
+    padding-left: 10px;
+    border-left: 1px solid rgba(37, 99, 235, 0.2);
+    margin-left: 5px;
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+    .services-bento {
+        grid-template-rows: auto;
+    }
+
+    .bento-1,
+    .bento-2,
+    .bento-3,
+    .bento-4 {
+        grid-column: span 12;
+    }
+
+    .why-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+    .why-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .stats-row {
+        flex-direction: column;
+        gap: 30px;
+    }
+
+    .process-timeline {
+        flex-direction: column;
+        gap: 50px;
+    }
+
+    .process-timeline::after {
+        display: none;
+    }
+
+    .portfolio-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* --- Designer Tool Additions --- */
+.designer-cursor {
+    position: fixed;
+    width: 14px;
+    height: 14px;
+    background: #2563eb;
+    border-radius: 2px;
+    pointer-events: none;
+    z-index: 10000;
+    transition: transform 0.05s linear;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 0 20px rgba(37, 99, 235, 0.4);
+}
+
+.designer-cursor::after {
+    content: '';
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    border: 1px solid rgba(37, 99, 235, 0.3);
+    border-radius: 50%;
+    animation: cursorReveal 1.5s infinite;
+}
+
+@keyframes cursorReveal {
+    0% {
+        transform: scale(0.5);
+        opacity: 1;
+    }
+
+    100% {
+        transform: scale(3);
+        opacity: 0;
+    }
+}
+
+.designer-cursor-label {
+    position: absolute;
+    left: 20px;
+    top: 20px;
+    background: #2563eb;
+    color: white;
+    padding: 4px 8px;
+    border-radius: 4px;
+    font-size: 10px;
+    font-family: 'JetBrains Mono', monospace;
+    white-space: nowrap;
+}
+
+.design-ruler-h {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 25px;
+    background: #f1f5f9;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+    z-index: 10;
+    display: flex;
+    align-items: center;
+    padding: 0 10px;
+    font-size: 9px;
+    color: #94a3b8;
+    font-family: inherit;
+    gap: 100px;
+}
+
+.color-specimen-row {
+    display: flex;
+    gap: 15px;
+    margin-top: 30px;
+}
+
+.color-specimen {
+    width: 60px;
+    height: 60px;
+    border-radius: 12px;
+    display: flex;
+    align-items: flex-end;
+    padding: 8px;
+    font-size: 8px;
+    font-family: 'JetBrains Mono', monospace;
+    color: #fff;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+}
+
+.comment-bubble {
+    position: absolute;
+    background: #2563eb;
+    color: white;
+    padding: 12px 18px;
+    border-radius: 15px;
+    border-bottom-left-radius: 2px;
+    font-size: 0.85rem;
+    box-shadow: 0 10px 25px rgba(37, 99, 235, 0.2);
+    z-index: 5;
+    max-width: 200px;
+    transition: 0.3s cubic-bezier(0.2, 1, 0.3, 1);
+}
+
+.comment-bubble:hover {
+    transform: scale(1.05) translateY(-5px);
+}

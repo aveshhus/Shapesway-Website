@@ -1,0 +1,231 @@
+.home-cta-new {
+    padding: 160px 0;
+    /* Increased padding for larger breakout */
+    background: #ffffff;
+}
+
+.cta-wrapper-modern {
+    background: var(--gradient-primary);
+    border-radius: 60px;
+    padding: 100px 80px;
+    position: relative;
+    overflow: visible;
+    box-shadow: 0 40px 120px -20px rgba(13, 181, 164, 0.5);
+    z-index: 10;
+}
+
+.cta-grid-layout {
+    display: grid;
+    grid-template-columns: 0.8fr 1.2fr;
+    /* Flipped: Image area on left, Text on right */
+    gap: 40px;
+    align-items: center;
+    position: relative;
+    z-index: 2;
+    min-height: 450px;
+}
+
+/* Right Side (Text) Styling */
+.cta-left-col {
+    text-align: left;
+    position: relative;
+    z-index: 5;
+    padding-left: 40px;
+    /* Space from the image breakout on the left */
+}
+
+.cta-tag-modern {
+    display: inline-block;
+    padding: 8px 20px;
+    background: rgba(255, 255, 255, 0.15);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 100px;
+    font-size: 0.85rem;
+    font-weight: 700;
+    color: #ffffff;
+    letter-spacing: 0.2em;
+    margin-bottom: 30px;
+}
+
+.cta-title-modern {
+    font-size: clamp(2rem, 5vw, 3.8rem);
+    font-weight: 800;
+    color: #ffffff;
+    line-height: 1.1;
+    letter-spacing: -0.04em;
+    margin-bottom: 24px;
+}
+
+.text-glow {
+    color: var(--color-secondary);
+    text-shadow: none;
+}
+
+.cta-desc-modern {
+    font-size: 1.25rem;
+    color: rgba(255, 255, 255, 0.95);
+    line-height: 1.7;
+    margin-bottom: 50px;
+    max-width: 580px;
+    text-align: justify;
+    hyphens: auto;
+}
+
+.cta-btns-new {
+    display: flex;
+    justify-content: flex-start;
+    gap: 20px;
+    align-items: center;
+}
+
+/* Left Side (Image) Styling - Moved up and increased size */
+.cta-right-col {
+    position: static;
+}
+
+.cta-image-wrapper {
+    position: absolute;
+    top: -30%;
+    /* Balanced for larger size */
+    left: calc(-20% + 50px);
+    /* Shifted 50px to the right */
+    width: 80%;
+    /* Increased from 65% (approx 20%+ increase) */
+    height: 180%;
+    /* Increased for vertical breakout */
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    pointer-events: none;
+    z-index: 10;
+}
+
+.cta-main-img {
+    width: auto;
+    height: 100%;
+    max-width: none;
+    object-fit: contain;
+    filter: drop-shadow(0 40px 80px rgba(0, 0, 0, 0.5)) grayscale(100%);
+    transition: transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.cta-wrapper-modern:hover .cta-main-img {
+    transform: scale(1.05) translate(10px, -10px);
+}
+
+.cta-primary-btn {
+    padding: 20px 48px;
+    background: #ffffff;
+    color: #0f172a;
+    border-radius: 18px;
+    font-size: 1.125rem;
+    font-weight: 700;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+}
+
+.cta-primary-btn:hover {
+    transform: translateY(-5px);
+    background: #f8fafc;
+    box-shadow: 0 25px 50px rgba(13, 181, 164, 0.3);
+}
+
+.cta-secondary-btn {
+    padding: 20px 48px;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    color: #ffffff;
+    border-radius: 18px;
+    font-size: 1.125rem;
+    font-weight: 700;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.cta-secondary-btn:hover {
+    background: rgba(255, 255, 255, 0.1);
+    border-color: rgba(255, 255, 255, 0.2);
+}
+
+/* Responsive Styles */
+@media (max-width: 1200px) {
+    .cta-wrapper-modern {
+        padding: 80px 40px;
+    }
+
+    .cta-image-wrapper {
+        width: 60%;
+        left: -10%;
+    }
+}
+
+@media (max-width: 1100px) {
+    .home-cta-new {
+        padding: 60px 0;
+    }
+
+    .cta-wrapper-modern {
+        border-radius: 40px;
+        padding: 60px 30px;
+    }
+
+    .cta-grid-layout {
+        grid-template-columns: 1fr;
+        gap: 30px;
+        min-height: auto;
+    }
+
+    .cta-left-col {
+        padding-left: 0;
+        order: 1;
+    }
+
+    .cta-right-col {
+        order: 2;
+        margin-top: 30px;
+    }
+
+    .cta-image-wrapper {
+        position: relative;
+        width: 100%;
+        height: 300px;
+        /* More controlled height */
+        top: 0;
+        left: 0;
+        margin: 0 auto;
+        display: flex;
+        justify-content: center;
+    }
+
+    .cta-main-img {
+        max-height: 100%;
+        width: auto;
+        filter: drop-shadow(0 20px 40px rgba(0, 0, 0, 0.3));
+    }
+}
+
+@media (max-width: 600px) {
+    .cta-title-modern {
+        font-size: 2.2rem;
+    }
+
+    .cta-desc-modern {
+        font-size: 1rem;
+        text-align: center;
+    }
+
+    .cta-btns-new {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .cta-primary-btn,
+    .cta-secondary-btn {
+        width: 100%;
+        padding: 16px 32px;
+    }
+}

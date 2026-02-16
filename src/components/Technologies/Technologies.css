@@ -1,0 +1,339 @@
+.tech-section {
+    padding: 160px 0;
+    background: #ffffff;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Futuristic Background Elements */
+.tech-bg-blob {
+    position: absolute;
+    width: 800px;
+    height: 800px;
+    border-radius: 50%;
+    filter: blur(140px);
+    z-index: 0;
+    opacity: 0.15;
+    pointer-events: none;
+}
+
+.tech-blob-1 {
+    top: -20%;
+    right: -10%;
+    background: radial-gradient(circle, #4facfe, #00f2fe);
+}
+
+.tech-blob-2 {
+    bottom: -20%;
+    left: -10%;
+    background: radial-gradient(circle, #00f2fe, #4facfe);
+}
+
+.tech-bg-grid {
+    position: absolute;
+    inset: 0;
+    background-image:
+        linear-gradient(rgba(79, 172, 254, 0.05) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(79, 172, 254, 0.05) 1px, transparent 1px);
+    background-size: 60px 60px;
+    z-index: 1;
+    pointer-events: none;
+    mask-image: radial-gradient(circle at 50% 50%, black, transparent 80%);
+}
+
+.tech-main-title {
+    font-size: clamp(3rem, 6vw, 4.5rem);
+    font-weight: 700;
+    color: var(--color-dark);
+    line-height: 1.1;
+    margin-top: 10px;
+}
+
+.tech-content-wrapper {
+    position: relative;
+    z-index: 5;
+    margin-top: 80px;
+}
+
+/* Premium Tabs Layout */
+.tech-tabs-outer {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 60px;
+}
+
+.tech-tabs-container {
+    display: flex;
+    padding: 8px;
+    background: rgba(255, 255, 255, 0.7);
+    backdrop-filter: blur(20px);
+    border: 1px solid rgba(0, 0, 0, 0.08);
+    border-radius: 24px;
+    gap: 8px;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.04);
+    overflow-x: auto;
+    scrollbar-width: none;
+    /* Hide scrollbar Firefox */
+    max-width: 100%;
+}
+
+.tech-tabs-container::-webkit-scrollbar {
+    display: none;
+    /* Hide scrollbar Chrome/Safari */
+}
+
+.tech-nav-btn {
+    position: relative;
+    padding: 14px 24px;
+    border: none;
+    background: transparent;
+    cursor: pointer;
+    border-radius: 16px;
+    transition: all 0.3s ease;
+}
+
+.nav-btn-content {
+    position: relative;
+    z-index: 2;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-family: var(--font-primary);
+    font-weight: 600;
+    color: #64748b;
+    transition: color 0.3s ease;
+}
+
+.tech-nav-btn.active .nav-btn-content {
+    color: #ffffff;
+}
+
+.nav-active-glow {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(135deg, #4facfe, #00f2fe);
+    border-radius: 16px;
+    z-index: 1;
+    box-shadow: 0 8px 20px rgba(79, 172, 254, 0.4);
+}
+
+/* Interactive Modern Grid */
+.tech-modern-grid {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 24px;
+}
+
+.tech-card-wrapper {
+    position: relative;
+}
+
+.tech-card {
+    position: relative;
+    height: 220px;
+    background: #ffffff;
+    border-radius: 32px;
+    border: 1px solid rgba(0, 0, 0, 0.05);
+    overflow: hidden;
+    transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+    cursor: crosshair;
+}
+
+.tech-card-spotlight {
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+    pointer-events: none;
+    opacity: 0;
+    transition: opacity 0.5s ease;
+}
+
+.tech-card:hover .tech-card-spotlight {
+    opacity: 1;
+}
+
+.tech-card-inner {
+    position: relative;
+    z-index: 5;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    padding: 30px;
+}
+
+.tech-icon-box {
+    position: relative;
+    width: 80px;
+    height: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 3.5rem;
+    color: var(--tech-color);
+    transition: transform 0.6s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.tech-icon-bg {
+    position: absolute;
+    inset: -10px;
+    background: var(--tech-color);
+    border-radius: 20px;
+    opacity: 0.05;
+    transition: all 0.4s ease;
+}
+
+.tech-card:hover {
+    transform: translateY(-10px);
+    border-color: rgba(79, 172, 254, 0.3);
+    box-shadow: 0 40px 80px rgba(0, 0, 0, 0.06);
+}
+
+.tech-card:hover .tech-icon-box {
+    transform: scale(1.1) rotate(5deg);
+}
+
+.tech-card:hover .tech-icon-bg {
+    opacity: 0.12;
+    transform: scale(1.1);
+}
+
+.tech-card-name {
+    font-weight: 600;
+    color: var(--color-dark);
+    font-size: 1.1rem;
+    letter-spacing: -0.01em;
+}
+
+.tech-card-corner {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 60px;
+    height: 60px;
+    clip-path: polygon(100% 0, 0 0, 100% 100%);
+    opacity: 0;
+    transition: opacity 0.4s ease;
+}
+
+.tech-card:hover .tech-card-corner {
+    opacity: 0.05;
+}
+
+/* Responsive Overrides */
+@media (max-width: 1400px) {
+    .tech-modern-grid {
+        grid-template-columns: repeat(4, 1fr);
+    }
+}
+
+@media (max-width: 1200px) {
+    .tech-section {
+        padding: 100px 0;
+    }
+}
+
+@media (max-width: 1024px) {
+    .tech-modern-grid {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 20px;
+    }
+
+    .tech-tabs-container {
+        border-radius: 20px;
+        padding: 6px;
+    }
+}
+
+@media (max-width: 768px) {
+    .tech-section {
+        padding: 80px 0;
+    }
+
+    .tech-main-title {
+        font-size: 2rem;
+        text-align: center;
+    }
+
+    .tech-tabs-outer {
+        margin: 0 -20px 40px;
+        padding: 0 20px;
+        justify-content: flex-start;
+    }
+
+    .tech-tabs-container {
+        padding: 6px;
+        border-radius: 18px;
+    }
+
+    .tech-nav-btn {
+        padding: 10px 18px;
+        white-space: nowrap;
+    }
+
+    .nav-btn-content {
+        font-size: 0.85rem;
+    }
+
+    .tech-modern-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 12px;
+    }
+
+    .tech-card {
+        height: 150px;
+        border-radius: 20px;
+    }
+
+    .tech-icon-box {
+        font-size: 2.2rem;
+        height: 50px;
+    }
+
+    .tech-card-name {
+        font-size: 0.85rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .tech-section {
+        padding: 60px 0;
+    }
+
+    .tech-main-title {
+        font-size: 1.8rem;
+    }
+
+    .tech-modern-grid {
+        grid-template-columns: repeat(2, 1fr);
+        /* Keep 2 column and shrink cards for better look */
+        gap: 12px;
+    }
+
+    .tech-card {
+        height: 160px;
+        border-radius: 24px;
+    }
+
+    .tech-icon-box {
+        font-size: 2.5rem;
+        width: 60px;
+        height: 60px;
+    }
+
+    .tech-card-name {
+        font-size: 0.9rem;
+    }
+}
+
+@media (max-width: 400px) {
+    .tech-modern-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .tech-card {
+        height: 140px;
+    }
+}

@@ -1,0 +1,341 @@
+@import "tailwindcss";
+
+/* ===================================
+   GLOBAL STYLES - Shapesway Technologies
+   =================================== */
+
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap');
+@import './design-system.css';
+
+/* ===================================
+   RESET & BASE STYLES
+   =================================== */
+
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --font-primary: 'Plus Jakarta Sans', sans-serif;
+    --font-heading: 'Outfit', sans-serif;
+    --color-primary: #0db5a4;
+    --color-primary-dark: #0a9b8d;
+    --color-secondary: #224aa4;
+    --color-dark: #0f172a;
+    --color-gray: #64748b;
+    --bg-mesh: radial-gradient(at 0% 0%, rgba(13, 181, 164, 0.1) 0, transparent 50%),
+        radial-gradient(at 50% 0%, rgba(34, 74, 164, 0.1) 0, transparent 50%),
+        radial-gradient(at 100% 0%, rgba(13, 181, 164, 0.1) 0, transparent 50%);
+}
+
+html {
+    font-size: 16px;
+    scroll-behavior: smooth;
+    -webkit-font-smoothing: antialiased;
+}
+
+body {
+    font-family: var(--font-primary);
+    background-color: var(--color-gray-lightest);
+    color: var(--color-dark);
+    line-height: var(--leading-normal);
+    overflow-x: hidden;
+}
+
+/* ===================================
+   TYPOGRAPHY
+   =================================== */
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: var(--font-heading);
+    color: var(--color-dark);
+    letter-spacing: -0.01em;
+    font-weight: 600;
+}
+
+h1 {
+    font-size: clamp(3rem, 8vw, 5rem);
+    font-weight: 800;
+}
+
+h2 {
+    font-size: clamp(2.5rem, 5vw, 3.5rem);
+    font-weight: 800;
+    /* More prominent */
+    color: var(--color-dark);
+    letter-spacing: -0.03em;
+}
+
+h3 {
+    font-size: var(--text-3xl);
+    font-weight: 700;
+}
+
+p {
+    color: #666;
+    line-height: 1.8;
+    font-size: 1.05rem;
+}
+
+.text-gradient {
+    background: var(--gradient-primary);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    display: inline-block;
+    filter: drop-shadow(0 2px 10px rgba(13, 181, 164, 0.1));
+}
+
+/* ===================================
+   LAYOUT & UTILITIES
+   =================================== */
+
+.container {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 40px;
+    /* Standard wide padding */
+}
+
+@media (max-width: 768px) {
+    .container {
+        padding: 0 24px;
+        /* Tighter padding for mobile */
+    }
+}
+
+.section {
+    padding: var(--space-section) 0;
+    position: relative;
+}
+
+.section-tag {
+    display: inline-flex;
+    align-items: center;
+    padding: 8px 18px;
+    background: rgba(13, 181, 164, 0.08);
+    color: var(--color-primary);
+    border-radius: var(--radius-full);
+    font-size: 0.75rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    margin-bottom: 24px;
+    border: 1px solid rgba(13, 181, 164, 0.1);
+}
+
+.section-header {
+    max-width: 800px;
+    margin-bottom: 60px;
+    text-align: left;
+}
+
+.section-header.center {
+    margin-left: 0;
+    margin-right: 0;
+    text-align: left;
+}
+
+.section-header h2 {
+    font-size: var(--text-4xl);
+    margin-bottom: 20px;
+}
+
+.section-header p {
+    font-size: 1.125rem;
+    max-width: 600px;
+    margin-bottom: 0;
+    color: var(--color-gray);
+}
+
+/* ===================================
+   COMPONENTS
+   =================================== */
+
+/* Buttons */
+.btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    padding: 16px 32px;
+    border-radius: var(--radius-full);
+    font-weight: 700;
+    transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+    cursor: pointer;
+    text-decoration: none;
+    font-size: 0.9375rem;
+    border: none;
+    outline: none;
+}
+
+.btn-primary {
+    background: var(--gradient-primary);
+    color: white;
+    box-shadow: 0 10px 20px rgba(13, 181, 164, 0.2);
+}
+
+.btn-primary:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 15px 30px rgba(13, 181, 164, 0.3);
+}
+
+.btn-lg {
+    padding: 18px 40px;
+    font-size: 1.0625rem;
+}
+
+.btn-outline {
+    background: white;
+    color: var(--color-dark);
+    border: 1px solid var(--color-gray-lighter);
+}
+
+.btn-outline:hover {
+    border-color: var(--color-primary);
+    color: var(--color-primary);
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-md);
+}
+
+/* Glassmorphism */
+.glass {
+    background: var(--glass-bg);
+    backdrop-filter: var(--glass-blur);
+    -webkit-backdrop-filter: var(--glass-blur);
+    border: 1px solid var(--glass-border);
+    box-shadow: var(--glass-shadow);
+}
+
+/* Background Effects */
+.mesh-bg {
+    background: var(--gradient-mesh);
+}
+
+.blob {
+    position: absolute;
+    width: 600px;
+    height: 600px;
+    background: radial-gradient(circle, rgba(99, 102, 241, 0.1), transparent 70%);
+    filter: blur(100px);
+    border-radius: 50%;
+    z-index: -1;
+    animation: blobFloat 25s infinite alternate ease-in-out;
+}
+
+/* Hover Effects */
+.hover-scale-trigger .about-main-img {
+    transition: transform 0.6s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+.hover-scale-trigger:hover .about-main-img {
+    transform: scale(1.05);
+}
+
+@keyframes blobFloat {
+    0% {
+        transform: translate(0, 0) scale(1);
+    }
+
+    33% {
+        transform: translate(100px, -50px) scale(1.1);
+    }
+
+    66% {
+        transform: translate(-50px, 100px) scale(0.9);
+    }
+
+    100% {
+        transform: translate(0, 0) scale(1);
+    }
+}
+
+/* Alternating Sections */
+.bg-white {
+    background: #ffffff;
+}
+
+.bg-light {
+    background: #f0f4f8;
+}
+
+/* Grid Utils */
+.grid {
+    display: grid;
+    gap: var(--space-8);
+}
+
+.grid-2 {
+    grid-template-columns: repeat(2, 1fr);
+}
+
+.grid-3 {
+    grid-template-columns: repeat(3, 1fr);
+}
+
+.grid-4 {
+    grid-template-columns: repeat(4, 1fr);
+}
+
+@media (max-width: 1024px) {
+
+    .grid-4,
+    .grid-3 {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+
+    .grid-4,
+    .grid-3,
+    .grid-2 {
+        grid-template-columns: 1fr;
+    }
+
+    .section {
+        padding: var(--space-20) 0;
+    }
+}
+
+/* Common Utilities */
+.flex {
+    display: flex;
+}
+
+.flex-col {
+    flex-direction: column;
+}
+
+.justify-between {
+    justify-content: space-between;
+}
+
+.items-center {
+    align-items: center;
+}
+
+.relative {
+    position: relative;
+}
+
+.z-10 {
+    z-index: 10;
+}
+
+.h-full {
+    height: 100%;
+}
+
+.w-full {
+    width: 100%;
+}

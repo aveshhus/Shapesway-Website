@@ -1,0 +1,23 @@
+.page-hero {
+    padding: var(--space-24) 0 var(--space-12);
+    background: var(--gradient-dark);
+    color: white;
+    text-align: center;
+    margin-top: 70px;
+}
+
+.page-hero h1 {
+    color: white;
+    font-size: var(--text-5xl);
+    margin-bottom: var(--space-4);
+}
+
+.page-hero p {
+    font-size: var(--text-xl);
+    color: rgba(255, 255, 255, 0.9);
+}
+
+.content-grid {
+    max-width: 800px;
+    margin: 0 auto;
+}

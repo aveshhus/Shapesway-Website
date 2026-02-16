@@ -1,0 +1,138 @@
+/* Light Theme Our Work Page */
+.our-work-page {
+    padding-top: 80px;
+    background: #f8fafc;
+    color: #0f172a;
+    min-height: 100vh;
+}
+
+.work-hero {
+    text-align: center;
+    padding: 100px 0 80px;
+    background: radial-gradient(circle at center, rgba(13, 181, 164, 0.08) 0%, transparent 60%);
+}
+
+.work-hero h1 {
+    font-size: 3.5rem;
+    font-weight: 800;
+    margin-bottom: 20px;
+    color: #0f172a;
+}
+
+.work-hero p {
+    font-size: 1.25rem;
+    color: #64748b;
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+.work-section {
+    padding: 80px 0;
+    border-top: 1px solid #e2e8f0;
+}
+
+.work-section:nth-child(even) {
+    background: #ffffff;
+}
+
+.work-section h2 {
+    font-size: 2.25rem;
+    margin-bottom: 50px;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    color: #0f172a;
+}
+
+/* Projects Grid */
+.projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 40px;
+}
+
+.project-card {
+    background: #ffffff;
+    border-radius: 20px;
+    overflow: hidden;
+    border: 1px solid #e2e8f0;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+}
+
+.project-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 20px 40px -5px rgba(0, 0, 0, 0.1);
+}
+
+.project-image {
+    height: 240px;
+    background: #f1f5f9;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 4rem;
+    color: #cbd5e1;
+}
+
+.project-info {
+    padding: 30px;
+}
+
+.project-tags {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 15px;
+}
+
+.project-tag {
+    background: #eff6ff;
+    color: #0db5a4;
+    padding: 6px 12px;
+    border-radius: 100px;
+    font-size: 0.8rem;
+    font-weight: 600;
+}
+
+.project-info h3 {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+    color: #0f172a;
+}
+
+.project-info p {
+    color: #64748b;
+    line-height: 1.7;
+}
+
+/* Client Stories Grid */
+.client-stories-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 40px;
+}
+
+.story-card {
+    background: #ffffff;
+    padding: 40px;
+    border-radius: 20px;
+    border: 1px solid #e2e8f0;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+}
+
+.story-content {
+    font-size: 1.1rem;
+    color: #334155;
+    font-style: italic;
+    margin-bottom: 10px;
+}
+
+.story-client h4 {
+    color: #0f172a;
+    font-weight: 700;
+}
+
+.story-client span {
+    color: #64748b;
+    font-size: 0.9rem;
+}

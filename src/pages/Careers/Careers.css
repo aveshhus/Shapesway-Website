@@ -1,0 +1,136 @@
+/* Light Theme Careers Page */
+.careers-page {
+    padding-top: 80px;
+    background: #f8fafc;
+    color: #0f172a;
+    min-height: 100vh;
+}
+
+.career-hero {
+    text-align: center;
+    padding: 100px 0 80px;
+    background: radial-gradient(circle at center, rgba(34, 74, 164, 0.08) 0%, transparent 60%);
+}
+
+.career-hero h1 {
+    font-size: 3.5rem;
+    font-weight: 800;
+    margin-bottom: 20px;
+    color: #0f172a;
+}
+
+.career-hero p {
+    font-size: 1.25rem;
+    color: #64748b;
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+.career-section {
+    padding: 80px 0;
+    border-top: 1px solid #e2e8f0;
+}
+
+.career-section:nth-child(even) {
+    background: #ffffff;
+}
+
+.career-section h2 {
+    font-size: 2.25rem;
+    margin-bottom: 50px;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    color: #0f172a;
+}
+
+/* Perks Grid */
+.perks-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+}
+
+.perk-card {
+    background: #ffffff;
+    padding: 35px;
+    border-radius: 20px;
+    border: 1px solid #e2e8f0;
+    text-align: center;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+}
+
+.perk-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 20px 40px -5px rgba(0, 0, 0, 0.1);
+    border-color: #0db5a4;
+}
+
+.perk-card h3 {
+    margin: 15px 0 10px;
+    color: #0f172a;
+}
+
+.perk-card p {
+    color: #64748b;
+    font-size: 0.95rem;
+}
+
+/* Job List */
+.job-list {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.job-card {
+    background: #ffffff;
+    padding: 30px;
+    border-radius: 16px;
+    border: 1px solid #e2e8f0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: all 0.2s ease;
+}
+
+.job-card:hover {
+    border-color: #0db5a4;
+    box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1);
+}
+
+.job-info h3 {
+    font-size: 1.25rem;
+    margin-bottom: 5px;
+    color: #0f172a;
+}
+
+.job-meta {
+    color: #64748b;
+    font-size: 0.9rem;
+}
+
+.apply-btn {
+    background: var(--color-primary, #0db5a4);
+    color: white;
+    border: none;
+    padding: 12px 24px;
+    border-radius: 100px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.apply-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(13, 181, 164, 0.3);
+}
+
+@media (max-width: 768px) {
+    .job-card {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 20px;
+    }
+}

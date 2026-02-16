@@ -1,0 +1,219 @@
+/* BeyondCardsCarousel.css */
+
+.beyond-carousel-container {
+    width: 100%;
+    max-width: 1100px;
+    /* Wider for 5 cards */
+    height: 500px;
+    /* Taller for vertical layout */
+    margin: 0 auto;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    perspective: 1200px;
+}
+
+.beyond-carousel-track {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* --- Card Base --- */
+.beyond-card {
+    position: absolute;
+    width: 320px;
+    height: 380px;
+    background: #0f1012;
+    /* Deepest black/charcoal */
+    border-radius: 24px;
+    padding: 2px;
+    /* Space for border */
+    cursor: pointer;
+    box-shadow: 0 10px 40px -10px rgba(0, 0, 0, 0.8);
+    transform-style: preserve-3d;
+    overflow: hidden;
+    /* Border Base */
+    border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+/* Background Layer (Handles Gradient Fills) */
+.beyond-bg-layer {
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    z-index: 0;
+    opacity: 0;
+    transition: opacity 0.5s ease;
+}
+
+/* Inner Content Layout */
+.beyond-card-inner {
+    position: relative;
+    z-index: 2;
+    width: 100%;
+    height: 100%;
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    /* Top (Icon) vs Bottom (Text) */
+    align-items: flex-start;
+    /* Left Align */
+    background: transparent;
+}
+
+/* --- Active State Core --- */
+.beyond-card.state-active {
+    box-shadow: 0 30px 60px -12px rgba(0, 0, 0, 0.9);
+    border-color: rgba(255, 255, 255, 0.2);
+}
+
+/* --- Gradient Themes (Active Only) --- */
+
+/* 1. Electric Purple & Neon Blue */
+.beyond-card.gradient-1.state-active .beyond-bg-layer {
+    opacity: 1;
+    background: radial-gradient(circle at top right, rgba(59, 130, 246, 0.4), transparent 70%),
+        linear-gradient(to bottom, rgba(139, 92, 246, 0.2), rgba(0, 0, 0, 0));
+}
+
+/* 2. Cyan & Emerald */
+.beyond-card.gradient-2.state-active .beyond-bg-layer {
+    opacity: 1;
+    background: radial-gradient(circle at top right, rgba(16, 185, 129, 0.4), transparent 70%),
+        linear-gradient(to bottom, rgba(6, 182, 212, 0.2), rgba(0, 0, 0, 0));
+}
+
+/* 3. Magenta & Orange (Warm) */
+.beyond-card.gradient-3.state-active .beyond-bg-layer {
+    opacity: 1;
+    background: radial-gradient(circle at top right, rgba(249, 115, 22, 0.4), transparent 70%),
+        linear-gradient(to bottom, rgba(236, 72, 153, 0.2), rgba(0, 0, 0, 0));
+}
+
+/* 4. Indigo & Aqua */
+.beyond-card.gradient-4.state-active .beyond-bg-layer {
+    opacity: 1;
+    background: radial-gradient(circle at top right, rgba(34, 211, 238, 0.4), transparent 70%),
+        linear-gradient(to bottom, rgba(99, 102, 241, 0.2), rgba(0, 0, 0, 0));
+}
+
+/* 5. Crimson & Violet */
+.beyond-card.gradient-5.state-active .beyond-bg-layer {
+    opacity: 1;
+    background: radial-gradient(circle at top right, rgba(220, 38, 38, 0.4), transparent 70%),
+        linear-gradient(to bottom, rgba(124, 58, 237, 0.2), rgba(0, 0, 0, 0));
+}
+
+
+/* --- Icon Styling --- */
+.beyond-icon-area {
+    width: 100%;
+}
+
+.beyond-icon-box {
+    width: 60px;
+    height: 60px;
+    border-radius: 16px;
+    background: rgba(255, 255, 255, 0.05);
+    /* Glassy dark */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    transition: all 0.3s ease;
+}
+
+.beyond-card.state-active .beyond-icon-box {
+    background: rgba(255, 255, 255, 0.15);
+    border-color: rgba(255, 255, 255, 0.4);
+    box-shadow: 0 0 20px rgba(255, 255, 255, 0.1);
+}
+
+.beyond-icon {
+    font-size: 28px;
+    color: #94a3b8;
+    /* Muted default */
+}
+
+.beyond-card.state-active .beyond-icon {
+    color: white;
+}
+
+/* --- Text Styling --- */
+.beyond-text-area {
+    width: 100%;
+    text-align: left;
+}
+
+.beyond-title {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #e2e8f0;
+    margin: 0;
+    line-height: 1.2;
+}
+
+.beyond-card.state-active .beyond-title {
+    color: #ffffff;
+}
+
+.beyond-desc-wrapper {
+    overflow: hidden;
+}
+
+.beyond-desc {
+    color: #94a3b8;
+    font-size: 0.95rem;
+    line-height: 1.5;
+    margin: 0;
+}
+
+/* Dots Navigation */
+.beyond-indicators {
+    position: absolute;
+    bottom: -50px;
+    display: flex;
+    gap: 8px;
+}
+
+.beyond-dot {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: #cbd5e1;
+    opacity: 0.3;
+    border: none;
+    transition: all 0.3s;
+}
+
+.beyond-dot.active {
+    width: 30px;
+    border-radius: 10px;
+    background: #3b82f6;
+    /* Accent color */
+    opacity: 1;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .beyond-carousel-container {
+        height: 420px;
+    }
+
+    .beyond-card {
+        width: 280px;
+        height: 340px;
+    }
+
+    .beyond-card.state-far-left,
+    .beyond-card.state-far-right {
+        opacity: 0;
+    }
+}

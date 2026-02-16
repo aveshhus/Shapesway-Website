@@ -1,0 +1,14 @@
+/* 
+   Consolidated into src/styles/global.css 
+   We keep this file minimal to avoid conflicts.
+*/
+:root {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+}

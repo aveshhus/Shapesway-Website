@@ -1,0 +1,110 @@
+/* Minimalist Reference Design */
+.about-section {
+    position: relative;
+    padding: 120px 0;
+    background: #fdfdfd;
+    /* Off-white from reference */
+}
+
+.about-split {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 100px;
+    align-items: center;
+}
+
+/* Curved Image Styling */
+.about-visual {
+    position: relative;
+}
+
+.about-img-container {
+    position: relative;
+    border-radius: 0 400px 400px 0;
+    /* Large curve from reference */
+    overflow: hidden;
+    height: 550px;
+    width: 110%;
+    /* Extend slightly to the left if needed, or just keep it full if on grid */
+    margin-left: -10vw;
+    /* Bleed off screen like reference if possible, but let's stick to container for now */
+    box-shadow: none;
+}
+
+.about-main-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Typography */
+.about-content {
+    padding-right: 50px;
+}
+
+.story-title {
+    font-size: 3.5rem;
+    font-weight: 500;
+    color: #4facfe;
+    /* Light blue from reference */
+    margin-bottom: 24px;
+    letter-spacing: -0.01em;
+}
+
+.about-desc {
+    font-size: 1.1rem;
+    color: #666;
+    line-height: 1.8;
+    margin-bottom: 60px;
+    max-width: 500px;
+}
+
+/* Pill Button */
+.about-btn {
+    padding: 14px 40px !important;
+    border-radius: 100px !important;
+    background: linear-gradient(90deg, #4facfe 0%, #00f2fe 100%) !important;
+    border: none !important;
+    font-weight: 600 !important;
+    box-shadow: 0 10px 20px rgba(79, 172, 254, 0.3) !important;
+    transition: transform 0.3s ease !important;
+}
+
+.about-btn:hover {
+    transform: translateY(-3px) !important;
+}
+
+/* Simplified Responsive */
+@media (max-width: 1024px) {
+    .about-split {
+        grid-template-columns: 1fr;
+        gap: 60px;
+        text-align: center;
+    }
+
+    .about-img-container {
+        border-radius: 0 250px 250px 0;
+        height: 400px;
+        margin-left: 0;
+        width: 100%;
+    }
+
+    .about-desc {
+        margin: 0 auto 40px;
+    }
+
+    .about-content {
+        padding-right: 0;
+    }
+}
+
+@media (max-width: 768px) {
+    .story-title {
+        font-size: 2.5rem;
+    }
+
+    .about-img-container {
+        height: 300px;
+        border-radius: 0 150px 150px 0;
+    }
+}

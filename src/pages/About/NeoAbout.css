@@ -1,0 +1,1292 @@
+/* Neo-Tech Minimalism Global Design System - LIGHT THEME (Matches Home) */
+/* Scoped to .neo-page to ensure specific styling for About sections */
+
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700&family=Outfit:wght@500;600;700;800&display=swap');
+
+:root {
+    /* Use Global Variables where possible, define overrides for Neo specifics */
+    --neo-bg-primary: #ffffff;
+    --neo-bg-secondary: #f0f4f8;
+    /* Matches .bg-light */
+    --neo-text-primary: #0f172a;
+    /* Matches --color-dark */
+    --neo-text-secondary: #64748b;
+    /* Matches --color-gray */
+
+    --neo-gradient-blue: #3B82F6;
+    --neo-gradient-cyan: #06B6D4;
+    --neo-gradient-purple: #8B5CF6;
+
+    /* Light Mode Glass */
+    --neo-glass-bg: rgba(255, 255, 255, 0.7);
+    --neo-glass-border: rgba(13, 181, 164, 0.15);
+    /* Brand Teal Hint */
+    --neo-glass-shadow: 0 10px 40px -10px rgba(0, 0, 0, 0.05);
+
+    --font-heading: 'Outfit', sans-serif;
+    --font-primary: 'Plus Jakarta Sans', sans-serif;
+}
+
+.neo-page {
+    background-color: var(--neo-bg-primary);
+    color: var(--neo-text-primary);
+    font-family: var(--font-primary);
+    min-height: 100vh;
+    padding-top: 80px;
+    /* Header clearance */
+    overflow-x: hidden;
+    position: relative;
+    /* Soft light mesh background */
+    background-image:
+        radial-gradient(circle at 10% 20%, rgba(13, 181, 164, 0.05), transparent 40%),
+        radial-gradient(circle at 90% 60%, rgba(59, 130, 246, 0.05), transparent 40%);
+}
+
+.neo-container {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 40px;
+    position: relative;
+    z-index: 2;
+}
+
+/* Typography */
+.neo-h1 {
+    font-family: var(--font-heading);
+    font-size: clamp(3rem, 6vw, 4.5rem);
+    font-weight: 800;
+    line-height: 1.1;
+    letter-spacing: -0.02em;
+    color: var(--neo-text-primary);
+    margin-bottom: 2rem;
+}
+
+.neo-h2 {
+    font-family: var(--font-heading);
+    font-size: 3rem;
+    font-weight: 700;
+    line-height: 1.2;
+    letter-spacing: -0.01em;
+    color: var(--neo-text-primary);
+    margin-bottom: 1.5rem;
+}
+
+.neo-h3 {
+    font-family: var(--font-heading);
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--neo-text-primary);
+    margin-bottom: 0.5rem;
+}
+
+.neo-text-lg {
+    font-size: 1.25rem;
+    line-height: 1.6;
+    color: var(--neo-text-secondary);
+    font-weight: 400;
+    max-width: 600px;
+}
+
+.neo-text {
+    font-size: 1.05rem;
+    line-height: 1.7;
+    color: var(--neo-text-secondary);
+}
+
+/* Signature Gradient Text */
+.neo-gradient-text {
+    background: linear-gradient(135deg, var(--neo-gradient-blue), var(--neo-gradient-cyan));
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+/* Components */
+.neo-glass-panel {
+    background: var(--neo-glass-bg);
+    border: 1px solid var(--neo-glass-border);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border-radius: 24px;
+    padding: 40px;
+    transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+    position: relative;
+    overflow: hidden;
+    box-shadow: var(--neo-glass-shadow);
+}
+
+.neo-glass-panel:hover {
+    border-color: rgba(13, 181, 164, 0.4);
+    box-shadow: 0 20px 50px -15px rgba(13, 181, 164, 0.15);
+    transform: translateY(-5px);
+}
+
+.neo-btn-primary {
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    padding: 16px 32px;
+    background: linear-gradient(135deg, #0db5a4, #0a9b8d);
+    border-radius: 100px;
+    color: #fff;
+    font-family: var(--font-heading);
+    font-weight: 600;
+    font-size: 1.05rem;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    box-shadow: 0 10px 20px rgba(13, 181, 164, 0.2);
+}
+
+.neo-btn-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 15px 30px rgba(13, 181, 164, 0.3);
+}
+
+/* Responsive Split Layout */
+.neo-split {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+    align-items: center;
+}
+
+.neo-split.reverse {
+    direction: rtl;
+}
+
+.neo-split.reverse>* {
+    direction: ltr;
+}
+
+@media (max-width: 968px) {
+    .neo-split {
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+
+    .neo-split.reverse {
+        direction: ltr;
+    }
+}
+
+.neo-card-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 20px;
+}
+
+.neo-avatar {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 4px solid #fff;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+}
+
+/* === Editorial / Magazine Style Utilities === */
+
+/* Hero Pattern - Abstract Dot Matrix */
+.neo-hero-editorial {
+    min-height: 85vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    background-image:
+        radial-gradient(#cbd5e1 1px, transparent 1px),
+        radial-gradient(#cbd5e1 1px, transparent 1px);
+    background-position: 0 0, 25px 25px;
+    background-size: 50px 50px;
+    position: relative;
+    overflow: hidden;
+}
+
+.neo-hero-editorial::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(circle at 50% 50%, rgba(255, 255, 255, 0) 0%, #fff 80%);
+    z-index: 1;
+}
+
+.neo-content-over {
+    position: relative;
+    z-index: 2;
+}
+
+/* Bento Grid System for About */
+/* === ULTRA MODERN CARD SYSTEM (Replaces previous bento styles) === */
+.neo-bento-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(2, minmax(300px, auto));
+    gap: 30px;
+    perspective: 1000px;
+    /* Enable 3D space for children */
+}
+
+.neo-modern-card {
+    position: relative;
+    border-radius: 32px;
+    overflow: hidden;
+    padding: 2px;
+    /* For border space */
+    background: #cbd5e1;
+    /* Default border color base */
+    transition: all 0.3s ease;
+    box-shadow: 0 20px 40px -10px rgba(0, 0, 0, 0.05);
+    /* Softer base shadow */
+    cursor: default;
+    display: flex;
+    flex-direction: column;
+    will-change: transform;
+    backface-visibility: hidden;
+    /* Force GPU rasterization for smoothness but handle text separately */
+    transform: translate3d(0, 0, 0);
+}
+
+/* Inner content area to simulate border */
+.neo-modern-card>.neo-card-content {
+    border-radius: 30px;
+    padding: 40px;
+    height: 100%;
+    /* Fix Blurry Text issues - simplify transforms */
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
+    transform: none !important;
+    /* Ensure no 3D transform on content */
+}
+
+/* Light Theme (Default) - Premium White Gradient */
+.neo-modern-card.light-theme {
+    background: linear-gradient(145deg, #ffffff, #f1f5f9);
+    border: 1px solid rgba(255, 255, 255, 0.8);
+}
+
+.neo-modern-card.light-theme>.neo-card-content {
+    background: linear-gradient(to bottom right, rgba(255, 255, 255, 0.95), rgba(255, 255, 255, 0.7));
+    backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, 0.5);
+}
+
+/* Dark Theme - Deep Professional Gradient (Not just black) */
+.neo-modern-card.dark-theme {
+    background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    color: white;
+}
+
+.neo-modern-card.dark-theme>.neo-card-content {
+    background: linear-gradient(to bottom right, rgba(15, 23, 42, 0.95), rgba(30, 41, 59, 0.9));
+    backdrop-filter: blur(20px);
+}
+
+/* ========================================= */
+/* DNA DARK GRADIENT THEME (Updates)         */
+/* ========================================= */
+.neo-modern-card.dna-dark {
+    background: #1e293b;
+    /* Lighter Dark (Slate-800) */
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    /* Fainter border */
+    color: white;
+    box-shadow: 0 20px 50px -10px rgba(0, 0, 0, 0.5);
+}
+
+.neo-modern-card.dna-dark>.neo-card-content {
+    background: transparent;
+    z-index: 10;
+    position: relative;
+    border: none;
+    backdrop-filter: none;
+}
+
+/* Specific Gradient Overrides - Applied as Pseudo Background */
+.neo-modern-card.dna-dark::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+    transition: opacity 0.5s ease;
+    opacity: 0.7;
+    /* Increased base visibility for lighter feel */
+}
+
+.neo-modern-card.dna-dark:hover::before {
+    opacity: 1;
+}
+
+/* Gradient Variants */
+.neo-modern-card.dna-gradient-1::before {
+    background: radial-gradient(circle at top right, rgba(59, 130, 246, 0.35), transparent 70%),
+        linear-gradient(to bottom left, rgba(139, 92, 246, 0.15), rgba(0, 0, 0, 0));
+}
+
+.neo-modern-card.dna-gradient-2::before {
+    background: radial-gradient(circle at top right, rgba(16, 185, 129, 0.35), transparent 70%),
+        linear-gradient(to bottom left, rgba(6, 182, 212, 0.15), rgba(0, 0, 0, 0));
+}
+
+.neo-modern-card.dna-gradient-3::before {
+    background: radial-gradient(circle at top right, rgba(249, 115, 22, 0.35), transparent 70%),
+        linear-gradient(to bottom left, rgba(236, 72, 153, 0.15), rgba(0, 0, 0, 0));
+}
+
+.neo-modern-card.dna-gradient-4::before {
+    background: radial-gradient(circle at top right, rgba(220, 38, 38, 0.35), transparent 70%),
+        linear-gradient(to bottom left, rgba(124, 58, 237, 0.15), rgba(0, 0, 0, 0));
+}
+
+/* Text Overrides for DNA Cards */
+.neo-modern-card.dna-dark h3,
+.neo-modern-card.dna-dark h4 {
+    background: none;
+    -webkit-text-fill-color: initial;
+    color: white;
+    font-weight: 700;
+    letter-spacing: -0.01em;
+    text-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
+    /* Improved Typo */
+}
+
+.neo-modern-card.dna-dark p {
+    color: #e2e8f0;
+    /* Lighter text color */
+    font-size: 1.05rem;
+    line-height: 1.7;
+    font-weight: 400;
+    opacity: 0.95;
+}
+
+.neo-modern-card.dna-dark .neo-icon-box {
+    background: rgba(255, 255, 255, 0.08) !important;
+    border: 1px solid rgba(255, 255, 255, 0.15) !important;
+    color: white !important;
+    border-radius: 20px;
+}
+
+/* ========================================= */
+
+/* Header Gradients for Pops of Color (Global Fallback) */
+.neo-modern-card h3,
+.neo-modern-card h4 {
+    background: linear-gradient(90deg, #0f172a, #334155);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    display: inline-block;
+}
+
+.neo-modern-card.dark-theme h3,
+.neo-modern-card.dark-theme h4 {
+    background: linear-gradient(90deg, #ffffff, #cbd5e1);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+/* Text Sharpness */
+.neo-modern-card p {
+    font-weight: 500;
+    /* Increase weight slightly for legibility on glass */
+    letter-spacing: 0.01em;
+}
+
+/* Background Image Layer */
+.neo-card-bg-layer {
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+}
+
+.neo-card-bg-layer img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.neo-modern-card:hover .neo-card-bg-layer img {
+    transform: scale(1.1);
+}
+
+/* Overlay to darken/tint background for readability */
+.neo-bg-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to bottom, transparent 0%, rgba(0, 0, 0, 0.4) 100%);
+    z-index: 1;
+}
+
+.neo-modern-card.light-theme .neo-bg-overlay {
+    background: linear-gradient(to bottom, rgba(255, 255, 255, 0.8) 0%, rgba(255, 255, 255, 0.4) 100%);
+}
+
+/* Spotlight Overlay */
+.neo-spotlight-overlay {
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    z-index: 5;
+    mix-blend-mode: overlay;
+    transition: opacity 0.3s ease;
+}
+
+/* Border Glow */
+.neo-border-glow {
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    z-index: 20;
+    /* Above everything */
+    mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    mask-composite: xor;
+    -webkit-mask-composite: xor;
+    padding: 2px;
+    /* Matches card padding */
+}
+
+/* Bottom Line */
+.neo-bottom-line {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 3px;
+    background: linear-gradient(90deg, transparent, #06b6d4, #3b82f6, transparent);
+    /* Multi-color gradient */
+    transform: scaleX(0);
+    transition: transform 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    z-index: 30;
+}
+
+.neo-bottom-line.active {
+    transform: scaleX(1);
+    box-shadow: 0 0 15px 1px rgba(6, 182, 212, 0.6);
+}
+
+/* Span Helpers */
+.col-span-2 {
+    grid-column: span 2;
+}
+
+.row-span-2 {
+    grid-row: span 2;
+}
+
+@media (max-width: 968px) {
+    .neo-bento-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .col-span-2,
+    .row-span-2 {
+        grid-column: span 1;
+        grid-row: span 1;
+    }
+}
+
+/* Team Card styling - Matches DNA Dark */
+.neo-team-card {
+    background: #1e293b;
+    border-radius: 30px;
+    padding: 30px;
+    text-align: center;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    /* Fainter border */
+    position: relative;
+    z-index: 1;
+    transition: all 0.3s ease;
+    box-shadow: 0 10px 40px -10px rgba(0, 0, 0, 0.5);
+    overflow: hidden;
+    /* For gradient pseudo */
+}
+
+.neo-team-card h4 {
+    color: white;
+}
+
+.neo-team-card span {
+    color: #cbd5e1 !important;
+}
+
+/* Add Gradient Glow to Team Cards */
+.neo-team-card::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    transition: opacity 0.5s ease;
+    opacity: 0.5;
+    background: radial-gradient(circle at top right, rgba(59, 130, 246, 0.2), transparent 70%);
+}
+
+.neo-team-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 20px 50px -10px rgba(0, 0, 0, 0.7);
+    border-color: rgba(59, 130, 246, 0.5);
+}
+
+.neo-team-card:hover::before {
+    opacity: 0.8;
+}
+
+
+/* Magazine Layout - Overlap */
+.neo-magazine-section {
+    position: relative;
+    padding: 120px 0;
+}
+
+.neo-image-overlap-container {
+    position: relative;
+    height: 600px;
+    display: flex;
+    align-items: center;
+}
+
+.neo-image-base {
+    width: 60%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 40px;
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.1);
+}
+
+.neo-text-floating {
+    width: 50%;
+    background: #1e293b;
+    /* Dark Slate */
+    padding: 60px;
+    border-radius: 40px;
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    box-shadow: 0 20px 60px -10px rgba(0, 0, 0, 0.6);
+    z-index: 2;
+    overflow: hidden;
+}
+
+/* Gradient Overlay for Story Box */
+.neo-text-floating::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    opacity: 0.6;
+    background: radial-gradient(circle at top right, rgba(6, 182, 212, 0.25), transparent 70%),
+        linear-gradient(to bottom left, rgba(16, 185, 129, 0.1), transparent);
+}
+
+.neo-text-floating h2,
+.neo-text-floating h3,
+.neo-text-floating .neo-h2 {
+    color: white;
+}
+
+.neo-text-floating p,
+.neo-text-floating .neo-text {
+    color: #e2e8f0;
+}
+
+
+
+.neo-img-shadow {
+    border: 1px solid #cbd5e1;
+    box-shadow: 12px 12px 0px #94a3b8;
+    transition: all 0.3s ease;
+}
+
+.neo-img-shadow:hover {
+    transform: translate(-5px, -5px) !important;
+    /* Override inline rotation if any, or handle carefully */
+    box-shadow: 18px 18px 0px rgba(13, 181, 164, 0.4);
+    border-color: #0db5a4;
+}
+
+@media (max-width: 968px) {
+    .neo-hero-editorial {
+        min-height: 60vh;
+    }
+
+    .neo-bento-grid {
+        grid-template-columns: 1fr;
+        grid-template-rows: auto;
+    }
+
+    .neo-bento-item.large,
+    .neo-bento-item.tall {
+        grid-column: span 1;
+        grid-row: span 1;
+    }
+
+    .neo-image-overlap-container {
+        height: auto;
+        flex-direction: column;
+    }
+
+    .neo-image-base {
+        width: 100%;
+        height: 400px;
+        margin-bottom: -50px;
+        z-index: 1;
+    }
+
+    .neo-text-floating {
+        width: 90%;
+        position: relative;
+        transform: none;
+        right: auto;
+        top: auto;
+        z-index: 2;
+        margin-top: 20px;
+    }
+}
+
+/* Animations - Adjusted */
+@keyframes float {
+
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-15px);
+    }
+}
+
+@keyframes scroll {
+    0% {
+        transform: translateX(0);
+    }
+
+    100% {
+        transform: translateX(-50%);
+    }
+}
+
+.neo-float {
+    animation: float 6s ease-in-out infinite;
+}
+
+/* Scroll Rail */
+.neo-scroll-rail-container {
+    width: 100%;
+    overflow: hidden;
+    padding: 60px 0;
+}
+
+.neo-scroll-track {
+    display: flex;
+    white-space: nowrap;
+    animation: scroll 40s linear infinite;
+    gap: 30px;
+}
+
+.neo-scroll-tile {
+    flex: 0 0 280px;
+    height: 320px;
+    background: #ffffff;
+    border: 1px solid rgba(0, 0, 0, 0.05);
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 30px;
+    transition: all 0.4s ease;
+    cursor: pointer;
+    text-decoration: none;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.03);
+}
+
+.neo-scroll-tile:hover {
+    transform: translateY(-5px);
+    border-color: rgba(13, 181, 164, 0.3);
+    box-shadow: 0 20px 40px rgba(13, 181, 164, 0.1);
+}
+
+.neo-scroll-tile h3 {
+    font-family: var(--font-heading);
+    font-size: 1.5rem;
+    color: var(--neo-text-primary);
+    margin-bottom: 20px;
+}
+
+.neo-scroll-tile p {
+    font-size: 0.95rem;
+    color: var(--neo-text-secondary);
+    text-align: center;
+    opacity: 0.8;
+    white-space: normal;
+}
+
+/* Stat Orbs - Light Mode */
+.neo-stats-container {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    gap: 40px;
+    padding: 80px 0;
+}
+
+.neo-stat-orb {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    background: #fff;
+    border: 1px solid rgba(0, 0, 0, 0.05);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.05);
+}
+
+.neo-stat-number {
+    font-family: var(--font-heading);
+    font-size: 3.5rem;
+    font-weight: 800;
+    color: #0db5a4;
+    /* Brand primary */
+    background: none;
+    -webkit-text-fill-color: initial;
+}
+
+.neo-stat-label {
+    margin-top: 10px;
+    font-size: 0.9rem;
+    color: var(--neo-text-secondary);
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    font-weight: 600;
+}
+
+@media (max-width: 768px) {
+    .neo-h1 {
+        font-size: 3rem;
+    }
+
+    .neo-h2 {
+        font-size: 2rem;
+    }
+}
+
+/* Full-Stack Mastery Section Styles - Grid Redesign */
+
+.mastery-section {
+    padding: 100px 0;
+    background-color: #ffffff;
+    /* Explicitly white */
+    position: relative;
+    display: flex;
+    justify-content: center;
+}
+
+/* 
+   The Container serves as the dark "slab" that holds the grid.
+   It creates the dark context on the white page.
+*/
+.mastery-dark-slab {
+    background-color: #000000;
+    /* Pure black or very dark slate as base */
+    border-radius: 24px;
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+    max-width: 1200px;
+    box-shadow: 0 30px 60px -12px rgba(0, 0, 0, 0.25);
+    border: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+/* The ambient center glow */
+.mastery-ambient-glow {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 800px;
+    height: 600px;
+    border-radius: 50%;
+    filter: blur(100px);
+    opacity: 0.15;
+    pointer-events: none;
+    transition: background 0.6s ease, opacity 0.6s ease;
+    z-index: 0;
+}
+
+.mastery-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(2, 320px);
+    /* Fixed height cells */
+    position: relative;
+    z-index: 2;
+}
+
+/* Individual Grid Cell */
+.mastery-cell {
+    position: relative;
+    /* Borders for grid lines */
+    border-right: 1px solid rgba(255, 255, 255, 0.1);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    background: transparent;
+    /* Let slab and glow show through */
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    /* Default align left */
+    justify-content: flex-start;
+    cursor: pointer;
+    overflow: hidden;
+    transition: background-color 0.3s ease;
+}
+
+/* Remove borders for last items to keep outer edge clean if desired, 
+   or keep them if the grid lines should go to edge. 
+   Usually "inner" grid lines implies removing outer ones. */
+.mastery-cell:nth-child(3n) {
+    border-right: none;
+}
+
+.mastery-cell:nth-child(n+4) {
+    border-bottom: none;
+}
+
+.mastery-cell:hover {
+    background-color: rgba(255, 255, 255, 0.03);
+    /* Subtle highlight */
+}
+
+/* Cell-specific internal gradient */
+.mastery-cell-gradient {
+    position: absolute;
+    inset: 0;
+    opacity: 0;
+    transition: opacity 0.4s ease;
+    z-index: 0;
+    pointer-events: none;
+    /* Gradient defined inline in JSX */
+}
+
+/* Content Wrapper */
+.mastery-content {
+    position: relative;
+    z-index: 2;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Icon Container */
+.mastery-icon-wrapper {
+    width: 60px;
+    height: 60px;
+    background: rgba(255, 255, 255, 0.08);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 20px;
+    /* Space between icon and title default */
+    color: #94a3b8;
+    transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+/* Hover State Logic is handled via JS Classes or Framer Motion variants */
+
+/* Typography */
+.mastery-title {
+    font-family: var(--font-heading);
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: #ffffff;
+    transition: color 0.3s ease;
+    text-align: left;
+}
+
+.mastery-desc {
+    font-size: 0.95rem;
+    color: #cbd5e1;
+    line-height: 1.6;
+    margin-top: 15px;
+    opacity: 0;
+    transform: translateY(10px);
+    transition: all 0.4s ease;
+    text-align: left;
+    max-width: 90%;
+}
+
+/* Responsive */
+@media (max-width: 968px) {
+    .mastery-grid {
+        grid-template-columns: 1fr;
+        grid-template-rows: auto;
+    }
+
+    .mastery-cell {
+        border-right: none;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        min-height: 250px;
+    }
+
+    .mastery-cell:last-child {
+        border-bottom: none;
+    }
+}
+
+/* Foundation Section Styling - Distinct from Mastery */
+.foundation-section {
+    padding: 120px 0;
+    background: #ffffff;
+}
+
+.foundation-grid {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    gap: 30px;
+}
+
+.foundation-card {
+    background: #0f172a;
+    border-radius: 40px;
+    padding: 50px;
+    position: relative;
+    overflow: hidden;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    transition: all 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    min-height: 400px;
+}
+
+.foundation-card:hover {
+    transform: translateY(-12px) scale(1.02);
+    border-color: rgba(255, 255, 255, 0.15);
+    box-shadow: 0 40px 80px -20px rgba(0, 0, 0, 0.4);
+}
+
+.foundation-card.span-8 {
+    grid-column: span 8;
+}
+
+.foundation-card.span-4 {
+    grid-column: span 4;
+}
+
+.foundation-card.span-6 {
+    grid-column: span 6;
+}
+
+.foundation-icon-box {
+    width: 70px;
+    height: 70px;
+    border-radius: 20px;
+    background: rgba(255, 255, 255, 0.05);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: auto;
+    transition: all 0.5s ease;
+}
+
+.foundation-card:hover .foundation-icon-box {
+    background: rgba(255, 255, 255, 0.1);
+    transform: translateY(-5px);
+}
+
+.foundation-label {
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    font-size: 0.75rem;
+    font-weight: 800;
+    color: #3b82f6;
+    margin-bottom: 12px;
+}
+
+.foundation-title {
+    font-size: 2rem;
+    font-weight: 800;
+    color: white;
+    margin-bottom: 20px;
+    font-family: var(--font-heading);
+}
+
+.foundation-desc {
+    font-size: 1.05rem;
+    color: #94a3b8;
+    line-height: 1.6;
+    max-width: 90%;
+}
+
+.foundation-glow {
+    position: absolute;
+    top: -10%;
+    right: -10%;
+    width: 300px;
+    height: 300px;
+    filter: blur(100px);
+    opacity: 0.1;
+    z-index: 0;
+    pointer-events: none;
+    transition: all 0.8s ease;
+}
+
+.foundation-card:hover .foundation-glow {
+    opacity: 0.3;
+    transform: scale(1.5);
+}
+
+@media (max-width: 1024px) {
+
+    .foundation-card.span-8,
+    .foundation-card.span-4,
+    .foundation-card.span-6 {
+        grid-column: span 12;
+        min-height: 350px;
+    }
+}
+
+/* === Modern Timeline Styles === */
+.modern-timeline-section {
+    padding: 150px 0;
+    background: #f8fafc;
+    position: relative;
+    overflow: hidden;
+}
+
+.timeline-container {
+    max-width: 1100px;
+    margin: 0 auto;
+    position: relative;
+    padding: 20px 0;
+}
+
+/* Vertical Line */
+.timeline-line {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    top: 0;
+    bottom: 0;
+    width: 2px;
+    background: linear-gradient(to bottom,
+            rgba(59, 130, 246, 0.05),
+            rgba(59, 130, 246, 0.2) 20%,
+            rgba(59, 130, 246, 0.2) 80%,
+            rgba(59, 130, 246, 0.05));
+}
+
+.timeline-item {
+    display: flex;
+    justify-content: center;
+    position: relative;
+    margin-bottom: 120px;
+    width: 100%;
+}
+
+/* Base wrapper to handle staggered layout */
+.timeline-content-wrapper {
+    display: flex;
+    align-items: center;
+    gap: 100px;
+    width: 100%;
+    max-width: 1200px;
+}
+
+.timeline-item.left .timeline-content-wrapper {
+    flex-direction: row;
+}
+
+.timeline-item.right .timeline-content-wrapper {
+    flex-direction: row-reverse;
+}
+
+/* Image styling */
+.timeline-visual {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.timeline-visual img {
+    max-width: 350px;
+    height: auto;
+    filter: drop-shadow(0 20px 40px rgba(0, 0, 0, 0.2));
+}
+
+.timeline-card {
+    flex: 1;
+    max-width: 500px;
+}
+
+/* Center Dot */
+.timeline-dot {
+    position: absolute;
+    left: 50%;
+    top: 40px;
+    width: 20px;
+    height: 20px;
+    background: white;
+    border: 4px solid var(--dot-color, #3b82f6);
+    border-radius: 50%;
+    transform: translateX(-50%);
+    z-index: 5;
+    box-shadow: 0 0 15px var(--dot-color, #3b82f6);
+}
+
+/* Year Background Background */
+.timeline-year-big {
+    position: absolute;
+    font-size: 15rem;
+    font-weight: 900;
+    color: rgba(15, 23, 42, 0.03);
+    top: -40px;
+    z-index: 0;
+    pointer-events: none;
+    font-family: var(--font-heading);
+    letter-spacing: -0.05em;
+    user-select: none;
+}
+
+.timeline-item:nth-child(odd) .timeline-year-big {
+    right: 55%;
+}
+
+.timeline-item:nth-child(even) .timeline-year-big {
+    left: 55%;
+}
+
+/* Content Card */
+.timeline-card {
+    background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%);
+    backdrop-filter: blur(10px);
+    border-radius: 30px;
+    padding: 40px;
+    position: relative;
+    z-index: 2;
+    box-shadow: 0 30px 60px -15px rgba(0, 0, 0, 0.3);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.timeline-item.left .timeline-card {
+    margin-left: 0;
+}
+
+.timeline-item.right .timeline-card {
+    margin-right: 0;
+}
+
+.timeline-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 40px 80px -20px rgba(0, 0, 0, 0.5);
+    border-color: var(--card-accent, #3b82f6);
+}
+
+.timeline-card-glow {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle at top right, var(--card-accent, #3b82f6), transparent 60%);
+    opacity: 0.15;
+    pointer-events: none;
+    border-radius: 30px;
+}
+
+.timeline-tag {
+    display: inline-block;
+    padding: 6px 16px;
+    border-radius: 100px;
+    font-size: 0.85rem;
+    font-weight: 700;
+    color: white;
+    margin-bottom: 20px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+.timeline-title {
+    font-size: 1.8rem;
+    font-weight: 800;
+    color: #ffffff;
+    margin-bottom: 15px;
+    font-family: var(--font-heading);
+}
+
+.timeline-desc {
+    font-size: 1.05rem;
+    color: #94a3b8;
+    line-height: 1.7;
+}
+
+@media (max-width: 968px) {
+    .timeline-content-wrapper {
+        flex-direction: column !important;
+        gap: 40px;
+    }
+
+    .timeline-visual img {
+        max-width: 250px;
+    }
+
+    .timeline-line {
+        left: 20px;
+    }
+
+    .timeline-dot {
+        left: 20px;
+    }
+}
+
+@media (max-width: 768px) {
+    .timeline-line {
+        left: 30px;
+    }
+
+    .timeline-item {
+        justify-content: flex-start;
+        padding-left: 70px;
+        padding-right: 20px;
+        margin-bottom: 80px;
+    }
+
+    .timeline-item.left .timeline-content-wrapper,
+    .timeline-item.right .timeline-content-wrapper {
+        flex-direction: column !important;
+        align-items: flex-start;
+    }
+
+    .timeline-dot {
+        left: 30px;
+    }
+
+    .timeline-item:nth-child(odd) .timeline-year-big,
+    .timeline-item:nth-child(even) .timeline-year-big {
+        font-size: 8rem;
+        left: 70px;
+        right: auto;
+        top: -20px;
+    }
+
+    .timeline-card {
+        width: 100%;
+        margin: 0 !important;
+        padding: 30px;
+    }
+}

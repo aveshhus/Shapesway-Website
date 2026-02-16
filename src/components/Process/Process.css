@@ -1,0 +1,151 @@
+/* Process Section - Simple & Modern */
+.process-section {
+    padding: 100px 0;
+    background-color: var(--color-gray-lightest);
+    position: relative;
+}
+
+.process-section .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Section Header */
+.section-header {
+    margin-bottom: 60px;
+    text-align: left;
+}
+
+.section-tag {
+    display: inline-block;
+    padding: 6px 16px;
+    background: var(--color-primary-ultra-light);
+    color: var(--color-primary);
+    border-radius: 50px;
+    font-size: 13px;
+    font-weight: 600;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    margin-bottom: 16px;
+}
+
+.section-header h2 {
+    font-size: 3.5rem;
+    font-weight: 500;
+    color: #4facfe;
+    /* Matching Our Story heading color */
+    margin-bottom: 24px;
+    letter-spacing: -0.01em;
+    font-family: var(--font-heading);
+}
+
+.highlight-text {
+    color: var(--color-primary);
+    /* Teal */
+}
+
+.section-header p {
+    font-size: 1.1rem;
+    color: #666;
+    max-width: 600px;
+    margin: 0 auto;
+    /* Centering for section header */
+    line-height: 1.8;
+}
+
+/* Grid Layout */
+.process-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+}
+
+/* Process Card */
+.process-card {
+    background: var(--color-white);
+    padding: 40px 30px;
+    border-radius: 32px;
+    /* Smoother corners */
+    position: relative;
+    box-shadow: var(--shadow-md);
+    transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+    border: 1px solid rgba(0, 0, 0, 0.03);
+    overflow: hidden;
+}
+
+.process-card:hover {
+    transform: translateY(15px) scale(1.05);
+    /* Pop downwards with lower intensity */
+    box-shadow: 0 15px 30px rgba(13, 181, 164, 0.3),
+        0 0 20px rgba(34, 74, 164, 0.2);
+    /* Softer gradient-like glow */
+    border-color: rgba(13, 181, 164, 0.3);
+    z-index: 5;
+}
+
+/* Big Number Background */
+.card-number {
+    position: absolute;
+    top: 20px;
+    right: 30px;
+    font-size: 60px;
+    font-weight: 800;
+    color: var(--color-gray-lighter);
+    z-index: 1;
+    line-height: 1;
+    opacity: 0.3;
+}
+
+.card-icon {
+    width: 60px;
+    height: 60px;
+    background: var(--gradient-primary);
+    /* Teal -> Blue Gradient */
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 24px;
+    color: white;
+    font-size: 24px;
+    position: relative;
+    z-index: 2;
+    box-shadow: 0 10px 20px rgba(13, 181, 164, 0.3);
+    /* Teal shadow */
+}
+
+.process-card h3 {
+    font-size: 22px;
+    font-weight: 600;
+    /* Matching Our Story */
+    color: var(--color-dark);
+    margin-bottom: 12px;
+    position: relative;
+    z-index: 2;
+}
+
+.process-card p {
+    font-size: 15px;
+    color: #666;
+    line-height: 1.7;
+    position: relative;
+    z-index: 2;
+}
+
+/* Responsiveness */
+@media (max-width: 1024px) {
+    .process-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+    .process-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .section-header h2 {
+        font-size: 28px;
+    }
+}
