@@ -28,7 +28,6 @@ import WhatsAppButton from './components/WhatsApp/WhatsAppButton';
 import './styles/global.css';
 
 function App() {
-  console.log("App: rendering full site");
   return (
     <Router>
       <div className="App">

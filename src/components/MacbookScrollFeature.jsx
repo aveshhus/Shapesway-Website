@@ -3,7 +3,7 @@ import { MacbookScroll } from "@/components/ui/macbook-scroll.jsx";
 import { motion } from "framer-motion";
 import { PiChartPieSliceBold, PiLightbulbBold, PiLayoutBold, PiInfinityBold, PiCompassBold, PiSparkleBold } from "react-icons/pi";
 
-export default function MacbookScrollDemo() {
+export default function MacbookScrollFeature() {
     return (
         <div className="relative w-full overflow-hidden bg-gradient-to-b from-white via-slate-50 to-white dark:from-[#0B0B0F] dark:via-[#0f0f14] dark:to-[#0B0B0F] py-20">
             {/* Background Grid Pattern */}

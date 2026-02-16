@@ -40,7 +40,7 @@ const AboutUs = () => {
 
     return (
         <div className="neo-page">
-            {/* 1. CINEMATIC HERO - REFINED */}
+            {/* Page Header & Hero Section */}
             <header className="neo-hero-editorial" ref={heroRef} style={{ background: '#ffffff', minHeight: '90vh', position: 'relative', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
                 {/* Dynamic Background Pattern */}
                 <div style={{ position: 'absolute', inset: 0, opacity: 0.1, pointerEvents: 'none', zIndex: 0 }}>
@@ -213,7 +213,7 @@ const AboutUs = () => {
                 </motion.div>
             </header>
 
-            {/* 2. OVERLAP STORY SECTION */}
+            {/* Narrative & Brand Story */}
             <div style={{ padding: '160px 0', background: '#ffffff', overflow: 'hidden' }}>
                 <div className="neo-container">
                     <SectionWrapper>
@@ -276,7 +276,7 @@ const AboutUs = () => {
                 </div>
             </div>
 
-            {/* 3. BENTO DNA - REFINED */}
+            {/* Core Values & DNA Visualization */}
             <section style={{ padding: '140px 0', background: '#0f172a' }}>
                 <div className="neo-container">
                     <SectionWrapper>
@@ -349,7 +349,7 @@ const AboutUs = () => {
                 </div>
             </section>
 
-            {/* 4. CREATIVE CAROUSEL */}
+            {/* Creative Competency Highlights */}
             <section style={{ padding: '140px 0', background: '#ffffff', overflow: 'hidden' }}>
                 <div className="neo-container" style={{ textAlign: 'center', marginBottom: '80px' }}>
                     <div style={{ color: '#3B82F6', fontWeight: 800, letterSpacing: '3px', textTransform: 'uppercase', marginBottom: '20px', fontSize: '0.9rem' }}>Beyond Software</div>
@@ -364,7 +364,7 @@ const AboutUs = () => {
                 </div>
             </section>
 
-            {/* 5. VELOCITY TIMELINE - MODERNIZED */}
+            {/* Growth Journey & Milestones */}
             <section style={{ padding: '140px 0', background: '#f8fafc' }}>
                 <div className="neo-container">
                     <SectionWrapper>
@@ -424,7 +424,7 @@ const AboutUs = () => {
                 </div>
             </section>
 
-            {/* 6. TEAM - PREMIUM GLASS CARDS */}
+            {/* Leadership & Strategic Direction */}
             <section style={{ padding: '140px 0', background: '#ffffff' }}>
                 <div className="neo-container">
                     <SectionWrapper>
@@ -470,7 +470,7 @@ const AboutUs = () => {
                 </div>
             </section>
 
-            {/* 7. OFFICES MINI SECTION */}
+            {/* Regional Operations & Presence */}
             <section style={{ padding: '80px 0', background: '#f8fafc', borderTop: '1px solid #e2e8f0' }}>
                 <div className="neo-container">
                     <div style={{ display: 'flex', justifyContent: 'center', gap: '80px', flexWrap: 'wrap', opacity: 0.6 }}>
@@ -486,7 +486,7 @@ const AboutUs = () => {
                 </div>
             </section>
 
-            {/* 8. CINEMATIC PARALLAX CTA */}
+            {/* Conversion & Call to Action */}
             <section style={{
                 padding: '160px 0', background: '#0f172a', color: 'white',
                 textAlign: 'center', position: 'relative', overflow: 'hidden'

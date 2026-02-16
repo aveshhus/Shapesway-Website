@@ -17,7 +17,7 @@ import servicesData from '../../data/services';
 import BespokeCTA from '../../components/common/BespokeCTA';
 import './NeoServices.css';
 
-// --- MODERN ICON ORCHESTRATOR ---
+// Icon Orchestrator for standardized visual modules
 const ModernIconWrapper = ({ Icon, type }) => {
     return (
         <div className={`modern-icon-wrapper icon-mode-${type}`}>
@@ -29,7 +29,7 @@ const ModernIconWrapper = ({ Icon, type }) => {
     );
 };
 
-// --- PILLAR 01: ENGINEERING (LIGHT ON DARK) ---
+// Engineering Pillar: Light on Dark Theme
 const EngineeringModule = ({ service, Icon }) => {
     const cardRef = useRef(null);
     const x = useMotionValue(0);
@@ -71,7 +71,7 @@ const EngineeringModule = ({ service, Icon }) => {
     );
 };
 
-// --- PILLAR 02: NEURAL COMPUTE (Redesigned Split Layout) ---
+// Neural Compute Pillar: Split Creative Layout
 const NeuralComputeSection = ({ category, services, IconMap }) => {
     const sectionRef = useRef(null);
 
@@ -134,7 +134,7 @@ const NeuralComputeSection = ({ category, services, IconMap }) => {
     );
 };
 
-// --- PILLAR 03: CREATIVE (Minimal Gradient Reveal) ---
+// Creative Pillar: Minimal Gradient Discovery
 const CreativeStudioStack = ({ service, Icon, index }) => (
     <div className="creative-stack" data-index={index}>
         <div className="creative-icon-wrapper">
@@ -148,7 +148,7 @@ const CreativeStudioStack = ({ service, Icon, index }) => (
     </div>
 );
 
-// --- PILLAR 04: ENTERPRISE (MINIMAL GRID CARDS) ---
+// Enterprise Pillar: Geometric Data Cards
 const EnterpriseGeometricCard = ({ service, Icon, index }) => (
     <motion.div
         className="enterprise-geo-card"
@@ -174,7 +174,7 @@ const Services = () => {
     const heroOpacity = useTransform(scrollYProgress, [0, 0.5], [1, 0]);
     const heroY = useTransform(scrollYProgress, [0, 0.5], [0, -50]);
 
-    // MODERN PHOSPHOR ICON MAPPING
+    // Standardized Icon Mapping - 2026 Index
     const iconMap = {
         'web-development': PiBrowserBold, 'mobile-app-development': PiDeviceMobileCameraBold, 'software-development': PiCodeBlockBold,
         'cross-platform-development': PiStackBold, 'ai-development': PiBrainBold, 'ui-ux-design': PiPaletteBold,

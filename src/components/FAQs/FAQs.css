@@ -1,4 +1,4 @@
-.faq-section {
+.home-faq-section {
     padding: 120px 0;
     background: var(--gradient-primary);
     color: #ffffff;
@@ -182,7 +182,7 @@
 
 /* Responsive */
 @media (max-width: 1100px) {
-    .faq-section {
+    .home-faq-section {
         padding: 80px 0;
     }
 
@@ -231,7 +231,7 @@
 }
 
 @media (max-width: 480px) {
-    .faq-section {
+    .home-faq-section {
         padding: 60px 0;
     }
 

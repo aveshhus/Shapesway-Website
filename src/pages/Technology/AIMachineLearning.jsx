@@ -20,7 +20,7 @@ import { FaArrowRight } from 'react-icons/fa';
 import BespokeCTA from '../../components/common/BespokeCTA';
 import './AIMachineLearning.css';
 
-// --- LIVE NEURAL NETWORK BACKGROUND ---
+// Neural Network Background Visualization Core
 const NeuralNetwork = () => {
     const canvasRef = useRef(null);
 
@@ -275,7 +275,7 @@ const AIMachineLearning = () => {
 
     return (
         <div className="ai-page">
-            {/* --- 1. HERO: LIVE NEURAL NETWORK --- */}
+            {/* Cognitive Hero Section */}
             <header className="hero-ultimate">
                 <div className="hero-bg-layer">
                     <NeuralNetwork />
@@ -426,7 +426,7 @@ const AIMachineLearning = () => {
                 </div>
             </header>
 
-            {/* --- 2. AI OVERVIEW --- */}
+            {/* Strategic Overview Module */}
             <section className="overview-ultimate">
                 <div className="container">
                     <div className="glass-panel-ultimate scanning-border">
@@ -476,7 +476,7 @@ const AIMachineLearning = () => {
                 </div>
             </section>
 
-            {/* --- 3. AI FEATURES: BENTO --- */}
+            {/* Capabilities Matrix: Bento Architecture */}
             <section className="features-ultimate">
                 <div className="container">
                     <SectionHeader
@@ -509,7 +509,7 @@ const AIMachineLearning = () => {
                 </div>
             </section>
 
-            {/* --- 4. ML APPLICATIONS: VANTABLACK PRISM --- */}
+            {/* Industrial Applications: Prism Layer */}
             <section className="apps-ultimate vantablack-prism-section">
                 <div className="matrix-rain-overlay"></div>
                 <div className="container" style={{ position: 'relative', zIndex: 2 }}>
@@ -557,7 +557,7 @@ const AIMachineLearning = () => {
                 </div>
             </section>
 
-            {/* --- 5. TECH STACK LAB --- */}
+            {/* Engineering Stack & Ecosystem Labs */}
             <section className="tech-ultimate">
                 <div className="container">
                     <SectionHeader
@@ -592,7 +592,7 @@ const AIMachineLearning = () => {
                 </div>
             </section>
 
-            {/* --- 6. USER EXPERIENCE (CONTRAST BREAK) --- */}
+            {/* Human-Centered Cognitive Interfaces */}
             <section className="ux-ultimate">
                 <div className="container">
                     <div className="cockpit-view">
@@ -639,7 +639,7 @@ const AIMachineLearning = () => {
                 </div>
             </section>
 
-            {/* --- 7. FUTURE INTEGRATION: CYBER HORIZON --- */}
+            {/* Strategic Roadmap & Infrastructure Horizon */}
             <section className="future-ultimate horizon-prism">
                 <div className="container">
                     <SectionHeader

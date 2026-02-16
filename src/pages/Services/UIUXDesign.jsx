@@ -5,11 +5,12 @@ import {
     PiPaletteBold, PiUsersBold, PiGraphBold, PiRocketLaunchBold,
     PiDeviceMobileBold, PiBrowsersBold, PiLayoutBold, PiTrendUpBold,
     PiMagnifyingGlassBold, PiPencilCircleBold, PiTestTubeBold, PiArrowRightBold,
-    PiPlusBold, PiMinusBold, PiFigmaLogoBold, PiGlobeBold, PiAppStoreLogoBold
+    PiPlusBold, PiMinusBold, PiFigmaLogoBold, PiGlobeBold, PiAppStoreLogoBold,
+    PiChartLineBold, PiHeartbeatBold, PiShoppingCartBold, PiPackageBold
 } from 'react-icons/pi';
-import { SiFigma, SiAdobexd, SiSketch, SiInvision, SiMiro } from 'react-icons/si';
+import { SiFigma, SiAdobexd, SiSketch, SiInvision, SiMiro, SiFramer, SiAdobeillustrator, SiAdobephotoshop, SiNotion } from 'react-icons/si';
 import BespokeCTA from '../../components/common/BespokeCTA';
-import MacbookScrollDemo from '../../components/macbook-scroll-demo';
+import MacbookScrollFeature from '../../components/MacbookScrollFeature';
 import './UIUXDesign.css';
 
 const MagneticButton = ({ children, className, style, to }) => {
@@ -70,6 +71,9 @@ const UIUXDesign = () => {
         { q: "What is the cost?", a: "Pricing is value-based and depends on the scope. We offer fixed-price packages for startups and hourly retainers for enterprise long-term support." },
         { q: "Do you provide development as well?", a: "Yes, we are a full-service agency. We can seamlessly transition your designs into high-performance web or mobile applications." },
         { q: "Can you redesign an existing product?", a: "Absolutely. We specialize in UX Audits and modernization for legacy platforms to improve performance and user satisfaction." },
+        { q: "Will I own the source design files?", a: "Yes, upon project completion and final payment, you receive full ownership of all source files, typically delivered via organized Figma files." },
+        { q: "What is your design process?", a: "We follow a discovery-driven approach: Research & Strategy, Information Architecture, Wireframing, Visual UI Design, Prototyping, and final Handover." },
+        { q: "Do you offer post-launch support?", a: "Yes, we provide ongoing design support for feature updates, A/B testing, and continuous UX improvements based on real user data." },
     ];
 
     return (
@@ -102,7 +106,7 @@ const UIUXDesign = () => {
                 whileInView={{ opacity: 1, scale: 1 }}
                 viewport={{ once: true }}
             >
-                "Let's try a softer blue for the CTA button."
+                "Prioritizing accessibility and visual hierarchy in every component."
             </motion.div>
 
             <motion.div
@@ -113,10 +117,10 @@ const UIUXDesign = () => {
                 viewport={{ once: true }}
                 transition={{ delay: 0.5 }}
             >
-                "User testing shows 90% preference for this layout."
+                "Implementing atomic design principles for enterprise-grade scalability."
             </motion.div>
 
-            {/* --- 1. HERO SECTION --- */}
+            {/* Landing Hero Section */}
             <section className="uiux-hero">
                 <div className="container">
                     <motion.div
@@ -150,9 +154,9 @@ const UIUXDesign = () => {
             </section>
 
             {/* --- 2. WHY UI/UX MATTERS - REDESIGNED WITH MACBOOK SCROLL --- */}
-            <MacbookScrollDemo />
+            <MacbookScrollFeature />
 
-            {/* --- 3. OUR SERVICES --- */}
+            {/* Design Methodology Showcase */}
             <section className="uiux-services-section relative">
                 {/* Vibrant Top Gradients - Matching MacbookScroll Bottom */}
                 <div className="absolute inset-x-0 top-0 h-1/2 bg-gradient-to-b from-blue-500/40 via-transparent to-transparent dark:from-blue-500/50 pointer-events-none" />
@@ -208,131 +212,318 @@ const UIUXDesign = () => {
                         </div>
                     </div>
                 </div>
+                {/* Vibrant Bottom Gradients - Matching Top Style but New Colors */}
+                <div className="absolute inset-x-0 bottom-0 h-1/2 bg-gradient-to-t from-emerald-500/40 via-transparent to-transparent dark:from-emerald-500/50 pointer-events-none" />
+                <div className="absolute inset-x-0 bottom-0 h-1/2 bg-gradient-to-tl from-teal-500/35 via-transparent to-transparent dark:from-teal-500/45 pointer-events-none" />
             </section>
 
-            {/* --- 4. DESIGN PROCESS --- */}
-            <section className="uiux-process-section">
+            {/* Iterative Design Workflow */}
+            <section className="uiux-process-section relative">
+                {/* Vibrant Top Gradients - Process Section */}
+                <div className="absolute inset-x-0 top-0 h-1/2 bg-gradient-to-b from-emerald-500/40 via-transparent to-transparent dark:from-emerald-500/50 pointer-events-none" />
+                <div className="absolute inset-x-0 top-0 h-1/2 bg-gradient-to-bl from-teal-500/35 via-transparent to-transparent dark:from-teal-500/45 pointer-events-none" />
                 <div className="container">
                     <div className="section-title-wrap" style={{ textAlign: 'center' }}>
                         <span className="section-label">How We Work</span>
                         <h2 className="section-title">Built for Precision.</h2>
                     </div>
 
-                    <div className="process-timeline">
+                    <div className="process-strip-container">
                         {[
-                            { num: "01", title: "Discover", desc: "Stakeholder interviews and user empathy mapping." },
-                            { num: "02", title: "Define", desc: "Information architecture and low-fi wireframes." },
-                            { num: "03", title: "Design", desc: "Interactive prototypes and high-fidelity UI." },
-                            { num: "04", title: "Test", desc: "Validation with real users and design iteration." },
-                            { num: "05", title: "Deliver", desc: "Pixel-perfect handoff to development teams." }
+                            {
+                                num: "01",
+                                title: "Discover",
+                                desc: "We start by diving deep into your goals, understanding user needs, and mapping out the core problems to solve.",
+                                icon: <PiMagnifyingGlassBold />,
+                                gradient: "linear-gradient(135deg, #3b82f6 0%, #8b5cf6 100%)", /* Blue to Purple */
+                                color: "#3b82f6"
+                            },
+                            {
+                                num: "02",
+                                title: "Define",
+                                desc: "Structuring the information architecture and plotting user flows to ensure a logical, intuitive experience.",
+                                icon: <PiGraphBold />,
+                                gradient: "linear-gradient(135deg, #06b6d4 0%, #3b82f6 100%)", /* Cyan to Blue */
+                                color: "#06b6d4"
+                            },
+                            {
+                                num: "03",
+                                title: "Design",
+                                desc: "Translating wireframes into stunning, high-fidelity interfaces with interactive prototypes for real-feel testing.",
+                                icon: <PiPaletteBold />,
+                                gradient: "linear-gradient(135deg, #d946ef 0%, #ec4899 100%)", /* Fuchsia to Pink */
+                                color: "#d946ef"
+                            },
+                            {
+                                num: "04",
+                                title: "Test",
+                                desc: "Rigorous usability testing with real users to identify friction points and validate design decisions.",
+                                icon: <PiTestTubeBold />,
+                                gradient: "linear-gradient(135deg, #f97316 0%, #f43f5e 100%)", /* Orange to Red */
+                                color: "#f97316"
+                            },
+                            {
+                                num: "05",
+                                title: "Deliver",
+                                desc: "Providing a complete design system and pixel-perfect assets ready for development handoff.",
+                                icon: <PiRocketLaunchBold />,
+                                gradient: "linear-gradient(135deg, #10b981 0%, #14b8a6 100%)", /* Emerald to Teal */
+                                color: "#10b981"
+                            }
                         ].map((step, i) => (
-                            <motion.div
-                                className="process-step"
-                                key={i}
-                                initial={{ opacity: 0, scale: 0.9 }}
-                                whileInView={{ opacity: 1, scale: 1 }}
-                                viewport={{ once: true }}
-                                transition={{ delay: i * 0.1 }}
-                            >
-                                <div className="step-number">{step.num}</div>
-                                <h4>{step.title}</h4>
-                                <p>{step.desc}</p>
-                            </motion.div>
+                            <div className="process-strip" key={i} style={{ '--accent-color': step.color }}>
+                                <div className="strip-gradient" style={{ background: step.gradient }} />
+                                <div className="strip-content">
+                                    <div className="strip-header">
+                                        <span className="strip-num">{step.num}</span>
+                                        <span className="strip-icon-wrapper">{step.icon}</span>
+                                    </div>
+                                    <div className="strip-text">
+                                        <h3>{step.title}</h3>
+                                        <p>{step.desc}</p>
+                                    </div>
+                                    <div className="strip-arrow" style={{ color: step.color }}><PiArrowRightBold /></div>
+                                </div>
+                            </div>
                         ))}
                     </div>
                 </div>
             </section>
 
-            {/* --- ATOMICS / DESIGN SYSTEM --- */}
-            <section className="uiux-atomics-section" style={{ padding: '80px 0', borderTop: '1px solid rgba(0,0,0,0.03)' }}>
+            {/* System Foundations & Atomics */}
+            <section className="uiux-atomics-section" style={{ padding: '100px 0', borderTop: '1px solid rgba(0,0,0,0.03)', background: '#f8fafc' }}>
                 <div className="container">
-                    <span className="section-label">Foundation</span>
-                    <h2 className="section-title" style={{ fontSize: '2.5rem' }}>The Design System.</h2>
-
-                    <div className="color-specimen-row">
-                        <div className="color-specimen" style={{ background: '#2563eb' }}>#2563eb</div>
-                        <div className="color-specimen" style={{ background: '#1e293b' }}>#1e293b</div>
-                        <div className="color-specimen" style={{ background: '#f8fafc', color: '#64748b', border: '1px solid #e2e8f0' }}>#f8fafc</div>
-                        <div className="color-specimen" style={{ background: '#ffffff', color: '#64748b', border: '1px solid #e2e8f0' }}>#ffffff</div>
+                    <div className="section-title-wrap">
+                        <span className="section-label">Foundation</span>
+                        <h2 className="section-title">Scalable Design Systems.</h2>
+                        <p style={{ maxWidth: '600px', margin: '20px 0 0', color: 'rgba(0,0,0,0.6)', fontSize: '1.1rem', lineHeight: '1.6' }}>
+                            We don't just design pages; we build living design systems. This ensures consistency, speed, and scalability for your product's future.
+                        </p>
                     </div>
 
-                    <div style={{ marginTop: '50px', display: 'flex', gap: '40px', alignItems: 'center' }}>
-                        <div style={{ fontFamily: 'Inter', fontSize: '2rem', fontWeight: '800' }}>Inter / ExtraBold</div>
-                        <div style={{ height: '40px', width: '1px', background: 'rgba(0,0,0,0.1)' }}></div>
-                        <div style={{ display: 'flex', gap: '8px' }}>
-                            {[1, 2, 3, 4, 5].map(i => (
-                                <div key={i} style={{ width: '40px', height: '40px', borderRadius: '8px', boxShadow: `0 ${i * 5}px ${i * 10}px rgba(0,0,0,0.05)` }}></div>
-                            ))}
+                    <div className="design-system-grid">
+                        <div className="ds-card" style={{ '--card-accent': '#3b82f6' }}>
+                            <div className="ds-icon-box"><span style={{ fontFamily: 'Inter', fontWeight: 800 }}>Aa</span></div>
+                            <div className="ds-content">
+                                <h3>Typography</h3>
+                                <p>Accessible type scale ensuring readability and hierarchy.</p>
+                            </div>
+                            <div className="ds-visual type-visual">
+                                <div className="type-line" style={{ height: '10px', width: '60%' }}></div>
+                                <div className="type-line" style={{ height: '6px', width: '40%', opacity: 0.6 }}></div>
+                                <div className="type-line" style={{ height: '6px', width: '50%', opacity: 0.6 }}></div>
+                            </div>
+                        </div>
+
+                        <div className="ds-card" style={{ '--card-accent': '#10b981' }}>
+                            <div className="ds-icon-box"><PiPaletteBold /></div>
+                            <div className="ds-content">
+                                <h3>Color Palette</h3>
+                                <p>Semantic tokens for consistent and accessible theming.</p>
+                            </div>
+                            <div className="ds-visual color-visual">
+                                <div className="color-circle main"></div>
+                                <div className="color-circle sub"></div>
+                            </div>
+                        </div>
+
+                        <div className="ds-card" style={{ '--card-accent': '#8b5cf6' }}>
+                            <div className="ds-icon-box"><PiLayoutBold /></div>
+                            <div className="ds-content">
+                                <h3>Components</h3>
+                                <p>Modular, reusable elements for rapid development.</p>
+                            </div>
+                            <div className="ds-visual comp-visual">
+                                <div className="comp-mock-btn"></div>
+                                <div className="comp-mock-input"></div>
+                            </div>
+                        </div>
+
+                        <div className="ds-card" style={{ '--card-accent': '#f97316' }}>
+                            <div className="ds-icon-box"><PiFigmaLogoBold /></div>
+                            <div className="ds-content">
+                                <h3>Assets</h3>
+                                <p>Custom icon sets defining your unique visual language.</p>
+                            </div>
+                            <div className="ds-visual icon-visual">
+                                <PiGlobeBold /> <PiRocketLaunchBold />
+                            </div>
                         </div>
                     </div>
                 </div>
             </section>
 
-            {/* --- 5. PORTFOLIO --- */}
+            {/* Portfolio Highlights */}
             <section className="uiux-portfolio-section">
                 <div className="container">
                     <div className="section-title-wrap">
                         <span className="section-label">Case Studies</span>
                         <h2 className="section-title">Real Results. Real Impact.</h2>
+                        <p style={{ maxWidth: '600px', margin: '20px auto 0', color: 'rgba(0,0,0,0.6)', fontSize: '1.1rem', lineHeight: '1.6', textAlign: 'center' }}>
+                            See how we've transformed digital experiences across industries
+                        </p>
                     </div>
 
-                    <div className="portfolio-grid">
-                        <div className="portfolio-item">
-                            <div className="portfolio-img-wrap">
+                    <div className="case-studies-grid">
+                        <motion.div
+                            className="case-study-card"
+                            style={{ '--case-accent': '#3b82f6' }}
+                            initial={{ opacity: 0, y: 40 }}
+                            whileInView={{ opacity: 1, y: 0 }}
+                            viewport={{ once: true }}
+                            transition={{ duration: 0.6 }}
+                        >
+                            <div className="case-category">
+                                <PiChartLineBold />
+                                <span>Fintech</span>
+                            </div>
+                            <div className="case-image-wrapper">
                                 <img src="/src/assets/uiux_portfolio_fintech.png" alt="Fintech Dashboard" />
+                                <div className="case-overlay"></div>
                             </div>
-                            <div className="portfolio-info">
-                                <h3>Fintech Dashboard Redesign</h3>
-                                <p>Reimagining complex data for one of the leading digital banking startups.</p>
-                                <div className="portfolio-results">
-                                    <div className="res-item">
-                                        <span>38%</span>
-                                        <span>Retention</span>
+                            <div className="case-content">
+                                <h3>Digital Banking Dashboard</h3>
+                                <p>Reimagining complex financial data visualization for modern users</p>
+                                <div className="case-metrics">
+                                    <div className="metric">
+                                        <span className="metric-value">+38%</span>
+                                        <span className="metric-label">User Retention</span>
                                     </div>
-                                    <div className="res-item">
-                                        <span>2x</span>
-                                        <span>Conversions</span>
+                                    <div className="metric">
+                                        <span className="metric-value">2x</span>
+                                        <span className="metric-label">Conversions</span>
                                     </div>
-                                    <div className="res-item">
-                                        <span>30%</span>
-                                        <span>Faster Onboarding</span>
+                                    <div className="metric">
+                                        <span className="metric-value">-30%</span>
+                                        <span className="metric-label">Onboarding Time</span>
                                     </div>
                                 </div>
                             </div>
-                        </div>
-                        <div className="portfolio-item">
-                            <div className="portfolio-img-wrap">
+                        </motion.div>
+
+                        <motion.div
+                            className="case-study-card"
+                            style={{ '--case-accent': '#10b981' }}
+                            initial={{ opacity: 0, y: 40 }}
+                            whileInView={{ opacity: 1, y: 0 }}
+                            viewport={{ once: true }}
+                            transition={{ duration: 0.6, delay: 0.2 }}
+                        >
+                            <div className="case-category">
+                                <PiHeartbeatBold />
+                                <span>Healthcare</span>
+                            </div>
+                            <div className="case-image-wrapper">
                                 <img src="/src/assets/uiux_portfolio_healthcare.png" alt="Healthcare App" />
+                                <div className="case-overlay"></div>
                             </div>
-                            <div className="portfolio-info">
-                                <h3>Healthcare Mobile App</h3>
-                                <p>Streamlining patient-doctor communication with user-first accessibility.</p>
-                                <div className="portfolio-results">
-                                    <div className="res-item">
-                                        <span>85%</span>
-                                        <span>CSAT Score</span>
+                            <div className="case-content">
+                                <h3>Patient Care Mobile App</h3>
+                                <p>Streamlining doctor-patient communication with accessibility-first design</p>
+                                <div className="case-metrics">
+                                    <div className="metric">
+                                        <span className="metric-value">85%</span>
+                                        <span className="metric-label">CSAT Score</span>
                                     </div>
-                                    <div className="res-item">
-                                        <span>50k+</span>
-                                        <span>Active Users</span>
+                                    <div className="metric">
+                                        <span className="metric-value">50k+</span>
+                                        <span className="metric-label">Active Users</span>
                                     </div>
-                                    <div className="res-item">
-                                        <span>#1</span>
-                                        <span>Health Category</span>
+                                    <div className="metric">
+                                        <span className="metric-value">#1</span>
+                                        <span className="metric-label">Health Category</span>
                                     </div>
                                 </div>
                             </div>
-                        </div>
+                        </motion.div>
                     </div>
                 </div>
             </section>
 
-            {/* --- 6. INDUSTRIES --- */}
-            <section className="industries-ticker">
-                <div className="ticker-wrap">
-                    {["FINTECH", "HEALTHCARE", "E-COMMERCE", "SAAS", "EDTECH", "LOGISTICS", "FINTECH", "HEALTHCARE", "E-COMMERCE", "SAAS", "EDTECH", "LOGISTICS"].map((ind, i) => (
-                        <div className="ticker-item" key={i}>{ind}</div>
-                    ))}
+            {/* Industry Expertise */}
+            <section className="industries-section">
+                <div className="container">
+                    <div className="section-title-wrap" style={{ textAlign: 'center' }}>
+                        <span className="section-label">Industries</span>
+                        <h2 className="section-title">Trusted Across Sectors.</h2>
+                        <p style={{ maxWidth: '600px', margin: '20px auto 0', color: 'rgba(0,0,0,0.6)', fontSize: '1.05rem', lineHeight: '1.6', textAlign: 'center' }}>
+                            From startups to enterprises, we've delivered exceptional UI/UX across diverse industries
+                        </p>
+                    </div>
+
+                    <div className="industries-grid">
+                        <motion.div
+                            className="industry-card"
+                            style={{ '--industry-color': '#3b82f6' }}
+                            whileHover={{ y: -8 }}
+                            transition={{ duration: 0.3 }}
+                        >
+                            <div className="industry-icon">
+                                <PiChartLineBold />
+                            </div>
+                            <h3>Fintech</h3>
+                        </motion.div>
+
+                        <motion.div
+                            className="industry-card"
+                            style={{ '--industry-color': '#10b981' }}
+                            whileHover={{ y: -8 }}
+                            transition={{ duration: 0.3 }}
+                        >
+                            <div className="industry-icon">
+                                <PiHeartbeatBold />
+                            </div>
+                            <h3>Healthcare</h3>
+                        </motion.div>
+
+                        <motion.div
+                            className="industry-card"
+                            style={{ '--industry-color': '#8b5cf6' }}
+                            whileHover={{ y: -8 }}
+                            transition={{ duration: 0.3 }}
+                        >
+                            <div className="industry-icon">
+                                <PiShoppingCartBold />
+                            </div>
+                            <h3>E-Commerce</h3>
+                        </motion.div>
+
+                        <motion.div
+                            className="industry-card"
+                            style={{ '--industry-color': '#f59e0b' }}
+                            whileHover={{ y: -8 }}
+                            transition={{ duration: 0.3 }}
+                        >
+                            <div className="industry-icon">
+                                <PiRocketLaunchBold />
+                            </div>
+                            <h3>SaaS</h3>
+                        </motion.div>
+
+                        <motion.div
+                            className="industry-card"
+                            style={{ '--industry-color': '#ec4899' }}
+                            whileHover={{ y: -8 }}
+                            transition={{ duration: 0.3 }}
+                        >
+                            <div className="industry-icon">
+                                <PiUsersBold />
+                            </div>
+                            <h3>EdTech</h3>
+                        </motion.div>
+
+                        <motion.div
+                            className="industry-card"
+                            style={{ '--industry-color': '#06b6d4' }}
+                            whileHover={{ y: -8 }}
+                            transition={{ duration: 0.3 }}
+                        >
+                            <div className="industry-icon">
+                                <PiTrendUpBold />
+                            </div>
+                            <h3>Logistics</h3>
+                        </motion.div>
+                    </div>
                 </div>
             </section>
 
@@ -345,41 +536,77 @@ const UIUXDesign = () => {
                         <div className="tool-logo"><SiFigma /><span>Figma</span></div>
                         <div className="tool-logo"><SiAdobexd /><span>Adobe XD</span></div>
                         <div className="tool-logo"><SiSketch /><span>Sketch</span></div>
-                        <div className="tool-logo"><SiInvision /><span>Invision</span></div>
+                        <div className="tool-logo"><SiFramer /><span>Framer</span></div>
+                        <div className="tool-logo"><SiInvision /><span>InVision</span></div>
                         <div className="tool-logo"><SiMiro /><span>Miro</span></div>
+                        <div className="tool-logo"><SiAdobeillustrator /><span>Illustrator</span></div>
+                        <div className="tool-logo"><SiAdobephotoshop /><span>Photoshop</span></div>
+                        <div className="tool-logo"><SiNotion /><span>Notion</span></div>
                     </div>
                 </div>
             </section>
 
-            {/* --- 9. FAQ --- */}
+            {/* Common Internal Inquiries */}
             <section className="faq-section">
                 <div className="container">
-                    <div className="section-title-wrap" style={{ textAlign: 'center' }}>
-                        <span className="section-label">FAQ</span>
-                        <h2 className="section-title">Objections Answered.</h2>
-                    </div>
+                    <div className="faq-layout-grid">
+                        <div className="faq-creative-side">
+                            <span className="section-label">Support</span>
+                            <h2 className="section-title">Common Questions.</h2>
+                            <p className="faq-intro-text">
+                                Can't find the answer you're looking for? Reach out to our design experts for a personalized consultation.
+                            </p>
 
-                    <div className="faq-grid">
-                        {faqData.map((faq, i) => (
-                            <div className="faq-item" key={i}>
-                                <div className="faq-question" onClick={() => toggleFaq(i)}>
-                                    <h4>{faq.q}</h4>
-                                    {activeFaq === i ? <PiMinusBold /> : <PiPlusBold />}
+                            <div className="faq-visual-card">
+                                <div className="visual-card-inner">
+                                    <div className="visual-icon-row">
+                                        <div className="mini-icon blue"><PiPencilCircleBold /></div>
+                                        <div className="mini-icon purple"><PiUsersBold /></div>
+                                        <div className="mini-icon orange"><PiRocketLaunchBold /></div>
+                                    </div>
+                                    <h3>Need more help?</h3>
+                                    <p>Our team is available 24/7 to discuss your project requirements.</p>
+                                    <Link to="/contact" className="faq-contact-btn">
+                                        Contact Us <PiArrowRightBold />
+                                    </Link>
                                 </div>
-                                <AnimatePresence>
-                                    {activeFaq === i && (
-                                        <motion.div
-                                            className="faq-answer"
-                                            initial={{ height: 0, opacity: 0 }}
-                                            animate={{ height: 'auto', opacity: 1 }}
-                                            exit={{ height: 0, opacity: 0 }}
-                                        >
-                                            {faq.a}
-                                        </motion.div>
-                                    )}
-                                </AnimatePresence>
+                                <div className="visual-bg-blur" />
                             </div>
-                        ))}
+
+                            <div className="decorative-dots">
+                                {[...Array(12)].map((_, i) => <div key={i} className="dot" />)}
+                            </div>
+                        </div>
+
+                        <div className="faq-grid-side">
+                            <div className="faq-list">
+                                {faqData.map((faq, i) => (
+                                    <div className={`faq-item ${activeFaq === i ? 'active' : ''}`} key={i}>
+                                        <div className="faq-question" onClick={() => toggleFaq(i)}>
+                                            <h4>{faq.q}</h4>
+                                            <div className="faq-toggle-icon">
+                                                {activeFaq === i ? <PiMinusBold /> : <PiPlusBold />}
+                                            </div>
+                                        </div>
+                                        <AnimatePresence>
+                                            {activeFaq === i && (
+                                                <motion.div
+                                                    className="faq-answer"
+                                                    initial={{ height: 0, opacity: 0 }}
+                                                    animate={{ height: 'auto', opacity: 1 }}
+                                                    exit={{ height: 0, opacity: 0 }}
+                                                    transition={{ duration: 0.4, ease: [0.16, 1, 0.3, 1] }}
+                                                >
+                                                    <div className="answer-content">
+                                                        {faq.a}
+                                                    </div>
+                                                </motion.div>
+                                            )}
+                                        </AnimatePresence>
+                                    </div>
+                                ))}
+                            </div>
+                        </div>
                     </div>
                 </div>
             </section>

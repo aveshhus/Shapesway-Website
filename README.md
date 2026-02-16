@@ -1,159 +1,60 @@
-# Shapesway Technologies Website
+# Shapesway Technologies - Official Web Infrastructure
 
-Enterprise-grade website for Shapesway Technologies Pvt. Ltd.
+Architected for Shapesway Technologies Pvt. Ltd., this platform represents the pinnacle of modern enterprise web design and high-performance digital engineering. Built with a focus on extreme agility, pixel-perfect aesthetics, and scalable architecture.
 
-## 🚀 Quick Start
+## 🛠 Tech Blueprint
 
-### Prerequisites
-- Node.js (v18 or higher)
-- npm or yarn
+*   **Engine**: React 18 with Vite for lightning-fast HMR and build performance.
+*   **Aesthetics**: Vanilla CSS architecture with centralized design system tokens.
+*   **Motion**: Framer Motion for sophisticated, high-performance interactions.
+*   **Ecosystem**: Phosphor Icons (Bold) & Lucide-React for standardized iconography.
+*   **Routing**: React Router DOM (v6) for seamless client-side navigation.
 
-### Installation
+## 📁 System Architecture
 
+```text
+src/
+├── assets/           # Optimized raw media and brand assets
+├── components/       # Atomic and molecular reusable components
+│   ├── common/       # Foundational components (BespokeCTA, ErrorBoundary)
+│   ├── Header/       # Orchestrated navigation and mega-menus
+│   └── ...           # Specialized interactive UI modules
+├── pages/            # View-level orchestrations
+│   ├── Services/     # High-fidelity service vertical portals
+│   ├── Technology/   # Specialized platform and tech stacks
+│   └── ...           # Core informational and business hubs
+├── styles/           # Centralized theme and design tokens
+│   ├── design-system.css # CSS Variable-driven theme core
+│   └── global.css        # Global resets and utility orchestrations
+└── App.jsx           # Main application routing matrix
+```
+
+## 🚀 Deployment & Integrity
+
+### Development Environment
 ```bash
-# Clone or navigate to the project directory
-cd "c:\Users\Admin\Desktop\Shapesway website"
-
-# Install dependencies
 npm install
-
-# Start development server
 npm run dev
 ```
 
-The website will be available at `http://localhost:5173/`
-
-## 📦 Build for Production
-
+### Production Orchestration
 ```bash
-# Create production build
 npm run build
-
-# Preview production build
 npm run preview
 ```
 
-## 🌐 Deployment
+## 💎 Design Standards
 
-### Vercel (Recommended)
-1. Install Vercel CLI: `npm i -g vercel`
-2. Run: `vercel`
-3. Follow the prompts
+This project adheres to a strict design language:
+*   **Typography**: Plus Jakarta Sans (Primary) & Outfit (Heading).
+*   **Color Space**: Deep slate neutrals with high-saturation primary accents.
+*   **Motion Philosophy**: Non-linear easing, magnetic interactions, and glassmorphic depth.
 
-### Netlify
-1. Build the project: `npm run build`
-2. Upload the `dist` folder to Netlify
-3. Or connect your Git repository for automatic deployments
+## 📞 Business Engagement
 
-## 📱 Features
+*   **Principal**: Shapesway Technologies Pvt. Ltd.
+*   **Engineering Hubs**: Jaipur & Udaipur, India
+*   **Inquiries**: Info@shapesway.in | +91 63671 81952
 
-- ✅ Fully responsive design
-- ✅ 14 service pages with detailed information
-- ✅ AI-powered chatbot (SWPL AI)
-- ✅ WhatsApp integration with business hours detection
-- ✅ Animated hero section
-- ✅ Mega menu navigation
-- ✅ Contact form
-- ✅ Professional testimonials section
-- ✅ SEO-optimized pages
-
-## 🛠️ Tech Stack
-
-- **Frontend Framework**: React 18
-- **Build Tool**: Vite
-- **Routing**: React Router DOM
-- **Animations**: Framer Motion
-- **Icons**: React Icons
-- **Forms**: React Hook Form
-- **HTTP Client**: Axios
-
-## 📂 Project Structure
-
-```
-src/
-├── components/       # Reusable components
-│   ├── Header/
-│   ├── Footer/
-│   ├── Hero/
-│   ├── AIChat/
-│   └── WhatsApp/
-├── pages/           # Page components
-│   ├── Home/
-│   ├── About/
-│   ├── Services/
-│   ├── Contact/
-│   ├── Blog/
-│   └── Careers/
-├── data/            # Static data
-│   └── services.js
-├── styles/          # Global styles
-│   ├── design-system.css
-│   └── global.css
-└── App.jsx          # Main app component
-```
-
-## ⚙️ Configuration
-
-### Environment Variables
-
-Create a `.env` file in the root directory:
-
-```env
-# API Configuration (when backend is ready)
-VITE_API_URL=http://localhost:5000/api
-
-# Analytics (optional)
-VITE_GA_TRACKING_ID=your_tracking_id
-```
-
-## 🎨 Design System
-
-The website uses a comprehensive design system with:
-- Color palette (Primary: #0066FF, Secondary: #6C5CE7, Accent: #00D4AA)
-- Typography scale (Inter & Plus Jakarta Sans fonts)
-- Spacing system
-- Shadow system
-- Animation curves
-
-## 📞 Contact Information
-
-- **Phone**: +91 63671 81952
-- **Email**: Info@shapesway.in
-- **Jaipur Office**: 4th Floor, Shree Amar Heights, 405, Ajmer Rd, Jaipur, Rajasthan 302019
-- **Udaipur Office**: Fortune 80 Complex, 205, University Rd, Udaipur, Rajasthan 313001
-
-## 📝 License
-
-© 2024 Shapesway Technologies Pvt. Ltd. All rights reserved.
-
-## 🚧 Coming Soon
-
-- Backend API (Node.js + Express + MongoDB)
-- Admin Panel for content management
-- Blog system with CMS
-- Advanced analytics dashboard
-- Email integration
-- Newsletter system
-
-## 💻 Development
-
-### Available Scripts
-
-- `npm run dev` - Start development server
-- `npm run build` - Build for production
-- `npm run preview` - Preview production build
-- `npm run lint` - Run ESLint
-
-### Adding New Pages
-
-1. Create component in `src/pages/`
-2. Add route in `src/App.jsx`
-3. Update navigation in `src/components/Header/Header.jsx`
-
-### Customizing Services
-
-Edit `src/data/services.js` to add/modify services.
-
-## 🤝 Support
-
-For technical support or inquiries, contact the development team at Admin@shapesway.in
+---
+© 2026 Shapesway Technologies. Engineered for the future.

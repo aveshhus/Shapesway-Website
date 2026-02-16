@@ -73,7 +73,7 @@ const FAQs = () => {
     };
 
     return (
-        <section className="faq-section">
+        <section className="home-faq-section">
             <div className="container">
                 <div className="faq-split-layout">
                     {/* Left side: Heading and CTA */}
