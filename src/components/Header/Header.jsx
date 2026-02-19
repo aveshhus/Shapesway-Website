@@ -78,7 +78,7 @@ const Header = () => {
         { name: 'Home', path: '/', hasMegaMenu: false },
         { name: 'About', path: '/about', hasMegaMenu: true, megaType: 'about' },
         { name: 'Services', path: '/services', hasMegaMenu: true, megaType: 'services' },
-        { name: 'Our Work', path: '/our-work', hasMegaMenu: true, megaType: 'work' },
+        { name: 'Our Work', path: '/our-work', hasMegaMenu: false },
         { name: 'Technology', path: '/technology', hasMegaMenu: true, megaType: 'technology' },
         { name: 'Industries', path: '/industries', hasMegaMenu: true, megaType: 'industries' },
         { name: 'Career', path: '/careers', hasMegaMenu: true, megaType: 'career' }
@@ -226,7 +226,7 @@ const MegaMenu = ({ type, onMouseEnter, onMouseLeave }) => {
                     {type === 'simple' && <HomeMegaMenu />}
                     {type === 'about' && <AboutMegaMenu />}
                     {type === 'services' && <ServicesMegaMenu />}
-                    {type === 'work' && <WorkMegaMenu />}
+
                     {type === 'technology' && <TechnologyMegaMenu />}
                     {type === 'industries' && <IndustriesMegaMenu />}
                     {type === 'career' && <CareerMegaMenu />}
@@ -332,42 +332,7 @@ const ServicesMegaMenu = () => {
     );
 };
 
-// Work Mega Menu (4-Column Grid - Tallium Style)
-const WorkMegaMenu = () => {
-    const categories = [
-        {
-            icon: <TbBuildingFactory2 />,
-            title: 'Industry Solutions',
-            link: '/our-work#industry'
-        },
-        {
-            icon: <TbCpu />,
-            title: 'Technology Solutions',
-            link: '/our-work#tech'
-        },
-        {
-            icon: <TbFileAnalytics />,
-            title: 'Case Studies',
-            link: '/our-work'
-        },
-        {
-            icon: <TbMessage2Heart />,
-            title: 'Client Stories',
-            link: '/our-work#clients'
-        }
-    ];
 
-    return (
-        <div className="mega-menu-content mega-menu-category-cards">
-            {categories.map((category, index) => (
-                <Link key={index} to={category.link} className="category-mega-card">
-                    <div className="category-card-icon">{category.icon}</div>
-                    <h5>{category.title}</h5>
-                </Link>
-            ))}
-        </div>
-    );
-};
 
 // Technology Mega Menu (4-Column Grid - Tallium Style)
 const TechnologyMegaMenu = () => {
