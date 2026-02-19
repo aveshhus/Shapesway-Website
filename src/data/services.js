@@ -154,16 +154,16 @@ export const servicesData = [
         id: 7,
         slug: 'digital-marketing',
         category: 'Design & Marketing',
-        title: 'Search Engine Optimization (SEO)',
-        shortDesc: 'Drive organic growth and dominate search results with our data-driven SEO strategies and content mastery.',
+        title: 'Digital Marketing & Growth',
+        shortDesc: 'Transform marketing into a core IT component. Integrated strategies for dominance in search, performance, and automation.',
         icon: 'FaBullhorn',
         features: [
-            'SEO Optimization',
-            'Content Marketing',
-            'Email Marketing',
-            'PPC Advertising',
-            'Marketing Automation',
-            'Analytics & Reporting'
+            'Growth Architecture',
+            'Technical SEO Dominance',
+            'Performance Marketing',
+            'Content Sovereignty',
+            'Full-Stack Automation',
+            'Predictive Analytics'
         ],
         technologies: ['Google Analytics', 'Google Ads', 'SEMrush', 'Mailchimp', 'HubSpot', 'Hootsuite'],
         benefits: [

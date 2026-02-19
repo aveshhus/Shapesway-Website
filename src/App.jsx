@@ -17,6 +17,8 @@ import WebDevelopment from './pages/Services/WebDevelopment';
 import MobileAppDevelopment from './pages/Services/MobileAppDevelopment';
 import SoftwareDevelopment from './pages/Services/SoftwareDevelopment';
 import UIUXDesign from './pages/Services/UIUXDesign';
+import CloudServices from './pages/Services/CloudServices';
+import DigitalMarketing from './pages/Services/DigitalMarketing';
 import OurWork from './pages/OurWork/OurWork';
 import Blog from './pages/Blog/Blog';
 import BlogPost from './pages/Blog/BlogPost';
@@ -45,6 +47,8 @@ function App() {
             <Route path="/services/mobile-app-development" element={<MobileAppDevelopment />} />
             <Route path="/services/software-development" element={<SoftwareDevelopment />} />
             <Route path="/services/ui-ux-design" element={<UIUXDesign />} />
+            <Route path="/services/cloud-services" element={<CloudServices />} />
+            <Route path="/services/digital-marketing" element={<DigitalMarketing />} />
             <Route path="/services/:slug" element={<ServiceDetail />} />
             <Route path="/industries" element={<Industries />} />
             <Route path="/technology" element={<Technology />} />
