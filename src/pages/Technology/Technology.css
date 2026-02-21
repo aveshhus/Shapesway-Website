@@ -306,7 +306,8 @@
     background: #0a0a0a;
     /* True black foundation for clarity */
     border-radius: 32px;
-    padding: 50px;
+    padding: 70px 60px;
+    /* More vertical breathing room */
     position: relative;
     overflow: hidden;
     border: 1px solid rgba(255, 255, 255, 0.08);
@@ -480,8 +481,9 @@
 .tech-page-v2 .bento-card-header {
     display: flex !important;
     align-items: flex-start !important;
-    gap: 28px !important;
-    margin-bottom: 35px !important;
+    gap: 0 !important;
+    /* Managed by explicit margins for absolute precision */
+    margin-bottom: 50px !important;
     position: relative !important;
     z-index: 10 !important;
     width: 100% !important;
@@ -489,11 +491,11 @@
 
 .tech-page-v2 .bento-icon-wrap {
     position: relative;
-    width: 52px;
-    height: 52px;
+    width: 60px;
+    height: 60px;
     flex-shrink: 0;
-    margin-top: 4px;
-    /* Align icon box with title text baseline */
+    margin-right: 50px;
+    /* Rigorously separate from title */
 }
 
 .tech-page-v2 .bento-icon {
@@ -515,7 +517,7 @@
 .tech-page-v2 .bento-header-info {
     display: flex;
     flex-direction: column;
-    gap: 8px;
+    gap: 12px;
     flex: 1;
     min-width: 0;
 }
@@ -636,7 +638,6 @@
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    /* Center text in the terminal button */
     gap: 15px;
     background: rgba(255, 255, 255, 0.05);
     border: 1px solid rgba(255, 255, 255, 0.1);
@@ -651,10 +652,9 @@
     transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
     position: relative;
     overflow: hidden;
-    margin-top: 40px;
-    /* Perfect architectural gap */
+    margin-top: 100px;
+    /* Extreme gap for ultimate separation and clarity */
     width: 100%;
-    /* Full width for stronger visual grounding */
 }
 
 .tech-page-v2 .bento-action-btn:hover {

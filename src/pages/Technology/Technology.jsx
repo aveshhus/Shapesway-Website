@@ -19,7 +19,8 @@ import {
 import {
     SiReact, SiNodedotjs, SiPython, SiPostgresql, SiDocker, SiKubernetes,
     SiAmazonwebservices, SiGooglecloud, SiTailwindcss,
-    SiTypescript, SiFlutter, SiMongodb, SiFirebase, SiAngular, SiVuedotjs
+    SiTypescript, SiFlutter, SiMongodb, SiFirebase, SiAngular, SiVuedotjs,
+    SiNextdotjs
 } from 'react-icons/si';
 import './Technology.css';
 
@@ -187,12 +188,13 @@ const Technology = () => {
                         variants={stagger}
                     >
                         <motion.h1 variants={fadeInUp}>
-                            Engineering the <br />
-                            <span className="text-highlight">Future Stacks</span>
+                            Architectural <br />
+                            <span className="text-highlight">Excellence Simplified</span>
                         </motion.h1>
                         <motion.p variants={fadeInUp}>
-                            We architect high-performance digital ecosystems that scale infinitely.
-                            Our technology selection is driven by one metric: Unfair Competitive Advantage.
+                            We transcend standard development. Shapesway builds elite, self-evolving
+                            digital ecosystems that turn technical complexity into your most
+                            powerful competitive advantage.
                         </motion.p>
                         <motion.div className="hero-cta-group" variants={fadeInUp}>
                             <a href="#powerhouse" className="tech-btn tech-btn-primary">
@@ -252,8 +254,8 @@ const Technology = () => {
                                     size="carousel"
                                     theme="theme-teal"
                                     icon={<PiCpu />}
-                                    title="Elastic Ecosystems"
-                                    desc="We architect self-healing infrastructures and serverless execution environments that automatically scale based on predictive demand, ensuring 99.999% availability even during massive traffic surges."
+                                    title="Infinite Scalability"
+                                    desc="We deploy auto-adaptive cloud architectures that breathe with your traffic, eliminating downtime and optimizing cost-efficiency through serverless precision."
                                 />
                             </SwiperSlide>
                             <SwiperSlide className="tech-slide">
@@ -261,8 +263,8 @@ const Technology = () => {
                                     size="carousel"
                                     theme="theme-blue"
                                     icon={<PiStack />}
-                                    title="Atomic Architecture"
-                                    desc="Leveraging microservices and modular design patterns to build complex systems from isolated, highly-reusable components that can be iterated or replaced without impacting the global state."
+                                    title="Modern Core Stacks"
+                                    desc="Building on the world's most robust frameworks—Next.js, Node.js, and Go—to ensure your codebase remains agile, maintainable, and future-proof."
                                 />
                             </SwiperSlide>
                             <SwiperSlide className="tech-slide">
@@ -270,8 +272,8 @@ const Technology = () => {
                                     size="carousel"
                                     theme="theme-purple"
                                     icon={<PiLightning />}
-                                    title="Sub-ms Latency"
-                                    desc="Aggressive edge-computing strategies and optimized data serialization protocols (like gRPC and Protobuf) to deliver virtually instantaneous responses across all global regions."
+                                    title="Real-Time Velocity"
+                                    desc="Our 'Zero-Lag' engineering philosophy ensures sub-second interactions across all platforms, leveraging edge-computing to bring data closer to your users."
                                 />
                             </SwiperSlide>
                             <SwiperSlide className="tech-slide">
@@ -279,8 +281,8 @@ const Technology = () => {
                                     size="carousel"
                                     theme="theme-orange"
                                     icon={<PiShieldCheckered />}
-                                    title="Zero-Trust Security"
-                                    desc="Integrated hardened security layers with E2E encryption, OIDC identity management, and automated penetration testing pipelines to protect enterprise-level data and maintain global compliance."
+                                    title="Hardened Sovereignty"
+                                    desc="Protecting your digital assets with enterprise-grade encryption and zero-trust protocols, ensuring complete data ownership and security compliance."
                                 />
                             </SwiperSlide>
                             {/* Duplicates for seamless infinity loop */}
@@ -289,8 +291,8 @@ const Technology = () => {
                                     size="carousel"
                                     theme="theme-teal"
                                     icon={<PiCpu />}
-                                    title="Elastic Ecosystems"
-                                    desc="We architect self-healing infrastructures and serverless execution environments that automatically scale based on predictive demand, ensuring 99.999% availability even during massive traffic surges."
+                                    title="Infinite Scalability"
+                                    desc="We deploy auto-adaptive cloud architectures that breathe with your traffic, eliminating downtime and optimizing cost-efficiency through serverless precision."
                                 />
                             </SwiperSlide>
                             <SwiperSlide className="tech-slide">
@@ -298,8 +300,8 @@ const Technology = () => {
                                     size="carousel"
                                     theme="theme-blue"
                                     icon={<PiStack />}
-                                    title="Atomic Architecture"
-                                    desc="Leveraging microservices and modular design patterns to build complex systems from isolated, highly-reusable components that can be iterated or replaced without impacting the global state."
+                                    title="Modern Core Stacks"
+                                    desc="Building on the world's most robust frameworks—Next.js, Node.js, and Go—to ensure your codebase remains agile, maintainable, and future-proof."
                                 />
                             </SwiperSlide>
                             <SwiperSlide className="tech-slide">
@@ -307,8 +309,8 @@ const Technology = () => {
                                     size="carousel"
                                     theme="theme-purple"
                                     icon={<PiLightning />}
-                                    title="Sub-ms Latency"
-                                    desc="Aggressive edge-computing strategies and optimized data serialization protocols (like gRPC and Protobuf) to deliver virtually instantaneous responses across all global regions."
+                                    title="Real-Time Velocity"
+                                    desc="Our 'Zero-Lag' engineering philosophy ensures sub-second interactions across all platforms, leveraging edge-computing to bring data closer to your users."
                                 />
                             </SwiperSlide>
                             <SwiperSlide className="tech-slide">
@@ -316,8 +318,8 @@ const Technology = () => {
                                     size="carousel"
                                     theme="theme-orange"
                                     icon={<PiShieldCheckered />}
-                                    title="Zero-Trust Security"
-                                    desc="Integrated hardened security layers with E2E encryption, OIDC identity management, and automated penetration testing pipelines to protect enterprise-level data and maintain global compliance."
+                                    title="Hardened Sovereignty"
+                                    desc="Protecting your digital assets with enterprise-grade encryption and zero-trust protocols, ensuring complete data ownership and security compliance."
                                 />
                             </SwiperSlide>
                         </Swiper>
@@ -349,14 +351,14 @@ const Technology = () => {
                     </div>
 
                     <div className="stack-categories-v3">
-                        {/* Frontend */}
+                        {/* Core Stack */}
                         <div className="stack-pad">
-                            <h3><FiCode /> Frontend</h3>
+                            <h3><FiCode /> Engine Core</h3>
                             <div className="tech-grid-v3">
                                 {[
-                                    { name: "React / Next.js", icon: <SiReact />, level: "Advanced" },
-                                    { name: "TypeScript", icon: <SiTypescript />, level: "Core" },
-                                    { name: "Tailwind CSS", icon: <SiTailwindcss />, level: "Style" }
+                                    { name: "Next.js 14", icon: <SiNextdotjs />, level: "Edge Ready" },
+                                    { name: "TypeScript", icon: <SiTypescript />, level: "Typed Safety" },
+                                    { name: "Framer Motion", icon: <FiActivity />, level: "Liquid UI" }
                                 ].map((tech, i) => (
                                     <div className="tech-item-row" key={i}>
                                         <div className="tech-icon-circle">{tech.icon}</div>
@@ -369,14 +371,14 @@ const Technology = () => {
                             </div>
                         </div>
 
-                        {/* Backend */}
+                        {/* Intelligence Layer */}
                         <div className="stack-pad">
-                            <h3><FiServer /> Backend</h3>
+                            <h3><FiServer /> Neural Layer</h3>
                             <div className="tech-grid-v3">
                                 {[
-                                    { name: "Node.js / Go", icon: <SiNodedotjs />, level: "Scalable" },
-                                    { name: "PostgreSQL", icon: <SiPostgresql />, level: "Reliable" },
-                                    { name: "MongoDB", icon: <SiMongodb />, level: "Flexible" }
+                                    { name: "Node.js / Go", icon: <SiNodedotjs />, level: "High-TPS" },
+                                    { name: "PostgreSQL", icon: <SiPostgresql />, level: "Atomic Data" },
+                                    { name: "Python / AI", icon: <SiPython />, level: "Intelligence" }
                                 ].map((tech, i) => (
                                     <div className="tech-item-row" key={i}>
                                         <div className="tech-icon-circle">{tech.icon}</div>
@@ -389,14 +391,14 @@ const Technology = () => {
                             </div>
                         </div>
 
-                        {/* Cloud */}
+                        {/* Global Infra */}
                         <div className="stack-pad">
-                            <h3><FiCloud /> Cloud Ops</h3>
+                            <h3><FiCloud /> Resilience</h3>
                             <div className="tech-grid-v3">
                                 {[
-                                    { name: "AWS / Google Cloud / Azure", icon: <SiAmazonwebservices />, level: "Global Scale" },
-                                    { name: "Kubernetes / Docker", icon: <SiKubernetes />, level: "Orchestration" },
-                                    { name: "Terraform / Ansible", icon: <FiMaximize />, level: "IaC Automation" }
+                                    { name: "AWS / Vercel", icon: <SiAmazonwebservices />, level: "Multi-Region" },
+                                    { name: "Docker / K8s", icon: <SiKubernetes />, level: "Autonomic" },
+                                    { name: "Terraform", icon: <FiMaximize />, level: "IaC Immutable" }
                                 ].map((tech, i) => (
                                     <div className="tech-item-row" key={i}>
                                         <div className="tech-icon-circle">{tech.icon}</div>
@@ -423,12 +425,12 @@ const Technology = () => {
                             whileInView={{ opacity: 1, x: 0 }}
                             viewport={{ once: true }}
                         >
-                            <span className="section-tag-v2">Advanced R&D</span>
-                            <h2>The Quantum <br />Innovation Lab</h2>
+                            <span className="section-tag-v2">Shapesway R&D</span>
+                            <h2>The Innovation <br />Launchpad</h2>
                             <p>
-                                We operate at the intersection of possibility and performance.
-                                Our R&D team is focused on autonomous agentic systems and
-                                next-generation data modeling.
+                                Shapesway isn't just a development partner; we are your technical
+                                co-pilot. Our lab constantly iterates on emerging tech to ensure
+                                you stay two steps ahead of the industry curve.
                             </p>
                             <div className="metrics-capsule">
                                 <div className="capsule">
@@ -463,10 +465,10 @@ const Technology = () => {
 
                     <div className="framework-path">
                         {[
-                            { step: "01", title: "Technical Discovery", desc: "Rigorous deep-dive into your problem space to select the high-growth stack." },
-                            { step: "02", title: "Architectural Blueprint", desc: "Modeling data flow and scalability vectors before a single line is written." },
-                            { step: "03", title: "Rapid Prototyping", desc: "Deploying functional MVPs with enterprise-grade quality in record time." },
-                            { step: "04", title: "Performance War-Room", desc: "Stress testing and infrastructure optimization for sub-second responses." }
+                            { step: "01", title: "Technical Audit", desc: "Rigorous excavation of your existing architecture to identify growth bottlenecks and scalability vectors." },
+                            { step: "02", title: "Sprint-Zero Ops", desc: "Engineering the foundation: Establishing secure CI/CD pipelines, container orchestration, and cloud staging." },
+                            { step: "03", title: "Atomic Build", desc: "Rapid iterative development using our modular 'Design-to-Code' engine for high-fidelity component delivery." },
+                            { step: "04", title: "Global Hardening", desc: "Stress-testing sub-second responses and implementing zero-trust security layers before final deployment." }
                         ].map((item, index) => (
                             <motion.div
                                 className="path-step"
@@ -498,13 +500,13 @@ const Technology = () => {
                     <div className="vault-grid">
                         <div className="vault-card">
                             <div className="vault-icon"><PiShieldCheckFill /></div>
-                            <h4>Hardened Security</h4>
-                            <p>Military-grade encryption protocols and zero-trust data access layers that ensure your intellectual property remains impenetrable.</p>
+                            <h4>Sovereign Security</h4>
+                            <p>We deploy hardened, zero-trust environments with E2E encryption, ensuring your proprietary data remains your own—always protected, never exposed.</p>
                         </div>
                         <div className="vault-card">
                             <div className="vault-icon"><PiPulse /></div>
-                            <h4>99.9% Resilience</h4>
-                            <p>Global multi-region failovers and automated backup systems that guarantee your services stay live, no matter the load.</p>
+                            <h4>Autonomous Resilience</h4>
+                            <p>Leveraging self-healing multi-region failovers on AWS and Vercel, Shapesway ensures your digital presence is bulletproof against any load or outage.</p>
                         </div>
                     </div>
                 </div>
@@ -531,11 +533,11 @@ const Technology = () => {
                             whileInView={{ opacity: 1, y: 0 }}
                             viewport={{ once: true }}
                         >
-                            Ready for the <br />Unfair Advantage?
+                            Power Your <br />Digital Evolution
                         </motion.h2>
                         <p>
-                            Stop settling for "industry standard". Build with the team
-                            that redefines it. Your technological evolution starts now.
+                            Don't just launch software. Deploy a high-performance ecosystem
+                            engineered for growth. Your partner in technical dominance awaits.
                         </p>
                         <a href="/contact" className="tech-btn tech-btn-primary">
                             Begin Transformation
