@@ -219,9 +219,24 @@
 
 /* 2. CORE POWERHOUSE - BENTO GRID */
 .tech-page-v2 .tech-powerhouse {
-    padding: 160px 0;
-    background: var(--tech-bg-alt);
+    padding: 180px 0;
+    background: var(--tech-bg);
     position: relative;
+    overflow: hidden;
+}
+
+/* Background Mesh for Section */
+.tech-page-v2 .tech-powerhouse::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image:
+        radial-gradient(at 0% 0%, rgba(13, 181, 164, 0.03) 0px, transparent 50%),
+        radial-gradient(at 100% 100%, rgba(34, 74, 164, 0.03) 0px, transparent 50%);
+    pointer-events: none;
 }
 
 .tech-page-v2 .section-tag-v2 {
@@ -252,120 +267,436 @@
     line-height: 1;
 }
 
-.tech-page-v2 .bento-grid {
-    display: grid;
-    grid-template-columns: repeat(12, 1fr);
-    grid-template-rows: repeat(2, 400px);
-    gap: 24px;
+/* 2. CORE POWERHOUSE - KINETIC CAROUSEL */
+.tech-page-v2 .kinetic-carousel-wrap {
+    position: relative;
+    width: 100%;
+    padding: 40px 0 100px;
+}
+
+.tech-page-v2 .tech-swiper {
+    padding: 50px 0 !important;
+    overflow: visible !important;
+}
+
+.tech-page-v2 .tech-swiper .swiper-wrapper {
+    transition-timing-function: linear !important;
+}
+
+.tech-page-v2 .tech-slide {
+    width: 640px !important;
+    /* Slightly wider for better text distribution */
+    max-width: 90%;
+    height: auto;
+    opacity: 0.15;
+    /* Deeper background dim for active focus */
+    transition: all 1s cubic-bezier(0.16, 1, 0.3, 1);
+    filter: blur(4px);
+    /* Professional depth of field */
+}
+
+.tech-page-v2 .tech-slide.swiper-slide-active {
+    opacity: 1;
+    transform: scale(1);
+    /* Keep active slide true size */
+    filter: blur(0);
 }
 
 .tech-page-v2 .bento-item {
-    background: var(--tech-card-bg);
+    background: #0a0a0a;
+    /* True black foundation for clarity */
     border-radius: 32px;
-    padding: 48px;
+    padding: 50px;
     position: relative;
     overflow: hidden;
-    border: 1px solid var(--tech-glass-border);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    /* Sophisticated thin border */
     display: flex;
     flex-direction: column;
-    justify-content: flex-end;
-    transition: all 0.5s cubic-bezier(0.2, 1, 0.3, 1);
-    box-shadow: var(--tech-shadow);
+    justify-content: center;
+    transition: all 1s cubic-bezier(0.16, 1, 0.3, 1);
+    box-shadow: 0 50px 100px -40px rgba(0, 0, 0, 0.8);
+    height: 100% !important;
+    min-height: 460px;
+    /* Perfectly balanced ratio */
 }
 
-.tech-page-v2 .bento-item:nth-child(1) {
-    background: linear-gradient(135deg, #ffffff, #f0fdfa, #ccfbf1);
+.tech-page-v2 .bento-item.theme-teal {
+    --card-theme: #0db5a4;
+    --card-gradient: radial-gradient(circle at 80% 20%, rgba(13, 181, 164, 0.25), transparent 70%),
+        linear-gradient(165deg, #020807 0%, #051614 100%);
+    background: var(--card-gradient);
 }
 
-.tech-page-v2 .bento-item:nth-child(2) {
-    background: linear-gradient(135deg, #ffffff, #eff6ff, #dbeafe);
+.tech-page-v2 .bento-item.theme-blue {
+    --card-theme: #3b82f6;
+    --card-gradient: radial-gradient(circle at 80% 20%, rgba(59, 130, 246, 0.25), transparent 70%),
+        linear-gradient(165deg, #02050a 0%, #0a1428 100%);
+    background: var(--card-gradient);
 }
 
-.tech-page-v2 .bento-item:nth-child(3) {
-    background: linear-gradient(135deg, #ffffff, #fdf4ff, #fae8ff);
+.tech-page-v2 .bento-item.theme-purple {
+    --card-theme: #a855f7;
+    --card-gradient: radial-gradient(circle at 80% 20%, rgba(168, 85, 247, 0.25), transparent 70%),
+        linear-gradient(165deg, #05020a 0%, #150a2e 100%);
+    background: var(--card-gradient);
 }
 
-.tech-page-v2 .bento-item:nth-child(4) {
-    background: linear-gradient(135deg, #ffffff, #fff7ed, #ffedd5);
+.tech-page-v2 .bento-item.theme-orange {
+    --card-theme: #f59e0b;
+    --card-gradient: radial-gradient(circle at 80% 20%, rgba(245, 158, 11, 0.25), transparent 70%),
+        linear-gradient(165deg, #0a0502 0%, #261002 100%);
+    background: var(--card-gradient);
+}
+
+.tech-page-v2 .bento-item {
+    color: white !important;
+    border: 1px solid rgba(255, 255, 255, 0.1) !important;
 }
 
 .tech-page-v2 .bento-item:hover {
-    transform: translateY(-10px);
-    border-color: var(--tech-primary);
-    box-shadow: 0 40px 80px rgba(13, 181, 164, 0.12), 0 10px 20px rgba(0, 0, 0, 0.05);
+    transform: translateY(-15px) scale(1.02);
+    border-color: rgba(255, 255, 255, 0.4) !important;
+    box-shadow:
+        0 40px 100px -20px rgba(0, 0, 0, 0.2),
+        inset 0 0 50px rgba(0, 0, 0, 0.1);
+}
+
+/* Animated Border Glow */
+.tech-page-v2 .bento-item::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, var(--tech-primary), transparent 40%, transparent 60%, var(--tech-secondary));
+    opacity: 0;
+    transition: opacity 0.6s ease;
+    z-index: 0;
+    mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    mask-composite: exclude;
+    padding: 1px;
+    pointer-events: none;
+    border-radius: inherit;
+}
+
+.tech-page-v2 .bento-item:hover::before {
+    opacity: 1;
+}
+
+/* Futuristic Data Stream Background */
+.tech-page-v2 .bento-item::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background:
+        linear-gradient(90deg, rgba(13, 181, 164, 0.02) 1px, transparent 1px) 0 0 / 20px 20px,
+        linear-gradient(0deg, rgba(13, 181, 164, 0.02) 1px, transparent 1px) 0 0 / 20px 20px;
+    opacity: 0;
+    transition: all 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+    z-index: 0;
+    pointer-events: none;
+}
+
+.tech-page-v2 .bento-item:hover::after {
+    opacity: 0.5;
+    background-position: 10px 10px;
 }
 
 .tech-page-v2 .bento-item.large {
-    grid-column: span 8;
+    grid-column: span 7;
 }
 
 .tech-page-v2 .bento-item.medium {
-    grid-column: span 4;
+    grid-column: span 5;
 }
 
 .tech-page-v2 .bento-item.small {
     grid-column: span 4;
 }
 
-@media (max-width: 1100px) {
-    .tech-page-v2 .bento-grid {
-        grid-template-columns: 1fr 1fr;
-        grid-template-rows: auto;
-    }
-
-    .tech-page-v2 .bento-item {
-        grid-column: span 1 !important;
-        height: 400px;
-    }
-}
-
-@media (max-width: 768px) {
-    .tech-page-v2 .bento-grid {
-        grid-template-columns: 1fr;
-    }
-}
-
-.tech-page-v2 .bento-icon {
-    position: absolute;
-    top: 48px;
-    left: 48px;
-    font-size: 3.5rem;
-    color: var(--tech-primary);
-    background: rgba(13, 181, 164, 0.05);
-    width: 90px;
-    height: 90px;
+/* Custom Navigation UI */
+.tech-page-v2 .carousel-controls {
     display: flex;
     align-items: center;
     justify-content: center;
-    border-radius: 20px;
+    gap: 40px;
+    margin-top: 60px;
+    position: relative;
+    z-index: 50;
+    /* Ensure on top of swiper visible overflow */
+}
+
+.tech-page-v2 .carousel-nav-btn {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background: white;
+    border: 1px solid var(--tech-glass-border);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    color: var(--tech-text-main);
+    cursor: pointer;
+    transition: all 0.4s ease;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.05);
+    z-index: 10;
+}
+
+.tech-page-v2 .carousel-nav-btn:hover {
+    background: var(--tech-text-main);
+    color: white;
+    transform: scale(1.1);
+}
+
+.tech-page-v2 .carousel-status {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.tech-page-v2 .status-line {
+    width: 80px;
+    height: 2px;
+    background: linear-gradient(90deg, transparent, var(--tech-primary), transparent);
+}
+
+.tech-page-v2 .status-label {
+    font-size: 0.85rem;
+    font-weight: 800;
+    letter-spacing: 0.3em;
+    color: var(--tech-text-muted);
+}
+
+@media (max-width: 900px) {
+    .tech-page-v2 .tech-slide {
+        width: 100% !important;
+    }
+}
+
+/* Consolidated Bento Card Architecture - PERFECT ALIGNMENT */
+.tech-page-v2 .bento-card-header {
+    display: flex !important;
+    align-items: flex-start !important;
+    gap: 28px !important;
+    margin-bottom: 35px !important;
+    position: relative !important;
+    z-index: 10 !important;
+    width: 100% !important;
+}
+
+.tech-page-v2 .bento-icon-wrap {
+    position: relative;
+    width: 52px;
+    height: 52px;
+    flex-shrink: 0;
+    margin-top: 4px;
+    /* Align icon box with title text baseline */
+}
+
+.tech-page-v2 .bento-icon {
+    width: 100%;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.4rem;
+    color: var(--card-theme);
+    position: relative;
+    z-index: 5;
+    transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.tech-page-v2 .bento-header-info {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    flex: 1;
+    min-width: 0;
+}
+
+.tech-page-v2 .bento-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(10px);
+    padding: 4px 12px;
+    border-radius: 100px;
+    width: fit-content;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.tech-page-v2 .bento-badge .dot {
+    width: 6px;
+    height: 6px;
+    background: var(--tech-primary);
+    border-radius: 50%;
+    box-shadow: 0 0 10px var(--tech-primary);
+}
+
+.tech-page-v2 .bento-badge .label {
+    font-size: 0.65rem;
+    font-weight: 800;
+    letter-spacing: 0.2em;
+    color: white;
+}
+
+.tech-page-v2 .tech-specs-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+    margin-top: 30px;
+    padding: 25px 0;
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.tech-page-v2 .spec-item {
+    display: flex;
+    flex-direction: column;
+}
+
+.tech-page-v2 .spec-item .val {
+    font-size: 1.4rem;
+    font-weight: 800;
+    color: white;
+    font-family: 'Outfit', sans-serif;
+}
+
+.tech-page-v2 .spec-item .lab {
+    font-size: 0.7rem;
+    color: rgba(255, 255, 255, 0.6);
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+}
+
+.tech-page-v2 .bento-icon::before {
+    content: '';
+    position: absolute;
+    inset: -4px;
+    border: 1px solid rgba(13, 181, 164, 0.2);
+    border-radius: 22px;
+    opacity: 0;
+    transition: all 0.4s ease;
+}
+
+.tech-page-v2 .bento-item:hover .bento-icon {
+    background: var(--card-theme);
+    color: white;
+    transform: translateY(-5px);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
 }
 
 .tech-page-v2 .bento-item h3 {
-    font-size: 2.4rem;
+    font-size: 1.6rem;
     font-weight: 900;
-    margin-bottom: 18px;
-    color: var(--tech-text-main);
-    letter-spacing: -0.03em;
+    color: white;
+    letter-spacing: -0.04em;
     line-height: 1.1;
+    margin: 0;
+    font-family: 'Outfit', sans-serif;
+    transition: color 0.3s ease;
+    white-space: normal !important;
+    word-break: break-word !important;
+}
+
+.tech-page-v2 .bento-item:hover h3 {
+    color: white;
+    transform: translateX(8px);
+}
+
+.tech-page-v2 .bento-content-wrap {
+    margin-top: 0;
+    position: relative;
+    z-index: 2;
+    transition: all 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.tech-page-v2 .bento-item:hover p {
+    color: rgba(255, 255, 255, 0.9);
+    transform: translateX(10px);
 }
 
 .tech-page-v2 .bento-item p {
-    color: var(--tech-text-muted);
-    line-height: 1.6;
-    font-size: 1.1rem;
-    max-width: 500px;
+    color: rgba(255, 255, 255, 0.85);
+    line-height: 1.8;
+    font-size: 1rem;
+    max-width: 520px;
+    margin-bottom: 25px;
+    font-weight: 500;
 }
 
-.tech-page-v2 .bento-item::after {
-    content: '';
+.tech-page-v2 .bento-action-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    /* Center text in the terminal button */
+    gap: 15px;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    padding: 18px 32px;
+    border-radius: 16px;
+    color: white;
+    font-weight: 800;
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    cursor: pointer;
+    transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+    position: relative;
+    overflow: hidden;
+    margin-top: 40px;
+    /* Perfect architectural gap */
+    width: 100%;
+    /* Full width for stronger visual grounding */
+}
+
+.tech-page-v2 .bento-action-btn:hover {
+    background: white;
+    color: var(--card-theme);
+    transform: translateY(-5px);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+}
+
+.tech-page-v2 .bento-action-btn .btn-glow {
     position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: radial-gradient(600px circle at var(--mouse-x, 50%) var(--mouse-y, 50%), rgba(13, 181, 164, 0.03), transparent 40%);
+    inset: 0;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+    transform: translateX(-100%);
+    transition: transform 0.6s ease;
+}
+
+.tech-page-v2 .bento-action-btn:hover .btn-glow {
+    transform: translateX(100%);
+}
+
+.tech-page-v2 .bento-content-wrap {
+    transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.tech-page-v2 .bento-item:hover .bento-content-wrap {
+    transform: translateX(5px);
+}
+
+/* Spotlight Refinement */
+.tech-page-v2 .bento-spotlight {
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(800px circle at var(--mouse-x, 50%) var(--mouse-y, 50%), rgba(13, 181, 164, 0.12), transparent 40%);
     pointer-events: none;
     z-index: 1;
+    opacity: 0;
+    transition: opacity 0.4s ease;
+}
+
+.tech-page-v2 .bento-item:hover .bento-spotlight {
+    opacity: 1;
 }
 
 /* 3. FULL STACK DOMINATION */

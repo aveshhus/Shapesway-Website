@@ -1,9 +1,21 @@
 import React, { useEffect, useState, useRef } from 'react';
 import { motion, useScroll, useSpring, useTransform } from 'framer-motion';
+import { Swiper, SwiperSlide } from 'swiper/react';
+import { Autoplay, Pagination, EffectCoverflow, Navigation } from 'swiper/modules';
+import 'swiper/css';
+import 'swiper/css/navigation';
+import 'swiper/css/pagination';
+import 'swiper/css/effect-coverflow';
+
 import {
-    FiCpu, FiLayers, FiShield, FiZap, FiCode, FiCloud, FiActivity, FiArrowRight,
-    FiServer, FiMaximize, FiRepeat, FiCheckCircle, FiGlobe, FiDatabase
+    FiCode, FiCloud, FiActivity, FiArrowRight,
+    FiServer, FiMaximize, FiRepeat, FiCheckCircle, FiGlobe, FiDatabase, FiShield,
+    FiChevronLeft, FiChevronRight
 } from 'react-icons/fi';
+import {
+    PiCpu, PiStack, PiLightning, PiShieldCheckered, PiBrowser, PiGraph,
+    PiShieldCheckFill, PiPulse
+} from 'react-icons/pi';
 import {
     SiReact, SiNodedotjs, SiPython, SiPostgresql, SiDocker, SiKubernetes,
     SiAmazonwebservices, SiGooglecloud, SiTailwindcss,
@@ -65,7 +77,8 @@ const CounterV3 = ({ value, label, duration = 3 }) => {
 };
 
 // 2. Bento Card with Spotlight Effect
-const BentoCard = ({ icon, title, desc, size = "small" }) => {
+// 2. Bento Card with Spotlight Effect
+const BentoCard = ({ icon, title, desc, size = "small", theme = "" }) => {
     const cardRef = useRef(null);
     const [mousePos, setMousePos] = useState({ x: 0, y: 0 });
 
@@ -81,7 +94,7 @@ const BentoCard = ({ icon, title, desc, size = "small" }) => {
     return (
         <motion.div
             ref={cardRef}
-            className={`bento-item ${size}`}
+            className={`bento-item ${size} ${theme}`}
             onMouseMove={handleMouseMove}
             style={{
                 "--mouse-x": `${mousePos.x}px`,
@@ -92,9 +105,38 @@ const BentoCard = ({ icon, title, desc, size = "small" }) => {
             viewport={{ once: true }}
             transition={{ duration: 0.6, ease: "easeOut" }}
         >
-            <div className="bento-icon">{icon}</div>
-            <h3>{title}</h3>
-            <p>{desc}</p>
+            <div className="bento-spotlight"></div>
+            <div className="bento-card-header">
+                <div className="bento-icon-wrap">
+                    <div className="bento-icon">{icon}</div>
+                    <div className="icon-pulse"></div>
+                </div>
+                <div className="bento-header-info">
+                    <div className="bento-badge">
+                        <span className="dot"></span>
+                        <span className="label">ACTIVE STACK</span>
+                    </div>
+                    <h3>{title}</h3>
+                </div>
+            </div>
+            <div className="bento-content-wrap">
+                <p>{desc}</p>
+                <div className="tech-specs-grid">
+                    <div className="spec-item">
+                        <span className="val">99.9%</span>
+                        <span className="lab">uptime</span>
+                    </div>
+                    <div className="spec-item">
+                        <span className="val">20ms</span>
+                        <span className="lab">latency</span>
+                    </div>
+                </div>
+            </div>
+            <button className="bento-action-btn" onClick={() => window.location.href = '/contact'}>
+                <span>Access Terminal</span>
+                <FiArrowRight />
+                <div className="btn-glow"></div>
+            </button>
         </motion.div>
     );
 };
@@ -116,6 +158,9 @@ const Technology = () => {
     const stagger = {
         visible: { transition: { staggerChildren: 0.1 } }
     };
+
+    const prevRef = useRef(null);
+    const nextRef = useRef(null);
 
     return (
         <div className="tech-page-v2">
@@ -164,7 +209,7 @@ const Technology = () => {
                 </div>
             </section>
 
-            {/* 2. CORE POWERHOUSE - BENTO */}
+            {/* 2. CORE POWERHOUSE - KINETIC CAROUSEL */}
             <section id="powerhouse" className="tech-powerhouse">
                 <div className="tech-container">
                     <div className="section-head-v2">
@@ -172,31 +217,125 @@ const Technology = () => {
                         <h2>The Powerhouse Engine</h2>
                     </div>
 
-                    <div className="bento-grid">
-                        <BentoCard
-                            size="large"
-                            icon={<FiCpu />}
-                            title="Elastic Ecosystems"
-                            desc="We architect self-healing infrastructures and serverless execution environments that automatically scale based on predictive demand, ensuring 99.999% availability even during massive traffic surges."
-                        />
-                        <BentoCard
-                            size="medium"
-                            icon={<FiLayers />}
-                            title="Atomic Architecture"
-                            desc="Leveraging microservices and modular design patterns to build complex systems from isolated, highly-reusable components that can be iterated or replaced without impacting the global state."
-                        />
-                        <BentoCard
-                            size="medium"
-                            icon={<FiZap />}
-                            title="Sub-ms Latency"
-                            desc="Aggressive edge-computing strategies and optimized data serialization protocols (like gRPC and Protobuf) to deliver virtually instantaneous responses across all global regions."
-                        />
-                        <BentoCard
-                            size="large"
-                            icon={<FiShield />}
-                            title="Zero-Trust Security"
-                            desc="Integrated hardened security layers with E2E encryption, OIDC identity management, and automated penetration testing pipelines to protect enterprise-level data and maintain global compliance."
-                        />
+                    <div className="kinetic-carousel-wrap">
+                        <Swiper
+                            effect={'coverflow'}
+                            grabCursor={true}
+                            centeredSlides={true}
+                            slidesPerView={'auto'}
+                            speed={1200} // Snappy, premium transition
+                            loop={true}
+                            autoplay={{
+                                delay: 3000,
+                                disableOnInteraction: false,
+                                pauseOnMouseEnter: true,
+                            }}
+                            coverflowEffect={{
+                                rotate: 10, // Slight rotation for 3D feel
+                                stretch: -20, // Overlap cards slightly
+                                depth: 200,
+                                modifier: 1,
+                                slideShadows: false,
+                            }}
+                            onInit={(swiper) => {
+                                swiper.params.navigation.prevEl = prevRef.current;
+                                swiper.params.navigation.nextEl = nextRef.current;
+                                swiper.navigation.init();
+                                swiper.navigation.update();
+                            }}
+                            navigation={true}
+                            modules={[Autoplay, EffectCoverflow, Navigation, Pagination]}
+                            className="tech-swiper"
+                        >
+                            <SwiperSlide className="tech-slide">
+                                <BentoCard
+                                    size="carousel"
+                                    theme="theme-teal"
+                                    icon={<PiCpu />}
+                                    title="Elastic Ecosystems"
+                                    desc="We architect self-healing infrastructures and serverless execution environments that automatically scale based on predictive demand, ensuring 99.999% availability even during massive traffic surges."
+                                />
+                            </SwiperSlide>
+                            <SwiperSlide className="tech-slide">
+                                <BentoCard
+                                    size="carousel"
+                                    theme="theme-blue"
+                                    icon={<PiStack />}
+                                    title="Atomic Architecture"
+                                    desc="Leveraging microservices and modular design patterns to build complex systems from isolated, highly-reusable components that can be iterated or replaced without impacting the global state."
+                                />
+                            </SwiperSlide>
+                            <SwiperSlide className="tech-slide">
+                                <BentoCard
+                                    size="carousel"
+                                    theme="theme-purple"
+                                    icon={<PiLightning />}
+                                    title="Sub-ms Latency"
+                                    desc="Aggressive edge-computing strategies and optimized data serialization protocols (like gRPC and Protobuf) to deliver virtually instantaneous responses across all global regions."
+                                />
+                            </SwiperSlide>
+                            <SwiperSlide className="tech-slide">
+                                <BentoCard
+                                    size="carousel"
+                                    theme="theme-orange"
+                                    icon={<PiShieldCheckered />}
+                                    title="Zero-Trust Security"
+                                    desc="Integrated hardened security layers with E2E encryption, OIDC identity management, and automated penetration testing pipelines to protect enterprise-level data and maintain global compliance."
+                                />
+                            </SwiperSlide>
+                            {/* Duplicates for seamless infinity loop */}
+                            <SwiperSlide className="tech-slide">
+                                <BentoCard
+                                    size="carousel"
+                                    theme="theme-teal"
+                                    icon={<PiCpu />}
+                                    title="Elastic Ecosystems"
+                                    desc="We architect self-healing infrastructures and serverless execution environments that automatically scale based on predictive demand, ensuring 99.999% availability even during massive traffic surges."
+                                />
+                            </SwiperSlide>
+                            <SwiperSlide className="tech-slide">
+                                <BentoCard
+                                    size="carousel"
+                                    theme="theme-blue"
+                                    icon={<PiStack />}
+                                    title="Atomic Architecture"
+                                    desc="Leveraging microservices and modular design patterns to build complex systems from isolated, highly-reusable components that can be iterated or replaced without impacting the global state."
+                                />
+                            </SwiperSlide>
+                            <SwiperSlide className="tech-slide">
+                                <BentoCard
+                                    size="carousel"
+                                    theme="theme-purple"
+                                    icon={<PiLightning />}
+                                    title="Sub-ms Latency"
+                                    desc="Aggressive edge-computing strategies and optimized data serialization protocols (like gRPC and Protobuf) to deliver virtually instantaneous responses across all global regions."
+                                />
+                            </SwiperSlide>
+                            <SwiperSlide className="tech-slide">
+                                <BentoCard
+                                    size="carousel"
+                                    theme="theme-orange"
+                                    icon={<PiShieldCheckered />}
+                                    title="Zero-Trust Security"
+                                    desc="Integrated hardened security layers with E2E encryption, OIDC identity management, and automated penetration testing pipelines to protect enterprise-level data and maintain global compliance."
+                                />
+                            </SwiperSlide>
+                        </Swiper>
+
+                        {/* High-Tech Navigation */}
+                        <div className="carousel-controls">
+                            <button ref={prevRef} className="carousel-nav-btn carousel-nav-prev">
+                                <FiChevronLeft />
+                            </button>
+                            <div className="carousel-status">
+                                <span className="status-line"></span>
+                                <span className="status-label">EXPLORE STACK</span>
+                                <span className="status-line"></span>
+                            </div>
+                            <button ref={nextRef} className="carousel-nav-btn carousel-nav-next">
+                                <FiChevronRight />
+                            </button>
+                        </div>
                     </div>
                 </div>
             </section>
@@ -358,12 +497,12 @@ const Technology = () => {
 
                     <div className="vault-grid">
                         <div className="vault-card">
-                            <div className="vault-icon"><FiShield /></div>
+                            <div className="vault-icon"><PiShieldCheckFill /></div>
                             <h4>Hardened Security</h4>
                             <p>Military-grade encryption protocols and zero-trust data access layers that ensure your intellectual property remains impenetrable.</p>
                         </div>
                         <div className="vault-card">
-                            <div className="vault-icon"><FiActivity /></div>
+                            <div className="vault-icon"><PiPulse /></div>
                             <h4>99.9% Resilience</h4>
                             <p>Global multi-region failovers and automated backup systems that guarantee your services stay live, no matter the load.</p>
                         </div>
