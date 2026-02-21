@@ -79,7 +79,7 @@ const Header = () => {
         { name: 'About', path: '/about', hasMegaMenu: true, megaType: 'about' },
         { name: 'Services', path: '/services', hasMegaMenu: true, megaType: 'services' },
         { name: 'Our Work', path: '/our-work', hasMegaMenu: false },
-        { name: 'Technology', path: '/technology', hasMegaMenu: true, megaType: 'technology' },
+        { name: 'Technology', path: '/technology', hasMegaMenu: false, megaType: 'technology' },
         { name: 'Industries', path: '/industries', hasMegaMenu: true, megaType: 'industries' },
         { name: 'Career', path: '/careers', hasMegaMenu: true, megaType: 'career' }
     ];
@@ -336,28 +336,7 @@ const ServicesMegaMenu = () => {
 
 // Technology Mega Menu (4-Column Grid - Tallium Style)
 const TechnologyMegaMenu = () => {
-    const categories = [
-        {
-            icon: <TbBrandReact />,
-            title: 'Frontend Technologies',
-            link: '/technology#frontend'
-        },
-        {
-            icon: <TbServer2 />,
-            title: 'Backend Technologies',
-            link: '/technology#backend'
-        },
-        {
-            icon: <TbDeviceMobileCode />,
-            title: 'Mobile Technologies',
-            link: '/technology#mobile'
-        },
-        {
-            icon: <TbCloudUp />,
-            title: 'Cloud & DevOps',
-            link: '/technology#cloud'
-        }
-    ];
+    const categories = [];
 
     return (
         <div className="mega-menu-content mega-menu-category-cards">
