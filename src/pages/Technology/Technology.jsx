@@ -13,10 +13,6 @@ import {
     FiChevronLeft, FiChevronRight
 } from 'react-icons/fi';
 import {
-    PiCpu, PiStack, PiLightning, PiShieldCheckered, PiBrowser, PiGraph,
-    PiShieldCheckFill, PiPulse
-} from 'react-icons/pi';
-import {
     SiReact, SiNodedotjs, SiPython, SiPostgresql, SiDocker, SiKubernetes,
     SiAmazonwebservices, SiGooglecloud, SiTailwindcss,
     SiTypescript, SiFlutter, SiMongodb, SiFirebase, SiAngular, SiVuedotjs,
@@ -24,9 +20,58 @@ import {
     SiSpringboot, SiExpress, SiMysql, SiDigitalocean, SiCloudflare,
     SiNginx, SiGitlab, SiJenkins, SiTerraform, SiVercel
 } from 'react-icons/si';
+import {
+    PiCpu, PiStack, PiLightning, PiShieldCheckered, PiBrowser, PiGraph,
+    PiShieldCheckFill, PiPulse, PiProjectorScreenChartFill
+} from 'react-icons/pi';
 import './Technology.css';
 
-// 1. Counter Component for Premium Metrics
+// 1. Tactical Scroll Gauge (The 'Perfection' Element)
+const TacticalScrollGauge = ({ progress }) => {
+    const gaugeValue = useTransform(progress, [0, 1], [0, 100]);
+    const hexVal = useTransform(progress, (v) => `0x${Math.floor(v * 255).toString(16).toUpperCase().padStart(2, '0')}`);
+
+    return (
+        <motion.div className="tactical-gauge-wrap" style={{
+            position: 'fixed',
+            bottom: '40px',
+            right: '40px',
+            zIndex: 1000,
+            display: 'flex',
+            alignItems: 'center',
+            gap: '20px',
+            background: 'rgba(10, 15, 29, 0.8)',
+            backdropFilter: 'blur(20px)',
+            padding: '12px 24px',
+            borderRadius: '100px',
+            border: '1px solid rgba(255, 255, 255, 0.1)',
+            boxShadow: '0 20px 40px rgba(0,0,0,0.3)'
+        }}>
+            <div className="gauge-label" style={{ fontSize: '0.65rem', fontWeight: 900, letterSpacing: '0.2em', color: '#64748b' }}>
+                NAV_POS
+            </div>
+            <motion.div className="gauge-readout" style={{
+                color: 'var(--tech-primary)',
+                fontFamily: 'monospace',
+                fontSize: '0.85rem',
+                fontWeight: 700
+            }}>
+                {hexVal}
+            </motion.div>
+            <div className="gauge-track" style={{ width: '60px', height: '4px', background: 'rgba(255,255,255,0.1)', borderRadius: '2px', overflow: 'hidden' }}>
+                <motion.div className="gauge-fill" style={{
+                    width: '100%',
+                    height: '100%',
+                    background: 'var(--tech-primary)',
+                    scaleX: progress,
+                    transformOrigin: 'left'
+                }} />
+            </div>
+        </motion.div>
+    );
+};
+
+// 2. Counter Component for Premium Metrics
 const CounterV3 = ({ value, label, duration = 3 }) => {
     const [count, setCount] = useState(0);
     const [hasAnimated, setHasAnimated] = useState(false);
@@ -106,18 +151,17 @@ const BentoCard = ({ icon, title, desc, size = "small", theme = "" }) => {
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.6, ease: "easeOut" }}
+            transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
         >
             <div className="bento-spotlight"></div>
             <div className="bento-card-header">
                 <div className="bento-icon-wrap">
                     <div className="bento-icon">{icon}</div>
-                    <div className="icon-pulse"></div>
                 </div>
                 <div className="bento-header-info">
                     <div className="bento-badge">
                         <span className="dot"></span>
-                        <span className="label">ACTIVE STACK</span>
+                        <span className="label">STABLE_RELEASE v4.2</span>
                     </div>
                     <h3>{title}</h3>
                 </div>
@@ -130,8 +174,8 @@ const BentoCard = ({ icon, title, desc, size = "small", theme = "" }) => {
                         <span className="lab">uptime</span>
                     </div>
                     <div className="spec-item">
-                        <span className="val">20ms</span>
-                        <span className="lab">latency</span>
+                        <span className="val">&lt;1ms</span>
+                        <span className="lab">core_speed</span>
                     </div>
                 </div>
             </div>
@@ -167,6 +211,9 @@ const Technology = () => {
 
     return (
         <div className="tech-page-v2">
+            {/* Tactical Scroll Gauge */}
+            <TacticalScrollGauge progress={scrollYProgress} />
+
             {/* Scroll Progress Bar */}
             <motion.div className="scroll-progress-bar" style={{
                 scaleX,
@@ -471,7 +518,14 @@ const Technology = () => {
                                 <div className="ring ring-1"></div>
                                 <div className="ring ring-2"></div>
                                 <div className="ring ring-3"></div>
+                                <div className="ring ring-4"></div>
+                                <div className="ring ring-5"></div>
                                 <div className="core-pulse"></div>
+                                <div className="core-data-bits">
+                                    {[1, 2, 3, 4].map(i => (
+                                        <div key={i} className={`bit bit-${i}`}></div>
+                                    ))}
+                                </div>
                             </div>
                         </div>
                     </div>
