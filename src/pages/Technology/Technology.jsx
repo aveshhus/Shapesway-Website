@@ -521,11 +521,6 @@ const Technology = () => {
                                 <div className="ring ring-4"></div>
                                 <div className="ring ring-5"></div>
                                 <div className="core-pulse"></div>
-                                <div className="core-data-bits">
-                                    {[1, 2, 3, 4].map(i => (
-                                        <div key={i} className={`bit bit-${i}`}></div>
-                                    ))}
-                                </div>
                             </div>
                         </div>
                     </div>

@@ -880,55 +880,101 @@
 }
 
 .tech-page-v2 .quantum-core {
-    width: 400px;
-    height: 400px;
+    width: 450px;
+    height: 450px;
     position: relative;
     margin: 0 auto;
+    transform-style: preserve-3d;
+    perspective: 1000px;
+    animation: techFloating 6s ease-in-out infinite;
+}
+
+/* Nebula Depth - Volumetric Backlight */
+.tech-page-v2 .quantum-core::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 300px;
+    height: 300px;
+    background: radial-gradient(circle, var(--tech-primary), var(--tech-secondary), transparent 70%);
+    transform: translate(-50%, -50%) translateZ(-100px);
+    filter: blur(80px);
+    opacity: 0.15;
+    pointer-events: none;
 }
 
 .tech-page-v2 .ring {
     position: absolute;
     top: 50%;
     left: 50%;
-    transform: translate(-50%, -50%);
-    border: 2px solid rgba(13, 181, 164, 0.3);
+    transform: translate(-50%, -50%) rotateX(65deg) rotateY(10deg);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    background: radial-gradient(circle, transparent 95%, rgba(13, 181, 164, 0.05) 100%);
     border-radius: 50%;
+    transition: all 0.5s ease;
+    box-shadow: 0 0 20px rgba(13, 181, 164, 0.05);
 }
 
+/* Perfect Orbital Calibration */
 .tech-page-v2 .ring-1 {
     width: 100%;
     height: 100%;
-    animation: techRot 12s linear infinite;
+    animation: orbitPlane1 20s linear infinite;
 }
 
 .tech-page-v2 .ring-2 {
-    width: 85%;
-    height: 85%;
-    animation: techRot 18s linear reverse infinite;
-    border-style: dashed;
+    width: 80%;
+    height: 80%;
+    animation: orbitPlane2 15s linear infinite reverse;
+    border-color: rgba(34, 74, 164, 0.3);
 }
 
 .tech-page-v2 .ring-3 {
-    width: 70%;
-    height: 70%;
-    animation: techRot 10s linear infinite;
-    border-color: rgba(34, 74, 164, 0.4);
+    width: 60%;
+    height: 60%;
+    animation: orbitPlane1 12s linear infinite;
+    border-color: rgba(13, 181, 164, 0.4);
 }
 
 .tech-page-v2 .ring-4 {
-    width: 55%;
-    height: 55%;
-    animation: techRot 15s linear reverse infinite;
-    border-style: dotted;
+    width: 40%;
+    height: 40%;
+    animation: orbitPlane2 8s linear infinite reverse;
     border-color: var(--tech-accent);
+    opacity: 0.5;
 }
 
 .tech-page-v2 .ring-5 {
-    width: 40%;
-    height: 40%;
-    animation: techRot 25s linear infinite;
+    width: 25%;
+    height: 25%;
+    animation: orbitPlane1 10s linear infinite;
     border-color: white;
-    opacity: 0.2;
+    opacity: 0.3;
+}
+
+/* Orbital Satellites (Perfect Nodes) */
+.tech-page-v2 .ring::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 50%;
+    width: 6px;
+    height: 6px;
+    background: white;
+    border-radius: 50%;
+    box-shadow: 0 0 15px white, 0 0 30px var(--tech-primary);
+    transform: translate(-50%, -50%);
+}
+
+.tech-page-v2 .ring-2::after {
+    background: var(--tech-secondary);
+    box-shadow: 0 0 15px var(--tech-secondary);
+}
+
+.tech-page-v2 .ring-4::after {
+    background: var(--tech-accent);
+    box-shadow: 0 0 15px var(--tech-accent);
 }
 
 .tech-page-v2 .core-pulse {
@@ -936,13 +982,17 @@
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    width: 60px;
-    height: 60px;
+    width: 50px;
+    height: 50px;
     background: var(--tech-primary);
     border-radius: 50%;
-    filter: blur(20px);
-    box-shadow: 0 0 50px var(--tech-primary);
-    animation: techFlash 4s ease-in-out infinite;
+    filter: blur(15px);
+    box-shadow:
+        0 0 40px var(--tech-primary),
+        0 0 80px var(--tech-primary),
+        inset 0 0 20px white;
+    animation: coreBreathe 4s ease-in-out infinite;
+    z-index: 10;
 }
 
 .tech-page-v2 .core-data-bits .bit {
@@ -1181,6 +1231,57 @@
 
 .tech-page-v2 .metric-v3:nth-child(4)::before {
     background: #4ade80;
+}
+
+/* High-Fidelity Orbital Keyframes */
+@keyframes orbitPlane1 {
+    from {
+        transform: translate(-50%, -50%) rotateX(65deg) rotateY(10deg) rotateZ(0deg);
+    }
+
+    to {
+        transform: translate(-50%, -50%) rotateX(65deg) rotateY(10deg) rotateZ(360deg);
+    }
+}
+
+@keyframes orbitPlane2 {
+    from {
+        transform: translate(-50%, -50%) rotateX(-65deg) rotateY(-10deg) rotateZ(0deg);
+    }
+
+    to {
+        transform: translate(-50%, -50%) rotateX(-65deg) rotateY(-10deg) rotateZ(360deg);
+    }
+}
+
+@keyframes coreBreathe {
+
+    0%,
+    100% {
+        scale: 1;
+        opacity: 0.8;
+        filter: blur(15px);
+        box-shadow: 0 0 40px var(--tech-primary);
+    }
+
+    50% {
+        scale: 1.3;
+        opacity: 1;
+        filter: blur(25px);
+        box-shadow: 0 0 70px var(--tech-primary), 0 0 100px var(--tech-primary);
+    }
+}
+
+@keyframes techFloating {
+
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-20px);
+    }
 }
 
 .tech-page-v2 .metric-v3 .val {
