@@ -20,7 +20,9 @@ import {
     SiReact, SiNodedotjs, SiPython, SiPostgresql, SiDocker, SiKubernetes,
     SiAmazonwebservices, SiGooglecloud, SiTailwindcss,
     SiTypescript, SiFlutter, SiMongodb, SiFirebase, SiAngular, SiVuedotjs,
-    SiNextdotjs
+    SiNextdotjs, SiSvelte, SiRedux, SiRedis, SiGraphql, SiDjango,
+    SiSpringboot, SiExpress, SiMysql, SiDigitalocean, SiCloudflare,
+    SiNginx, SiGitlab, SiJenkins, SiTerraform, SiVercel
 } from 'react-icons/si';
 import './Technology.css';
 
@@ -358,7 +360,14 @@ const Technology = () => {
                                 {[
                                     { name: "Next.js 14", icon: <SiNextdotjs />, level: "Edge Ready" },
                                     { name: "TypeScript", icon: <SiTypescript />, level: "Typed Safety" },
-                                    { name: "Framer Motion", icon: <FiActivity />, level: "Liquid UI" }
+                                    { name: "Framer Motion", icon: <FiActivity />, level: "Liquid UI" },
+                                    { name: "React.js", icon: <SiReact />, level: "Component OS" },
+                                    { name: "Tailwind CSS", icon: <SiTailwindcss />, level: "Atomic Styling" },
+                                    { name: "Vue.js", icon: <SiVuedotjs />, level: "Progressive" },
+                                    { name: "Angular", icon: <SiAngular />, level: "Enterprise" },
+                                    { name: "Svelte", icon: <SiSvelte />, level: "Cybernetic" },
+                                    { name: "Redux", icon: <SiRedux />, level: "State Logic" },
+                                    { name: "Flutter", icon: <SiFlutter />, level: "Cross-Platform" }
                                 ].map((tech, i) => (
                                     <div className="tech-item-row" key={i}>
                                         <div className="tech-icon-circle">{tech.icon}</div>
@@ -378,7 +387,14 @@ const Technology = () => {
                                 {[
                                     { name: "Node.js / Go", icon: <SiNodedotjs />, level: "High-TPS" },
                                     { name: "PostgreSQL", icon: <SiPostgresql />, level: "Atomic Data" },
-                                    { name: "Python / AI", icon: <SiPython />, level: "Intelligence" }
+                                    { name: "Python / AI", icon: <SiPython />, level: "Intelligence" },
+                                    { name: "MongoDB", icon: <SiMongodb />, level: "NoSQL Scale" },
+                                    { name: "Redis", icon: <SiRedis />, level: "In-Memory" },
+                                    { name: "GraphQL", icon: <SiGraphql />, level: "Data Graph" },
+                                    { name: "Express.js", icon: <SiExpress />, level: "Fast Routing" },
+                                    { name: "Django", icon: <SiDjango />, level: "Robust Backend" },
+                                    { name: "Spring Boot", icon: <SiSpringboot />, level: "Java Core" },
+                                    { name: "MySQL", icon: <SiMysql />, level: "Relational" }
                                 ].map((tech, i) => (
                                     <div className="tech-item-row" key={i}>
                                         <div className="tech-icon-circle">{tech.icon}</div>
@@ -396,9 +412,16 @@ const Technology = () => {
                             <h3><FiCloud /> Resilience</h3>
                             <div className="tech-grid-v3">
                                 {[
-                                    { name: "AWS / Vercel", icon: <SiAmazonwebservices />, level: "Multi-Region" },
-                                    { name: "Docker / K8s", icon: <SiKubernetes />, level: "Autonomic" },
-                                    { name: "Terraform", icon: <FiMaximize />, level: "IaC Immutable" }
+                                    { name: "AWS", icon: <SiAmazonwebservices />, level: "Multi-Region" },
+                                    { name: "Vercel", icon: <SiVercel />, level: "Edge Compute" },
+                                    { name: "Docker", icon: <SiDocker />, level: "Containerized" },
+                                    { name: "Kubernetes", icon: <SiKubernetes />, level: "Autonomic" },
+                                    { name: "Terraform", icon: <SiTerraform />, level: "IaC Immutable" },
+                                    { name: "Google Cloud", icon: <SiGooglecloud />, level: "Planet Scale" },
+                                    { name: "DigitalOcean", icon: <SiDigitalocean />, level: "Developer Cloud" },
+                                    { name: "Cloudflare", icon: <SiCloudflare />, level: "Edge Network" },
+                                    { name: "GitLab CI", icon: <SiGitlab />, level: "DevOps Flow" },
+                                    { name: "Jenkins", icon: <SiJenkins />, level: "Automation Tool" }
                                 ].map((tech, i) => (
                                     <div className="tech-item-row" key={i}>
                                         <div className="tech-icon-circle">{tech.icon}</div>
