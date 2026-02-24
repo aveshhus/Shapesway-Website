@@ -53,22 +53,22 @@ const Industries = () => {
                             <div className="ind-v3-tag" style={{ background: 'rgba(13, 181, 164, 0.1)', color: '#0db5a4', borderColor: 'rgba(13, 181, 164, 0.2)' }}>
                                 SYS_INIT // STRATEGY_MODE
                             </div>
-                            <h1 className="ind-v3-title" style={{ color: '#fff', fontSize: 'clamp(3.5rem, 8vw, 6.5rem)', textTransform: 'uppercase' }}>
+                            <h1 className="ind-v3-title" style={{ color: '#0a0f1d', fontSize: 'clamp(3.5rem, 8vw, 6.5rem)', textTransform: 'uppercase' }}>
                                 Architecting <br />
                                 <span style={{ background: 'linear-gradient(135deg, #0db5a4, #3b82f6)', WebkitBackgroundClip: 'text', backgroundClip: 'text', color: 'transparent' }}>
                                     Absolute Scale.
                                 </span>
                             </h1>
-                            <p className="ind-v3-desc" style={{ color: '#94a3b8', margin: '0 auto', maxWidth: '750px', fontSize: '1.4rem' }}>
+                            <p className="ind-v3-desc" style={{ color: '#64748b', margin: '0 auto', maxWidth: '750px', fontSize: '1.4rem' }}>
                                 We design and deploy high-performance, industry-specific operational frameworks.
                                 Secure. Intelligent. Built to command your market.
                             </p>
 
                             <div style={{ marginTop: '50px', display: 'flex', gap: '20px', justifyContent: 'center', flexWrap: 'wrap' }}>
-                                <Link to="/contact" className="btn-mag-v3" style={{ padding: '20px 45px', fontSize: '1.05rem', background: '#0db5a4', color: '#fff' }}>
+                                <Link to="/contact" className="btn-mag-v3" style={{ padding: '20px 45px', fontSize: '1.05rem', background: '#0a0f1d', color: '#fff' }}>
                                     Initialize Build <PiArrowRightBold />
                                 </Link>
-                                <Link to="/services" className="btn-mag-v3" style={{ padding: '20px 45px', fontSize: '1.05rem', background: 'transparent', color: '#fff', border: '1px solid rgba(255,255,255,0.2)' }}>
+                                <Link to="/services" className="btn-mag-v3" style={{ padding: '20px 45px', fontSize: '1.05rem', background: 'transparent', color: '#0a0f1d', border: '1px solid rgba(0,0,0,0.1)' }}>
                                     View Architecture
                                 </Link>
                             </div>

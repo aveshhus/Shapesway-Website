@@ -96,15 +96,15 @@
    =================================== */
 .ind-hero-v3 {
     min-height: 100vh;
-    padding: 220px 0 140px;
     display: flex;
     align-items: center;
     justify-content: center;
     text-align: center;
     position: relative;
-    background: #020617;
-    /* Deep Dark Space */
-    color: #fff;
+    background: radial-gradient(circle at 50% -20%, rgba(13, 181, 164, 0.08) 0%, transparent 60%),
+        radial-gradient(circle at 100% 50%, rgba(59, 130, 246, 0.05) 0%, transparent 50%),
+        var(--ind-bg);
+    color: var(--ind-text-main);
     overflow: hidden;
 }
 
@@ -114,7 +114,7 @@
     bottom: -2px;
     left: 0;
     width: 100%;
-    height: 250px;
+    height: 150px;
     background: linear-gradient(to top, var(--ind-bg-alt), transparent);
     z-index: 10;
     pointer-events: none;
@@ -122,30 +122,30 @@
 
 .hero-v3-bg-grid {
     position: absolute;
-    bottom: -100px;
-    left: -20%;
-    right: -20%;
-    height: 60vh;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 100%;
     background-image:
-        linear-gradient(rgba(255, 255, 255, 0.06) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(255, 255, 255, 0.06) 1px, transparent 1px);
-    background-size: 60px 60px;
-    transform: perspective(600px) rotateX(65deg);
-    mask-image: radial-gradient(circle at top, black, transparent 60%);
-    -webkit-mask-image: radial-gradient(circle at top, black, transparent 60%);
+        linear-gradient(rgba(0, 0, 0, 0.03) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(0, 0, 0, 0.03) 1px, transparent 1px);
+    background-size: 50px 50px;
+    mask-image: linear-gradient(to bottom, transparent, black, transparent);
+    -webkit-mask-image: linear-gradient(to bottom, transparent, black, transparent);
     z-index: 1;
 }
 
 .hero-v3-bg-glow {
     position: absolute;
-    top: 30%;
+    top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    width: 800px;
-    height: 800px;
-    background: radial-gradient(circle, rgba(13, 181, 164, 0.2), transparent 70%);
-    filter: blur(120px);
+    width: 600px;
+    height: 600px;
+    background: radial-gradient(circle, rgba(13, 181, 164, 0.15), transparent 70%);
+    filter: blur(80px);
     z-index: 0;
+    opacity: 0.8;
 }
 
 .hero-v3-content {
