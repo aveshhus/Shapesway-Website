@@ -295,38 +295,50 @@
 }
 
 .why-v3-wrap {
-    display: flex;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
     gap: 80px;
     align-items: flex-start;
 }
 
 .why-v3-sticky {
-    flex: 1;
     position: sticky;
     top: 150px;
 }
 
 .why-v3-cards {
-    flex: 1.2;
-    display: flex;
-    flex-direction: column;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
     gap: 30px;
+    align-items: stretch;
 }
 
 .why-v3-card {
     background: var(--ind-dark-card);
     border: 1px solid var(--ind-border-dark);
-    padding: 50px;
+    padding: 40px;
     border-radius: 32px;
     position: relative;
     overflow: hidden;
+    transition: 0.5s var(--ind-bezier);
+}
+
+.why-v3-card.vibrant-why-card {
+    background: var(--why-bg, var(--ind-dark-card));
+    border: none;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
+}
+
+.why-v3-card.vibrant-why-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 30px 80px -10px rgba(0, 0, 0, 0.4);
 }
 
 .why-v3-card::after {
     content: '';
     position: absolute;
     inset: 0;
-    background: radial-gradient(circle at top right, rgba(13, 181, 164, 0.1), transparent 60%);
+    background: radial-gradient(circle at top right, rgba(255, 255, 255, 0.2), transparent 70%);
     opacity: 0;
     transition: 0.5s;
 }
@@ -343,16 +355,34 @@
     display: block;
 }
 
+.vibrant-why-card .why-num {
+    color: #fff;
+    display: inline-block;
+    padding: 6px 16px;
+    background: rgba(0, 0, 0, 0.15);
+    border-radius: 100px;
+    backdrop-filter: blur(10px);
+}
+
 .why-v3-card h3 {
-    font-size: 2rem;
+    font-size: 1.6rem;
     font-weight: 800;
     margin-bottom: 15px;
 }
 
+.vibrant-why-card h3 {
+    color: #fff;
+    line-height: 1.2;
+}
+
 .why-v3-card p {
     color: #94a3b8;
-    line-height: 1.7;
-    font-size: 1.1rem;
+    line-height: 1.6;
+    font-size: 1rem;
+}
+
+.vibrant-why-card p {
+    color: rgba(255, 255, 255, 0.9);
 }
 
 /* ===================================

@@ -34,10 +34,10 @@ const Industries = () => {
     ];
 
     const whyData = [
-        { num: "01", title: "Industry-Calibrated Strategy", desc: "We map logic to your specific domain constraints, ensuring absolute compliance and market relevance." },
-        { num: "02", title: "Zero-Latency Architecture", desc: "Engineered on elite edge networks to guarantee milliseconds response times globally." },
-        { num: "03", title: "Adaptive Machine Learning", desc: "Embedding intelligence layers that optimize operations autonomously." },
-        { num: "04", title: "Fortified Infrastructure", desc: "Military-grade encryption and perpetual security auditing built into the foundational code." }
+        { num: "01", title: "Industry-Calibrated Strategy", desc: "We map logic to your specific domain constraints, ensuring absolute compliance and market relevance.", bgGrad: "linear-gradient(135deg, #f43f5e 0%, #fb923c 100%)" },
+        { num: "02", title: "Zero-Latency Architecture", desc: "Engineered on elite edge networks to guarantee milliseconds response times globally.", bgGrad: "linear-gradient(135deg, #3b82f6 0%, #8b5cf6 100%)" },
+        { num: "03", title: "Adaptive Machine Learning", desc: "Embedding intelligence layers that optimize operations autonomously.", bgGrad: "linear-gradient(135deg, #10b981 0%, #3b82f6 100%)" },
+        { num: "04", title: "Fortified Infrastructure", desc: "Military-grade encryption and perpetual security auditing built into the foundational code.", bgGrad: "linear-gradient(135deg, #ec4899 0%, #8b5cf6 100%)" }
     ];
 
     return (
@@ -116,12 +116,17 @@ const Industries = () => {
                                 <p className="ind-v3-desc" style={{ color: '#94a3b8' }}>
                                     We do not assemble templates. We forge digital supremacy using pure mathematics, relentless logic, and hyper-optimized code to ensure your infrastructure outpaces all competition.
                                 </p>
+                                <div style={{ marginTop: '50px' }}>
+                                    <Link to="/contact" className="btn-mag-v3" style={{ padding: '20px 40px', fontSize: '1.05rem', background: '#0db5a4', color: '#fff' }}>
+                                        Discover Our Edge <PiArrowRightBold />
+                                    </Link>
+                                </div>
                             </motion.div>
                         </div>
 
                         <div className="why-v3-cards">
                             {whyData.map((w, idx) => (
-                                <motion.div key={idx} className="why-v3-card" initial={{ opacity: 0, x: 50 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} transition={{ delay: idx * 0.1, duration: 0.6 }}>
+                                <motion.div key={idx} className="why-v3-card vibrant-why-card" style={{ '--why-bg': w.bgGrad }} initial={{ opacity: 0, x: 50 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} transition={{ delay: idx * 0.1, duration: 0.6 }}>
                                     <span className="why-num">NODE_{w.num}</span>
                                     <h3>{w.title}</h3>
                                     <p>{w.desc}</p>
