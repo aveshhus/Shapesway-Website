@@ -24,20 +24,20 @@ const Industries = () => {
 
     // --- DATA MODULES ---
     const bentoData = [
-        { title: "Healthcare Systems", desc: "HIPAA-compliant patient portals, telemedicine integrators, and AI-driven diagnostic engines.", icon: <PiHeartbeatLight />, span: "6", color: "#f43f5e", bgGrad: "linear-gradient(135deg, #ff0844 0%, #ffb199 100%)" },
-        { title: "Enterprise Commerce", desc: "Hyper-scalable storefronts, predictive inventory, and frictionless omnichannel checkout flows.", icon: <PiShoppingCartLight />, span: "6", color: "#3b82f6", bgGrad: "linear-gradient(135deg, #0250c5 0%, #d43f8d 100%)" },
-        { title: "FinTech Architecture", desc: "Institutional trading hubs, decentralized ledgers, and ultra-low latency transaction APIs.", icon: <PiBankLight />, span: "4", color: "#10b981", bgGrad: "linear-gradient(135deg, #0ba360 0%, #3cba92 100%)" },
-        { title: "Real Estate & Con-Tech", desc: "Predictive property analytics, 3D spatial mapping, and highly automated leasing CRM pipelines.", icon: <PiBuildingsLight />, span: "4", color: "#f59e0b", bgGrad: "linear-gradient(135deg, #f83600 0%, #f9d423 100%)" },
-        { title: "EdTech & Learning", desc: "Adaptive learning ecosystems, real-time engagement analytics, and enterprise LMS scaling.", icon: <PiGraduationCapLight />, span: "4", color: "#8b5cf6", bgGrad: "linear-gradient(135deg, #667eea 0%, #764ba2 100%)" },
-        { title: "Industrial Logistics", desc: "IoT sensor telemetry, fleet optimization algorithms, and global supply chain orchestration.", icon: <PiTruckLight />, span: "8", color: "#0db5a4", bgGrad: "linear-gradient(135deg, #16a085 0%, #f4d03f 100%)" },
-        { title: "Corporate Governance", desc: "Centralized operational dashboards, absolute workflow automation, and deep intelligence tools.", icon: <PiBriefcaseLight />, span: "4", color: "#64748b", bgGrad: "linear-gradient(135deg, #b224ef 0%, #7579ff 100%)" }
+        { title: "Healthcare Systems", desc: "HIPAA-compliant patient portals, telemedicine integrators, and AI-driven diagnostic engines.", icon: <PiHeartbeatLight />, span: "6", color: "#f43f5e", bgGrad: "linear-gradient(135deg, #020617 0%, #4c0519 100%)" },
+        { title: "Enterprise Commerce", desc: "Hyper-scalable storefronts, predictive inventory, and frictionless omnichannel checkout flows.", icon: <PiShoppingCartLight />, span: "6", color: "#3b82f6", bgGrad: "linear-gradient(135deg, #0f172a 0%, #1e3a8a 100%)" },
+        { title: "FinTech Architecture", desc: "Institutional trading hubs, decentralized ledgers, and ultra-low latency transaction APIs.", icon: <PiBankLight />, span: "4", color: "#10b981", bgGrad: "linear-gradient(135deg, #020617 0%, #064e3b 100%)" },
+        { title: "Real Estate & Con-Tech", desc: "Predictive property analytics, 3D spatial mapping, and highly automated leasing CRM pipelines.", icon: <PiBuildingsLight />, span: "4", color: "#f59e0b", bgGrad: "linear-gradient(135deg, #1c1917 0%, #7c2d12 100%)" },
+        { title: "EdTech & Learning", desc: "Adaptive learning ecosystems, real-time engagement analytics, and enterprise LMS scaling.", icon: <PiGraduationCapLight />, span: "4", color: "#8b5cf6", bgGrad: "linear-gradient(135deg, #171717 0%, #4c1d95 100%)" },
+        { title: "Industrial Logistics", desc: "IoT sensor telemetry, fleet optimization algorithms, and global supply chain orchestration.", icon: <PiTruckLight />, span: "8", color: "#0db5a4", bgGrad: "linear-gradient(135deg, #020617 0%, #164e63 100%)" },
+        { title: "Corporate Governance", desc: "Centralized operational dashboards, absolute workflow automation, and deep intelligence tools.", icon: <PiBriefcaseLight />, span: "4", color: "#64748b", bgGrad: "linear-gradient(135deg, #0f172a 0%, #312e81 100%)" }
     ];
 
     const whyData = [
-        { num: "01", title: "Industry-Calibrated Strategy", desc: "We map logic to your specific domain constraints, ensuring absolute compliance and market relevance.", bgGrad: "linear-gradient(135deg, #f43f5e 0%, #fb923c 100%)" },
-        { num: "02", title: "Zero-Latency Architecture", desc: "Engineered on elite edge networks to guarantee milliseconds response times globally.", bgGrad: "linear-gradient(135deg, #3b82f6 0%, #8b5cf6 100%)" },
-        { num: "03", title: "Adaptive Machine Learning", desc: "Embedding intelligence layers that optimize operations autonomously.", bgGrad: "linear-gradient(135deg, #10b981 0%, #3b82f6 100%)" },
-        { num: "04", title: "Fortified Infrastructure", desc: "Military-grade encryption and perpetual security auditing built into the foundational code.", bgGrad: "linear-gradient(135deg, #ec4899 0%, #8b5cf6 100%)" }
+        { num: "01", title: "Industry-Calibrated Strategy", desc: "We map logic to your specific domain constraints, ensuring absolute compliance and market relevance.", bgGrad: "linear-gradient(135deg, #0f172a 0%, #2e1065 100%)" },
+        { num: "02", title: "Zero-Latency Architecture", desc: "Engineered on elite edge networks to guarantee milliseconds response times globally.", bgGrad: "linear-gradient(135deg, #020617 0%, #831843 100%)" },
+        { num: "03", title: "Adaptive Machine Learning", desc: "Embedding intelligence layers that optimize operations autonomously.", bgGrad: "linear-gradient(135deg, #1c1917 0%, #065f46 100%)" },
+        { num: "04", title: "Fortified Infrastructure", desc: "Military-grade encryption and perpetual security auditing built into the foundational code.", bgGrad: "linear-gradient(135deg, #020617 0%, #1e3a8a 100%)" }
     ];
 
     return (
@@ -147,12 +147,12 @@ const Industries = () => {
 
                     <div className="approach-v3-grid">
                         {[
-                            { title: "Empirical Research", desc: "Complete extraction of your industry constraints, API protocols, and legacy hurdles.", icon: <PiMagnifyingGlassLight /> },
-                            { title: "Architectural Blueprinting", desc: "Constructing the theoretical model for zero-downtime, limitless horizontal scalability.", icon: <PiBuildingsLight /> },
-                            { title: "Cognitive Design", desc: "Mapping human-computer interaction patterns to maximize user behavioral compliance.", icon: <PiGlobeLight /> },
-                            { title: "Iterative Deployment", desc: "Rolling out isolated nodes iteratively to maintain absolute operational continuity.", icon: <PiCloudArrowUpLight /> }
+                            { title: "Empirical Research", desc: "Complete extraction of your industry constraints, API protocols, and legacy hurdles.", icon: <PiMagnifyingGlassLight />, bgGrad: "linear-gradient(135deg, #020617 0%, #4c1d95 100%)" },
+                            { title: "Architectural Blueprinting", desc: "Constructing the theoretical model for zero-downtime, limitless horizontal scalability.", icon: <PiBuildingsLight />, bgGrad: "linear-gradient(135deg, #020617 0%, #164e63 100%)" },
+                            { title: "Cognitive Design", desc: "Mapping human-computer interaction patterns to maximize user behavioral compliance.", icon: <PiGlobeLight />, bgGrad: "linear-gradient(135deg, #0f172a 0%, #1e3a8a 100%)" },
+                            { title: "Iterative Deployment", desc: "Rolling out isolated nodes iteratively to maintain absolute operational continuity.", icon: <PiCloudArrowUpLight />, bgGrad: "linear-gradient(135deg, #1c1917 0%, #7c2d12 100%)" }
                         ].map((m, i) => (
-                            <motion.div key={i} className="app-node-card" initial="hidden" whileInView="visible" viewport={{ once: true }} variants={revealVariant}>
+                            <motion.div key={i} className="app-node-card dark-vibrant-bg" style={{ '--card-bg': m.bgGrad }} initial="hidden" whileInView="visible" viewport={{ once: true }} variants={revealVariant}>
                                 <div className="app-node-icon">{m.icon}</div>
                                 <h4>{m.title}</h4>
                                 <p>{m.desc}</p>
@@ -216,11 +216,11 @@ const Industries = () => {
 
                     <div className="trans-v3-grid">
                         {[
-                            { title: "Synthetic Automation", desc: "Removing human error by hardwiring logic into redundant tasks, saving millions in operational latency.", icon: <PiGearLight /> },
-                            { title: "Predictive Analytics", desc: "We turn raw data exhausts into crystal clear financial forecasting interfaces.", icon: <PiChartLineUpLight /> },
-                            { title: "Elastic Cloud Shift", desc: "Seamless migration of localized risk into hyper-secure, globally distributed cloud nodes.", icon: <PiCloudArrowUpLight /> }
+                            { title: "Synthetic Automation", desc: "Removing human error by hardwiring logic into redundant tasks, saving millions in operational latency.", icon: <PiGearLight />, bgGrad: "linear-gradient(135deg, #0f172a 0%, #064e3b 100%)" },
+                            { title: "Predictive Analytics", desc: "We turn raw data exhausts into crystal clear financial forecasting interfaces.", icon: <PiChartLineUpLight />, bgGrad: "linear-gradient(135deg, #1c1917 0%, #831843 100%)" },
+                            { title: "Elastic Cloud Shift", desc: "Seamless migration of localized risk into hyper-secure, globally distributed cloud nodes.", icon: <PiCloudArrowUpLight />, bgGrad: "linear-gradient(135deg, #020617 0%, #1e3a8a 100%)" }
                         ].map((t, i) => (
-                            <motion.div key={i} className="trans-v3-card" initial="hidden" whileInView="visible" viewport={{ once: true }} variants={revealVariant}>
+                            <motion.div key={i} className="trans-v3-card dark-vibrant-bg" style={{ '--card-bg': t.bgGrad }} initial="hidden" whileInView="visible" viewport={{ once: true }} variants={revealVariant}>
                                 <div className="t-icon">{t.icon}</div>
                                 <h3>{t.title}</h3>
                                 <p>{t.desc}</p>
@@ -240,15 +240,15 @@ const Industries = () => {
                 {/* Animated Marquee Strip */}
                 <div className="stack-v3-marquee" style={{ overflowX: 'auto' }}>
                     {[
-                        { name: "FRONTEND DEPLOYMENT", tags: ["React 19", "Next.js 14", "Framer Motion", "Three.js GPU", "TailwindCSS"] },
-                        { name: "BACKEND & LOGIC", tags: ["Node.js V20", "Python 3.12", "Go Microservices", "GraphQL", "REST APIs"] },
-                        { name: "DATA PERSISTENCE", tags: ["PostgreSQL", "MongoDB Atlas", "Redis Clusters", "Elasticsearch"] },
-                        { name: "CLOUD PIPELINES", tags: ["AWS ECS", "Docker Kubernetes", "Azure DevOps", "Vercel Edge"] }
+                        { name: "FRONTEND DEPLOYMENT", tags: ["React 19", "Next.js 14", "Framer Motion", "Three.js GPU", "TailwindCSS"], bgGrad: "linear-gradient(135deg, #020617 0%, #1e3a8a 100%)" },
+                        { name: "BACKEND & LOGIC", tags: ["Node.js V20", "Python 3.12", "Go Microservices", "GraphQL", "REST APIs"], bgGrad: "linear-gradient(135deg, #1e1b4b 0%, #4c1d95 100%)" },
+                        { name: "DATA PERSISTENCE", tags: ["PostgreSQL", "MongoDB Atlas", "Redis Clusters", "Elasticsearch"], bgGrad: "linear-gradient(135deg, #0f172a 0%, #064e3b 100%)" },
+                        { name: "CLOUD PIPELINES", tags: ["AWS ECS", "Docker Kubernetes", "Azure DevOps", "Vercel Edge"], bgGrad: "linear-gradient(135deg, #1c1917 0%, #7c2d12 100%)" }
                     ].map((s, i) => (
-                        <div key={i} className="stack-v3-cat">
+                        <div key={i} className="stack-v3-cat dark-vibrant-bg" style={{ '--card-bg': s.bgGrad }}>
                             <h4>{s.name}</h4>
                             <div className="stack-tags">
-                                {s.tags.map(tag => <span key={tag} className="stack-tag">{tag}</span>)}
+                                {s.tags.map(tag => <span key={tag} className="stack-tag dark-vibrant-tag">{tag}</span>)}
                             </div>
                         </div>
                     ))}
@@ -266,11 +266,11 @@ const Industries = () => {
 
                     <div className="partner-v3-grid">
                         {[
-                            { title: "24/7 Sentient Monitoring", desc: "Automated threat detection and absolute uptime enforcement.", icon: <PiShieldCheckLight /> },
-                            { title: "Infinite Scalability", desc: "Elastic bandwidth expanding preemptively as transaction volumes spike.", icon: <PiInfinityLight /> },
-                            { title: "Elite Consultation", desc: "Direct access to our senior architects for perpetual roadmap alignment.", icon: <PiGearLight /> }
+                            { title: "24/7 Sentient Monitoring", desc: "Automated threat detection and absolute uptime enforcement.", icon: <PiShieldCheckLight />, bgGrad: "linear-gradient(135deg, #171717 0%, #4c1d95 100%)" },
+                            { title: "Infinite Scalability", desc: "Elastic bandwidth expanding preemptively as transaction volumes spike.", icon: <PiInfinityLight />, bgGrad: "linear-gradient(135deg, #020617 0%, #164e63 100%)" },
+                            { title: "Elite Consultation", desc: "Direct access to our senior architects for perpetual roadmap alignment.", icon: <PiGearLight />, bgGrad: "linear-gradient(135deg, #0f172a 0%, #312e81 100%)" }
                         ].map((p, i) => (
-                            <motion.div key={i} className="partner-v3-card" initial="hidden" whileInView="visible" viewport={{ once: true }} variants={revealVariant}>
+                            <motion.div key={i} className="partner-v3-card dark-vibrant-bg r-glow" style={{ '--card-bg': p.bgGrad }} initial="hidden" whileInView="visible" viewport={{ once: true }} variants={revealVariant}>
                                 <div className="partner-v3-circle">
                                     <i className="r-icon">{p.icon}</i>
                                 </div>
@@ -285,7 +285,7 @@ const Industries = () => {
             {/* 9. MASTER CTA BLOCK */}
             <section className="ind-sect-cta">
                 <div className="ind-v3-container">
-                    <motion.div className="cta-v3-master" initial={{ opacity: 0, scale: 0.95 }} whileInView={{ opacity: 1, scale: 1 }} viewport={{ once: true }} transition={{ duration: 0.8 }}>
+                    <motion.div className="cta-v3-master dark-vibrant-bg" style={{ '--card-bg': 'linear-gradient(135deg, #020617 0%, #4c1d95 100%)' }} initial={{ opacity: 0, scale: 0.95 }} whileInView={{ opacity: 1, scale: 1 }} viewport={{ once: true }} transition={{ duration: 0.8 }}>
                         <h2>Execute the <span>Protocol.</span></h2>
                         <Link to="/contact" className="btn-mag-v3">
                             Initiate System Build <PiArrowRightBold />
