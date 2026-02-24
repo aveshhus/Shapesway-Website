@@ -80,7 +80,7 @@ const Header = () => {
         { name: 'Services', path: '/services', hasMegaMenu: true, megaType: 'services' },
         { name: 'Our Work', path: '/our-work', hasMegaMenu: false },
         { name: 'Technology', path: '/technology', hasMegaMenu: false, megaType: 'technology' },
-        { name: 'Industries', path: '/industries', hasMegaMenu: true, megaType: 'industries' },
+        { name: 'Industries', path: '/industries', hasMegaMenu: false, megaType: 'industries' },
         { name: 'Career', path: '/careers', hasMegaMenu: true, megaType: 'career' }
     ];
 
@@ -352,18 +352,7 @@ const TechnologyMegaMenu = () => {
 
 // Industries Mega Menu (2-Column Grid - Tallium Style)
 const IndustriesMegaMenu = () => {
-    const categories = [
-        {
-            icon: <TbBuildingHospital />,
-            title: 'Core Industries',
-            link: '/industries#core'
-        },
-        {
-            icon: <TbRocket />,
-            title: 'Emerging Sectors',
-            link: '/industries#emerging'
-        }
-    ];
+    const categories = [];
 
     return (
         <div className="mega-menu-content mega-menu-category-cards mega-menu-2-col">
