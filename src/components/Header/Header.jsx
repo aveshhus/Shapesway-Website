@@ -81,7 +81,7 @@ const Header = () => {
         { name: 'Our Work', path: '/our-work', hasMegaMenu: false },
         { name: 'Technology', path: '/technology', hasMegaMenu: false, megaType: 'technology' },
         { name: 'Industries', path: '/industries', hasMegaMenu: false, megaType: 'industries' },
-        { name: 'Career', path: '/careers', hasMegaMenu: true, megaType: 'career' }
+        { name: 'Contact', path: '/contact', hasMegaMenu: false }
     ];
 
     return (
@@ -229,7 +229,6 @@ const MegaMenu = ({ type, onMouseEnter, onMouseLeave }) => {
 
                     {type === 'technology' && <TechnologyMegaMenu />}
                     {type === 'industries' && <IndustriesMegaMenu />}
-                    {type === 'career' && <CareerMegaMenu />}
                 </motion.div>
             </div>
         </motion.div>
@@ -366,36 +365,6 @@ const IndustriesMegaMenu = () => {
     );
 };
 
-// Career Mega Menu (3-Column Grid - Tallium Style)
-const CareerMegaMenu = () => {
-    const categories = [
-        {
-            icon: <TbMoodSmile />,
-            title: 'Life at Shapesway',
-            link: '/careers#life'
-        },
-        {
-            icon: <TbBriefcase />,
-            title: 'Open Positions',
-            link: '/careers#positions'
-        },
-        {
-            icon: <TbSchool />,
-            title: 'Students & Freshers',
-            link: '/careers#students'
-        }
-    ];
 
-    return (
-        <div className="mega-menu-content mega-menu-category-cards mega-menu-3-col">
-            {categories.map((category, index) => (
-                <Link key={index} to={category.link} className="category-mega-card">
-                    <div className="category-card-icon">{category.icon}</div>
-                    <h5>{category.title}</h5>
-                </Link>
-            ))}
-        </div>
-    );
-};
 
 export default Header;

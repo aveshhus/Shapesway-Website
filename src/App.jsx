@@ -22,7 +22,7 @@ import DigitalMarketing from './pages/Services/DigitalMarketing';
 import OurWork from './pages/OurWork/OurWork';
 import Blog from './pages/Blog/Blog';
 import BlogPost from './pages/Blog/BlogPost';
-import Careers from './pages/Careers/Careers';
+
 import PrivacyPolicy from './pages/Policy/SitePrivacy';
 import TermsOfService from './pages/Policy/SiteTerms';
 import AIChat from './components/AIChat/AIChat';
@@ -56,7 +56,7 @@ function App() {
             <Route path="/our-work" element={<OurWork />} />
             <Route path="/blog" element={<Blog />} />
             <Route path="/blog/:slug" element={<BlogPost />} />
-            <Route path="/careers" element={<Careers />} />
+
             <Route path="/contact" element={<Contact />} />
             <Route path="/privacy-policy" element={<PrivacyPolicy />} />
             <Route path="/terms" element={<TermsOfService />} />
