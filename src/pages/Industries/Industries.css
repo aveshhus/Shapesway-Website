@@ -632,12 +632,16 @@
 .trans-v3-card {
     background: #fff;
     border: 1px solid var(--ind-border);
-    padding: 50px 40px;
+    padding: 60px 40px;
     border-radius: 32px;
     position: relative;
     overflow: hidden;
     transition: 0.5s;
     box-shadow: 0 10px 40px rgba(0, 0, 0, 0.03);
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 .trans-v3-card::before {
@@ -683,10 +687,14 @@
 }
 
 .trans-v3-card .t-icon {
-    font-size: 3rem;
+    font-size: 3.5rem;
     color: var(--ind-primary);
     margin-bottom: 30px;
-    filter: drop-shadow(0 10px 10px rgba(13, 181, 164, 0.2));
+    filter: drop-shadow(0 15px 15px rgba(13, 181, 164, 0.3));
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.4s var(--ind-bezier);
 }
 
 .trans-v3-card h3 {
@@ -972,7 +980,13 @@
     color: #fff;
 }
 
-.dark-vibrant-bg .t-icon,
+.dark-vibrant-bg .t-icon {
+    background: transparent !important;
+    backdrop-filter: none !important;
+    border: none !important;
+    color: #fff;
+}
+
 .dark-vibrant-bg .partner-v3-circle {
     background: rgba(255, 255, 255, 0.1);
     backdrop-filter: blur(10px);
@@ -989,11 +1003,16 @@
 }
 
 .dark-vibrant-bg:hover .app-node-icon,
-.dark-vibrant-bg:hover .t-icon,
 .dark-vibrant-bg.r-glow:hover .partner-v3-circle {
     background: #fff;
     color: var(--ind-primary);
     box-shadow: 0 10px 30px rgba(255, 255, 255, 0.3);
+}
+
+.dark-vibrant-bg:hover .t-icon {
+    background: transparent !important;
+    transform: scale(1.1) translateY(-5px);
+    filter: drop-shadow(0 20px 20px rgba(255, 255, 255, 0.4));
 }
 
 .stack-v3-cat.dark-vibrant-bg {
