@@ -215,9 +215,16 @@ const Contact = () => {
                         </div>
                         <h3>Jaipur HQ</h3>
                         <p>4th Floor, Shree Amar Heights, 405, Ajmer Rd, Jaipur, Rajasthan 302019</p>
-                        <div className="map-mock">
-                            <PiNavigationArrowFill style={{ marginRight: '10px' }} />
-                            Spatial Data: 26.9124° N, 75.7873° E
+                        <div className="map-container">
+                            <iframe
+                                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3558.3897658887145!2d75.7421279!3d26.891122599999996!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x396db56a81b57573%3A0xd6febd17e35d2bb2!2sShapesway%20Technologies%20pvt.%20Ltd.%20Jaipur!5e0!3m2!1sen!2sin!4v1772006489332!5m2!1sen!2sin"
+                                width="100%"
+                                height="100%"
+                                style={{ border: 0 }}
+                                allowFullScreen=""
+                                loading="lazy"
+                                title="Jaipur HQ"
+                            ></iframe>
                         </div>
                     </motion.div>
 
@@ -234,9 +241,16 @@ const Contact = () => {
                         </div>
                         <h3>Udaipur Hub</h3>
                         <p>Fortune 80 Complex, 205, University Rd, Udaipur, Rajasthan 313001</p>
-                        <div className="map-mock">
-                            <PiNavigationArrowFill style={{ marginRight: '10px' }} />
-                            Spatial Data: 24.5854° N, 73.7125° E
+                        <div className="map-container">
+                            <iframe
+                                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1857535.9008310616!2d71.27681495625002!3d24.589202900000014!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3967e5aff53ee55f%3A0x830a6c0e0010eeeb!2sShapesway%20Technologies%20Private%20Limited%20-%20Best%20Digital%20Marketing%20Agency%20in%20Udaipur!5e0!3m2!1sen!2sin!4v1772006537399!5m2!1sen!2sin"
+                                width="100%"
+                                height="100%"
+                                style={{ border: 0 }}
+                                allowFullScreen=""
+                                loading="lazy"
+                                title="Udaipur Hub"
+                            ></iframe>
                         </div>
                     </motion.div>
                 </div>
