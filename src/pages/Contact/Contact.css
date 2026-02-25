@@ -362,6 +362,7 @@
     border: 1px solid var(--con-border);
     overflow: hidden;
     position: relative;
+    cursor: pointer;
     transition: all 0.5s var(--con-bezier);
 }
 
