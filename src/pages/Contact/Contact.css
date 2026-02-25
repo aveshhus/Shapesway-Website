@@ -1,52 +1,400 @@
-.contact-grid {
+/* ============================================================
+   CONTACT PAGE - V4 - NEURAL COMMUNICATIONS SUITE
+   Aesthetic: Mission Control / Ultra-Modern Glassmorphism
+   ============================================================ */
+
+.contact-v4 {
+    --con-primary: #0db5a4;
+    --con-primary-glow: rgba(13, 181, 164, 0.3);
+    --con-secondary: #3b82f6;
+    --con-bg: #030712;
+    --con-card-bg: rgba(15, 23, 42, 0.6);
+    --con-border: rgba(255, 255, 255, 0.08);
+    --con-text-main: #f8fafc;
+    --con-text-muted: #94a3b8;
+    --con-font: 'Inter', sans-serif;
+    --con-heading: 'Outfit', sans-serif;
+    --con-bezier: cubic-bezier(0.16, 1, 0.3, 1);
+
+    background-color: var(--con-bg);
+    color: var(--con-text-main);
+    font-family: var(--con-font);
+    min-height: 100vh;
+    overflow-x: hidden;
+    position: relative;
+}
+
+/* 1. KINETIC BACKGROUND ENGINE */
+.contact-v4 .neural-bg {
+    position: fixed;
+    inset: 0;
+    z-index: 0;
+    background:
+        radial-gradient(circle at 0% 0%, rgba(13, 181, 164, 0.15) 0%, transparent 40%),
+        radial-gradient(circle at 100% 100%, rgba(59, 130, 246, 0.1) 0%, transparent 40%);
+    pointer-events: none;
+}
+
+.contact-v4 .grid-overlay {
+    position: absolute;
+    inset: 0;
+    background-image: linear-gradient(var(--con-border) 1px, transparent 1px),
+        linear-gradient(90deg, var(--con-border) 1px, transparent 1px);
+    background-size: 50px 50px;
+    mask-image: radial-gradient(circle at center, black, transparent 80%);
+    opacity: 0.3;
+}
+
+/* 2. HERO SECTION: COMMS_INIT */
+.contact-v4 .hero-lite {
+    padding: 180px 0 100px;
+    text-align: center;
+    position: relative;
+    z-index: 2;
+}
+
+.contact-v4 .badge-tactical {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 8px 16px;
+    background: rgba(13, 181, 164, 0.1);
+    border: 1px solid var(--con-primary-glow);
+    border-radius: 100px;
+    color: var(--con-primary);
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.75rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.2em;
+    margin-bottom: 24px;
+}
+
+.contact-v4 .hero-lite h1 {
+    font-family: var(--con-heading);
+    font-size: clamp(3rem, 7vw, 6rem);
+    font-weight: 950;
+    letter-spacing: -0.05em;
+    line-height: 0.9;
+    margin-bottom: 30px;
+    text-transform: uppercase;
+}
+
+.contact-v4 .hero-lite h1 span {
+    background: linear-gradient(135deg, white 30%, var(--con-primary));
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+}
+
+/* 3. CORE INTERFACE GRID */
+.contact-v4 .main-comms-grid {
     display: grid;
-    grid-template-columns: 1.5fr 1fr;
-    gap: var(--space-12);
+    grid-template-columns: 1.2fr 0.8fr;
+    gap: 40px;
+    max-width: 1440px;
+    margin: 0 auto;
+    padding: 0 40px 150px;
+    position: relative;
+    z-index: 5;
 }
 
-.contact-form {
+/* 4. TERMINAL FORM CARD */
+.contact-v4 .form-terminal {
+    background: var(--con-card-bg);
+    backdrop-filter: blur(20px);
+    border: 1px solid var(--con-border);
+    border-radius: 32px;
+    padding: 60px;
+    position: relative;
+    box-shadow: 0 40px 100px rgba(0, 0, 0, 0.4);
+}
+
+.contact-v4 .form-terminal::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    border-radius: 32px;
+    padding: 1px;
+    background: linear-gradient(135deg, var(--con-border), transparent 50%, var(--con-border));
+    -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    -webkit-mask-composite: destination-out;
+    mask-composite: exclude;
+    pointer-events: none;
+}
+
+.contact-v4 .form-header {
     display: flex;
-    flex-direction: column;
-    gap: var(--space-4);
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 50px;
 }
 
-.contact-info-wrapper h2 {
-    margin-bottom: var(--space-8);
+.contact-v4 .form-header h2 {
+    font-family: var(--con-heading);
+    font-size: 2.2rem;
+    font-weight: 800;
+    letter-spacing: -0.02em;
 }
 
-.contact-info-item {
+.contact-v4 .status-dot-pulse {
     display: flex;
-    gap: var(--space-4);
-    margin-bottom: var(--space-6);
-    padding: var(--space-4);
-    background: var(--color-gray-lightest);
-    border-radius: var(--radius-lg);
+    align-items: center;
+    gap: 10px;
+    font-size: 0.7rem;
+    font-family: 'JetBrains Mono', monospace;
+    color: var(--con-primary);
 }
 
-.contact-info-icon {
-    font-size: var(--text-2xl);
-    color: var(--color-primary);
+.contact-v4 .dot {
+    width: 8px;
+    height: 8px;
+    background: var(--con-primary);
+    border-radius: 50%;
+    animation: tacticalPulse 2s infinite;
+}
+
+@keyframes tacticalPulse {
+    0% {
+        box-shadow: 0 0 0 0 rgba(13, 181, 164, 0.4);
+    }
+
+    70% {
+        box-shadow: 0 0 0 10px rgba(13, 181, 164, 0);
+    }
+
+    100% {
+        box-shadow: 0 0 0 0 rgba(13, 181, 164, 0);
+    }
+}
+
+/* 5. INPUT MATRIX */
+.contact-v4 .input-matrix {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 24px;
+}
+
+.contact-v4 .input-wrap {
+    margin-bottom: 30px;
+    position: relative;
+}
+
+.contact-v4 .input-wrap.full {
+    grid-column: span 2;
+}
+
+.contact-v4 label {
+    display: block;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.7rem;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--con-text-muted);
+    margin-bottom: 12px;
+}
+
+.contact-v4 input,
+.contact-v4 select,
+.contact-v4 textarea {
+    width: 100%;
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid var(--con-border);
+    border-radius: 12px;
+    padding: 16px 20px;
+    color: white;
+    font-size: 1rem;
+    transition: all 0.3s var(--con-bezier);
+}
+
+.contact-v4 input:focus,
+.contact-v4 select:focus,
+.contact-v4 textarea:focus {
+    outline: none;
+    border-color: var(--con-primary);
+    background: rgba(13, 181, 164, 0.05);
+    box-shadow: 0 0 30px rgba(13, 181, 164, 0.1);
+}
+
+.contact-v4 textarea {
+    min-height: 150px;
+    resize: none;
+}
+
+/* 6. MAGNETIC BUTTON */
+.contact-v4 .btn-submit-elite {
+    width: 100%;
+    background: var(--con-primary);
+    color: #000;
+    padding: 22px;
+    border: none;
+    border-radius: 100px;
+    font-weight: 800;
+    font-size: 1rem;
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+    position: relative;
+    overflow: hidden;
+}
+
+.contact-v4 .btn-submit-elite:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 20px 40px rgba(13, 181, 164, 0.3);
+    background: white;
+}
+
+/* 7. CONNECTION NODES (INFO CARDS) */
+.contact-v4 .connection-nodes {
+    display: grid;
+    gap: 24px;
+}
+
+.contact-v4 .node-card {
+    background: var(--con-card-bg);
+    border: 1px solid var(--con-border);
+    border-radius: 24px;
+    padding: 30px;
+    display: flex;
+    gap: 24px;
+    transition: all 0.4s var(--con-bezier);
+}
+
+.contact-v4 .node-card:hover {
+    background: rgba(255, 255, 255, 0.05);
+    border-color: rgba(255, 255, 255, 0.15);
+    transform: translateX(10px);
+}
+
+.contact-v4 .node-icon-wrap {
+    width: 60px;
+    height: 60px;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.8rem;
+    color: var(--con-primary);
     flex-shrink: 0;
 }
 
-.contact-info-item h4 {
-    font-size: var(--text-lg);
-    margin-bottom: var(--space-2);
+.contact-v4 .node-info h4 {
+    color: var(--con-text-muted);
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.7rem;
+    text-transform: uppercase;
+    margin-bottom: 8px;
+    letter-spacing: 0.1em;
 }
 
-.contact-info-item a {
-    color: var(--color-primary);
+.contact-v4 .node-info p,
+.contact-v4 .node-info a {
+    font-size: 1.15rem;
+    font-weight: 700;
+    color: white;
     text-decoration: none;
+    line-height: 1.4;
 }
 
-.contact-info-item p {
-    margin: 0;
-    color: var(--color-gray);
-    font-size: var(--text-sm);
+.contact-v4 .node-info a:hover {
+    color: var(--con-primary);
 }
 
+/* 8. LOCATION MATRIX */
+.contact-v4 .location-matrix {
+    max-width: 1440px;
+    margin: 0 auto;
+    padding: 0 40px 150px;
+}
+
+.contact-v4 .office-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+}
+
+.contact-v4 .office-card {
+    background: var(--con-card-bg);
+    border: 1px solid var(--con-border);
+    border-radius: 32px;
+    padding: 50px;
+    position: relative;
+    overflow: hidden;
+}
+
+.contact-v4 .office-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 200px;
+    height: 200px;
+    background: radial-gradient(circle at top right, var(--con-primary-glow), transparent 70%);
+    opacity: 0.3;
+}
+
+.contact-v4 .office-card h3 {
+    font-family: var(--con-heading);
+    font-size: 2.2rem;
+    font-weight: 800;
+    margin-bottom: 24px;
+}
+
+.contact-v4 .office-card p {
+    font-size: 1.1rem;
+    color: var(--con-text-muted);
+    margin-bottom: 40px;
+    max-width: 400px;
+    line-height: 1.6;
+}
+
+.contact-v4 .map-mock {
+    height: 250px;
+    background: rgba(0, 0, 0, 0.4);
+    border-radius: 20px;
+    border: 1px solid var(--con-border);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--con-text-muted);
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+}
+
+/* RESPONSIVE LOGIC */
 @media (max-width: 1024px) {
-    .contact-grid {
+    .contact-v4 .main-comms-grid {
         grid-template-columns: 1fr;
+    }
+
+    .contact-v4 .office-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .contact-v4 .input-matrix {
+        grid-template-columns: 1fr;
+    }
+
+    .contact-v4 .input-wrap.full {
+        grid-column: span 1;
+    }
+}
+
+@media (max-width: 768px) {
+    .contact-v4 .form-terminal {
+        padding: 40px 24px;
+    }
+
+    .contact-v4 .hero-lite h1 {
+        font-size: 3.5rem;
     }
 }
