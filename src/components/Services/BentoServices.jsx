@@ -104,45 +104,47 @@ const BentoServices = () => {
                             viewport={{ once: true }}
                             transition={{ duration: 0.6, delay: index * 0.1 }}
                         >
-                            <div className="bento-card">
-                                {/* Front Side */}
-                                <div className="bento-card-front">
-                                    <div
-                                        className="bento-bg-image"
-                                        style={{ backgroundImage: `url(${service.image})` }}
-                                    />
-                                    <div className="card-overlay" />
-                                    <div className="bento-icon">
-                                        {service.icon}
+                            <Link to={service.link} className="bento-card-link">
+                                <div className="bento-card">
+                                    {/* Front Side */}
+                                    <div className="bento-card-front">
+                                        <div
+                                            className="bento-bg-image"
+                                            style={{ backgroundImage: `url(${service.image})` }}
+                                        />
+                                        <div className="card-overlay" />
+                                        <div className="bento-icon">
+                                            {service.icon}
+                                        </div>
+                                        <div className="bento-content">
+                                            <h3 className="bento-title">{service.title}</h3>
+                                            <p className="bento-desc">{service.desc}</p>
+                                        </div>
+                                        <div className="bento-arrow-hint">
+                                            Hover to Flip <FaArrowRight />
+                                        </div>
                                     </div>
-                                    <div className="bento-content">
-                                        <h3 className="bento-title">{service.title}</h3>
-                                        <p className="bento-desc">{service.desc}</p>
-                                    </div>
-                                    <div className="bento-arrow-hint">
-                                        Hover to Flip <FaArrowRight />
-                                    </div>
-                                </div>
 
-                                {/* Back Side (The "Book Page" reveal) */}
-                                <div className="bento-card-back">
-                                    <div className="back-content">
-                                        <div className="back-icon">{service.icon}</div>
-                                        <h3 className="back-title">{service.title}</h3>
-                                        <ul className="feature-list">
-                                            {service.features.map((feature, i) => (
-                                                <li key={i}>
-                                                    <FaCheckCircle className="check-icon" />
-                                                    {feature}
-                                                </li>
-                                            ))}
-                                        </ul>
-                                        <Link to={service.link} className="bento-explore-btn">
-                                            Explore Service <FaArrowRight />
-                                        </Link>
+                                    {/* Back Side (The "Book Page" reveal) */}
+                                    <div className="bento-card-back">
+                                        <div className="back-content">
+                                            <div className="back-icon">{service.icon}</div>
+                                            <h3 className="back-title">{service.title}</h3>
+                                            <ul className="feature-list">
+                                                {service.features.map((feature, i) => (
+                                                    <li key={i}>
+                                                        <FaCheckCircle className="check-icon" />
+                                                        {feature}
+                                                    </li>
+                                                ))}
+                                            </ul>
+                                            <div className="bento-explore-btn">
+                                                Explore Service <FaArrowRight />
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
-                            </div>
+                            </Link>
                         </motion.div>
                     ))}
                 </div>
