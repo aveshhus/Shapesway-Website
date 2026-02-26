@@ -18,22 +18,28 @@ import './Contact.css';
 
 const Contact = () => {
     const [formData, setFormData] = useState({
-        name: '',
-        email: '',
-        phone: '',
-        service: '',
-        message: ''
+        name: '', email: '', phone: '', service: '', message: ''
     });
     const [isSubmitting, setIsSubmitting] = useState(false);
     const [isSubmitted, setIsSubmitted] = useState(false);
-    const [activeTab, setActiveTab] = useState('form');
-
     const [sessionId] = useState(() => Math.random().toString(36).substring(7).toUpperCase());
+
+    // Mouse Tracking for Parallax
+    const [mousePos, setMousePos] = useState({ x: 0, y: 0 });
+    useEffect(() => {
+        const handleMouseMove = (e) => {
+            setMousePos({
+                x: (e.clientX / window.innerWidth - 0.5) * 20,
+                y: (e.clientY / window.innerHeight - 0.5) * 20
+            });
+        };
+        window.addEventListener('mousemove', handleMouseMove);
+        return () => window.removeEventListener('mousemove', handleMouseMove);
+    }, []);
 
     const handleSubmit = async (e) => {
         e.preventDefault();
         setIsSubmitting(true);
-        // Simulate API call
         await new Promise(resolve => setTimeout(resolve, 2000));
         setIsSubmitting(false);
         setIsSubmitted(true);
@@ -49,65 +55,106 @@ const Contact = () => {
         visible: { opacity: 1, y: 0, transition: { duration: 0.8, ease: [0.16, 1, 0.3, 1] } }
     };
 
-    const staggerContainer = {
-        hidden: { opacity: 0 },
-        visible: {
-            opacity: 1,
-            transition: {
-                staggerChildren: 0.1,
-                delayChildren: 0.3
-            }
-        }
-    };
-
     return (
         <div className="contact-premium">
+            {/* --- IMMERSIVE BACKGROUND --- */}
             <div className="ambient-background">
                 <div className="blob blob-1"></div>
                 <div className="blob blob-2"></div>
                 <div className="blob blob-3"></div>
                 <div className="grid-sub-overlay"></div>
+
+                {/* Floating Orbitals */}
+                <div className="tech-nodes">
+                    {[...Array(6)].map((_, i) => (
+                        <motion.div
+                            key={i}
+                            className={`orbital node-${i + 1}`}
+                            animate={{
+                                y: [0, -20, 0],
+                                rotate: [0, 360],
+                                scale: [1, 1.1, 1],
+                            }}
+                            transition={{
+                                duration: 10 + i * 2,
+                                repeat: Infinity,
+                                ease: "linear"
+                            }}
+                        />
+                    ))}
+                </div>
             </div>
 
             {/* --- HERO SECTION --- */}
             <section className="contact-hero">
                 <div className="container">
                     <motion.div
-                        initial="hidden"
-                        animate="visible"
-                        variants={staggerContainer}
-                        className="hero-content"
+                        className="hero-parallax-wrapper"
+                        style={{
+                            transform: `translate3d(${mousePos.x}px, ${mousePos.y}px, 0)`,
+                            transition: 'transform 0.1s ease-out'
+                        }}
                     >
-                        <motion.div variants={fadeInUp} className="badge-modern">
-                            <PiSparkleFill className="pulse-icon" />
-                            <span>Available For New Projects</span>
-                        </motion.div>
+                        <motion.div
+                            initial="hidden"
+                            animate="visible"
+                            variants={{
+                                visible: { transition: { staggerChildren: 0.1 } }
+                            }}
+                            className="hero-content"
+                        >
+                            <motion.div variants={fadeInUp} className="badge-refractive">
+                                <div className="glass-shine"></div>
+                                <PiSparkleFill className="sparkle-icon" />
+                                <span>Core Systems Online</span>
+                            </motion.div>
 
-                        <motion.h1 variants={fadeInUp} className="hero-title">
-                            Let's Build The <br />
-                            <span className="text-glow">Next Dimension.</span>
-                        </motion.h1>
+                            <motion.h1 variants={fadeInUp} className="hero-title">
+                                <span className="title-top">Command Your</span> <br />
+                                <span className="text-glow">Digital Future.</span>
+                            </motion.h1>
 
-                        <motion.p variants={fadeInUp} className="hero-subtitle">
-                            Whether you're scaling a startup or re-engineering an enterprise, our
-                            senior architects are ready to route your vision into reality.
-                        </motion.p>
+                            <motion.p variants={fadeInUp} className="hero-subtitle">
+                                Initiate high-bandwidth collaboration with our senior architects.
+                                We don't just build software; we engineer competitive advantages.
+                            </motion.p>
 
-                        <motion.div variants={fadeInUp} className="hero-stats">
-                            <div className="stat-item">
-                                <span className="stat-num">2hr</span>
-                                <span className="stat-label">Response Time</span>
-                            </div>
-                            <div className="stat-divider"></div>
-                            <div className="stat-item">
-                                <span className="stat-num">24/7</span>
-                                <span className="stat-label">Global Support</span>
-                            </div>
-                            <div className="stat-divider"></div>
-                            <div className="stat-item">
-                                <span className="stat-num">100%</span>
-                                <span className="stat-label">Secure Comms</span>
-                            </div>
+                            <motion.div variants={fadeInUp} className="hero-dashboard">
+                                <div className="dash-item">
+                                    <div className="dash-viz">
+                                        <svg viewBox="0 0 36 36" className="circular-chart teal">
+                                            <path className="circle-bg" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" />
+                                            <motion.path className="circle" initial={{ strokeDasharray: "0, 100" }} animate={{ strokeDasharray: "95, 100" }} transition={{ duration: 2, delay: 1 }} d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" />
+                                        </svg>
+                                        <span className="viz-val">95%</span>
+                                    </div>
+                                    <div className="dash-meta">
+                                        <h4>Efficiency</h4>
+                                        <p>Protocol Speed</p>
+                                    </div>
+                                </div>
+                                <div className="dash-divider"></div>
+                                <div className="dash-item">
+                                    <div className="dash-viz pulse">
+                                        <div className="pulse-core"></div>
+                                        <div className="pulse-ring"></div>
+                                    </div>
+                                    <div className="dash-meta">
+                                        <h4>24/7</h4>
+                                        <p>Node Monitor</p>
+                                    </div>
+                                </div>
+                                <div className="dash-divider"></div>
+                                <div className="dash-item">
+                                    <div className="dash-viz">
+                                        <PiCpuFill className="dash-icon-cpu" />
+                                    </div>
+                                    <div className="dash-meta">
+                                        <h4>Scalable</h4>
+                                        <p>Architecture</p>
+                                    </div>
+                                </div>
+                            </motion.div>
                         </motion.div>
                     </motion.div>
                 </div>

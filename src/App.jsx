@@ -20,6 +20,7 @@ import UIUXDesign from './pages/Services/UIUXDesign';
 import CloudServices from './pages/Services/CloudServices';
 import DigitalMarketing from './pages/Services/DigitalMarketing';
 import OurWork from './pages/OurWork/OurWork';
+import ProjectDetail from './pages/OurWork/ProjectDetail';
 import Blog from './pages/Blog/Blog';
 import BlogPost from './pages/Blog/BlogPost';
 
@@ -54,6 +55,7 @@ function App() {
             <Route path="/technology" element={<Technology />} />
             <Route path="/ai-machine-learning" element={<AIMachineLearning />} />
             <Route path="/our-work" element={<OurWork />} />
+            <Route path="/our-work/:id" element={<ProjectDetail />} />
             <Route path="/blog" element={<Blog />} />
             <Route path="/blog/:slug" element={<BlogPost />} />
 
