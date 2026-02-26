@@ -3,6 +3,9 @@ import selectionImg from '../assets/portfolio/Selection.png';
 import dietDashboard from '../assets/portfolio/diet-plus/dashboard.png';
 import dietProducts from '../assets/portfolio/diet-plus/products.png';
 import dietConsulting from '../assets/portfolio/diet-plus/consulting.png';
+import selection01 from '../assets/portfolio/Selection/Selection01.png';
+import selection02 from '../assets/portfolio/Selection/Selection02.png';
+import selection03 from '../assets/portfolio/Selection/Selection03.png';
 
 export const projects = [
     {
@@ -93,19 +96,19 @@ export const projects = [
         ],
         gallery: [
             {
-                title: 'Modular Kitchen Innovation',
-                desc: 'Smart storage with premium sleek finishes and ergonomic handles.',
-                url: 'https://images.unsplash.com/photo-1556911220-e15224bbafb0?q=80&w=1200'
+                title: 'Bespoke Interior Excellence',
+                desc: 'A showcase of our high-precision modular craftsmanship and luxury finishes.',
+                url: selection01
             },
             {
-                title: 'High-Efficiency Layouts',
-                desc: 'Interior design that optimizes every inch of residential space.',
-                url: 'https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?q=80&w=1200'
+                title: 'Premium Living Space',
+                desc: 'Integrating advanced infrastructure with elegant architectural design.',
+                url: selection02
             },
             {
-                title: 'Corporate Precision Fit-Out',
-                desc: 'Ergonomic workstations designed for productivity and brand identity.',
-                url: 'https://images.unsplash.com/photo-1497366216548-37526070297c?q=80&w=1200'
+                title: 'Sophisticated Interior Concepts',
+                desc: 'Tailored solutions reflecting the individual character of every client.',
+                url: selection03
             }
         ]
     }
