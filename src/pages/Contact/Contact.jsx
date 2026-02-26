@@ -1,5 +1,5 @@
-import React, { useState } from 'react';
-import { motion } from 'framer-motion';
+import React, { useState, useEffect } from 'react';
+import { motion, AnimatePresence } from 'framer-motion';
 import {
     PiPhoneCallFill,
     PiEnvelopeSimpleFill,
@@ -8,7 +8,11 @@ import {
     PiHeadsetFill,
     PiSparkleFill,
     PiGlobeFill,
-    PiNavigationArrowFill
+    PiNavigationArrowFill,
+    PiCheckCircleFill,
+    PiTerminalFill,
+    PiCpuFill,
+    PiChatCircleTextFill
 } from 'react-icons/pi';
 import './Contact.css';
 
@@ -20,10 +24,19 @@ const Contact = () => {
         service: '',
         message: ''
     });
+    const [isSubmitting, setIsSubmitting] = useState(false);
+    const [isSubmitted, setIsSubmitted] = useState(false);
+    const [activeTab, setActiveTab] = useState('form');
 
-    const handleSubmit = (e) => {
+    const [sessionId] = useState(() => Math.random().toString(36).substring(7).toUpperCase());
+
+    const handleSubmit = async (e) => {
         e.preventDefault();
-        alert('COMMS_ESTABLISHED: Your message has been routed to our core team.');
+        setIsSubmitting(true);
+        // Simulate API call
+        await new Promise(resolve => setTimeout(resolve, 2000));
+        setIsSubmitting(false);
+        setIsSubmitted(true);
         setFormData({ name: '', email: '', phone: '', service: '', message: '' });
     };
 
@@ -33,240 +46,314 @@ const Contact = () => {
 
     const fadeInUp = {
         hidden: { opacity: 0, y: 30 },
-        visible: { opacity: 1, y: 0 }
+        visible: { opacity: 1, y: 0, transition: { duration: 0.8, ease: [0.16, 1, 0.3, 1] } }
+    };
+
+    const staggerContainer = {
+        hidden: { opacity: 0 },
+        visible: {
+            opacity: 1,
+            transition: {
+                staggerChildren: 0.1,
+                delayChildren: 0.3
+            }
+        }
     };
 
     return (
-        <div className="contact-v4">
-            <div className="neural-bg"></div>
-            <div className="grid-overlay"></div>
+        <div className="contact-premium">
+            <div className="ambient-background">
+                <div className="blob blob-1"></div>
+                <div className="blob blob-2"></div>
+                <div className="blob blob-3"></div>
+                <div className="grid-sub-overlay"></div>
+            </div>
 
-            {/* 1. HERO SECTION: COMMS_INIT */}
-            <section className="hero-lite">
+            {/* --- HERO SECTION --- */}
+            <section className="contact-hero">
                 <div className="container">
                     <motion.div
                         initial="hidden"
                         animate="visible"
-                        variants={{
-                            visible: { transition: { staggerChildren: 0.15 } }
-                        }}
+                        variants={staggerContainer}
+                        className="hero-content"
                     >
-                        <motion.div variants={fadeInUp} className="badge-tactical">
-                            <span className="dot"></span>
-                            SYS_STATUS // ONLINE
+                        <motion.div variants={fadeInUp} className="badge-modern">
+                            <PiSparkleFill className="pulse-icon" />
+                            <span>Available For New Projects</span>
                         </motion.div>
-                        <motion.h1 variants={fadeInUp}>
-                            Initialize <br /> <span>Connection.</span>
+
+                        <motion.h1 variants={fadeInUp} className="hero-title">
+                            Let's Build The <br />
+                            <span className="text-glow">Next Dimension.</span>
                         </motion.h1>
-                        <motion.p variants={fadeInUp} className="ind-v3-desc" style={{ margin: '0 auto', maxWidth: '700px' }}>
-                            Ready to transform your technical infrastructure? Route your query below
-                            and our senior architects will engage within 6 business hours.
+
+                        <motion.p variants={fadeInUp} className="hero-subtitle">
+                            Whether you're scaling a startup or re-engineering an enterprise, our
+                            senior architects are ready to route your vision into reality.
                         </motion.p>
+
+                        <motion.div variants={fadeInUp} className="hero-stats">
+                            <div className="stat-item">
+                                <span className="stat-num">2hr</span>
+                                <span className="stat-label">Response Time</span>
+                            </div>
+                            <div className="stat-divider"></div>
+                            <div className="stat-item">
+                                <span className="stat-num">24/7</span>
+                                <span className="stat-label">Global Support</span>
+                            </div>
+                            <div className="stat-divider"></div>
+                            <div className="stat-item">
+                                <span className="stat-num">100%</span>
+                                <span className="stat-label">Secure Comms</span>
+                            </div>
+                        </motion.div>
                     </motion.div>
                 </div>
             </section>
 
-            {/* 2. CORE INTERFACE GRID */}
-            <section className="main-comms-grid">
-                {/* Left: Terminal Form */}
-                <motion.div
-                    className="form-terminal"
-                    initial={{ opacity: 0, x: -50 }}
-                    whileInView={{ opacity: 1, x: 0 }}
-                    viewport={{ once: true }}
-                    transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
-                >
-                    <div className="form-header">
-                        <h2>Transmission Terminal</h2>
-                        <div className="status-dot-pulse">
-                            <span className="dot"></span>
-                            ACTIVE_LINK
-                        </div>
-                    </div>
+            {/* --- MAIN INTERFACE SECTION --- */}
+            <section className="contact-interface">
+                <div className="container">
+                    <div className="interface-grid">
 
-                    <form onSubmit={handleSubmit}>
-                        <div className="input-matrix">
-                            <div className="input-wrap">
-                                <label>Full Name</label>
-                                <input
-                                    type="text"
-                                    name="name"
-                                    placeholder="Enter identifier..."
-                                    required
-                                    value={formData.name}
-                                    onChange={handleChange}
-                                />
-                            </div>
-                            <div className="input-wrap">
-                                <label>Vector Email</label>
-                                <input
-                                    type="email"
-                                    name="email"
-                                    placeholder="address@domain.io"
-                                    required
-                                    value={formData.email}
-                                    onChange={handleChange}
-                                />
-                            </div>
-                            <div className="input-wrap">
-                                <label>Contact Node</label>
-                                <input
-                                    type="tel"
-                                    name="phone"
-                                    placeholder="+91 ...."
-                                    value={formData.phone}
-                                    onChange={handleChange}
-                                />
-                            </div>
-                            <div className="input-wrap">
-                                <label>Target Stream</label>
-                                <select name="service" value={formData.service} onChange={handleChange}>
-                                    <option value="">Select Service Scope</option>
-                                    <option value="ai">AI / Machine Learning</option>
-                                    <option value="web">Next-Gen Web Dev</option>
-                                    <option value="mobile">Native Mobile Hub</option>
-                                    <option value="cloud">Cloud Infrastructure</option>
-                                    <option value="other">Bespoke Protocol</option>
-                                </select>
-                            </div>
-                            <div className="input-wrap full">
-                                <label>Message Payload</label>
-                                <textarea
-                                    name="message"
-                                    placeholder="Describe your project vision / technical requirements..."
-                                    required
-                                    value={formData.message}
-                                    onChange={handleChange}
-                                ></textarea>
-                            </div>
-                        </div>
-
-                        <button type="submit" className="btn-submit-elite">
-                            <span>Execute Transmission</span>
-                            <PiPaperPlaneRightFill />
-                        </button>
-                    </form>
-                </motion.div>
-
-                {/* Right: Connection Nodes */}
-                <div className="connection-nodes">
-                    {[
-                        {
-                            id: 'node-1',
-                            icon: <PiPhoneCallFill />,
-                            label: 'Direct Link',
-                            val: '+91 63671 81952',
-                            link: 'tel:+916367181952'
-                        },
-                        {
-                            id: 'node-2',
-                            icon: <PiEnvelopeSimpleFill />,
-                            label: 'Secure Mail',
-                            val: 'info@shapesway.in',
-                            link: 'mailto:info@shapesway.in'
-                        },
-                        {
-                            id: 'node-3',
-                            icon: <PiHeadsetFill />,
-                            label: 'Support Hub',
-                            val: '24/7 Response Ready',
-                            link: '/support'
-                        },
-                        {
-                            id: 'node-4',
-                            icon: <PiSparkleFill />,
-                            label: 'Social Presence',
-                            val: '@shapesway_tech',
-                            link: 'https://instagram.com'
-                        }
-                    ].map((node, i) => (
+                        {/* LEFT: INFO NODES */}
                         <motion.div
-                            key={node.id}
-                            className="node-card"
-                            initial={{ opacity: 0, x: 50 }}
+                            className="info-panel"
+                            initial={{ opacity: 0, x: -30 }}
                             whileInView={{ opacity: 1, x: 0 }}
                             viewport={{ once: true }}
-                            transition={{ delay: i * 0.1, duration: 0.6 }}
+                            transition={{ duration: 0.8 }}
                         >
-                            <div className="node-icon-wrap">
-                                {node.icon}
+                            <div className="panel-header">
+                                <PiCpuFill className="panel-icon" />
+                                <h3>Connection Nodes</h3>
                             </div>
-                            <div className="node-info">
-                                <h4>{node.label}</h4>
-                                <a href={node.link}>{node.val}</a>
+
+                            <div className="node-list">
+                                {[
+                                    { icon: <PiEnvelopeSimpleFill />, label: 'Email Protocol', value: 'hello@shapesway.in', link: 'mailto:hello@shapesway.in', color: '#0db5a4' },
+                                    { icon: <PiPhoneCallFill />, label: 'Direct Voice', value: '+91 63671 81952', link: 'tel:+916367181952', color: '#3b82f6' },
+                                    { icon: <PiChatCircleTextFill />, label: 'Live Assistance', value: 'Start Signal Chat', link: '#', color: '#8b5cf6' },
+                                    { icon: <PiGlobeFill />, label: 'Digital Hub', value: 'www.shapesway.in', link: 'https://shapesway.in', color: '#f59e0b' }
+                                ].map((node, i) => (
+                                    <motion.a
+                                        href={node.link}
+                                        key={i}
+                                        className="modern-node-card"
+                                        whileHover={{ x: 10 }}
+                                        style={{ '--node-accent': node.color }}
+                                    >
+                                        <div className="node-icon">{node.icon}</div>
+                                        <div className="node-text">
+                                            <span className="node-label">{node.label}</span>
+                                            <span className="node-value">{node.value}</span>
+                                        </div>
+                                    </motion.a>
+                                ))}
+                            </div>
+
+                            <div className="security-badge">
+                                <PiCheckCircleFill />
+                                <span>End-to-End Encrypted Transmission Active</span>
                             </div>
                         </motion.div>
-                    ))}
+
+                        {/* RIGHT: FORM TERMINAL */}
+                        <motion.div
+                            className="form-container"
+                            initial={{ opacity: 0, y: 30 }}
+                            whileInView={{ opacity: 1, y: 0 }}
+                            viewport={{ once: true }}
+                            transition={{ duration: 0.8 }}
+                        >
+                            <div className="glass-form-card">
+                                <div className="form-top-bar">
+                                    <div className="terminal-dots">
+                                        <span></span><span></span><span></span>
+                                    </div>
+                                    <div className="terminal-id">SES_ID: {sessionId}</div>
+                                </div>
+
+                                <AnimatePresence mode="wait">
+                                    {!isSubmitted ? (
+                                        <motion.div
+                                            key="form"
+                                            initial={{ opacity: 0 }}
+                                            animate={{ opacity: 1 }}
+                                            exit={{ opacity: 0 }}
+                                        >
+                                            <div className="form-content">
+                                                <h2 className="form-title">Initialize Engagement</h2>
+                                                <p className="form-desc">Fill in the technical parameters of your project.</p>
+
+                                                <form onSubmit={handleSubmit} className="premium-form">
+                                                    <div className="form-row">
+                                                        <div className="input-group">
+                                                            <label>Identifier</label>
+                                                            <input
+                                                                type="text"
+                                                                name="name"
+                                                                placeholder="Your Full Name"
+                                                                required
+                                                                value={formData.name}
+                                                                onChange={handleChange}
+                                                            />
+                                                        </div>
+                                                        <div className="input-group">
+                                                            <label>Vector Mail</label>
+                                                            <input
+                                                                type="email"
+                                                                name="email"
+                                                                placeholder="name@company.com"
+                                                                required
+                                                                value={formData.email}
+                                                                onChange={handleChange}
+                                                            />
+                                                        </div>
+                                                    </div>
+
+                                                    <div className="form-row">
+                                                        <div className="input-group">
+                                                            <label>Service Stream</label>
+                                                            <select name="service" value={formData.service} onChange={handleChange}>
+                                                                <option value="">Select Protocol</option>
+                                                                <option value="ai">AI / Machine Learning</option>
+                                                                <option value="web">Hyper-Scale Web</option>
+                                                                <option value="mobile">Native Mobile Hub</option>
+                                                                <option value="cloud">Cloud Architecture</option>
+                                                            </select>
+                                                        </div>
+                                                        <div className="input-group">
+                                                            <label>Contact Node</label>
+                                                            <input
+                                                                type="tel"
+                                                                name="phone"
+                                                                placeholder="+91 ...."
+                                                                value={formData.phone}
+                                                                onChange={handleChange}
+                                                            />
+                                                        </div>
+                                                    </div>
+
+                                                    <div className="input-group full">
+                                                        <label>Project Matrix (Requirements)</label>
+                                                        <textarea
+                                                            name="message"
+                                                            placeholder="Describe your vision / technical constraints..."
+                                                            required
+                                                            value={formData.message}
+                                                            onChange={handleChange}
+                                                        ></textarea>
+                                                    </div>
+
+                                                    <button
+                                                        type="submit"
+                                                        className={`submit-btn-premium ${isSubmitting ? 'loading' : ''}`}
+                                                        disabled={isSubmitting}
+                                                    >
+                                                        {isSubmitting ? (
+                                                            <span className="loader">TRANSMITTING...</span>
+                                                        ) : (
+                                                            <>
+                                                                <span>Establish Connection</span>
+                                                                <PiPaperPlaneRightFill />
+                                                            </>
+                                                        )}
+                                                    </button>
+                                                </form>
+                                            </div>
+                                        </motion.div>
+                                    ) : (
+                                        <motion.div
+                                            key="success"
+                                            initial={{ opacity: 0, scale: 0.9 }}
+                                            animate={{ opacity: 1, scale: 1 }}
+                                            className="success-state"
+                                        >
+                                            <div className="success-icon-wrap">
+                                                <PiCheckCircleFill />
+                                            </div>
+                                            <h3>Transmission Complete</h3>
+                                            <p>Your signal has been successfully routed. Our senior architects will engage with you within 2 business hours.</p>
+                                            <button
+                                                className="reset-btn"
+                                                onClick={() => setIsSubmitted(false)}
+                                            >
+                                                Send Another Signal
+                                            </button>
+                                        </motion.div>
+                                    )}
+                                </AnimatePresence>
+                            </div>
+                        </motion.div>
+
+                    </div>
                 </div>
             </section>
 
-            {/* 3. LOCATION MATRIX */}
-            <section className="location-matrix">
-                <div className="office-grid">
-                    <motion.div
-                        className="office-card"
-                        initial={{ opacity: 0, y: 50 }}
-                        whileInView={{ opacity: 1, y: 0 }}
-                        viewport={{ once: true }}
-                    >
-                        <div style={{ display: 'flex', alignItems: 'center', gap: '15px', marginBottom: '20px' }}>
-                            <PiGlobeFill style={{ color: 'var(--con-primary)', fontSize: '2rem' }} />
-                            <span className="badge-tactical" style={{ marginBottom: 0 }}>HQ_NODE</span>
-                        </div>
-                        <h3>Jaipur HQ</h3>
-                        <p>4th Floor, Shree Amar Heights, 405, Ajmer Rd, Jaipur, Rajasthan 302019</p>
-                        <a
-                            href="https://www.google.com/maps/search/?api=1&query=Shapesway+Technologies+pvt.+Ltd.+Jaipur"
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className="map-link-wrapper"
-                        >
-                            <div className="map-container">
-                                <iframe
-                                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3558.3897658887145!2d75.7421279!3d26.891122599999996!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x396db56a81b57573%3A0xd6febd17e35d2bb2!2sShapesway%20Technologies%20pvt.%20Ltd.%20Jaipur!5e0!3m2!1sen!2sin!4v1772006489332!5m2!1sen!2sin"
-                                    width="100%"
-                                    height="100%"
-                                    style={{ border: 0, pointerEvents: 'none' }}
-                                    allowFullScreen=""
-                                    loading="lazy"
-                                    title="Jaipur HQ"
-                                ></iframe>
-                            </div>
-                        </a>
-                    </motion.div>
+            {/* --- LOCATIONS SECTION --- */}
+            <section className="contact-locations">
+                <div className="container">
+                    <div className="section-header-modern">
+                        <span className="sup-title">OFFICE_NODES</span>
+                        <h2>Global Infrastructure</h2>
+                    </div>
 
-                    <motion.div
-                        className="office-card"
-                        initial={{ opacity: 0, y: 50 }}
-                        whileInView={{ opacity: 1, y: 0 }}
-                        viewport={{ once: true }}
-                        transition={{ delay: 0.2 }}
-                    >
-                        <div style={{ display: 'flex', alignItems: 'center', gap: '15px', marginBottom: '20px' }}>
-                            <PiGlobeFill style={{ color: 'var(--con-secondary)', fontSize: '2rem' }} />
-                            <span className="badge-tactical" style={{ marginBottom: 0, color: 'var(--con-secondary)', borderColor: 'rgba(59, 130, 246, 0.2)' }}>REGIONAL_NODE</span>
-                        </div>
-                        <h3>Udaipur Hub</h3>
-                        <p>Fortune 80 Complex, 205, University Rd, Udaipur, Rajasthan 313001</p>
-                        <a
-                            href="https://www.google.com/maps/search/?api=1&query=Shapesway+Technologies+Private+Limited+-+Best+Digital+Marketing+Agency+in+Udaipur"
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className="map-link-wrapper"
-                        >
-                            <div className="map-container">
-                                <iframe
-                                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1857535.9008310616!2d71.27681495625002!3d24.589202900000014!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3967e5aff53ee55f%3A0x830a6c0e0010eeeb!2sShapesway%20Technologies%20Private%20Limited%20-%20Best%20Digital%20Marketing%20Agency%20in%20Udaipur!5e0!3m2!1sen!2sin!4v1772006537399!5m2!1sen!2sin"
-                                    width="100%"
-                                    height="100%"
-                                    style={{ border: 0, pointerEvents: 'none' }}
-                                    allowFullScreen=""
-                                    loading="lazy"
-                                    title="Udaipur Hub"
-                                ></iframe>
-                            </div>
-                        </a>
-                    </motion.div>
+                    <div className="locations-grid">
+                        {[
+                            {
+                                city: 'Jaipur HQ',
+                                address: '4th Floor, Shree Amar Heights, 405, Ajmer Rd, Jaipur, Rajasthan 302019',
+                                map: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3558.3897658887145!2d75.7421279!3d26.891122599999996!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x396db56a81b57573%3A0xd6febd17e35d2bb2!2sShapesway%20Technologies%20pvt.%20Ltd.%20Jaipur!5e0!3m2!1sen!2sin!4v1772006489332!5m2!1sen!2sin",
+                                color: '#0db5a4'
+                            },
+                            {
+                                city: 'Udaipur Hub',
+                                address: 'Fortune 80 Complex, 205, University Rd, Udaipur, Rajasthan 313001',
+                                map: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1857535.9008310616!2d71.27681495625002!3d24.589202900000014!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3967e5aff53ee55f%3A0x830a6c0e0010eeeb!2sShapesway%20Technologies%20Private%20Limited%20-%20Best%20Digital%20Marketing%20Agency%20in%20Udaipur!5e0!3m2!1sen!2sin!4v1772006537399!5m2!1sen!2sin",
+                                color: '#3b82f6'
+                            }
+                        ].map((loc, idx) => (
+                            <motion.div
+                                key={idx}
+                                className="location-card-modern"
+                                initial={{ opacity: 0, y: 30 }}
+                                whileInView={{ opacity: 1, y: 0 }}
+                                viewport={{ once: true }}
+                                transition={{ delay: idx * 0.2 }}
+                            >
+                                <div className="loc-info">
+                                    <div className="loc-tag" style={{ backgroundColor: loc.color }}>
+                                        {idx === 0 ? 'Primary Node' : 'Regional Node'}
+                                    </div>
+                                    <h3>{loc.city}</h3>
+                                    <p>{loc.address}</p>
+                                    <a
+                                        href={`https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(loc.city + ' ' + loc.address)}`}
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                        className="view-map-link"
+                                    >
+                                        <PiNavigationArrowFill /> Get Directions
+                                    </a>
+                                </div>
+                                <div className="loc-map-wrap">
+                                    <iframe
+                                        src={loc.map}
+                                        width="100%"
+                                        height="100%"
+                                        style={{ border: 0 }}
+                                        allowFullScreen=""
+                                        loading="lazy"
+                                        title={loc.city}
+                                    ></iframe>
+                                    <div className="map-shimmer"></div>
+                                </div>
+                            </motion.div>
+                        ))}
+                    </div>
                 </div>
             </section>
         </div>
