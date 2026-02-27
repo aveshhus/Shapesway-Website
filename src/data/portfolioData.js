@@ -7,6 +7,9 @@ import selection01 from '../assets/portfolio/Selection/Selection01.png';
 import selection02 from '../assets/portfolio/Selection/Selection02.png';
 import selection03 from '../assets/portfolio/Selection/Selection03.png';
 import shreeOmjiImg from '../assets/portfolio/shreeomjisaraf.png';
+import shreeOmji01 from '../assets/portfolio/shree_omji_01.png';
+import shreeOmji02 from '../assets/portfolio/shree_omji_02.png';
+import shreeOmji03 from '../assets/portfolio/shree_omji_03.png';
 
 export const projects = [
     {
@@ -37,6 +40,18 @@ export const projects = [
         ],
         brands: ['Optimum Nutrition', 'MuscleBlaze', 'GNC', 'Dymatize', 'Ultimate Nutrition', 'MyProtein', 'Isopure', 'BSN'],
         technologies: ['React', 'Node.js', 'PostgreSQL', 'Redux', 'Framer Motion', 'Local API Integration'],
+        techBreakdown: [
+            { label: 'Delivery', value: '< 24hrs', icon: 'zap' },
+            { label: 'Authenticity', value: '100% Verified', icon: 'lock' },
+            { label: 'Active Users', value: '5k+', icon: 'globe' },
+            { label: 'Integration', value: '8+ Global Brands', icon: 'sync' }
+        ],
+        results: [
+            { metric: '100%', label: 'Authentic Product Guarantee' },
+            { metric: 'Same Day', label: 'Local Delivery in Jaipur' },
+            { metric: 'Free', label: 'Expert Nutrition Consulting' },
+            { metric: '2500+', label: 'Monthly Active Fitness App Users' }
+        ],
         testimonials: [
             { text: "My go-to store in Jaipur for all my fitness needs!", author: "Local Athlete" },
             { text: "Great prices, 100% genuine supplements. Highly recommended!", author: "S. Sharma" },
@@ -90,6 +105,18 @@ export const projects = [
         ],
         sectors: ['Hotels & Resorts', 'Villas & Luxury Homes', 'Corporate Offices', 'Hospitals & Clinics', 'Restaurants', 'Schools & Colleges'],
         technologies: ['CNC Precision Machining', 'Panelsaw Engineering', 'Router Technology', '3D Design Prototyping', 'Modular Scalability'],
+        techBreakdown: [
+            { label: 'Capacity', value: '500+ Units/Mo', icon: 'zap' },
+            { label: 'Precision', value: '0.1mm CNC', icon: 'lock' },
+            { label: 'Designers', value: '5 Architects', icon: 'globe' },
+            { label: 'Workflow', value: 'O2O Hybrid', icon: 'sync' }
+        ],
+        results: [
+            { metric: '500+', label: 'Modular Units Produced Monthly' },
+            { metric: '25+', label: 'Expert In-house Craftsmen' },
+            { metric: '100%', label: 'Precision Engineering Guarantee' },
+            { metric: 'Lux', label: 'High-end Bespoke Interiors' }
+        ],
         testimonials: [
             { text: "At Selection Interior, creativity drives the approach. They bring fresh, imaginative ideas to every project.", author: "Architectural Review" },
             { text: "Their commitment to uniqueness sets them apart. Every space is tailored to the individual character.", author: "Luxury Homeowner" },
@@ -155,16 +182,33 @@ export const projects = [
             { text: "The cross-platform consistency and real-time pricing are second to none in this niche.", author: "Fintech Analyst" },
             { text: "Seamless transition from digital gold investment to physical store pickup.", author: "Premium User" }
         ],
+        techBreakdown: [
+            { label: 'Real-Time Sync', value: '30s Buffer', icon: 'sync' },
+            { label: 'Encryption', value: '256-bit AES', icon: 'lock' },
+            { label: 'Latency', value: '< 200ms', icon: 'zap' },
+            { label: 'Scale', value: '10k+ Req/s', icon: 'globe' }
+        ],
+        results: [
+            { metric: '₹1 Entry', label: 'Minimum Investment barrier broken' },
+            { metric: '995 Purity', label: 'Certified quality guarantee' },
+            { metric: '100% Insured', label: 'Zero-risk digital vaulting' },
+            { metric: '5min KYC', label: 'Express onboarding pipeline' }
+        ],
         gallery: [
             {
                 title: 'Market Trading Interface',
                 desc: 'Real-time syncing with global gold and silver market indices.',
-                url: shreeOmjiImg
+                url: shreeOmji01
             },
             {
                 title: 'Secure Vault Dashboard',
                 desc: 'End-to-end encrypted holdings with insured backup.',
-                url: shreeOmjiImg
+                url: shreeOmji02
+            },
+            {
+                title: 'Investment Analytics',
+                desc: 'Comprehensive view of assets and market trends.',
+                url: shreeOmji03
             }
         ]
     }
