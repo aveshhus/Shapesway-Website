@@ -6,6 +6,7 @@ import dietConsulting from '../assets/portfolio/diet-plus/consulting.png';
 import selection01 from '../assets/portfolio/Selection/Selection01.png';
 import selection02 from '../assets/portfolio/Selection/Selection02.png';
 import selection03 from '../assets/portfolio/Selection/Selection03.png';
+import shreeOmjiImg from '../assets/portfolio/shreeomjisaraf.png';
 
 export const projects = [
     {
@@ -109,6 +110,61 @@ export const projects = [
                 title: 'Sophisticated Interior Concepts',
                 desc: 'Tailored solutions reflecting the individual character of every client.',
                 url: selection03
+            }
+        ]
+    },
+    {
+        id: 'shree-omji-saraf',
+        title: 'Shree Omji Saraf (GoldApp)',
+        category: 'Cross-Platform Fintech // Gold & Silver Investment',
+        status: 'Operational',
+        client: 'Shree Omji Saraf // GoldApp',
+        location: 'Jaipur, India (Flagship: Vaishali Nagar)',
+        year: '2024',
+        color: '#800000',
+        image: shreeOmjiImg,
+        description: "A high-performance cross-platform fintech ecosystem for buying, selling, and vaulting 24K Gold and Silver with real-time market integration.",
+        longDescription: 'Shree Omji Saraf (GoldApp) is a sophisticated fintech platform that bridges traditional precious metal investment with modern digital architecture. Engineered using a full-stack Next.js environment, the platform handles high-concurrency real-time market price polling every 30 seconds. It features a robust KYC processing engine (PAN/Aadhaar integration) and a complex market-linked refund logic, ensuring platform stability during high commodity volatility.',
+        mission: 'To democratize precious metal investment by making it accessible, transparent, and secure for everyone through advanced digital vaults and sub-₹1 entry barriers.',
+        vision: 'To become India’s premier digital asset gateway, seamlessly blending physical jewelry tradition with cutting-edge blockchain-grade security and transparency.',
+        philosophy: 'Trust, Transparency, and Tradition (T3). We architect systems where the integrity of physical assets is matched by the precision of digital code.',
+        challenge: 'Synchronizing high-frequency market data across web and mobile interfaces while maintaining low latency, and implementing a secure O2O (Online-to-Offline) fulfillment protocol with OTP-based verification for store pickups.',
+        solution: 'Built a decoupled architecture using React 18 and Next.js App Router for the frontend, integrated with an encrypted RESTful API layer. We implemented a 256-bit bank-level encryption standard and a custom state-management system to handle real-time portfolio revaluations.',
+        features: [
+            'Real-Time Market Price Engine (30s Sync)',
+            'Integrated KYC Engine (PAN/Aadhaar Verification)',
+            'Secure Digital Vaulting with Insured Storage',
+            'O2O Pickup Protocol (Vaishali Nagar Jaipur Hub)',
+            'Market-Linked Refund & Settlement Algorithm',
+            'Scalable Investment Entry (Starting at ₹1)',
+            'Automated Portfolio Valuation Dashboard',
+            'Cross-Platform UI/UX Consistency'
+        ],
+        technologies: [
+            'Next.js (App Router)',
+            'React 18',
+            'Node.js Ecosystem',
+            'Tailwind CSS',
+            'Radix UI Primitives',
+            'Redux / Context API',
+            'RESTful API Architecture',
+            '256-bit AES Encryption',
+            'OTP-based Authentication'
+        ],
+        testimonials: [
+            { text: "The cross-platform consistency and real-time pricing are second to none in this niche.", author: "Fintech Analyst" },
+            { text: "Seamless transition from digital gold investment to physical store pickup.", author: "Premium User" }
+        ],
+        gallery: [
+            {
+                title: 'Market Trading Interface',
+                desc: 'Real-time syncing with global gold and silver market indices.',
+                url: shreeOmjiImg
+            },
+            {
+                title: 'Secure Vault Dashboard',
+                desc: 'End-to-end encrypted holdings with insured backup.',
+                url: shreeOmjiImg
             }
         ]
     }
