@@ -16,6 +16,11 @@ import alfaServices from '../assets/portfolio/alfa-motors/services.png';
 import alfaDetailing from '../assets/portfolio/alfa-motors/detailing.png';
 import alfaGallery from '../assets/portfolio/alfa-motors/gallery.png';
 
+import jawariyaHero from '../assets/portfolio/jawariya-dental/hero.png';
+import jawariyaServices from '../assets/portfolio/jawariya-dental/services.png';
+import jawariyaAbout from '../assets/portfolio/jawariya-dental/about.png';
+import jawariyaGallery from '../assets/portfolio/jawariya-dental/gallery.png';
+
 export const projects = [
     {
         id: 'diet-plus-nutrition-hub',
@@ -282,6 +287,74 @@ export const projects = [
                 title: 'Quality Execution Showcase',
                 desc: 'Visual proof of transformation and meticulous care in our automotive gallery.',
                 url: alfaGallery
+            }
+        ]
+    },
+    {
+        id: 'jawariya-dental-clinic',
+        title: 'Jawariya Dental Clinic',
+        category: 'Advanced Dental Care & Implants',
+        status: 'Operational',
+        client: 'Jawariya Dental Clinic',
+        location: 'Udaipur, Rajasthan',
+        year: '2024',
+        color: '#00a3cc',
+        image: jawariyaHero,
+        description: 'A state-of-the-art dental clinic platform offering advanced oral care, implantology, and painless laser dentistry.',
+        longDescription: 'Jawariya Dental Clinic & Implant Center is Udaipur’s premier destination for comprehensive oral healthcare. Under the expert leadership of Dr. Gaurav Jawariya, the clinic integrates cutting-edge international standards with personalized patient care. The digital platform was designed to reflect their commitment to precision, featuring seamless appointment booking and detailed educational resources spanning from routine cavity fillings to complex Orthognathic surgeries.',
+        mission: 'To deliver world-class, painless dental care and transform smiles through advanced technology and compassionate, patient-first treatment plans.',
+        vision: 'To be the most trusted name in digital and clinical dentistry across Rajasthan, making high-end oral healthcare accessible to everyone 7 days a week.',
+        philosophy: 'Smiles built on Science and Trust. We champion preventative care and minimally invasive procedures powered by modern digital X-rays and laser techniques.',
+        challenge: 'Architecting a medical platform that balances the necessary clinical authority with a warm, inviting patient experience, while securely managing high-volume appointment scheduling.',
+        solution: 'Developed a responsive, high-performance web experience built on WordPress. We implemented the Slider Revolution engine for engaging, fast-loading visual storytelling, and integrated a robust appointment booking system alongside direct WhatsApp API connectivity for instantaneous patient support.',
+        features: [
+            'Real-Time Appointment Scheduling',
+            'Advanced Treatment Showcase (Implants, RCT, Braces)',
+            'Digital X-Ray & Laser Dentistry Education',
+            'Instant WhatsApp Patient Support',
+            'Dynamic Before & After Gallery',
+            '7-Days-a-Week Availability Integration',
+            'Secure Patient Information Portal'
+        ],
+        technologies: [
+            'WordPress Core',
+            'Elementor Pro',
+            'Slider Revolution (SR7)',
+            'PHP 8.x',
+            'WhatsApp Business API',
+            'Responsive Architecture'
+        ],
+        testimonials: [
+            { text: "Dr. Gaurav Jawariya and his team provided the most painless dental implant experience I\'ve ever had. Highly recommended!", author: "Verified Patient" },
+            { text: "The clinic\'s state-of-the-art equipment and 7-day availability makes them the best choice in Udaipur.", author: "Local Patient" }
+        ],
+        techBreakdown: [
+            { label: 'Booking', value: 'Instant WA', icon: 'zap' },
+            { label: 'Platform', value: 'WP Engine', icon: 'globe' },
+            { label: 'Availability', value: '7 Days/Wk', icon: 'sync' },
+            { label: 'Trust', value: 'Certified', icon: 'lock' }
+        ],
+        results: [
+            { metric: '4+ Yrs', label: 'Specialized Implant Experience' },
+            { metric: 'Painless', label: 'Advanced Laser Dentistry' },
+            { metric: '100%', label: 'Patient Satisfaction Focus' },
+            { metric: '24/7', label: 'Online Scheduling Capability' }
+        ],
+        gallery: [
+            {
+                title: 'Comprehensive Dental Services',
+                desc: 'Detailed overviews of our advanced procedures including Implants, RCT, and Orthognathic surgeries.',
+                url: jawariyaServices
+            },
+            {
+                title: 'State-of-the-Art Infrastructure',
+                desc: 'An inside look at our modern technology and Dr. Gaurav Jawariya\'s clinical excellence.',
+                url: jawariyaAbout
+            },
+            {
+                title: 'Transformative Case Studies',
+                desc: 'Real patient transformations and visual proof of our cosmetic and restorative capabilities.',
+                url: jawariyaGallery
             }
         ]
     }
