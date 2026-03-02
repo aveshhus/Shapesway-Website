@@ -3,24 +3,21 @@ import { useParams, Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { projects } from '../../data/portfolioData';
 import {
-    PiArrowLeftLight,
-    PiCpuLight,
+    PiArrowLeft,
+    PiCpu,
     PiCheckCircleFill,
-    PiCalendarBlankLight,
-    PiUserLight,
-    PiTagLight,
-    PiBoundingBoxLight,
-    PiLightbulbLight,
-    PiPuzzlePieceLight,
-    PiShieldCheckLight,
-    PiMapPinLight,
-    PiQuotesLight,
-    PiTargetLight,
-    PiArrowRightLight,
-    PiGlobeLight,
-    PiLockKeyLight,
-    PiZapLight,
-    PiArrowsClockwiseLight
+    PiCalendarBlank,
+    PiUser,
+    PiTag,
+    PiLightbulb,
+    PiPuzzlePiece,
+    PiMapPin,
+    PiTarget,
+    PiArrowRight,
+    PiGlobe,
+    PiLockKey,
+    PiLightning,
+    PiArrowsClockwise
 } from 'react-icons/pi';
 import './ProjectDetail.css';
 
@@ -37,11 +34,10 @@ const ProjectDetail = () => {
             <div className="project-not-found">
                 <div className="container">
                     <div className="error-code">404</div>
-                    <h2>ENGINEERING LOG // NODE_NULL</h2>
-                    <p>The specified project repository could not be located on the current server.</p>
-                    <Link to="/our-work" className="back-btn">
-                        <PiArrowLeftLight />
-                        Return to Index
+                    <h2>SYSTEM_OFFLINE // NODE_NULL</h2>
+                    <p>The requested project repository is inaccessible or does not exist.</p>
+                    <Link to="/our-work" className="back-btn-prem">
+                        <PiArrowLeft /> Return to Work
                     </Link>
                 </div>
             </div>
@@ -59,17 +55,17 @@ const ProjectDetail = () => {
 
     const getIcon = (iconName) => {
         switch (iconName) {
-            case 'sync': return <PiArrowsClockwiseLight />;
-            case 'lock': return <PiLockKeyLight />;
-            case 'zap': return <PiZapLight />;
-            case 'globe': return <PiGlobeLight />;
-            default: return <PiCpuLight />;
+            case 'sync': return <PiArrowsClockwise />;
+            case 'lock': return <PiLockKey />;
+            case 'zap': return <PiLightning />;
+            case 'globe': return <PiGlobe />;
+            default: return <PiCpu />;
         }
     };
 
     return (
         <div className="project-detail-premium" style={{ '--project-accent': project.color }}>
-            {/* --- HERO SECTION --- */}
+            {/* --- CORE HERO ARCHITECTURE --- */}
             <section className="pd-hero">
                 <div className="pd-hero-bg">
                     <img src={project.image} alt={project.title} />
@@ -77,9 +73,9 @@ const ProjectDetail = () => {
                 </div>
 
                 <div className="container">
-                    <Link to="/our-work" className="back-btn-top">
-                        <PiArrowLeftLight />
-                        <span>Project Repository</span>
+                    <Link to="/our-work" className="back-link-tactical">
+                        <PiArrowLeft />
+                        <span>SHELF_BACK</span>
                     </Link>
 
                     <motion.div
@@ -89,47 +85,50 @@ const ProjectDetail = () => {
                         variants={staggerContainer}
                     >
                         <motion.div variants={fadeInUp} className="pd-badge-row">
-                            <span className="pd-category-badge">{project.category}</span>
-                            <span className="pd-status-pill">{project.status}</span>
+                            <span className="pd-cat-badge">{project.category}</span>
+                            <span className="pd-stat-pill">{project.status}</span>
                         </motion.div>
-                        <motion.h1 variants={fadeInUp} className="pd-title">
+                        <motion.h1 variants={fadeInUp} className="pd-hero-title">
                             {project.title}
                         </motion.h1>
-                        <motion.div variants={fadeInUp} className="pd-meta-row">
-                            <div className="pd-meta-item">
-                                <PiUserLight /> <span>{project.client}</span>
+                        <motion.div variants={fadeInUp} className="pd-meta-grid">
+                            <div className="pd-meta-box">
+                                <label>CLIENT_ID</label>
+                                <span>{project.client}</span>
                             </div>
-                            <div className="pd-meta-item">
-                                <PiMapPinLight /> <span>{project.location || 'India'}</span>
+                            <div className="pd-meta-box">
+                                <label>VECTOR_LOC</label>
+                                <span>{project.location || 'Jaipur, IN'}</span>
                             </div>
-                            <div className="pd-meta-item">
-                                <PiCalendarBlankLight /> <span>{project.year}</span>
+                            <div className="pd-meta-box">
+                                <label>DEPLOY_YR</label>
+                                <span>{project.year}</span>
                             </div>
                         </motion.div>
                     </motion.div>
                 </div>
 
-                <div className="hero-scroll-indicator">
-                    <div className="mouse"></div>
-                    <span>Explore Architecture</span>
+                <div className="pd-scroll-callout">
+                    <div className="scroll-line"></div>
+                    <span>ARCH_DETAILS</span>
                 </div>
             </section>
 
-            {/* --- RESULTS / STATS SECTION --- */}
+            {/* --- OPERATIONAL METRICS --- */}
             {project.results && (
-                <section className="pd-results">
+                <section className="pd-results-v2">
                     <div className="container">
                         <motion.div
-                            className="results-grid"
+                            className="metrics-grid-lux"
                             initial="hidden"
                             whileInView="visible"
                             viewport={{ once: true }}
                             variants={staggerContainer}
                         >
                             {project.results.map((res, i) => (
-                                <motion.div key={i} variants={fadeInUp} className="result-card">
-                                    <h3>{res.metric}</h3>
-                                    <p>{res.label}</p>
+                                <motion.div key={i} variants={fadeInUp} className="metric-box-lux">
+                                    <div className="metric-val">{res.metric}</div>
+                                    <div className="metric-lab">{res.label}</div>
                                 </motion.div>
                             ))}
                         </motion.div>
@@ -137,64 +136,63 @@ const ProjectDetail = () => {
                 </section>
             )}
 
-            {/* --- CONTENT SECTION --- */}
-            <section className="pd-content">
+            {/* --- TECHNICAL DOCUMENTATION --- */}
+            <section className="pd-body-grid">
                 <div className="container">
-                    <div className="pd-grid">
-                        <div className="pd-main">
-                            {/* Executive Overview */}
+                    <div className="pd-layout-split">
+                        <div className="pd-main-stack">
+                            {/* Project DNA */}
                             <motion.div
-                                className="pd-glass-card overview-card"
+                                className="pd-bento-card overview-bento"
                                 initial={{ opacity: 0, y: 20 }}
                                 whileInView={{ opacity: 1, y: 0 }}
                                 viewport={{ once: true }}
                             >
-                                <div className="card-tag">EXECUTIVE SUMMARY</div>
-                                <h2>Project Overview</h2>
-                                <p className="large-p">{project.longDescription}</p>
+                                <div className="bento-tag">PROJECT_DNA</div>
+                                <h2>Executive Overview</h2>
+                                <p>{project.longDescription}</p>
                             </motion.div>
 
-                            {/* Challenge & Solution */}
-                            <div className="pd-split-cards">
+                            {/* Challenge / Solution Duo */}
+                            <div className="pd-col-2">
                                 <motion.div
-                                    className="pd-glass-card challenge-card"
+                                    className="pd-bento-card challenge-bento"
                                     initial={{ opacity: 0, x: -20 }}
                                     whileInView={{ opacity: 1, x: 0 }}
                                     viewport={{ once: true }}
                                 >
-                                    <div className="card-header-icon sm"><PiPuzzlePieceLight /></div>
-                                    <h3>Operational Challenge</h3>
+                                    <PiPuzzlePiece className="bento-icon-p" />
+                                    <h3>Operational Logic</h3>
                                     <p>{project.challenge}</p>
                                 </motion.div>
                                 <motion.div
-                                    className="pd-glass-card solution-card"
+                                    className="pd-bento-card solution-bento"
                                     initial={{ opacity: 0, x: 20 }}
                                     whileInView={{ opacity: 1, x: 0 }}
                                     viewport={{ once: true }}
                                 >
-                                    <div className="card-header-icon sm"><PiLightbulbLight /></div>
-                                    <h3>Engineering Solution</h3>
+                                    <PiLightbulb className="bento-icon-p" />
+                                    <h3>Engineered Architecture</h3>
                                     <p>{project.solution}</p>
                                 </motion.div>
                             </div>
 
-                            {/* Technical Deep Dive */}
+                            {/* System Performance */}
                             {project.techBreakdown && (
                                 <motion.div
-                                    className="pd-glass-card tech-deep-dive"
+                                    className="pd-bento-card performance-bento"
                                     initial={{ opacity: 0, y: 20 }}
                                     whileInView={{ opacity: 1, y: 0 }}
                                     viewport={{ once: true }}
                                 >
-                                    <div className="card-tag">SYSTEM ANALYTICS</div>
-                                    <h2>Technical Performance</h2>
-                                    <div className="tech-stats-grid">
+                                    <div className="bento-tag">SYSTEM_ANALYTICS</div>
+                                    <div className="perf-grid">
                                         {project.techBreakdown.map((item, i) => (
-                                            <div key={i} className="tech-stat-item">
-                                                <div className="ts-icon">{getIcon(item.icon)}</div>
-                                                <div className="ts-info">
-                                                    <label>{item.label}</label>
-                                                    <span>{item.value}</span>
+                                            <div key={i} className="perf-item">
+                                                <div className="perf-icon">{getIcon(item.icon)}</div>
+                                                <div className="perf-content">
+                                                    <div className="perf-label">{item.label}</div>
+                                                    <div className="perf-value">{item.value}</div>
                                                 </div>
                                             </div>
                                         ))}
@@ -202,57 +200,27 @@ const ProjectDetail = () => {
                                 </motion.div>
                             )}
 
-                            {/* Pillars */}
-                            {(project.mission || project.vision) && (
-                                <div className="pd-pillars-section">
-                                    <motion.div
-                                        className="pd-glass-card pillar-card mission-card"
-                                        initial={{ opacity: 0, y: 20 }}
-                                        whileInView={{ opacity: 1, y: 0 }}
-                                        viewport={{ once: true }}
-                                    >
-                                        <PiTargetLight className="pillar-icon" />
-                                        <h3>Our Mission</h3>
-                                        <p>{project.mission}</p>
-                                    </motion.div>
-                                    <motion.div
-                                        className="pd-glass-card pillar-card vision-card"
-                                        initial={{ opacity: 0, y: 20 }}
-                                        whileInView={{ opacity: 1, y: 0 }}
-                                        viewport={{ once: true }}
-                                        transition={{ delay: 0.1 }}
-                                    >
-                                        <PiTagLight className="pillar-icon" />
-                                        <h3>Our Vision</h3>
-                                        <p>{project.vision}</p>
-                                    </motion.div>
-                                </div>
-                            )}
-
-                            {/* Visual Gallery */}
+                            {/* Gallery V3 */}
                             {project.gallery && (
-                                <div className="pd-gallery-premium">
-                                    <div className="gallery-header">
-                                        <div className="card-tag">VISUAL ARCHITECTURE</div>
-                                        <h2>Platform Interface</h2>
-                                        <p>High-fidelity structural snapshots of the operational hub.</p>
+                                <div className="pd-gallery-section">
+                                    <div className="gallery-meta">
+                                        <div className="bento-tag">VISUAL_REPO</div>
+                                        <h2>Operational Interface</h2>
                                     </div>
-                                    <div className="gallery-grid-v2">
+                                    <div className="pd-gallery-grid">
                                         {project.gallery.map((img, i) => (
                                             <motion.div
                                                 key={i}
-                                                className={`gallery-item-v2 ${i === 0 ? 'span-2' : ''}`}
-                                                initial={{ opacity: 0, y: 20 }}
-                                                whileInView={{ opacity: 1, y: 0 }}
+                                                className={`pd-gallery-card ${i === 0 ? 'g-large' : ''}`}
+                                                initial={{ opacity: 0, scale: 0.95 }}
+                                                whileInView={{ opacity: 1, scale: 1 }}
                                                 viewport={{ once: true }}
                                                 transition={{ delay: i * 0.1 }}
                                             >
-                                                <div className="gallery-img-container">
-                                                    <img src={img.url} alt={img.title} />
-                                                    <div className="gallery-info-v2">
-                                                        <h4>{img.title}</h4>
-                                                        <p>{img.desc}</p>
-                                                    </div>
+                                                <img src={img.url} alt={img.title} />
+                                                <div className="pd-gallery-overlay">
+                                                    <h4>{img.title}</h4>
+                                                    <p>{img.desc}</p>
                                                 </div>
                                             </motion.div>
                                         ))}
@@ -260,81 +228,56 @@ const ProjectDetail = () => {
                                 </div>
                             )}
 
-                            {/* Features */}
+                            {/* Deliverables */}
                             <motion.div
-                                className="pd-glass-card deliverables-premium"
+                                className="pd-bento-card features-bento"
                                 initial={{ opacity: 0, y: 20 }}
                                 whileInView={{ opacity: 1, y: 0 }}
                                 viewport={{ once: true }}
                             >
-                                <div className="card-tag">SYSTEM QUALITIES</div>
-                                <h2>Key Deliverables</h2>
-                                <div className="features-grid-v2">
-                                    {project.features?.map((feature, index) => (
-                                        <div key={index} className="feature-item-v2">
-                                            <PiCheckCircleFill className="check-icon" />
-                                            <span>{feature}</span>
+                                <div className="bento-tag">CORE_DELIVERABLES</div>
+                                <div className="features-list-v3">
+                                    {project.features?.map((f, i) => (
+                                        <div key={i} className="f-item">
+                                            <PiCheckCircleFill className="f-icon" />
+                                            <span>{f}</span>
                                         </div>
                                     ))}
                                 </div>
                             </motion.div>
                         </div>
 
-                        {/* Sidebar */}
-                        <aside className="pd-sidebar">
+                        {/* Tactical Sidebar */}
+                        <aside className="pd-sidebar-v2">
                             <motion.div
-                                className="pd-glass-card tech-sidebar-premium"
+                                className="pd-bento-card stack-sidebar"
                                 initial={{ opacity: 0, x: 20 }}
                                 whileInView={{ opacity: 1, x: 0 }}
                                 viewport={{ once: true }}
                             >
-                                <div className="sidebar-header">
-                                    <PiCpuLight className="sidebar-icon" />
-                                    <h3>Core Tech Stack</h3>
-                                </div>
-                                <div className="tech-list-premium">
-                                    {project.technologies?.map((tech, index) => (
-                                        <div key={index} className="tech-item-premium">
-                                            <div className="tech-progress" style={{ width: '100%', opacity: 0.1 }}></div>
-                                            <span>{tech}</span>
-                                        </div>
+                                <h3>Tech Stack</h3>
+                                <div className="sidebar-tech-list">
+                                    {project.technologies?.map((t, i) => (
+                                        <span key={i} className="tech-pill-link">{t}</span>
                                     ))}
                                 </div>
                             </motion.div>
 
                             <motion.div
-                                className="pd-glass-card contact-cta-sidebar"
+                                className="pd-bento-card cta-sidebar"
                                 initial={{ opacity: 0, y: 20 }}
                                 whileInView={{ opacity: 1, y: 0 }}
                                 viewport={{ once: true }}
                             >
-                                <h3>Ready to Build?</h3>
-                                <p>Let's collaborate on your next digital transformation project.</p>
-                                <Link to="/contact" className="premium-sidebar-btn">
-                                    <span>Initiate Pipeline</span>
-                                    <PiArrowRightLight />
+                                <h3>Initiate Transformation</h3>
+                                <p>Architecting the future of your enterprise.</p>
+                                <Link to="/contact" className="sidebar-action-btn">
+                                    <span>CONTACT_NODE</span>
+                                    <PiArrowRight />
                                 </Link>
                             </motion.div>
                         </aside>
                     </div>
-                </div>
-            </section>
-
-            {/* --- FINAL CTA --- */}
-            <section className="pd-final-cta">
-                <div className="container">
-                    <motion.div
-                        className="cta-glass-box"
-                        initial={{ opacity: 0, scale: 0.9 }}
-                        whileInView={{ opacity: 1, scale: 1 }}
-                        viewport={{ once: true }}
-                    >
-                        <h2>Vision into <span>Reality.</span></h2>
-                        <p>Join the ecosystem of forward-thinking enterprises.</p>
-                        <Link to="/contact" className="cta-main-btn">
-                            Get Started
-                        </Link>
-                    </motion.div>
                 </div>
             </section>
         </div>

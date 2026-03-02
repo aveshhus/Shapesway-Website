@@ -152,8 +152,8 @@ export const projects = [
         image: shreeOmjiImg,
         description: "A high-performance cross-platform fintech ecosystem for buying, selling, and vaulting 24K Gold and Silver with real-time market integration.",
         longDescription: 'Shree Omji Saraf (GoldApp) is a sophisticated fintech platform that bridges traditional precious metal investment with modern digital architecture. Engineered using a full-stack Next.js environment, the platform handles high-concurrency real-time market price polling every 30 seconds. It features a robust KYC processing engine (PAN/Aadhaar integration) and a complex market-linked refund logic, ensuring platform stability during high commodity volatility.',
-        mission: 'To democratize precious metal investment by making it accessible, transparent, and secure for everyone through advanced digital vaults and sub-₹1 entry barriers.',
-        vision: 'To become India’s premier digital asset gateway, seamlessly blending physical jewelry tradition with cutting-edge blockchain-grade security and transparency.',
+        mission: 'To democratize precious metal investment by making it accessible, transparent, and secure for everyone through advanced digital vaults and sub-\u20B91 entry barriers.',
+        vision: 'To become India\u2019s premier digital asset gateway, seamlessly blending physical jewelry tradition with cutting-edge blockchain-grade security and transparency.',
         philosophy: 'Trust, Transparency, and Tradition (T3). We architect systems where the integrity of physical assets is matched by the precision of digital code.',
         challenge: 'Synchronizing high-frequency market data across web and mobile interfaces while maintaining low latency, and implementing a secure O2O (Online-to-Offline) fulfillment protocol with OTP-based verification for store pickups.',
         solution: 'Built a decoupled architecture using React 18 and Next.js App Router for the frontend, integrated with an encrypted RESTful API layer. We implemented a 256-bit bank-level encryption standard and a custom state-management system to handle real-time portfolio revaluations.',
@@ -163,7 +163,7 @@ export const projects = [
             'Secure Digital Vaulting with Insured Storage',
             'O2O Pickup Protocol (Vaishali Nagar Jaipur Hub)',
             'Market-Linked Refund & Settlement Algorithm',
-            'Scalable Investment Entry (Starting at ₹1)',
+            'Scalable Investment Entry (Starting at \u20B91)',
             'Automated Portfolio Valuation Dashboard',
             'Cross-Platform UI/UX Consistency'
         ],
@@ -189,7 +189,7 @@ export const projects = [
             { label: 'Scale', value: '10k+ Req/s', icon: 'globe' }
         ],
         results: [
-            { metric: '₹1 Entry', label: 'Minimum Investment barrier broken' },
+            { metric: '\u20B91 Entry', label: 'Minimum Investment barrier broken' },
             { metric: '995 Purity', label: 'Certified quality guarantee' },
             { metric: '100% Insured', label: 'Zero-risk digital vaulting' },
             { metric: '5min KYC', label: 'Express onboarding pipeline' }
