@@ -11,6 +11,11 @@ import shreeOmji01 from '../assets/portfolio/shree_omji_01.png';
 import shreeOmji02 from '../assets/portfolio/shree_omji_02.png';
 import shreeOmji03 from '../assets/portfolio/shree_omji_03.png';
 
+import alfaHero from '../assets/portfolio/alfa-motors/hero.png';
+import alfaServices from '../assets/portfolio/alfa-motors/services.png';
+import alfaDetailing from '../assets/portfolio/alfa-motors/detailing.png';
+import alfaGallery from '../assets/portfolio/alfa-motors/gallery.png';
+
 export const projects = [
     {
         id: 'diet-plus-nutrition-hub',
@@ -209,6 +214,74 @@ export const projects = [
                 title: 'Investment Analytics',
                 desc: 'Comprehensive view of assets and market trends.',
                 url: shreeOmji03
+            }
+        ]
+    },
+    {
+        id: 'alfa-motors',
+        title: 'Alfa Motors',
+        category: 'Automotive Servicing & Detailing',
+        status: 'Operational',
+        client: 'Alfa Motors',
+        location: 'India',
+        year: '2024',
+        color: '#0d6efd',
+        image: alfaHero,
+        description: 'A comprehensive automotive care platform offering premium maintenance, advanced detailing, cashless insurance, and certified used cars.',
+        longDescription: 'Alfa Motors ("Always With You") is a premium automotive service ecosystem designed to simplify and elevate the car ownership experience. Our platform integrates a suite of services ranging from routine 70-point maintenance checkups to high-end graphene and PPF surface protection. With integrated functionality for cashless insurance claims and a digital used car marketplace, Alfa Motors serves as a one-stop lifecycle manager for vehicles.',
+        mission: 'To redefine automotive care by providing transparent, high-quality, and accessible services that prioritize the longevity and optimal performance of every vehicle.',
+        vision: 'To be the ultimate trusted partner in every car owner’s journey across India, setting the industry benchmark for honest pricing and technical excellence.',
+        philosophy: 'Driven by the "Always With You" ethos. We believe in proactive maintenance, integrating digital ease with mechanical mastery.',
+        challenge: 'Consolidating highly technical and varied automotive services—from mechanical repairs and detailing to insurance and vehicle sales—into a single, easy-to-navigate digital platform that builds trust instantly.',
+        solution: 'Architected a highly performant and user-centric platform featuring a modern responsive grid of services. We prioritized clear value propositions, integrated high-fidelity before & after galleries for the detailing studio, and incorporated frictionless communication through instant WhatsApp integrations.',
+        features: [
+            'Premium Periodic Maintenance (70-Point Check)',
+            'Advanced Detailing Studio (Graphene, Ceramic & PPF)',
+            'Cashless Insurance Claims & Renewals portal',
+            'Certified Used Cars Marketplace',
+            'Instant WhatsApp Connectivity & Support',
+            'Transparent Pricing Tiers',
+            'Fast-track Denting & Painting Services'
+        ],
+        technologies: [
+            'HTML5',
+            'CSS3',
+            'Vanilla JavaScript',
+            'Bootstrap Layout Engine',
+            'Responsive Architecture',
+            'WhatsApp Business API'
+        ],
+        testimonials: [
+            { text: "The detailing studio brought my car back to showroom condition. Absolutely stunning work.", author: "Premium Customer" },
+            { text: "Quick and hassle-free cashless insurance claim. They truly live up to the 'Always With You' motto.", author: "Verified Client" }
+        ],
+        techBreakdown: [
+            { label: 'Booking', value: 'Real-time SMS/WA', icon: 'zap' },
+            { label: 'Platform', value: 'Static Arch', icon: 'globe' },
+            { label: 'Performance', value: '< 1s Load', icon: 'sync' },
+            { label: 'Integrity', value: '100% OEM Parts', icon: 'lock' }
+        ],
+        results: [
+            { metric: '70-Point', label: 'Comprehensive diagnostic check' },
+            { metric: '\u20B9800+', label: 'Transparent entry-level pricing' },
+            { metric: '100%', label: 'Commitment to OEM parts' },
+            { metric: '24/7', label: 'Consultation support' }
+        ],
+        gallery: [
+            {
+                title: 'Comprehensive Maintenance',
+                desc: 'Detailed breakdown of our 70-point regular and premium service packages.',
+                url: alfaServices
+            },
+            {
+                title: 'Advanced Detailing Studio',
+                desc: 'High-end surface protection featuring Graphene and Ceramic coatings.',
+                url: alfaDetailing
+            },
+            {
+                title: 'Quality Execution Showcase',
+                desc: 'Visual proof of transformation and meticulous care in our automotive gallery.',
+                url: alfaGallery
             }
         ]
     }
