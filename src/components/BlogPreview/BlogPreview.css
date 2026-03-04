@@ -32,6 +32,9 @@
 
 .blog-card-content {
     margin-bottom: 30px;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
 }
 
 .blog-badge {
@@ -55,6 +58,12 @@
     line-height: 1.2;
     margin-bottom: 16px;
     letter-spacing: -0.02em;
+    min-height: 3.6rem;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 
 .blog-card-desc {
@@ -63,6 +72,12 @@
     color: rgba(255, 255, 255, 0.7);
     line-height: 1.5;
     margin-bottom: 30px;
+    min-height: 5.7rem;
+    display: -webkit-box;
+    -webkit-line-clamp: 4;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 
 .blog-cta-btn {
@@ -77,6 +92,7 @@
     text-decoration: none;
     font-size: 0.9rem;
     transition: all 0.3s ease;
+    margin-top: auto;
 }
 
 .blog-cta-btn:hover {

@@ -21,6 +21,11 @@ import jawariyaServices from '../assets/portfolio/jawariya-dental/services.png';
 import jawariyaAbout from '../assets/portfolio/jawariya-dental/about.png';
 import jawariyaGallery from '../assets/portfolio/jawariya-dental/gallery.png';
 
+import tgSalonHero from '../assets/portfolio/tg-salon/hero.png';
+import tgSalonAbout from '../assets/portfolio/tg-salon/about.png';
+import tgSalonServices from '../assets/portfolio/tg-salon/services.png';
+import tgSalonGallery from '../assets/portfolio/tg-salon/gallery.png';
+
 export const projects = [
     {
         id: 'diet-plus-nutrition-hub',
@@ -355,6 +360,74 @@ export const projects = [
                 title: 'Transformative Case Studies',
                 desc: 'Real patient transformations and visual proof of our cosmetic and restorative capabilities.',
                 url: jawariyaGallery
+            }
+        ]
+    },
+    {
+        id: 'tg-salon-furniture',
+        title: 'Tanishka Global',
+        category: 'Premium Salon Furniture Manufacturer',
+        status: 'Operational',
+        client: 'Tanishka Global',
+        location: 'India',
+        year: '2024',
+        color: '#cda85c',
+        image: tgSalonHero,
+        description: 'A luxurious B2B e-commerce and portfolio platform for a premium salon furniture manufacturer.',
+        longDescription: 'Tanishka Global (TG Salon Furniture) is a leading manufacturer of high-end salon furniture. Established in 2015, they blend ergonomic functionality with luxurious aesthetic design. Their digital platform serves as a massive B2B catalog and operational showcase, highlighting over 292+ successful projects and providing instant WhatsApp-based consultation for wholesale clients.',
+        mission: 'To redefine salon experiences globally through meticulously crafted, ergonomic, and stylish furniture that empowers professionals.',
+        vision: 'To be the ultimate industry standard in salon manufacturing, renowned for unparalleled craftsmanship, innovation, and client satisfaction.',
+        philosophy: 'Crafting Excellence. We believe that premium salon experiences start with premium foundations. Every mirror and chair is engineered for both luxury and long-lasting durability.',
+        challenge: 'Categorizing a vast, varied inventory of high-end furniture (from customized LED mirrors to heavy-duty hydraulic styling chairs) into an easily navigable digital experience that drives immediate B2B sales leads.',
+        solution: 'Developed a robust, elegant digital catalog using HTML5, CSS3, and Bootstrap. We prioritized large, high-resolution imagery and integrated real-time WhatsApp Business routing, enabling instant customized quotes for bulk orders and bespoke designs.',
+        features: [
+            'Comprehensive Product Catalog',
+            'WhatsApp Business Quoting Integration',
+            'Progressive Web App (PWA) Capabilities',
+            'Bespoke Design & Customization Showcase',
+            'High-Resolution Gallery of 292+ Projects',
+            'Mobile-First Responsive Architecture',
+            'Testimonial & Social Proof Engine'
+        ],
+        technologies: [
+            'HTML5',
+            'CSS3',
+            'Bootstrap Framework',
+            'Vanilla JavaScript',
+            'WhatsApp API',
+            'Responsive Grid'
+        ],
+        testimonials: [
+            { text: "Tanishka Global transformed our salon with their impeccable furniture. The quality and design are unmatched!", author: "Rajesh Sharma" },
+            { text: "Outstanding service and premium products. Our clients constantly compliment the comfortable and stylish chairs.", author: "Priya Mehta" }
+        ],
+        techBreakdown: [
+            { label: 'Booking', value: 'WhatsApp API', icon: 'zap' },
+            { label: 'UI / UX', value: 'Bootstrap 5', icon: 'globe' },
+            { label: 'Performance', value: 'PWA Ready', icon: 'sync' },
+            { label: 'Scale', value: '292+ Projects', icon: 'lock' }
+        ],
+        results: [
+            { metric: '175+', label: 'Satisfied Corporate Clients' },
+            { metric: '2015', label: 'Established Manufacturing Legacy' },
+            { metric: '100%', label: 'Ergonomic Quality Focus' },
+            { metric: 'Custom', label: 'Bespoke Design Solutions' }
+        ],
+        gallery: [
+            {
+                title: 'Premium Styling Chairs',
+                desc: 'Ergonomic and luxurious seating solutions designed for professional salons.',
+                url: tgSalonServices
+            },
+            {
+                title: 'Core Manufacturing Values',
+                desc: 'A look into the mission, vision, and operational excellence of Tanishka Global.',
+                url: tgSalonAbout
+            },
+            {
+                title: 'Testimonials & Assurance',
+                desc: 'Real social proof and client success stories from across the country.',
+                url: tgSalonGallery
             }
         ]
     }
