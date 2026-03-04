@@ -1,0 +1,89 @@
+﻿
+> shapesway-website@0.0.0 build
+> vite build
+
+[36mvite v7.3.0 [32mbuilding client environment for production...[36m[39m
+transforming...
+[32mΓ£ô[39m 6607 modules transformed.
+rendering chunks...
+computing gzip size...
+[2mdist/[22m[32mindex.html                                     [39m[1m[2m    1.75 kB[22m[1m[22m[2m Γöé gzip:   0.73 kB[22m
+[2mdist/[22m[32massets/logo-CZ2lTRfq.png                       [39m[1m[2m   24.28 kB[22m[1m[22m
+[2mdist/[22m[32massets/contact_hero_bg-BI2Q_d_f.png            [39m[1m[2m   78.89 kB[22m[1m[22m
+[2mdist/[22m[32massets/service_uiux_v2-DYqVO6Vn.jpg            [39m[1m[2m   88.74 kB[22m[1m[22m
+[2mdist/[22m[32massets/shapesway-story-CyAEug0w.jpg            [39m[1m[2m  132.21 kB[22m[1m[22m
+[2mdist/[22m[32massets/tech-bg-DWAC4eNP.jpg                    [39m[1m[2m  137.94 kB[22m[1m[22m
+[2mdist/[22m[32massets/timeline-expansion-CqJ4OvM3.png         [39m[1m[2m  150.36 kB[22m[1m[22m
+[2mdist/[22m[32massets/port01-BFlE4boK.png                     [39m[1m[2m  191.23 kB[22m[1m[22m
+[2mdist/[22m[32massets/shreeomjisaraf-BnkyTwYw.png             [39m[1m[2m  203.90 kB[22m[1m[22m
+[2mdist/[22m[32massets/hero-BOi1nbBk.png                       [39m[1m[2m  210.55 kB[22m[1m[22m
+[2mdist/[22m[32massets/dashboard-CP1XXvBC.png                  [39m[1m[2m  220.89 kB[22m[1m[22m
+[2mdist/[22m[32massets/hero-D8est8sO.png                       [39m[1m[2m  223.58 kB[22m[1m[22m
+[2mdist/[22m[32massets/hero-cDMx4dGt.png                       [39m[1m[2m  226.58 kB[22m[1m[22m
+[2mdist/[22m[32massets/velocity_success-bmYI-LPQ.jpg           [39m[1m[2m  238.02 kB[22m[1m[22m
+[2mdist/[22m[32massets/Selection-jx42cNC2.png                  [39m[1m[2m  244.63 kB[22m[1m[22m
+[2mdist/[22m[32massets/services-Bkh4eOpx.png                   [39m[1m[2m  251.81 kB[22m[1m[22m
+[2mdist/[22m[32massets/handshake-8QLrh9Kb.png                  [39m[1m[2m  284.81 kB[22m[1m[22m
+[2mdist/[22m[32massets/products-BvdyB8GF.png                   [39m[1m[2m  284.89 kB[22m[1m[22m
+[2mdist/[22m[32massets/shree_omji_02-CWHpqsxD.png              [39m[1m[2m  304.78 kB[22m[1m[22m
+[2mdist/[22m[32massets/service_cloud_v2-UlSEyL9D.png           [39m[1m[2m  307.03 kB[22m[1m[22m
+[2mdist/[22m[32massets/timeline-milestone-DJVslxCC.png         [39m[1m[2m  319.68 kB[22m[1m[22m
+[2mdist/[22m[32massets/ai_robot-DWzZasic.png                   [39m[1m[2m  328.29 kB[22m[1m[22m
+[2mdist/[22m[32massets/consulting-Dvf4YTAx.png                 [39m[1m[2m  339.39 kB[22m[1m[22m
+[2mdist/[22m[32massets/timeline-future-BkOmk_6R.png            [39m[1m[2m  341.42 kB[22m[1m[22m
+[2mdist/[22m[32massets/timeline-genesis-DOACOTx0.png           [39m[1m[2m  360.46 kB[22m[1m[22m
+[2mdist/[22m[32massets/Selection03-fSrW0jVL.png                [39m[1m[2m  390.92 kB[22m[1m[22m
+[2mdist/[22m[32massets/service_ai_v2-DBRKr6Y_.png              [39m[1m[2m  397.77 kB[22m[1m[22m
+[2mdist/[22m[32massets/Selection01-B-Z1FC4X.png                [39m[1m[2m  401.92 kB[22m[1m[22m
+[2mdist/[22m[32massets/creative_seo-CSgwMwLS.png               [39m[1m[2m  441.73 kB[22m[1m[22m
+[2mdist/[22m[32massets/service_mobile_v2-ChDjWDHL.png          [39m[1m[2m  459.02 kB[22m[1m[22m
+[2mdist/[22m[32massets/about-BVLv0HD7.png                      [39m[1m[2m  536.22 kB[22m[1m[22m
+[2mdist/[22m[32massets/gallery-DUaZKZXB.png                    [39m[1m[2m  553.04 kB[22m[1m[22m
+[2mdist/[22m[32massets/about_section_image-Bf1fcc2a.png        [39m[1m[2m  571.65 kB[22m[1m[22m
+[2mdist/[22m[32massets/creative_uiux-D6lBVJvN.png              [39m[1m[2m  577.89 kB[22m[1m[22m
+[2mdist/[22m[32massets/shree_omji_01-By2mhKuB.png              [39m[1m[2m  636.28 kB[22m[1m[22m
+[2mdist/[22m[32massets/creative_brand_design-C3YinXvB.png      [39m[1m[2m  656.47 kB[22m[1m[22m
+[2mdist/[22m[32massets/service_marketing_v2-XSmtANUL.png       [39m[1m[2m  666.91 kB[22m[1m[22m
+[2mdist/[22m[32massets/services-Bg79EEv5.png                   [39m[1m[2m  760.95 kB[22m[1m[22m
+[2mdist/[22m[32massets/neural_compute_bg-CX4D_My2.png          [39m[1m[2m  763.05 kB[22m[1m[22m
+[2mdist/[22m[32massets/industries_main-DKnNrLAk.png            [39m[1m[2m  803.64 kB[22m[1m[22m
+[2mdist/[22m[32massets/gallery-D55WN477.png                    [39m[1m[2m  870.60 kB[22m[1m[22m
+[2mdist/[22m[32massets/creative_paid_ads-BtRNZF3j.png          [39m[1m[2m  888.57 kB[22m[1m[22m
+[2mdist/[22m[32massets/about-CMOTNQta.png                      [39m[1m[2m  904.93 kB[22m[1m[22m
+[2mdist/[22m[32massets/creative_social_media-Bx0T6fYY.png      [39m[1m[2m  919.72 kB[22m[1m[22m
+[2mdist/[22m[32massets/service_web_v2-g00Qc1CB.png             [39m[1m[2m  944.87 kB[22m[1m[22m
+[2mdist/[22m[32massets/Selection02-BsCt4NmI.png                [39m[1m[2m  975.48 kB[22m[1m[22m
+[2mdist/[22m[32massets/detailing-Vx-co38T.png                  [39m[1m[2m  977.52 kB[22m[1m[22m
+[2mdist/[22m[32massets/creative_content_strategy-Dx0cmpz9.png  [39m[1m[2m1,013.31 kB[22m[1m[22m
+[2mdist/[22m[32massets/gallery-CTIUhTbe.png                    [39m[1m[2m1,036.25 kB[22m[1m[22m
+[2mdist/[22m[32massets/services-B1-VifgJ.png                   [39m[1m[2m1,153.79 kB[22m[1m[22m
+[2mdist/[22m[35massets/index-rKS_7Tu9.css                      [39m[1m[2m  379.74 kB[22m[1m[22m[2m Γöé gzip:  66.75 kB[22m
+[2mdist/[22m[36massets/index-Dxghx57C.js                       [39m[1m[33m1,417.98 kB[39m[22m[2m Γöé gzip: 353.11 kB[22m
+node.exe : [33m
+At line:1 char:1
++ & "C:\Program 
+Files\nodejs/node.exe" 
+"C:\Users\Admin\AppData\Roaming\ 
+...
++ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~
+    + CategoryInfo          : Not 
+   Specified: ([33m:String) [],  
+   RemoteException
+    + FullyQualifiedErrorId : Nat 
+   iveCommandError
+ 
+(!) Some chunks are larger than 
+500 kB after minification. 
+Consider:
+- Using dynamic import() to 
+code-split the application
+- Use build.rollupOptions.output.m
+anualChunks to improve chunking: h
+ttps://rollupjs.org/configuration-
+options/#output-manualchunks
+- Adjust chunk size limit for 
+this warning via 
+build.chunkSizeWarningLimit.[39m
+[32mΓ£ô built in 10.00s[39m
