@@ -10,7 +10,7 @@ import {
     TbMoodSmile, TbBriefcase, TbSchool,
     TbBrandReact, TbBrandNodejs, TbBrandAws,
     TbBriefcase as TbBriefcaseIcon, TbUsers as TbUsersIcon, TbBuilding as TbBuildingIcon,
-    TbBrandFacebook, TbBrandInstagram, TbBrandLinkedin
+    TbBrandFacebook, TbBrandInstagram, TbBrandLinkedin, TbBrandWhatsapp
 } from 'react-icons/tb';
 import { SiFlutter } from 'react-icons/si';
 import { motion, AnimatePresence } from 'framer-motion';
@@ -204,14 +204,14 @@ const MegaMenu = ({ type, onMouseEnter, onMouseLeave }) => {
 
                     {/* Social Icons */}
                     <div className="mega-social-icons">
-                        <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" className="mega-social-icon">
-                            <TbBrandFacebook />
+                        <a href="https://in.linkedin.com/company/shapesway-technologies-private-limited" target="_blank" rel="noopener noreferrer" className="mega-social-icon">
+                            <TbBrandLinkedin />
                         </a>
-                        <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" className="mega-social-icon">
+                        <a href="https://www.instagram.com/shapesway_technologies/" target="_blank" rel="noopener noreferrer" className="mega-social-icon">
                             <TbBrandInstagram />
                         </a>
-                        <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" className="mega-social-icon">
-                            <TbBrandLinkedin />
+                        <a href="https://wa.me/916367181952" target="_blank" rel="noopener noreferrer" className="mega-social-icon">
+                            <TbBrandWhatsapp />
                         </a>
                     </div>
                 </motion.div>

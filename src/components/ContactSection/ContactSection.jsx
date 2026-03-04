@@ -31,24 +31,28 @@ const ContactSection = () => {
                         <h3>Send us a message</h3>
                         <p className="panel-subtext">Do you have a question? A complaint? Or need any help to choose the right service from Shapesway? Feel free to contact us.</p>
 
-                        <form className="modern-contact-form">
+                        <form action="https://formsubmit.co/shapesway.technolgies@gmail.com" method="POST" className="modern-contact-form">
+                            {/* FormSubmit Configs */}
+                            <input type="hidden" name="_subject" value="New Submission from Shapesway Landing Page" />
+                            <input type="hidden" name="_captcha" value="false" />
+
                             <div className="form-grid">
                                 <div className="form-group">
                                     <label>First Name</label>
-                                    <input type="text" placeholder="Enter your first name" />
+                                    <input type="text" name="First Name" placeholder="Enter your first name" required />
                                 </div>
                                 <div className="form-group">
                                     <label>Last Name</label>
-                                    <input type="text" placeholder="Enter your Last name" />
+                                    <input type="text" name="Last Name" placeholder="Enter your Last name" required />
                                 </div>
                                 <div className="form-group">
                                     <label>Email</label>
-                                    <input type="email" placeholder="Enter your email" />
+                                    <input type="email" name="email" placeholder="Enter your email" required />
                                 </div>
                                 <div className="form-group">
                                     <label>Contact Details</label>
                                     <div className="input-with-code">
-                                        <select className="country-code">
+                                        <select className="country-code" name="Country Code">
                                             <option value="+91">🇮🇳 +91 (India)</option>
                                             <option value="+1">🇺🇸 +1 (USA)</option>
                                             <option value="+44">🇬🇧 +44 (UK)</option>
@@ -124,14 +128,14 @@ const ContactSection = () => {
                                             <option value="+256">🇺🇬 +256 (Uganda)</option>
                                             <option value="+263">🇿🇼 +263 (Zimbabwe)</option>
                                         </select>
-                                        <input type="tel" placeholder="Enter your contact number" />
+                                        <input type="tel" name="phone" placeholder="Enter your contact number" required />
                                     </div>
                                 </div>
                             </div>
 
                             <div className="form-group full-width">
                                 <label>Message</label>
-                                <textarea rows="4" placeholder="Enter your message"></textarea>
+                                <textarea name="message" rows="4" placeholder="Enter your message" required></textarea>
                             </div>
 
                             <div className="form-action">
@@ -171,7 +175,7 @@ const ContactSection = () => {
                                     <div className="info-icon"><FaEnvelope /></div>
                                     <div className="info-text">
                                         <span>Email:</span>
-                                        <p>info@shapesway.com</p>
+                                        <p>Info@shapesway.in</p>
                                     </div>
                                 </div>
                             </div>
@@ -179,11 +183,10 @@ const ContactSection = () => {
                             <div className="social-footer">
                                 <p>Connect with us</p>
                                 <div className="social-icons-row">
-                                    <a href="#" aria-label="Facebook"><FaFacebookF /></a>
-                                    <a href="#" aria-label="Instagram"><FaInstagram /></a>
-                                    <a href="#" aria-label="LinkedIn"><FaLinkedinIn /></a>
-                                    <a href="#" aria-label="WhatsApp"><FaWhatsapp /></a>
-                                    <a href="#" aria-label="Email"><FaEnvelope /></a>
+                                    <a href="https://in.linkedin.com/company/shapesway-technologies-private-limited" aria-label="LinkedIn" target="_blank" rel="noopener noreferrer"><FaLinkedinIn /></a>
+                                    <a href="https://www.instagram.com/shapesway_technologies/" aria-label="Instagram" target="_blank" rel="noopener noreferrer"><FaInstagram /></a>
+                                    <a href="https://wa.me/916367181952" aria-label="WhatsApp" target="_blank" rel="noopener noreferrer"><FaWhatsapp /></a>
+                                    <a href="mailto:Info@shapesway.in" aria-label="Email"><FaEnvelope /></a>
                                 </div>
                             </div>
                         </div>

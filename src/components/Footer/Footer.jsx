@@ -5,10 +5,8 @@ import {
     FaPhone,
     FaMapMarkerAlt,
     FaLinkedin,
-    FaTwitter,
-    FaFacebook,
     FaInstagram,
-    FaGithub
+    FaWhatsapp
 } from 'react-icons/fa';
 import servicesData from '../../data/services';
 import './Footer.css';
@@ -32,20 +30,14 @@ const Footer = () => {
                                 Transform your ideas into reality with our expert team.
                             </p>
                             <div className="social-links">
-                                <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+                                <a href="https://in.linkedin.com/company/shapesway-technologies-private-limited" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
                                     <FaLinkedin />
                                 </a>
-                                <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" aria-label="Twitter">
-                                    <FaTwitter />
-                                </a>
-                                <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" aria-label="Facebook">
-                                    <FaFacebook />
-                                </a>
-                                <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+                                <a href="https://www.instagram.com/shapesway_technologies/" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
                                     <FaInstagram />
                                 </a>
-                                <a href="https://github.com" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
-                                    <FaGithub />
+                                <a href="https://wa.me/916367181952" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp">
+                                    <FaWhatsapp />
                                 </a>
                             </div>
                         </div>

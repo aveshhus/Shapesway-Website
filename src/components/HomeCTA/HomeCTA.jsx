@@ -74,7 +74,7 @@ const HomeCTA = () => {
                                 <Link to="/contact" className="cta-primary-btn">
                                     Get Started Today <FaArrowRight />
                                 </Link>
-                                <a href="https://wa.me/+916367181952" className="cta-secondary-btn">
+                                <a href="https://wa.me/916367181952" className="cta-secondary-btn">
                                     Talk to an Expert
                                 </a>
                             </motion.div>

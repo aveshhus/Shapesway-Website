@@ -5,7 +5,7 @@ import './WhatsAppButton.css';
 const WhatsAppButton = () => {
     const [isOpen, setIsOpen] = useState(false);
 
-    const phoneNumber = '+916367181952';
+    const phoneNumber = '916367181952';
     const defaultMessage = 'Hello Shapesway Technologies, I would like to inquire about your services.';
 
     const openWhatsApp = () => {

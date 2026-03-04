@@ -40,7 +40,19 @@ const Contact = () => {
     const handleSubmit = async (e) => {
         e.preventDefault();
         setIsSubmitting(true);
-        await new Promise(resolve => setTimeout(resolve, 2000));
+        try {
+            // Added FormSubmit AJAX integration referencing the requested email
+            await fetch("https://formsubmit.co/ajax/shapesway.technolgies@gmail.com", {
+                method: "POST",
+                headers: {
+                    'Content-Type': 'application/json',
+                    'Accept': 'application/json'
+                },
+                body: JSON.stringify(formData)
+            });
+        } catch (error) {
+            console.error("Transmission error:", error);
+        }
         setIsSubmitting(false);
         setIsSubmitted(true);
         setFormData({ name: '', email: '', phone: '', service: '', message: '' });
@@ -180,9 +192,9 @@ const Contact = () => {
 
                             <div className="node-list">
                                 {[
-                                    { icon: <PiEnvelopeSimpleFill />, label: 'Email Protocol', value: 'hello@shapesway.in', link: 'mailto:hello@shapesway.in', color: '#0db5a4' },
+                                    { icon: <PiEnvelopeSimpleFill />, label: 'Email Protocol', value: 'Info@shapesway.in', link: 'mailto:Info@shapesway.in', color: '#0db5a4' },
                                     { icon: <PiPhoneCallFill />, label: 'Direct Voice', value: '+91 63671 81952', link: 'tel:+916367181952', color: '#3b82f6' },
-                                    { icon: <PiChatCircleTextFill />, label: 'Live Assistance', value: 'Start Signal Chat', link: '#', color: '#8b5cf6' },
+                                    { icon: <PiChatCircleTextFill />, label: 'Live Assistance', value: 'Start Signal Chat', link: 'https://wa.me/916367181952', color: '#8b5cf6' },
                                     { icon: <PiGlobeFill />, label: 'Digital Hub', value: 'www.shapesway.in', link: 'https://shapesway.in', color: '#f59e0b' }
                                 ].map((node, i) => (
                                     <motion.a
