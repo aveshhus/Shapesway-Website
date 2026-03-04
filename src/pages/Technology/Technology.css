@@ -1351,3 +1351,184 @@
         filter: blur(30px);
     }
 }
+
+/* --- PERFECT MOBILE RESPONSIVENESS REBOOT --- */
+@media (max-width: 1200px) {
+    .tech-page-v2 .tech-slide {
+        width: 500px !important;
+    }
+
+    .tech-page-v2 .bento-item {
+        padding: 50px 40px;
+        min-height: 420px;
+    }
+
+    .tech-page-v2 .bento-item h3 {
+        font-size: 1.8rem;
+    }
+
+    .tech-page-v2 .stack-pad {
+        padding: 40px;
+    }
+}
+
+@media (max-width: 1024px) {
+    .tech-page-v2 .tech-hero-v2 {
+        padding: 160px 0 100px;
+    }
+
+    .tech-page-v2 .tech-hero-v2 h1 {
+        font-size: 3.5rem;
+    }
+
+    .tech-page-v2 .tech-hero-v2 p {
+        font-size: 1.2rem;
+    }
+
+    .tech-page-v2 .tech-powerhouse,
+    .tech-page-v2 .tech-stack-domination,
+    .tech-page-v2 .innovation-engine,
+    .tech-page-v2 .dev-framework,
+    .tech-page-v2 .tech-cta-final {
+        padding: 100px 0;
+    }
+
+    .tech-page-v2 .stack-categories-v3 {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .tech-page-v2 .innovation-grid {
+        grid-template-columns: 1fr;
+        text-align: center;
+        gap: 60px;
+    }
+
+    .tech-page-v2 .innovation-content {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .tech-page-v2 .metrics-dashboard {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+    .tech-page-v2 .tech-hero-v2 h1 {
+        font-size: 2.8rem;
+    }
+
+    .tech-page-v2 .tech-hero-v2 p {
+        font-size: 1.1rem;
+    }
+
+    .tech-page-v2 .tech-slide {
+        width: 100% !important;
+    }
+
+    .tech-page-v2 .bento-item {
+        padding: 40px 30px;
+        min-height: 380px;
+        border-radius: 24px;
+    }
+
+    .tech-page-v2 .bento-card-header {
+        grid-template-columns: 60px 1fr !important;
+        gap: 20px !important;
+    }
+
+    .tech-page-v2 .bento-icon-wrap {
+        width: 60px;
+        height: 60px;
+    }
+
+    .tech-page-v2 .bento-item h3 {
+        font-size: 1.5rem;
+    }
+
+    .tech-page-v2 .bento-item p {
+        font-size: 1rem;
+        margin-bottom: 30px;
+    }
+
+    .tech-page-v2 .stack-categories-v3 {
+        grid-template-columns: 1fr;
+    }
+
+    .tech-page-v2 .tech-container {
+        padding: 0 24px;
+    }
+
+    .tech-page-v2 .framework-path {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    .tech-page-v2 .path-step::after {
+        display: none;
+    }
+
+    .tech-page-v2 .vault-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .tech-page-v2 .metrics-dashboard {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    .tech-page-v2 .metric-v3 {
+        padding: 40px 20px;
+    }
+
+    .tech-page-v2 .metric-v3 .val {
+        font-size: 3.5rem;
+    }
+
+    .tech-page-v2 .tech-cta-final h2 {
+        font-size: 2.5rem;
+    }
+
+    .tech-page-v2 .tech-cta-final p {
+        font-size: 1.1rem;
+    }
+
+    .tactical-gauge-wrap {
+        display: none !important;
+        /* Hide complex gauge on mobile to save screen space */
+    }
+
+    .hero-cta-group {
+        flex-direction: column;
+        width: 100%;
+        max-width: 320px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .tech-page-v2 .tech-btn {
+        width: 100%;
+        justify-content: center;
+        padding: 18px 30px;
+    }
+}
+
+@media (max-width: 480px) {
+    .tech-page-v2 .tech-hero-v2 h1 {
+        font-size: 2.2rem;
+    }
+
+    .tech-page-v2 .section-head-v2 h2 {
+        font-size: 2rem;
+    }
+
+    .tech-page-v2 .bento-item h3 {
+        font-size: 1.3rem;
+    }
+
+    .tech-page-v2 .tech-specs-grid {
+        grid-template-columns: 1fr;
+        gap: 15px;
+    }
+}

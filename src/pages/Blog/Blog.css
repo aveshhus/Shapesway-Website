@@ -115,6 +115,7 @@
 .blog-premium-hero h1 .text-gradient {
     background: linear-gradient(135deg, #60a5fa 0%, #a855f7 100%);
     -webkit-background-clip: text;
+    background-clip: text;
     -webkit-text-fill-color: transparent;
     display: inline-block;
 }
@@ -526,6 +527,7 @@
     min-height: 3.9rem;
     display: -webkit-box;
     -webkit-line-clamp: 2;
+    line-clamp: 2;
     -webkit-box-orient: vertical;
     overflow: hidden;
     text-overflow: ellipsis;
@@ -544,6 +546,7 @@
     min-height: 4.8rem;
     display: -webkit-box;
     -webkit-line-clamp: 3;
+    line-clamp: 3;
     -webkit-box-orient: vertical;
     overflow: hidden;
     text-overflow: ellipsis;
@@ -552,6 +555,7 @@
 /* For large bento cards, allow more text */
 .card-large .pb-excerpt {
     -webkit-line-clamp: 5;
+    line-clamp: 5;
     min-height: 8rem;
 }
 
@@ -673,6 +677,11 @@
         font-size: 3.2rem;
     }
 
+    .hero-subtitle {
+        font-size: 1.1rem;
+        padding: 0 20px;
+    }
+
     .card-large {
         flex-direction: column !important;
         grid-column: span 1 !important;
@@ -693,5 +702,40 @@
 
     .category-scroll-container {
         padding: 0 10px 10px;
+    }
+
+    .search-glass-wrapper {
+        padding: 6px 6px 6px 16px;
+    }
+
+    .search-glass-wrapper input {
+        font-size: 0.95rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .blog-premium-hero h1 {
+        font-size: 2.5rem;
+    }
+
+    .pf-title {
+        font-size: 1.8rem;
+    }
+
+    .pf-content {
+        padding: 30px 20px;
+    }
+
+    .pb-title {
+        font-size: 1.3rem;
+    }
+
+    .pb-content {
+        padding: 24px 20px;
+    }
+
+    .premium-cat-btn {
+        padding: 10px 20px;
+        font-size: 0.85rem;
     }
 }

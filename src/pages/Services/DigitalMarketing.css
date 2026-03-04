@@ -703,9 +703,16 @@
     }
 }
 
-@media (max-width: 991px) {
+@media (max-width: 1024px) {
+    .dm-hero {
+        padding: 140px 0 80px;
+    }
+
     .dm-section-head {
         margin-bottom: 60px;
+        text-align: center;
+        margin-left: auto;
+        margin-right: auto;
     }
 
     .dm-framework-grid,
@@ -726,7 +733,7 @@
     }
 
     .dm-hero-stats {
-        grid-template-columns: 1fr;
+        grid-template-columns: repeat(3, 1fr);
         gap: 30px;
     }
 }
@@ -738,6 +745,7 @@
 
     .dm-hero-desc {
         font-size: 1.15rem;
+        margin-bottom: 40px;
     }
 
     .dm-container {
@@ -756,5 +764,46 @@
     .dm-analytics-grid,
     .dm-security-grid {
         grid-template-columns: 1fr;
+    }
+
+    .dm-hero-stats {
+        grid-template-columns: 1fr;
+    }
+
+    .dm-hero-btns {
+        flex-direction: column;
+        width: 100%;
+        max-width: 320px;
+        margin: 0 auto;
+    }
+
+    .dm-btn-primary,
+    .dm-btn-secondary {
+        width: 100%;
+        justify-content: center;
+    }
+
+    .dm-fw-card,
+    .dm-seo-card,
+    .dm-perf-card,
+    .dm-social-card,
+    .dm-auto-card,
+    .dm-analytics-card,
+    .dm-security-card {
+        padding: 40px 30px;
+    }
+}
+
+@media (max-width: 480px) {
+    .dm-hero-title {
+        font-size: 2.8rem;
+    }
+
+    .dm-section-head h2 {
+        font-size: 2.2rem;
+    }
+
+    .dm-stat h4 {
+        font-size: 2.2rem;
     }
 }

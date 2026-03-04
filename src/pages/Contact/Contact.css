@@ -812,6 +812,11 @@
     .contact-premium .hero-title {
         font-size: 4.5rem;
     }
+
+    .contact-premium .hero-dashboard {
+        gap: 30px;
+        padding: 20px 30px;
+    }
 }
 
 @media (max-width: 768px) {
@@ -820,22 +825,29 @@
     }
 
     .contact-premium .hero-title {
-        font-size: 3.5rem;
+        font-size: 3rem;
     }
 
-    .contact-premium .hero-stats {
+    .contact-premium .hero-dashboard {
         flex-direction: column;
         gap: 24px;
         width: 100%;
+        max-width: 320px;
     }
 
-    .contact-premium .stat-divider {
+    .contact-premium .dash-divider {
         width: 80%;
         height: 1px;
     }
 
+    .contact-premium .dash-item {
+        width: 100%;
+        justify-content: center;
+    }
+
     .contact-premium .glass-form-card {
         padding: 40px 24px;
+        border-radius: 24px;
     }
 
     .contact-premium .form-row {
@@ -843,7 +855,46 @@
         gap: 0;
     }
 
+    .contact-premium .input-group.full {
+        grid-column: span 1;
+    }
+
     .contact-premium .section-header-modern h2 {
         font-size: 2.5rem;
+    }
+
+    .contact-premium .loc-info {
+        padding: 30px 20px;
+    }
+
+    .contact-premium .loc-info h3 {
+        font-size: 1.5rem;
+    }
+
+    .contact-premium .modern-node-card {
+        padding: 20px;
+    }
+
+    .contact-premium .node-value {
+        font-size: 1.1rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .contact-premium .hero-title {
+        font-size: 2.2rem;
+    }
+
+    .contact-premium .form-title {
+        font-size: 1.8rem;
+    }
+
+    .contact-premium .badge-refractive {
+        padding: 8px 20px;
+    }
+
+    .contact-premium .submit-btn-premium {
+        padding: 18px;
+        font-size: 0.9rem;
     }
 }

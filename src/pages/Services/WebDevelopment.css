@@ -968,10 +968,14 @@
 }
 
 @media (max-width: 1024px) {
+    .web-hero {
+        padding: 140px 0 80px;
+    }
+
     .hero-split-web {
         flex-direction: column !important;
         text-align: center;
-        gap: 40px;
+        gap: 60px;
     }
 
     .hero-content-web {
@@ -990,6 +994,15 @@
         justify-content: center !important;
     }
 
+    .hero-visual-web {
+        height: auto;
+        margin-top: 40px;
+    }
+
+    .web-hero-terminal {
+        max-width: 100%;
+    }
+
     .web-overview-section .container>div {
         flex-direction: column !important;
         gap: 40px !important;
@@ -1000,8 +1013,18 @@
     }
 
     .web-bento-grid {
-        display: flex;
-        flex-direction: column;
+        grid-template-columns: repeat(2, 1fr);
+        display: grid;
+        /* Force grid */
+    }
+
+    .span-double {
+        grid-column: span 2;
+    }
+
+    .web-bento-card {
+        grid-column: span 1;
+        min-height: 340px;
     }
 
     .web-milestones-grid {
@@ -1013,7 +1036,81 @@
     }
 
     .web-cockpit-inner {
-        padding: 80px 40px;
+        padding: 60px 30px;
+    }
+
+    .tech-circuit-container {
+        gap: 80px;
+        padding: 0 20px;
+    }
+}
+
+@media (max-width: 768px) {
+    .web-hero {
+        padding-top: 120px;
+    }
+
+    .hero-title-web {
+        font-size: 2.8rem;
+    }
+
+    .features-grid-web {
+        grid-template-columns: 1fr;
+    }
+
+    .web-tech-grid {
+        grid-template-columns: repeat(2, 1fr) !important;
+    }
+
+    .web-bento-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .span-double,
+    .web-bento-card {
+        grid-column: span 1;
+    }
+
+    .web-roadmap-track {
+        display: none;
+    }
+
+    .web-milestones-grid {
+        grid-template-columns: 1fr !important;
+    }
+
+    .branch-label h3 {
+        font-size: 1.1rem;
+    }
+
+    .crystal-card {
+        width: 100%;
+        height: 120px;
+    }
+
+    .branch-nodes {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        width: 100%;
+    }
+
+    .hero-float-badge {
+        display: none;
+        /* Hide floating badges on mobile to prevent clutter */
+    }
+}
+
+@media (max-width: 480px) {
+    .hero-title-web {
+        font-size: 2.2rem;
+    }
+
+    .branch-nodes {
+        grid-template-columns: 1fr;
+    }
+
+    .web-cockpit-inner {
+        padding: 40px 20px;
     }
 }
 

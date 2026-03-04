@@ -288,10 +288,6 @@
 }
 
 @media (max-width: 1200px) {
-    .container {
-        padding: 0 40px;
-    }
-
     .hero-content {
         grid-template-columns: 1fr;
         gap: 60px;
@@ -324,10 +320,6 @@
 }
 
 @media (max-width: 768px) {
-    .container {
-        padding: 0 24px;
-    }
-
     .hero {
         padding-top: 140px;
         padding-bottom: 60px;
@@ -337,16 +329,24 @@
         font-size: 2.8rem;
     }
 
+    .hero-description {
+        font-size: 1.1rem;
+        padding: 0 20px;
+    }
+
     .hero-cta {
         flex-direction: column;
         width: 100%;
         max-width: 320px;
+        margin-left: auto;
+        margin-right: auto;
     }
 
     .hero-stats {
         gap: 30px;
         flex-wrap: wrap;
         justify-content: center;
+        width: 100%;
     }
 
     .stat-item h3 {
@@ -356,16 +356,16 @@
     .hero-visual {
         margin-top: 40px;
         max-width: 100%;
-        overflow: hidden;
     }
 
     .image-container {
-        max-width: 300px;
+        max-width: 320px;
     }
 
     .floating-element {
         padding: 12px 18px;
         gap: 10px;
+        border-radius: 12px;
     }
 
     .float-icon {
@@ -373,8 +373,8 @@
     }
 
     .float-1 {
-        top: -10px;
-        left: -20px;
+        top: 0;
+        left: -10px;
     }
 
     .float-2 {
@@ -392,15 +392,18 @@
         font-size: 2.2rem;
     }
 
-    .hero-description {
-        font-size: 1rem;
+    .image-container {
+        max-width: 260px;
+    }
+
+    .floating-element {
+        display: none;
+        /* Hide floating elements on very small screens to avoid clutter */
     }
 
     .hero-stats {
+        flex-direction: column;
+        align-items: center;
         gap: 20px;
-    }
-
-    .stat-item h3 {
-        font-size: 1.25rem;
     }
 }

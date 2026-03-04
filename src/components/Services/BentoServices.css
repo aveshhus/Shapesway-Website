@@ -255,7 +255,50 @@
     }
 
     .bento-icon {
-        top: 32px;
-        left: 32px;
+        top: 24px;
+        left: 24px;
+        width: 48px;
+        height: 48px;
+        font-size: 1.5rem;
+    }
+
+    .bento-arrow-hint {
+        top: 24px;
+        right: 24px;
+        font-size: 0.8rem;
+    }
+
+    .bento-content {
+        padding: 20px;
+        border-radius: 20px;
+    }
+}
+
+@media (max-width: 480px) {
+
+    .bento-card-container,
+    .bento-card-container.bento-item-wide {
+        min-height: 350px;
+    }
+
+    .bento-title {
+        font-size: 1.3rem;
+    }
+
+    .bento-desc {
+        font-size: 0.85rem;
+    }
+
+    .bento-card-front,
+    .bento-card-back {
+        padding: 24px;
+    }
+
+    .back-title {
+        font-size: 1.3rem;
+    }
+
+    .feature-list li {
+        font-size: 0.9rem;
     }
 }

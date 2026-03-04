@@ -1252,564 +1252,84 @@
 
     .feature-grid {
         gap: 20px;
-    }
-}
-
-@media (max-width: 640px) {
-    .feature-grid {
-        grid-template-columns: 1fr;
-    }
-}
-
-/* --- 4. ENGINEERING PIPELINE (PREMIUM POLISH) --- */
-.soft-pipeline-section {
-    padding: 160px 0;
-    background: #0f172a;
-    position: relative;
-    overflow: hidden;
-}
-
-/* Dynamic Mesh Background */
-.soft-pipeline-section::before {
-    content: '';
-    position: absolute;
-    inset: 0;
-    background:
-        radial-gradient(circle at 20% 30%, rgba(13, 181, 164, 0.05) 0%, transparent 50%),
-        radial-gradient(circle at 80% 70%, rgba(37, 99, 235, 0.05) 0%, transparent 50%);
-    z-index: 0;
-    animation: meshPulse 10s ease-in-out infinite alternate;
-}
-
-@keyframes meshPulse {
-    0% {
-        opacity: 0.5;
-        transform: scale(1);
+        grid-template-columns: repeat(2, 1fr);
     }
 
-    100% {
-        opacity: 1;
-        transform: scale(1.1);
-    }
-}
-
-.pipeline-grid {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 30px;
-    position: relative;
-    margin-top: 100px;
-    z-index: 2;
-}
-
-/* Glowing Flow Line */
-.pipeline-flow-line {
-    position: absolute;
-    top: -40px;
-    left: 8%;
-    right: 8%;
-    height: 3px;
-    background: rgba(255, 255, 255, 0.1);
-    z-index: 1;
-    overflow: hidden;
-    border-radius: 4px;
-    box-shadow: 0 0 10px rgba(13, 181, 164, 0.2);
-}
-
-/* Animated Data Packet on Line */
-.flow-progress {
-    position: absolute;
-    top: 0;
-    left: 0;
-    height: 100%;
-    width: 30%;
-    /* Packet size */
-    background: linear-gradient(90deg, transparent, var(--soft-teal), #fff, var(--soft-teal), transparent);
-    filter: blur(2px);
-    animation: packetMove 3s linear infinite;
-}
-
-@keyframes packetMove {
-    0% {
-        left: -30%;
+    .soft-hero {
+        padding: 140px 0 80px;
     }
 
-    100% {
-        left: 130%;
-    }
-}
-
-@keyframes packetMove {
-    0% {
-        left: -30%;
+    .soft-pipeline-section,
+    .telemetry-section {
+        padding: 80px 0;
     }
 
-    100% {
-        left: 130%;
-    }
-}
-
-.pipeline-stage-card {
-    background: rgba(30, 41, 59, 0.6);
-    backdrop-filter: blur(16px);
-    -webkit-backdrop-filter: blur(16px);
-    border: 1px solid rgba(255, 255, 255, 0.08);
-    /* Subtle border */
-    border-radius: 24px;
-    padding: 40px 30px;
-    position: relative;
-    z-index: 2;
-    transition: all 0.4s cubic-bezier(0.23, 1, 0.32, 1);
-    display: flex;
-    flex-direction: column;
-    gap: 25px;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
-    overflow: hidden;
-    /* For inner glow */
-}
-
-/* Gradient Border Effect via Pseudo-element */
-.pipeline-stage-card::before {
-    content: '';
-    position: absolute;
-    inset: 0;
-    border-radius: 24px;
-    padding: 2px;
-    /* Border width */
-    background: linear-gradient(135deg, transparent, rgba(255, 255, 255, 0.1), transparent);
-    -webkit-mask:
-        linear-gradient(#fff 0 0) content-box,
-        linear-gradient(#fff 0 0);
-    mask:
-        linear-gradient(#fff 0 0) content-box,
-        linear-gradient(#fff 0 0);
-    -webkit-mask-composite: xor;
-    mask-composite: exclude;
-    transition: opacity 0.4s ease;
-    opacity: 0.5;
-}
-
-.pipeline-stage-card:hover {
-    transform: translateY(-15px);
-    background: rgba(30, 41, 59, 0.85);
-    box-shadow:
-        0 30px 60px -10px rgba(0, 0, 0, 0.5),
-        0 0 30px rgba(13, 181, 164, 0.1);
-    /* Ambient glow */
-}
-
-/* Active Gradient Border on Hover */
-.pipeline-stage-card:hover::before {
-    background: linear-gradient(135deg, var(--soft-teal), var(--soft-blue), #8b5cf6);
-    opacity: 1;
-}
-
-.stage-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
-.stage-num {
-    font-family: 'JetBrains Mono', monospace;
-    font-size: 3rem;
-    /* Huge background number */
-    font-weight: 900;
-    color: rgba(255, 255, 255, 0.03);
-    position: absolute;
-    top: 10px;
-    right: 20px;
-    letter-spacing: -2px;
-    pointer-events: none;
-    transition: all 0.4s ease;
-}
-
-.pipeline-stage-card:hover .stage-num {
-    color: rgba(255, 255, 255, 0.08);
-    transform: scale(1.1);
-}
-
-.stage-icon {
-    width: 65px;
-    height: 65px;
-    background: rgba(255, 255, 255, 0.03);
-    border: 1px solid rgba(255, 255, 255, 0.05);
-    /* Glass icon border */
-    border-radius: 16px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 1.8rem;
-    position: relative;
-    z-index: 2;
-    transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
-    /* Bouncy */
-}
-
-.pipeline-stage-card:hover .stage-icon {
-    background: var(--soft-teal);
-    color: #0f172a;
-    /* Invert contrast */
-    border-color: var(--soft-teal);
-    transform: scale(1.1) rotate(-5deg);
-    box-shadow: 0 10px 20px rgba(13, 181, 164, 0.3);
-}
-
-.stage-body {
-    position: relative;
-    z-index: 2;
-    display: flex;
-    flex-direction: column;
-    gap: 12px;
-}
-
-.stage-title {
-    font-size: 1.5rem;
-    font-weight: 800;
-    color: #ffffff;
-    letter-spacing: -0.5px;
-}
-
-.stage-desc {
-    font-size: 0.95rem;
-    line-height: 1.6;
-    color: #94a3b8;
-    font-weight: 400;
-}
-
-.stage-connector {
-    position: absolute;
-    top: -56px;
-    left: 50%;
-    transform: translateX(-50%);
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    z-index: 10;
-    height: 56px;
-}
-
-/* Vertical Stem Line */
-.stage-connector::before {
-    content: '';
-    position: absolute;
-    top: 8px;
-    /* Start from center of dot */
-    bottom: 0;
-    width: 2px;
-    background: linear-gradient(to bottom, var(--soft-teal), transparent);
-    opacity: 0.3;
-    z-index: -1;
-}
-
-.connector-dot {
-    width: 16px;
-    height: 16px;
-    background: #0f172a;
-    border: 3px solid var(--soft-teal);
-    border-radius: 50%;
-    box-shadow: 0 0 15px rgba(13, 181, 164, 0.8);
-    cursor: pointer;
-    transition: 0.3s;
-    position: relative;
-}
-
-.pipeline-stage-card:hover+.stage-connector .connector-dot,
-/* Not possible in CSS directly, but effect handled by hover state of card itself if redesigned, for now keep dot persistent */
-.connector-dot:hover {
-    background: var(--soft-teal);
-    transform: scale(1.2);
-    box-shadow: 0 0 25px var(--soft-teal);
-}
-
-@media (max-width: 1200px) {
     .pipeline-grid {
         grid-template-columns: repeat(2, 1fr);
-        gap: 60px 40px;
-    }
-
-    .pipeline-flow-line {
-        display: none;
-    }
-
-    .stage-connector {
-        display: none;
-    }
-}
-
-@media (max-width: 640px) {
-    .pipeline-grid {
-        grid-template-columns: 1fr;
-    }
-}
-
-/* --- 5. METRICS --- */
-/* --- 5. SYSTEM TELEMETRY (PERFORMANCE - LIGHT) --- */
-.telemetry-section {
-    padding: 100px 0;
-    background: #ffffff;
-    position: relative;
-}
-
-.telemetry-dashboard {
-    background: #f8fafc;
-    /* Slate 50 */
-    border: 1px solid rgba(15, 23, 42, 0.05);
-    border-radius: 40px;
-    padding: 60px;
-    position: relative;
-    overflow: hidden;
-    box-shadow: inset 0 0 40px rgba(0, 0, 0, 0.02);
-}
-
-/* Dashboard Scan Line Effect - Subtle Dark */
-.telemetry-dashboard::after {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    height: 1px;
-    background: linear-gradient(90deg, transparent, rgba(13, 181, 164, 0.3), transparent);
-    animation: scanLine 8s linear infinite;
-    opacity: 0.5;
-}
-
-@keyframes scanLine {
-    0% {
-        top: -10%;
-    }
-
-    100% {
-        top: 110%;
-    }
-}
-
-.telemetry-grid-layout {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 30px;
-    margin-top: 60px;
-}
-
-/* Module Base - Light */
-.telemetry-module {
-    background: #ffffff;
-    border: 1px solid rgba(15, 23, 42, 0.05);
-    border-radius: 20px;
-    padding: 30px;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    min-height: 280px;
-    position: relative;
-    transition: all 0.4s ease;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.03);
-}
-
-.telemetry-module:hover {
-    transform: translateY(-5px);
-    border-color: rgba(13, 181, 164, 0.3);
-    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.06);
-}
-
-/* Module Header */
-.module-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 20px;
-    border-bottom: 1px solid rgba(15, 23, 42, 0.05);
-    padding-bottom: 15px;
-}
-
-.module-header span {
-    font-family: 'JetBrains Mono', monospace;
-    font-size: 0.85rem;
-    color: var(--soft-teal);
-    letter-spacing: 1px;
-    font-weight: 600;
-}
-
-.module-icon {
-    font-size: 1.4rem;
-    color: var(--soft-slate-light);
-}
-
-.status-dot {
-    width: 8px;
-    height: 8px;
-    border-radius: 50%;
-    box-shadow: 0 0 10px currentColor;
-}
-
-.status-dot.green {
-    background: #10b981;
-    color: #10b981;
-}
-
-/* Module Visuals */
-/* Uptime */
-.uptime-visual {
-    flex: 1;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.uptime-circle {
-    width: 140px;
-    height: 140px;
-    position: relative;
-}
-
-.uptime-circle svg {
-    transform: rotate(-90deg);
-    width: 100%;
-    height: 100%;
-}
-
-.circle-bg {
-    fill: none;
-    stroke: rgba(15, 23, 42, 0.05);
-    stroke-width: 6;
-}
-
-.circle-progress {
-    fill: none;
-    stroke: var(--soft-teal);
-    stroke-width: 6;
-    stroke-linecap: round;
-    stroke-dasharray: 283;
-    /* 2 * PI * 45 */
-    filter: drop-shadow(0 0 5px rgba(13, 181, 164, 0.4));
-}
-
-.uptime-value {
-    position: absolute;
-    inset: 0;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    font-size: 2rem;
-    font-weight: 800;
-    color: var(--soft-slate-deep);
-}
-
-.uptime-value span {
-    font-size: 1rem;
-    opacity: 0.5;
-    font-weight: 600;
-}
-
-/* Latency */
-.latency-graph {
-    flex: 1;
-    display: flex;
-    align-items: flex-end;
-    gap: 8px;
-    padding: 0 10px;
-    height: 100px;
-}
-
-.latency-bar {
-    flex: 1;
-    background: linear-gradient(to top, var(--soft-blue), #8b5cf6);
-    border-radius: 4px;
-    min-height: 4px;
-    opacity: 0.8;
-}
-
-.latency-readout {
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-end;
-    margin-top: 20px;
-}
-
-.latency-readout .val {
-    font-size: 2.5rem;
-    font-weight: 800;
-    line-height: 1;
-    color: var(--soft-slate-deep);
-}
-
-.latency-readout .label {
-    font-family: 'JetBrains Mono', monospace;
-    font-size: 0.75rem;
-    color: var(--soft-slate-light);
-}
-
-/* Throughput */
-.throughput-gauge {
-    flex: 1;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    position: relative;
-}
-
-.throughput-val {
-    font-size: 3rem;
-    font-weight: 900;
-    color: var(--soft-slate-deep);
-    text-align: center;
-    z-index: 2;
-}
-
-.throughput-val span {
-    display: block;
-    font-size: 1rem;
-    font-weight: 600;
-    color: var(--soft-teal);
-    letter-spacing: 2px;
-}
-
-.gauge-arc {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    border-radius: 50%;
-    border: 2px dashed rgba(15, 23, 42, 0.1);
-    animation: spinSlow 20s linear infinite;
-}
-
-@keyframes spinSlow {
-    to {
-        transform: rotate(360deg);
-    }
-}
-
-/* Module Footer */
-.module-footer {
-    border-top: 1px solid rgba(15, 23, 42, 0.05);
-    padding-top: 15px;
-    display: flex;
-    justify-content: space-between;
-    font-size: 0.75rem;
-    color: var(--soft-slate-light);
-}
-
-.mono-val {
-    font-family: 'JetBrains Mono', monospace;
-    color: var(--soft-blue);
-    font-weight: 600;
-}
-
-@media (max-width: 1024px) {
-    .telemetry-grid-layout {
-        grid-template-columns: repeat(2, 1fr);
+        margin-top: 60px;
     }
 }
 
 @media (max-width: 768px) {
+    .soft-hero-title {
+        font-size: 2.8rem;
+    }
+
+    .soft-hero-p {
+        font-size: 1.1rem;
+    }
+
+    .feature-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .pipeline-grid {
+        grid-template-columns: 1fr;
+    }
+
     .telemetry-grid-layout {
         grid-template-columns: 1fr;
     }
 
     .telemetry-dashboard {
         padding: 30px;
+        border-radius: 24px;
+    }
+
+    .soft-hero-visual {
+        display: none;
+        /* Hide complex visuals on mobile to focus on CTA */
+    }
+
+    .hero-btn-group-soft {
+        flex-direction: column;
+        width: 100%;
+        max-width: 320px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .btn-soft {
+        width: 100%;
+    }
+}
+
+@media (max-width: 480px) {
+    .soft-hero-title {
+        font-size: 2.2rem;
+    }
+
+    .overview-title {
+        font-size: 2.2rem;
+    }
+
+    .pipeline-stage-card {
+        padding: 30px 20px;
+    }
+
+    .telemetry-module {
+        padding: 20px;
+        min-height: auto;
     }
 }
 

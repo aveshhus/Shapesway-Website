@@ -332,12 +332,36 @@
 
 /* Responsive Adjustments Removed redundants and kept only specifics */
 @media (max-width: 1100px) {
+    .contact-panel-wrapper {
+        flex-direction: column;
+        border-radius: 30px;
+        box-shadow: 0 20px 60px rgba(0, 0, 0, 0.06);
+    }
+
+    .contact-panel-left {
+        padding: 50px 30px;
+        order: 2;
+    }
+
+    .contact-panel-right {
+        order: 1;
+        padding: 50px 30px;
+    }
+
     .form-grid {
         gap: 20px;
     }
 }
 
 @media (max-width: 768px) {
+    .contact-modern-section {
+        padding: 80px 0;
+    }
+
+    .contact-panel-left {
+        padding: 40px 20px;
+    }
+
     .contact-panel-left h3 {
         font-size: 1.8rem;
     }
@@ -350,9 +374,53 @@
         grid-column: span 1;
     }
 
+    .form-group input,
+    .form-group textarea {
+        padding: 16px 20px;
+    }
+
     .country-code {
         width: 120px;
         padding: 15px 10px;
         font-size: 0.85rem;
+    }
+
+    .contact-panel-right {
+        padding: 40px 24px;
+    }
+
+    .info-content h4 {
+        font-size: 1.3rem;
+        margin-bottom: 30px;
+    }
+
+    .info-item-box {
+        padding: 18px 20px;
+        gap: 15px;
+    }
+
+    .send-message-btn {
+        width: 100%;
+        padding: 16px;
+    }
+}
+
+@media (max-width: 480px) {
+    .contact-header-top h2 {
+        font-size: 1.8rem;
+    }
+
+    .contact-panel-left h3 {
+        font-size: 1.5rem;
+    }
+
+    .info-text p {
+        font-size: 0.95rem;
+    }
+
+    .info-icon {
+        width: 40px;
+        height: 40px;
+        font-size: 1rem;
     }
 }

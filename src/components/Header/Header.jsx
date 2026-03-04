@@ -22,6 +22,7 @@ const Header = () => {
     const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
     const [scrollProgress, setScrollProgress] = useState(0);
     const [activeMegaMenu, setActiveMegaMenu] = useState(null);
+    const [mobileSubMenu, setMobileSubMenu] = useState(null);
     const [isHoveringMenu, setIsHoveringMenu] = useState(false);
     const location = useLocation();
     const menuTimeoutRef = useRef(null);
@@ -42,6 +43,7 @@ const Header = () => {
     useEffect(() => {
         setIsMobileMenuOpen(false);
         setActiveMegaMenu(null);
+        setMobileSubMenu(null);
     }, [location]);
 
     const handleMegaMenuEnter = (menuName) => {
@@ -138,29 +140,68 @@ const Header = () => {
                     </div>
                 </div>
 
-                {/* Mobile Menu Drawer */}
                 <AnimatePresence>
                     {isMobileMenuOpen && (
                         <motion.div
-                            className="mobile-drawer"
-                            initial={{ x: '100%' }}
-                            animate={{ x: 0 }}
-                            exit={{ x: '100%' }}
-                            transition={{ type: 'spring', damping: 25, stiffness: 200 }}
+                            className="mobile-bubble-menu"
+                            initial={{ opacity: 0, scale: 0.5, originX: 0.9, originY: 0 }}
+                            animate={{ opacity: 1, scale: 1 }}
+                            exit={{ opacity: 0, scale: 0.5, originX: 0.9, originY: 0 }}
+                            transition={{ type: 'spring', damping: 20, stiffness: 300 }}
                         >
-                            <div className="mobile-drawer-header">
-                                <img src={logo} alt="Shapesway Logo" className="logo-img" />
-                                <button className="close-drawer-btn" onClick={() => setIsMobileMenuOpen(false)}>
-                                    <FaTimes />
-                                </button>
-                            </div>
                             <div className="mobile-drawer-links">
                                 {navLinks.map((link) => (
-                                    <Link key={link.name} to={link.path}>{link.name}</Link>
+                                    <div key={link.name} className="mobile-nav-item">
+                                        {link.hasMegaMenu ? (
+                                            <>
+                                                <button
+                                                    className={`mobile-link-accordion ${mobileSubMenu === link.name ? 'active' : ''}`}
+                                                    onClick={() => setMobileSubMenu(mobileSubMenu === link.name ? null : link.name)}
+                                                >
+                                                    {link.name}
+                                                    <FaChevronDown className={`accordion-icon ${mobileSubMenu === link.name ? 'rotate' : ''}`} />
+                                                </button>
+                                                <AnimatePresence>
+                                                    {mobileSubMenu === link.name && (
+                                                        <motion.div
+                                                            className="mobile-submenu"
+                                                            initial={{ height: 0, opacity: 0 }}
+                                                            animate={{ height: 'auto', opacity: 1 }}
+                                                            exit={{ height: 0, opacity: 0 }}
+                                                        >
+                                                            {link.megaType === 'about' && <div className="mobile-sub-grid">
+                                                                <Link to="/company" onClick={() => setIsMobileMenuOpen(false)}>Company</Link>
+                                                                <Link to="/why-us" onClick={() => setIsMobileMenuOpen(false)}>Why Us</Link>
+                                                                <Link to="/global-presence-trust" onClick={() => setIsMobileMenuOpen(false)}>Trust</Link>
+                                                            </div>}
+                                                            {link.megaType === 'services' && <div className="mobile-sub-grid">
+                                                                <Link to="/ai-machine-learning" onClick={() => setIsMobileMenuOpen(false)}>AI & ML</Link>
+                                                                <Link to="/services/web-development" onClick={() => setIsMobileMenuOpen(false)}>Web Dev</Link>
+                                                                <Link to="/services/mobile-app-development" onClick={() => setIsMobileMenuOpen(false)}>Mobile Apps</Link>
+                                                                <Link to="/services/software-development" onClick={() => setIsMobileMenuOpen(false)}>Software</Link>
+                                                                <Link to="/services/ui-ux-design" onClick={() => setIsMobileMenuOpen(false)}>UI/UX</Link>
+                                                                <Link to="/services/cloud-services" onClick={() => setIsMobileMenuOpen(false)}>Cloud</Link>
+                                                                <Link to="/services/digital-marketing" onClick={() => setIsMobileMenuOpen(false)}>Marketing</Link>
+                                                            </div>}
+                                                        </motion.div>
+                                                    )}
+                                                </AnimatePresence>
+                                            </>
+                                        ) : (
+                                            <Link
+                                                to={link.path}
+                                                onClick={() => setIsMobileMenuOpen(false)}
+                                            >
+                                                {link.name}
+                                            </Link>
+                                        )}
+                                    </div>
                                 ))}
                             </div>
-                            <div className="mobile-drawer-cta">
-                                <Link to="/contact" className="btn btn-primary btn-lg" style={{ width: '100%' }}>Consult Now</Link>
+                            <div className="mobile-bubble-footer">
+                                <Link to="/contact" className="bubble-cta" onClick={() => setIsMobileMenuOpen(false)}>
+                                    Discuss Project
+                                </Link>
                             </div>
                         </motion.div>
                     )}

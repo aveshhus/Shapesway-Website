@@ -352,6 +352,10 @@
     .portfolio-dark-panel {
         padding: 60px 30px 100px;
     }
+
+    .p-main-title {
+        font-size: 3rem;
+    }
 }
 
 @media (max-width: 768px) {
@@ -365,10 +369,51 @@
 
     .swiper-container-wrapper {
         margin-bottom: 0px;
+        perspective: none;
     }
 
     .portfolio-dark-panel {
         padding: 40px 20px;
         border-radius: 24px;
+    }
+
+    .p-main-title {
+        font-size: 2.5rem;
+    }
+
+    .portfolio-card-reference {
+        padding: 8px;
+        border-radius: 24px;
+    }
+
+    .p-card-image-box {
+        border-radius: 16px;
+    }
+
+    .p-card-footer h3 {
+        font-size: 1.25rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .p-main-title {
+        font-size: 2rem;
+    }
+
+    .p-subtitle {
+        font-size: 0.6rem;
+        letter-spacing: 0.3em;
+    }
+
+    .p-card-image-box {
+        height: 220px;
+    }
+
+    .p-card-footer {
+        padding: 18px 8px 8px;
+    }
+
+    .p-card-description {
+        font-size: 0.8rem;
     }
 }

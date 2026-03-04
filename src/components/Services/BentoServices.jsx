@@ -22,7 +22,7 @@ const services = [
         desc: 'Transform your business with intelligent automation and custom AI agents.',
         features: ['Custom AI Agents', 'Predictive Analytics', 'NLP Solutions', 'Computer Vision'],
         icon: <FaBrain />,
-        link: '/services/ai-development',
+        link: '/ai-machine-learning',
         image: aiImg,
         className: 'bento-item-wide'
     },

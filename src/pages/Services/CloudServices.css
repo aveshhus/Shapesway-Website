@@ -710,7 +710,11 @@
         }
     }
 
-    @media (max-width: 991px) {
+    @media (max-width: 1024px) {
+        .hero-v3 {
+            padding: 140px 0 80px;
+        }
+
         .v3-section-head {
             margin-bottom: 60px;
             text-align: center;
@@ -767,7 +771,7 @@
 
     @media (max-width: 768px) {
         .hero-v3-title {
-            font-size: 4rem;
+            font-size: 3.5rem;
         }
 
         .hero-v3-stats {
@@ -776,7 +780,8 @@
         }
 
         .hero-v3-desc {
-            font-size: 1.2rem;
+            font-size: 1.1rem;
+            margin-bottom: 40px;
         }
 
         .capabilities-v3-grid {
@@ -785,6 +790,17 @@
 
         .platform-v3-grid {
             grid-template-columns: repeat(2, 1fr);
+            gap: 15px;
+        }
+
+        .plat-card-v3 {
+            height: 260px;
+            padding: 24px;
+            border-radius: 24px;
+        }
+
+        .plat-icon-box {
+            font-size: 3.5rem;
         }
 
         .benefits-v3-grid {
@@ -793,5 +809,46 @@
 
         .proc-card-v3 {
             padding: 30px;
+            border-radius: 20px;
+        }
+
+        .hero-btn-group-v3 {
+            flex-direction: column;
+            width: 100%;
+            max-width: 320px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .btn-v3 {
+            width: 100%;
+            justify-content: center;
+        }
+    }
+
+    @media (max-width: 480px) {
+        .hero-v3-title {
+            font-size: 2.8rem;
+        }
+
+        .v3-section-head h2 {
+            font-size: 2.5rem;
+        }
+
+        .platform-v3-grid {
+            grid-template-columns: 1fr;
+        }
+
+        .cap-card-v3 {
+            padding: 40px 24px;
+            border-radius: 20px;
+        }
+
+        .cap-card-v3 h3 {
+            font-size: 1.5rem;
+        }
+
+        .hero-stat-item h4 {
+            font-size: 2.5rem;
         }
     }

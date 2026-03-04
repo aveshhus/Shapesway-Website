@@ -1496,3 +1496,133 @@
         font-size: 3rem;
     }
 }
+
+@media (max-width: 1024px) {
+    .mob-hero {
+        padding: 140px 0 80px;
+    }
+
+    .mob-hero-title {
+        font-size: 3.5rem;
+    }
+
+    .mob-hero-split {
+        flex-direction: column;
+        text-align: center;
+        gap: 60px;
+    }
+
+    .mob-hero-content {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .mob-hero-p {
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .mob-hero-visual {
+        height: auto;
+        margin-top: 40px;
+    }
+
+    .mob-terminal-frame {
+        max-width: 100%;
+    }
+
+    .mob-overview-section,
+    .mob-tech-section,
+    .mob-bento-section,
+    .mob-process-section,
+    .mob-cta-section {
+        padding: 100px 0;
+    }
+
+    .mob-tech-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+    .mob-hero-title {
+        font-size: 2.8rem;
+    }
+
+    .mob-hero-p {
+        font-size: 1.1rem;
+    }
+
+    .mob-tech-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px;
+    }
+
+    .mob-bento-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .mob-bento-card.span-2 {
+        grid-column: span 1;
+    }
+
+    .mob-process-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .mob-stat-grid-perf {
+        grid-template-columns: 1fr;
+    }
+
+    .mob-cta-box {
+        border-radius: 40px;
+        padding: 60px 30px;
+    }
+
+    .mob-cta-title {
+        font-size: 2.2rem;
+    }
+
+    .mob-cta-desc {
+        font-size: 1.1rem;
+    }
+
+    .btn-mob-group {
+        flex-direction: column;
+        width: 100%;
+        max-width: 320px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .btn-mob-cta {
+        width: 100%;
+    }
+
+    .hero-float-sensor {
+        display: none;
+    }
+}
+
+@media (max-width: 480px) {
+    .mob-hero-title {
+        font-size: 2.2rem;
+    }
+
+    .mob-tech-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .mob-cta-title {
+        font-size: 1.8rem;
+    }
+
+    .mob-stat-card-perf {
+        padding: 30px 20px !important;
+    }
+
+    .stat-val-perf {
+        font-size: 2.5rem;
+    }
+}

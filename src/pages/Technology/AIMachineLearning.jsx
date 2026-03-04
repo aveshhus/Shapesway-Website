@@ -202,14 +202,7 @@ const InteractiveCard = ({ children, className, style, span }) => {
 };
 
 const SectionHeader = ({ tag, title, desc, align = 'center', dark = false }) => (
-    <div style={{
-        textAlign: align,
-        marginBottom: '80px',
-        maxWidth: align === 'center' ? '800px' : '700px',
-        margin: align === 'center' ? '0 auto 80px' : '0 0 80px',
-        position: 'relative',
-        zIndex: 2
-    }}>
+    <div className={`ai-section-header ${align}`}>
         <motion.div
             className="text-gradient-ultimate"
             style={{
@@ -288,21 +281,7 @@ const AIMachineLearning = () => {
                         {/* LEFT COLUMN: TEXT CONTENT */}
                         <div className="hero-content-ai">
                             <motion.div
-                                style={{
-                                    display: 'inline-flex',
-                                    alignItems: 'center',
-                                    gap: '8px',
-                                    background: 'rgba(255,255,255,0.9)',
-                                    backdropFilter: 'blur(10px)',
-                                    color: 'var(--ai-slate-deep)',
-                                    padding: '10px 24px',
-                                    borderRadius: '100px',
-                                    fontSize: '0.85rem',
-                                    marginBottom: '32px',
-                                    fontWeight: 800,
-                                    border: '1px solid rgba(13, 181, 164, 0.2)',
-                                    boxShadow: '0 10px 30px rgba(13, 181, 164, 0.15)'
-                                }}
+                                className="ai-section-tag-wrapper"
                                 initial={{ opacity: 0, x: -20 }}
                                 animate={{ opacity: 1, x: 0 }}
                             >
@@ -322,14 +301,7 @@ const AIMachineLearning = () => {
                             </motion.h1>
 
                             <motion.p
-                                style={{
-                                    fontSize: '1.25rem',
-                                    color: 'var(--ai-slate-light)',
-                                    lineHeight: 1.6,
-                                    maxWidth: '600px',
-                                    marginBottom: '40px',
-                                    textAlign: 'left'
-                                }}
+                                className="ai-hero-p"
                                 initial={{ opacity: 0, y: 30 }}
                                 animate={{ opacity: 1, y: 0 }}
                                 transition={{ delay: 0.2, duration: 0.8 }}
@@ -339,7 +311,7 @@ const AIMachineLearning = () => {
                             </motion.p>
 
                             <motion.div
-                                style={{ display: 'flex', gap: '20px', alignItems: 'center' }}
+                                className="ai-hero-btns"
                                 initial={{ opacity: 0, y: 20 }}
                                 animate={{ opacity: 1, y: 0 }}
                                 transition={{ delay: 0.3 }}

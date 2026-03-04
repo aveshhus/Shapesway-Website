@@ -186,6 +186,7 @@
 
     .footer-grid {
         grid-template-columns: 1fr;
+        gap: 40px;
     }
 
     .footer-bottom-content {
@@ -197,5 +198,28 @@
     .footer-links {
         justify-content: center;
         gap: var(--space-4);
+        flex-wrap: wrap;
+    }
+}
+
+@media (max-width: 480px) {
+    .footer-top {
+        padding: 60px 0 40px;
+    }
+
+    .footer-col h3 {
+        font-size: 1rem;
+    }
+
+    .footer-desc {
+        font-size: 0.85rem;
+    }
+
+    .footer-col ul li a {
+        font-size: 0.85rem;
+    }
+
+    .contact-item p {
+        font-size: 0.8rem;
     }
 }

@@ -46,10 +46,9 @@
 }
 
 .h1-elite {
-    font-size: clamp(3.5rem, 8vw, 7rem);
+    font-size: clamp(2.5rem, 8vw, 7rem);
     font-weight: 800;
-    /* Outfit Bold */
-    line-height: 1.0;
+    line-height: 1.1;
     letter-spacing: -0.04em;
     color: var(--color-dark);
     margin: 0 auto;
@@ -368,7 +367,18 @@
     opacity: 0.9;
 }
 
-@media (max-width: 992px) {
+@media (max-width: 1024px) {
+    .services-hero-refined {
+        padding: 140px 0 80px;
+    }
+
+    .pillar-eng,
+    .pillar-neural-compute,
+    .pillar-creative,
+    .pillar-enterprise {
+        padding: 80px 0;
+    }
+
     .neural-split-layout {
         grid-template-columns: 1fr;
         gap: 60px;
@@ -387,9 +397,22 @@
     .neural-content-side .btn-bespoke-master {
         margin-top: 20px;
     }
+
+    .eng-card-3d,
+    .creative-stack {
+        height: 420px;
+    }
 }
 
-@media (max-width: 600px) {
+@media (max-width: 768px) {
+    .services-hero-refined {
+        padding: 120px 0 60px;
+    }
+
+    .h1-elite {
+        font-size: 2.8rem;
+    }
+
     .neural-grid-side {
         grid-template-columns: 1fr;
         gap: 30px;
@@ -401,6 +424,33 @@
 
     .neural-item .modern-icon-wrapper {
         margin: 0 auto 20px;
+    }
+
+    .eng-card-3d,
+    .creative-stack {
+        height: 450px;
+    }
+
+    .eng-face,
+    .eng-reveal,
+    .creative-stack {
+        padding: 32px;
+    }
+
+    .h3-bespoke-master {
+        font-size: 1.8rem;
+    }
+
+    .creative-title {
+        font-size: 1.6rem;
+    }
+
+    .pillar-creative {
+        padding: 60px 0;
+    }
+
+    .creative-stack:hover .creative-title {
+        bottom: 240px;
     }
 }
 
@@ -1218,14 +1268,19 @@
     font-family: var(--font-primary);
 }
 
-@media (max-width: 968px) {
+@media (max-width: 1024px) {
     .cta-layout-grid {
         flex-direction: column;
         text-align: center;
+        gap: 40px;
     }
 
     .cta-content-side {
         max-width: 100%;
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
     }
 
     .cta-transcend-title,
@@ -1236,8 +1291,13 @@
     }
 
     .cta-image-side {
-        margin-top: 40px;
+        margin-top: 20px;
         flex: auto;
+        max-width: 300px;
+    }
+
+    .cta-transcend {
+        padding: 100px 0;
     }
 }
 
