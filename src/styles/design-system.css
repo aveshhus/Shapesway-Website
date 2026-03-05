@@ -67,6 +67,9 @@
    /* Overlay Colors */
    --overlay-dark: rgba(15, 23, 42, 0.9);
    --overlay-light: rgba(255, 255, 255, 0.9);
+
+   /* Ease / Timing */
+   --ai-ease-luxury: cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 /* ===================================

@@ -1,4 +1,5 @@
 import React, { useState, useEffect, useRef } from 'react';
+import { useScroll, useSpring } from 'framer-motion';
 import { Link, useLocation } from 'react-router-dom';
 import { FaBars, FaTimes, FaChevronDown } from 'react-icons/fa';
 import {
@@ -20,25 +21,32 @@ import logo from '../../assets/logo.png';
 const Header = () => {
     const [isScrolled, setIsScrolled] = useState(false);
     const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
-    const [scrollProgress, setScrollProgress] = useState(0);
     const [activeMegaMenu, setActiveMegaMenu] = useState(null);
     const [mobileSubMenu, setMobileSubMenu] = useState(null);
     const [isHoveringMenu, setIsHoveringMenu] = useState(false);
     const location = useLocation();
     const menuTimeoutRef = useRef(null);
 
+    const { scrollYProgress } = useScroll();
+    const scaleX = useSpring(scrollYProgress, {
+        stiffness: 100,
+        damping: 30,
+        restDelta: 0.001
+    });
+
     useEffect(() => {
         const handleScroll = () => {
             const scrolled = window.scrollY;
-            setIsScrolled(scrolled > 50);
-
-            const winHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight;
-            const scrolledPercentage = (scrolled / winHeight) * 100;
-            setScrollProgress(scrolledPercentage);
+            if (scrolled > 50) {
+                if (!isScrolled) setIsScrolled(true);
+            } else {
+                if (isScrolled) setIsScrolled(false);
+            }
         };
-        window.addEventListener('scroll', handleScroll);
+
+        window.addEventListener('scroll', handleScroll, { passive: true });
         return () => window.removeEventListener('scroll', handleScroll);
-    }, []);
+    }, [isScrolled]);
 
     useEffect(() => {
         setIsMobileMenuOpen(false);
@@ -86,18 +94,82 @@ const Header = () => {
         { name: 'Contact', path: '/contact', hasMegaMenu: false }
     ];
 
+    const [windowWidth, setWindowWidth] = useState(window.innerWidth);
+
+    useEffect(() => {
+        const handleResize = () => setWindowWidth(window.innerWidth);
+        window.addEventListener('resize', handleResize);
+        return () => window.removeEventListener('resize', handleResize);
+    }, []);
+
+    const isMobile = windowWidth <= 1024;
+    const isSmallMobile = windowWidth <= 480;
+
+    const headerVariants = {
+        initial: { paddingTop: isSmallMobile ? 12 : 24, paddingBottom: isSmallMobile ? 12 : 24 },
+        scrolled: { paddingTop: isSmallMobile ? 4 : 10, paddingBottom: isSmallMobile ? 4 : 10 }
+    };
+
+    const innerVariants = {
+        initial: {
+            height: isSmallMobile ? 72 : 84,
+            width: isMobile ? (isSmallMobile ? "90%" : "92%") : "95%",
+            maxWidth: isMobile ? "92%" : 1400,
+            borderRadius: isSmallMobile ? 20 : (isMobile ? 24 : 42),
+            padding: isSmallMobile ? "0 20px" : "0 40px",
+            background: "rgba(255, 255, 255, 0.7)",
+            backdropFilter: "blur(20px)"
+        },
+        scrolled: {
+            height: isSmallMobile ? 60 : 70,
+            width: isMobile ? "100%" : "95%",
+            maxWidth: isMobile ? "100%" : 1200,
+            borderRadius: isMobile ? 0 : 35,
+            padding: isSmallMobile ? "0 15px" : "0 30px",
+            background: "rgba(255, 255, 255, 0.9)",
+            backdropFilter: "blur(25px)",
+            boxShadow: "0 20px 50px rgba(0, 0, 0, 0.08)"
+        }
+    };
+
+    const springTransition = {
+        type: "spring",
+        stiffness: 100,
+        damping: 30,
+        mass: 1
+    };
+    const logoVariants = {
+        initial: { scale: 1 },
+        scrolled: { scale: isMobile ? 0.8 : 0.85 }
+    };
+
     return (
-        <>
+        <div style={{ position: 'relative', zIndex: 1000 }}>
             <div className="scroll-progress-container">
-                <div className="scroll-progress-bar" style={{ width: `${scrollProgress}%` }}></div>
+                <motion.div
+                    className="scroll-progress-bar"
+                    style={{ scaleX, originX: 0 }}
+                />
             </div>
 
-            <header className={`header ${isScrolled ? 'scrolled' : ''}`}>
+            <motion.header
+                initial="initial"
+                animate={isScrolled ? "scrolled" : "initial"}
+                variants={headerVariants}
+                transition={springTransition}
+                className={`header ${isScrolled ? 'scrolled' : ''}`}
+            >
                 <div className="container">
-                    <div className="header-inner">
-                        <Link to="/" className="logo">
-                            <img src={logo} alt="Shapesway" className="logo-img" />
-                        </Link>
+                    <motion.div
+                        variants={innerVariants}
+                        className="header-inner"
+                        transition={springTransition}
+                    >
+                        <motion.div variants={logoVariants} transition={springTransition}>
+                            <Link to="/" className="logo">
+                                <img src={logo} alt="Shapesway" className="logo-img" />
+                            </Link>
+                        </motion.div>
 
                         <nav className="nav-desktop">
                             {navLinks.map((link) => (
@@ -137,77 +209,77 @@ const Header = () => {
                                 {isMobileMenuOpen ? <FaTimes /> : <FaBars />}
                             </button>
                         </div>
-                    </div>
+                    </motion.div>
                 </div>
+            </motion.header>
 
-                <AnimatePresence>
-                    {isMobileMenuOpen && (
-                        <motion.div
-                            className="mobile-bubble-menu"
-                            initial={{ opacity: 0, scale: 0.5, originX: 0.9, originY: 0 }}
-                            animate={{ opacity: 1, scale: 1 }}
-                            exit={{ opacity: 0, scale: 0.5, originX: 0.9, originY: 0 }}
-                            transition={{ type: 'spring', damping: 20, stiffness: 300 }}
-                        >
-                            <div className="mobile-drawer-links">
-                                {navLinks.map((link) => (
-                                    <div key={link.name} className="mobile-nav-item">
-                                        {link.hasMegaMenu ? (
-                                            <>
-                                                <button
-                                                    className={`mobile-link-accordion ${mobileSubMenu === link.name ? 'active' : ''}`}
-                                                    onClick={() => setMobileSubMenu(mobileSubMenu === link.name ? null : link.name)}
-                                                >
-                                                    {link.name}
-                                                    <FaChevronDown className={`accordion-icon ${mobileSubMenu === link.name ? 'rotate' : ''}`} />
-                                                </button>
-                                                <AnimatePresence>
-                                                    {mobileSubMenu === link.name && (
-                                                        <motion.div
-                                                            className="mobile-submenu"
-                                                            initial={{ height: 0, opacity: 0 }}
-                                                            animate={{ height: 'auto', opacity: 1 }}
-                                                            exit={{ height: 0, opacity: 0 }}
-                                                        >
-                                                            {link.megaType === 'about' && <div className="mobile-sub-grid">
-                                                                <Link to="/company" onClick={() => setIsMobileMenuOpen(false)}>Company</Link>
-                                                                <Link to="/why-us" onClick={() => setIsMobileMenuOpen(false)}>Why Us</Link>
-                                                                <Link to="/global-presence-trust" onClick={() => setIsMobileMenuOpen(false)}>Trust</Link>
-                                                            </div>}
-                                                            {link.megaType === 'services' && <div className="mobile-sub-grid">
-                                                                <Link to="/ai-machine-learning" onClick={() => setIsMobileMenuOpen(false)}>AI & ML</Link>
-                                                                <Link to="/services/web-development" onClick={() => setIsMobileMenuOpen(false)}>Web Dev</Link>
-                                                                <Link to="/services/mobile-app-development" onClick={() => setIsMobileMenuOpen(false)}>Mobile Apps</Link>
-                                                                <Link to="/services/software-development" onClick={() => setIsMobileMenuOpen(false)}>Software</Link>
-                                                                <Link to="/services/ui-ux-design" onClick={() => setIsMobileMenuOpen(false)}>UI/UX</Link>
-                                                                <Link to="/services/cloud-services" onClick={() => setIsMobileMenuOpen(false)}>Cloud</Link>
-                                                                <Link to="/services/digital-marketing" onClick={() => setIsMobileMenuOpen(false)}>Marketing</Link>
-                                                            </div>}
-                                                        </motion.div>
-                                                    )}
-                                                </AnimatePresence>
-                                            </>
-                                        ) : (
-                                            <Link
-                                                to={link.path}
-                                                onClick={() => setIsMobileMenuOpen(false)}
+            <AnimatePresence>
+                {isMobileMenuOpen && (
+                    <motion.div
+                        className="mobile-bubble-menu"
+                        initial={{ opacity: 0, scale: 0.5, originX: 0.9, originY: 0 }}
+                        animate={{ opacity: 1, scale: 1 }}
+                        exit={{ opacity: 0, scale: 0.5, originX: 0.9, originY: 0 }}
+                        transition={{ type: 'spring', damping: 20, stiffness: 300 }}
+                    >
+                        <div className="mobile-drawer-links">
+                            {navLinks.map((link) => (
+                                <div key={link.name} className="mobile-nav-item">
+                                    {link.hasMegaMenu ? (
+                                        <>
+                                            <button
+                                                className={`mobile-link-accordion ${mobileSubMenu === link.name ? 'active' : ''}`}
+                                                onClick={() => setMobileSubMenu(mobileSubMenu === link.name ? null : link.name)}
                                             >
                                                 {link.name}
-                                            </Link>
-                                        )}
-                                    </div>
-                                ))}
-                            </div>
-                            <div className="mobile-bubble-footer">
-                                <Link to="/contact" className="bubble-cta" onClick={() => setIsMobileMenuOpen(false)}>
-                                    Discuss Project
-                                </Link>
-                            </div>
-                        </motion.div>
-                    )}
-                </AnimatePresence>
-            </header>
-        </>
+                                                <FaChevronDown className={`accordion-icon ${mobileSubMenu === link.name ? 'rotate' : ''}`} />
+                                            </button>
+                                            <AnimatePresence>
+                                                {mobileSubMenu === link.name && (
+                                                    <motion.div
+                                                        className="mobile-submenu"
+                                                        initial={{ height: 0, opacity: 0 }}
+                                                        animate={{ height: 'auto', opacity: 1 }}
+                                                        exit={{ height: 0, opacity: 0 }}
+                                                    >
+                                                        {link.megaType === 'about' && <div className="mobile-sub-grid">
+                                                            <Link to="/company" onClick={() => setIsMobileMenuOpen(false)}>Company</Link>
+                                                            <Link to="/why-us" onClick={() => setIsMobileMenuOpen(false)}>Why Us</Link>
+                                                            <Link to="/global-presence-trust" onClick={() => setIsMobileMenuOpen(false)}>Trust</Link>
+                                                        </div>}
+                                                        {link.megaType === 'services' && <div className="mobile-sub-grid">
+                                                            <Link to="/ai-machine-learning" onClick={() => setIsMobileMenuOpen(false)}>AI & ML</Link>
+                                                            <Link to="/services/web-development" onClick={() => setIsMobileMenuOpen(false)}>Web Dev</Link>
+                                                            <Link to="/services/mobile-app-development" onClick={() => setIsMobileMenuOpen(false)}>Mobile Apps</Link>
+                                                            <Link to="/services/software-development" onClick={() => setIsMobileMenuOpen(false)}>Software</Link>
+                                                            <Link to="/services/ui-ux-design" onClick={() => setIsMobileMenuOpen(false)}>UI/UX</Link>
+                                                            <Link to="/services/cloud-services" onClick={() => setIsMobileMenuOpen(false)}>Cloud</Link>
+                                                            <Link to="/services/digital-marketing" onClick={() => setIsMobileMenuOpen(false)}>Marketing</Link>
+                                                        </div>}
+                                                    </motion.div>
+                                                )}
+                                            </AnimatePresence>
+                                        </>
+                                    ) : (
+                                        <Link
+                                            to={link.path}
+                                            onClick={() => setIsMobileMenuOpen(false)}
+                                        >
+                                            {link.name}
+                                        </Link>
+                                    )}
+                                </div>
+                            ))}
+                        </div>
+                        <div className="mobile-bubble-footer">
+                            <Link to="/contact" className="bubble-cta" onClick={() => setIsMobileMenuOpen(false)}>
+                                Discuss Project
+                            </Link>
+                        </div>
+                    </motion.div>
+                )}
+            </AnimatePresence>
+        </div>
     );
 };
 
