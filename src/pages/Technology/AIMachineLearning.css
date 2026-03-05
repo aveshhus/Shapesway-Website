@@ -604,11 +604,42 @@
     padding: 40px;
     border-radius: 32px;
     transition: 0.4s;
+    height: 100%;
 }
 
 .ux-pillar-card:hover {
     border-color: var(--ai-teal);
     background: rgba(255, 255, 255, 0.05);
+}
+
+.ux-pillar-card h4 {
+    color: white !important;
+    font-size: 1.6rem;
+    margin-bottom: 16px;
+    font-weight: 700;
+}
+
+.ux-pillar-card p {
+    color: rgba(255, 255, 255, 0.65) !important;
+    font-size: 1.05rem;
+    line-height: 1.6;
+}
+
+.pillar-icon-wrap {
+    color: var(--ai-teal);
+    margin-bottom: 30px;
+    position: relative;
+    width: fit-content;
+    display: flex;
+    align-items: center;
+}
+
+.pillar-glow {
+    position: absolute;
+    inset: -15px;
+    background: radial-gradient(circle, rgba(13, 181, 164, 0.2) 0%, transparent 70%);
+    filter: blur(10px);
+    z-index: -1;
 }
 
 /* --- 7. ROADMAP --- */

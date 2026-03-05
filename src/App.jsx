@@ -31,6 +31,7 @@ const TermsOfService = lazy(() => import('./pages/Policy/SiteTerms'));
 // Eagerly loaded components for initial render
 import AIChat from './components/AIChat/AIChat';
 import WhatsAppButton from './components/WhatsApp/WhatsAppButton';
+import ScrollToTop from './components/common/ScrollToTop';
 import './styles/global.css';
 
 // Fallback loader
@@ -80,6 +81,7 @@ function App() {
         <Footer />
         <AIChat />
         <WhatsAppButton />
+        <ScrollToTop />
       </div>
     </Router>
   );

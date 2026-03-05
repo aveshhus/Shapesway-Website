@@ -1,7 +1,7 @@
 .ai-chat-wrapper {
     position: fixed;
-    bottom: var(--space-6);
-    right: var(--space-6);
+    bottom: 40px;
+    left: 40px;
     z-index: var(--z-modal);
 }
 
@@ -48,8 +48,8 @@
 /* Chat Window */
 .chat-window {
     position: fixed;
-    bottom: 90px;
-    right: var(--space-6);
+    bottom: 112px;
+    left: 40px;
     width: 400px;
     height: 600px;
     background: white;
@@ -288,15 +288,15 @@
 /* Responsive */
 @media (max-width: 768px) {
     .chat-window {
-        bottom: 80px;
-        right: var(--space-4);
-        left: var(--space-4);
+        bottom: 84px;
+        right: 20px;
+        left: 20px;
         width: auto;
         height: 500px;
     }
 
     .ai-chat-wrapper {
-        bottom: var(--space-4);
-        right: var(--space-4);
+        bottom: 24px;
+        left: 20px;
     }
 }

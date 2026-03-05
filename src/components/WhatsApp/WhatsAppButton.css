@@ -1,7 +1,7 @@
 .whatsapp-wrapper {
     position: fixed;
-    bottom: 90px;
-    right: var(--space-6);
+    bottom: 112px;
+    left: 40px;
     z-index: var(--z-fixed);
 }
 
@@ -42,7 +42,8 @@
 
 .whatsapp-tooltip {
     position: absolute;
-    right: 75px;
+    left: 75px;
+    /* Tooltip on the right of the button */
     top: 50%;
     transform: translateY(-50%);
     background: white;
@@ -50,17 +51,19 @@
     border-radius: var(--radius-lg);
     box-shadow: var(--shadow-lg);
     white-space: nowrap;
-    animation: fadeInRight var(--transition-slow) var(--ease-out);
+    animation: fadeInLeft var(--transition-slow) var(--ease-out);
 }
 
 .whatsapp-tooltip::after {
     content: '';
     position: absolute;
-    right: -8px;
+    left: -8px;
+    /* Tooltip arrow on the left side of tooltip */
     top: 50%;
     transform: translateY(-50%);
     border: 8px solid transparent;
-    border-left-color: white;
+    border-right-color: white;
+    /* Arrow points left */
 }
 
 .whatsapp-tooltip p {
@@ -70,10 +73,10 @@
     font-weight: var(--font-medium);
 }
 
-@keyframes fadeInRight {
+@keyframes fadeInLeft {
     from {
         opacity: 0;
-        transform: translateY(-50%) translateX(10px);
+        transform: translateY(-50%) translateX(-10px);
     }
 
     to {
@@ -85,8 +88,8 @@
 /* Responsive */
 @media (max-width: 768px) {
     .whatsapp-wrapper {
-        bottom: 80px;
-        right: var(--space-4);
+        bottom: 96px;
+        left: 20px;
     }
 
     .whatsapp-tooltip {
