@@ -515,10 +515,10 @@ const WebDevelopment = () => {
 
             {/* --- 2. ABOUT: ECOSYSTEM --- */}
             {/* --- 2. ABOUT: ECOSYSTEM --- */}
-            <section className="web-overview-section" style={{ padding: '120px 0', borderBottom: '1px solid #f1f5f9', background: '#ffffff' }}>
+            <section className="web-overview-section">
                 <div className="container">
-                    <div className="overview-split-layout" style={{ display: 'flex', gap: '80px', alignItems: 'flex-start' }}>
-                        <div style={{ flex: 1, display: 'flex', flexDirection: 'column', justifyContent: 'center' }}>
+                    <div className="overview-split-layout">
+                        <div className="overview-text-content">
                             <motion.div
                                 initial={{ opacity: 0, y: 20 }}
                                 whileInView={{ opacity: 1, y: 0 }}
@@ -536,24 +536,11 @@ const WebDevelopment = () => {
                                 }}>
                                     Overview
                                 </span>
-                                <h2 style={{
-                                    fontSize: 'clamp(2.5rem, 4vw, 3.5rem)',
-                                    lineHeight: '1.2',
-                                    fontWeight: 800,
-                                    color: 'var(--web-slate-deep)',
-                                    marginBottom: '20px',
-                                    marginTop: 0
-                                }}>
+                                <h2 className="overview-title">
                                     Engineered for <br />
                                     <span className="text-gradient-web">Scalable Growth.</span>
                                 </h2>
-                                <p style={{
-                                    fontSize: '1.1rem',
-                                    lineHeight: '1.7',
-                                    color: '#64748b',
-                                    marginBottom: '40px',
-                                    maxWidth: '90%'
-                                }}>
+                                <p className="overview-desc">
                                     We don't just build websites; we architect digital platforms that drive business velocity. Our comprehensive development lifecycle ensures your web presence is fast, secure, and ready to scale.
                                 </p>
 
@@ -565,7 +552,7 @@ const WebDevelopment = () => {
                             </motion.div>
                         </div>
 
-                        <div style={{ flex: 1.3 }}>
+                        <div className="overview-grid-content">
                             <div className="features-grid-web">
                                 {[
                                     {
