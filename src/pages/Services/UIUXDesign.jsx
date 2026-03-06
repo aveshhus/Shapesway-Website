@@ -11,6 +11,8 @@ import {
 import { SiFigma, SiAdobexd, SiSketch, SiInvision, SiMiro, SiFramer, SiAdobeillustrator, SiAdobephotoshop, SiNotion } from 'react-icons/si';
 import BespokeCTA from '../../components/common/BespokeCTA';
 import MacbookScrollFeature from '../../components/MacbookScrollFeature';
+import fintechPortfolioImage from '../../assets/uiux_portfolio_fintech.png';
+import healthcarePortfolioImage from '../../assets/uiux_portfolio_healthcare.png';
 import './UIUXDesign.css';
 
 const MagneticButton = ({ children, className, style, to }) => {
@@ -374,7 +376,7 @@ const UIUXDesign = () => {
                                 <span>Fintech</span>
                             </div>
                             <div className="case-image-wrapper">
-                                <img src="/src/assets/uiux_portfolio_fintech.png" alt="Fintech Dashboard" />
+                                <img src={fintechPortfolioImage} alt="Fintech Dashboard" />
                                 <div className="case-overlay"></div>
                             </div>
                             <div className="case-content">
@@ -410,7 +412,7 @@ const UIUXDesign = () => {
                                 <span>Healthcare</span>
                             </div>
                             <div className="case-image-wrapper">
-                                <img src="/src/assets/uiux_portfolio_healthcare.png" alt="Healthcare App" />
+                                <img src={healthcarePortfolioImage} alt="Healthcare App" />
                                 <div className="case-overlay"></div>
                             </div>
                             <div className="case-content">

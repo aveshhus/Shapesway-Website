@@ -3,6 +3,8 @@ import { MacbookScroll } from "@/components/ui/macbook-scroll.jsx";
 import { motion } from "framer-motion";
 import { PiChartPieSliceBold, PiLightbulbBold, PiLayoutBold, PiInfinityBold, PiCompassBold, PiSparkleBold } from "react-icons/pi";
 
+import laptopVisual from "../assets/UI Lpatop.png";
+
 export default function MacbookScrollFeature() {
     return (
         <div className="relative w-full overflow-hidden bg-gradient-to-b from-white via-slate-50 to-white dark:from-[#0B0B0F] dark:via-[#0f0f14] dark:to-[#0B0B0F] py-20">
@@ -44,7 +46,7 @@ export default function MacbookScrollFeature() {
                 rightContent={<RightSidebar />}
                 secondTitle="Mastering the Digital Landscape."
                 secondDescription="Our design philosophy bridges the gap between complex technical architecture and human-centered intuition, delivering products that users love and businesses trust."
-                src="/src/assets/UI Lpatop.png"
+                src={laptopVisual}
                 showGradient={false}
             />
         </div>
