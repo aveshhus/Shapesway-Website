@@ -23,7 +23,7 @@ export default function MacbookScrollFeature() {
 
             <MacbookScroll
                 title={
-                    <div className="flex flex-col items-center">
+                    <div className="flex flex-col items-center macbook-feature-title-wrap">
                         <span className="font-mono text-[0.75rem] uppercase tracking-[2px] text-[#2563eb] mb-4">
                             Strategic Excellence
                         </span>

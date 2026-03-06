@@ -107,13 +107,7 @@ const InteractiveCard = ({ children, className, style, span }) => {
 };
 
 const SectionHeader = ({ tag, title, desc, align = 'center', dark = false }) => (
-    <div className={`section-header-wrap ${align}`} style={{
-        textAlign: align,
-        marginBottom: '80px',
-        maxWidth: align === 'center' ? '800px' : '700px',
-        margin: align === 'center' ? '0 auto 80px' : '0 0 80px',
-        position: 'relative'
-    }}>
+    <div className={`section-header-wrap ${align} ${dark ? 'dark' : ''}`}>
         <div className="header-metadata-line">
             <motion.span
                 className="text-gradient-mob"
@@ -128,7 +122,6 @@ const SectionHeader = ({ tag, title, desc, align = 'center', dark = false }) => 
         </div>
         <motion.h2
             className="mob-title-large"
-            style={{ color: dark ? 'white' : 'var(--web-slate-deep)', marginTop: '15px' }}
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
@@ -137,7 +130,6 @@ const SectionHeader = ({ tag, title, desc, align = 'center', dark = false }) => 
             {title}
         </motion.h2>
         <motion.p
-            style={{ fontSize: '1.25rem', color: dark ? 'rgba(255,255,255,0.6)' : 'var(--web-slate-light)', lineHeight: 1.6 }}
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}

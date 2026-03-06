@@ -171,7 +171,6 @@ const UIUXDesign = () => {
                     <div className="services-bento">
                         <div className="service-bento-card bento-1 gradient-card-blue">
                             <div className="card-gradient-overlay" />
-                            <div className="spec-overlay">radius: 30px / bg: rgba(255, 255, 255, 0.7) / blur: 10px</div>
                             <h3>UX Research</h3>
                             <ul className="service-list">
                                 <li><PiUsersBold /> User Personas & Segmentation</li>
@@ -182,7 +181,6 @@ const UIUXDesign = () => {
                         </div>
                         <div className="service-bento-card bento-2 gradient-card-purple">
                             <div className="card-gradient-overlay" />
-                            <div className="spec-overlay">flex: column / gap: 24px</div>
                             <h3>UI Design</h3>
                             <ul className="service-list">
                                 <li><PiLayoutBold /> Wireframing</li>
@@ -192,7 +190,6 @@ const UIUXDesign = () => {
                         </div>
                         <div className="service-bento-card bento-3 gradient-card-orange">
                             <div className="card-gradient-overlay" />
-                            <div className="spec-overlay">grid-column: span 5</div>
                             <h3>Product Design</h3>
                             <ul className="service-list">
                                 <li><PiBrowsersBold /> SaaS Platforms</li>
@@ -202,7 +199,6 @@ const UIUXDesign = () => {
                         </div>
                         <div className="service-bento-card bento-4 gradient-card-pink">
                             <div className="card-gradient-overlay" />
-                            <div className="spec-overlay">shadow: 0 10px 40px rgba(0,0,0,0.02)</div>
                             <h3>UX Optimization</h3>
                             <ul className="service-list">
                                 <li><PiMagnifyingGlassBold /> Full UX Audits</li>

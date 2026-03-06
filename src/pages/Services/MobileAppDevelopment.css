@@ -1165,6 +1165,72 @@
     width: 100px;
 }
 
+.section-header-wrap {
+    margin-bottom: 80px;
+    position: relative;
+    width: 100%;
+}
+
+.section-header-wrap.center {
+    text-align: center;
+    max-width: 800px;
+    margin: 0 auto 80px;
+}
+
+.section-header-wrap.dark h2 {
+    color: white !important;
+}
+
+.section-header-wrap.dark p {
+    color: rgba(255, 255, 255, 0.7) !important;
+}
+
+.section-header-wrap.left {
+    text-align: left;
+    max-width: 700px;
+    margin: 0 0 80px;
+}
+
+.section-header-wrap h2 {
+    font-size: clamp(2.5rem, 5vw, 4rem);
+    font-weight: 850;
+    line-height: 1.1;
+    letter-spacing: -2px;
+}
+
+.section-header-wrap p {
+    font-size: clamp(1rem, 2vw, 1.25rem);
+    line-height: 1.6;
+    margin-top: 20px;
+}
+
+@media (max-width: 768px) {
+    .section-header-wrap {
+        margin-bottom: 50px !important;
+        text-align: center !important;
+        max-width: 100% !important;
+        margin-left: auto !important;
+        margin-right: auto !important;
+    }
+
+    .header-metadata-line {
+        justify-content: center !important;
+    }
+
+    .header-line-dec {
+        display: none;
+    }
+
+    .section-header-wrap h2 {
+        font-size: 2.2rem;
+        letter-spacing: -1px;
+    }
+
+    .section-header-wrap p {
+        font-size: 1rem;
+    }
+}
+
 /* --- TECH CIRCUITRY BACKGROUND --- */
 .mob-stack-section {
     padding: 150px 0;
@@ -1483,146 +1549,198 @@
 }
 
 /* --- RESPONSIVE --- */
-@media (max-width: 1200px) {
-    .mob-cockpit-stats {
-        grid-template-columns: 1fr;
+/* --- RESPONSIVE OVERHAUL --- */
+@media (max-width: 1280px) {
+    .hero-title-mob {
+        font-size: 5rem;
     }
 
-    .mob-cta-box {
-        padding: 80px 40px;
+    .hero-split-mob {
+        gap: 50px;
     }
 
-    .mob-cta-title {
-        font-size: 3rem;
+    .mob-bento-card-perf {
+        grid-column: span 5;
+    }
+
+    .span-double {
+        grid-column: span 10;
     }
 }
 
 @media (max-width: 1024px) {
     .mob-hero {
         padding: 140px 0 80px;
+        min-height: auto;
     }
 
-    .mob-hero-title {
-        font-size: 3.5rem;
-    }
-
-    .mob-hero-split {
+    .hero-split-mob {
         flex-direction: column;
         text-align: center;
         gap: 60px;
     }
 
-    .mob-hero-content {
+    .hero-content-mob {
         display: flex;
         flex-direction: column;
         align-items: center;
+        width: 100%;
     }
 
-    .mob-hero-p {
+    .hero-title-mob {
+        font-size: 4rem;
+        margin-bottom: 20px;
+    }
+
+    .hero-desc-mob {
+        font-size: 1.2rem;
         margin-left: auto;
         margin-right: auto;
     }
 
-    .mob-hero-visual {
+    .hero-visual-mob {
+        width: 100%;
         height: auto;
-        margin-top: 40px;
-    }
-
-    .mob-terminal-frame {
-        max-width: 100%;
-    }
-
-    .mob-overview-section,
-    .mob-tech-section,
-    .mob-bento-section,
-    .mob-process-section,
-    .mob-cta-section {
-        padding: 100px 0;
+        min-height: 500px;
     }
 
     .mob-tech-grid {
-        grid-template-columns: repeat(3, 1fr);
+        gap: 20px;
+    }
+
+    .mob-bento-section,
+    .mob-stack-section,
+    .mob-roadmap-section,
+    .mob-cockpit-section {
+        padding: 100px 0;
+    }
+
+    .mob-cockpit-inner {
+        padding: 60px 40px;
+        border-radius: 40px;
+    }
+
+    .mob-cockpit-stats {
+        grid-template-columns: repeat(2, 1fr);
     }
 }
 
 @media (max-width: 768px) {
-    .mob-hero-title {
-        font-size: 2.8rem;
+    .hero-title-mob {
+        font-size: 3.2rem;
+        letter-spacing: -1px;
     }
 
-    .mob-hero-p {
+    .hero-desc-mob {
         font-size: 1.1rem;
     }
 
     .mob-tech-grid {
         grid-template-columns: repeat(2, 1fr);
-        gap: 20px;
+        display: grid;
+        width: 100%;
     }
 
-    .mob-bento-grid {
+    .mob-tech-item-perf {
+        width: 100%;
+        height: 180px;
+    }
+
+    .mob-bento-grid-perf {
         grid-template-columns: 1fr;
+        display: grid;
     }
 
-    .mob-bento-card.span-2 {
+    .mob-bento-card-perf,
+    .span-double {
         grid-column: span 1;
+        min-height: 340px;
+        padding: 30px;
     }
 
-    .mob-process-grid {
+    .mob-milestones-grid {
         grid-template-columns: 1fr;
     }
 
-    .mob-stat-grid-perf {
+    .mob-roadmap-flow-perf {
+        display: none;
+        /* Flow line is messy on mobile */
+    }
+
+    .mob-cockpit-stats {
         grid-template-columns: 1fr;
     }
 
-    .mob-cta-box {
-        border-radius: 40px;
-        padding: 60px 30px;
+    .stat-val-perf {
+        font-size: 2.8rem;
     }
 
-    .mob-cta-title {
-        font-size: 2.2rem;
+    .mob-hero-terminal,
+    .mob-hero-coords,
+    .tactical-scroll-gauge {
+        display: none;
     }
 
-    .mob-cta-desc {
-        font-size: 1.1rem;
+    .floating-mob-card-perf.store {
+        left: 20px;
+        top: 20px;
     }
 
-    .btn-mob-group {
-        flex-direction: column;
-        width: 100%;
-        max-width: 320px;
-        margin-left: auto;
-        margin-right: auto;
+    .floating-mob-card-perf.fps {
+        right: 20px;
+        bottom: 20px;
     }
 
-    .btn-mob-cta {
-        width: 100%;
-    }
-
-    .hero-float-sensor {
+    .floating-mob-card-perf.shield {
         display: none;
     }
 }
 
 @media (max-width: 480px) {
-    .mob-hero-title {
-        font-size: 2.2rem;
+    .hero-title-mob {
+        font-size: 2.6rem;
+    }
+
+    .mob-page {
+        padding-top: 20px;
+    }
+
+    .mob-hero {
+        padding: 120px 0 60px;
     }
 
     .mob-tech-grid {
         grid-template-columns: 1fr;
-    }
-
-    .mob-cta-title {
-        font-size: 1.8rem;
     }
 
     .mob-stat-card-perf {
         padding: 30px 20px !important;
     }
 
-    .stat-val-perf {
-        font-size: 2.5rem;
+    .mob-cockpit-inner {
+        padding: 40px 20px;
+    }
+
+    .mob-3d-device-perf {
+        width: 220px;
+        height: 440px;
+    }
+
+    .device-frame-perf {
+        border-width: 10px;
+        border-radius: 44px;
+    }
+
+    .device-screen-perf {
+        border-radius: 34px;
+    }
+
+    .floating-mob-card-perf {
+        padding: 12px 20px;
+        border-radius: 20px;
+    }
+
+    .floating-mob-card-perf p {
+        font-size: 0.85rem;
     }
 }

@@ -68,7 +68,7 @@ export const MacbookScroll = ({
     return (
         <div
             ref={ref}
-            className="flex min-h-[200vh] shrink-0 scale-[0.35] transform flex-col items-center justify-start py-0 [perspective:800px] sm:scale-50 md:scale-100 md:py-80"
+            className="flex min-h-[200vh] shrink-0 scale-[0.5] transform flex-col items-center justify-start py-0 [perspective:800px] sm:scale-50 md:scale-100 md:py-80"
         >
             <motion.h2
                 style={{
@@ -85,10 +85,10 @@ export const MacbookScroll = ({
             </motion.h2>
 
             {/* Direct Spacer for Separation with Content */}
-            <div className="h-[500px] w-full shrink-0 flex flex-col items-center justify-center">
+            <div className="h-[600px] w-full shrink-0 flex flex-col items-center justify-center">
                 <motion.div
                     style={{ opacity: textOpacity }}
-                    className="flex flex-col items-center px-4 max-w-4xl"
+                    className="flex flex-col items-center px-4 max-w-4xl macbook-feature-subtitle-wrap"
                 >
                     <span className="section-label">
                         Design Logic

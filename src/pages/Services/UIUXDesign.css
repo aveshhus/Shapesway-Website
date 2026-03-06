@@ -321,8 +321,7 @@
 }
 
 
-/* --- CSS Vector Graphics --- */
-/* Abstract geometric shapes representing UI/UX concepts */
+/* CSS Vector Graphics */
 .card-gradient-overlay {
     position: absolute;
     top: 20px;
@@ -355,7 +354,6 @@
     --bg-gradient: linear-gradient(135deg, #3b82f6 0%, #06b6d4 100%);
     --accent-color: #0284c7;
     --vector-mask: url("data:image/svg+xml,%3Csvg viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M12 2C6.48 2 2 6.48 2 12C2 17.52 6.48 22 12 22C17.52 22 22 17.52 22 12C22 6.48 17.52 2 12 2ZM12 20C7.59 20 4 16.41 4 12C4 7.59 7.59 4 12 4C16.41 4 20 7.59 20 12C20 16.41 16.41 20 12 20ZM12.88 15.76L14.83 17.17L11 21L7.17 17.17L9.12 15.76L11 17.64V8H13V17.64L12.88 15.76Z'/%3E%3C/svg%3E");
-    /* Abstract Data Search */
 }
 
 /* 2. UI Design - Purple (Layers / Layout Concept) */
@@ -363,7 +361,6 @@
     --bg-gradient: linear-gradient(135deg, #8b5cf6 0%, #d946ef 100%);
     --accent-color: #7c3aed;
     --vector-mask: url("data:image/svg+xml,%3Csvg viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M3 3H21V21H3V3ZM5 5V19H19V5H5Z'/%3E%3Crect x='7' y='7' width='4' height='4'/%3E%3Crect x='13' y='7' width='4' height='4'/%3E%3Crect x='7' y='13' width='4' height='4'/%3E%3Crect x='13' y='13' width='4' height='4'/%3E%3C/svg%3E");
-    /* Grid Layout */
 }
 
 /* 3. Product Design - Orange (Cube / 3D Concept) */
@@ -371,7 +368,6 @@
     --bg-gradient: linear-gradient(135deg, #f97316 0%, #facc15 100%);
     --accent-color: #ea580c;
     --vector-mask: url("data:image/svg+xml,%3Csvg viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M12 2L2 7L12 12L22 7L12 2Z' /%3E%3Cpath d='M2 17L12 22L22 17' fill='none' stroke='currentColor' stroke-width='2'/%3E%3Cpath d='M2 12L12 17L22 12' fill='none' stroke='currentColor' stroke-width='2'/%3E%3C/svg%3E");
-    /* 3D Box */
 }
 
 /* 4. UX Optimization - Pink (Growth / Chart Concept) */
@@ -379,11 +375,9 @@
     --bg-gradient: linear-gradient(135deg, #db2777 0%, #f43f5e 100%);
     --accent-color: #be185d;
     --vector-mask: url("data:image/svg+xml,%3Csvg viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M16 6L18.29 8.29L13.41 13.17L9.41 9.17L2 16.59L3.41 18L9.41 12L13.41 16L19.71 9.71L22 12V6H16Z'/%3E%3C/svg%3E");
-    /* Trending Up */
 }
 
-
-/* --- Typography & Content --- */
+/* Typography & Content */
 .service-bento-card h3 {
     font-size: 2rem;
     margin-bottom: 24px;
@@ -395,7 +389,6 @@
     line-height: 1.1;
 }
 
-/* Gradient Text Effect on Hover */
 .service-bento-card:hover h3 {
     background: var(--bg-gradient);
     -webkit-background-clip: text;
@@ -409,7 +402,6 @@
     position: relative;
     padding-left: 0;
     margin-top: auto;
-    /* Push list to bottom of flex container */
 }
 
 .service-list li {
@@ -423,56 +415,23 @@
     transition: all 0.3s ease;
     padding: 8px 12px;
     background: rgba(255, 255, 255, 0.5);
-    /* Glassy pill background */
     border-radius: 12px;
     backdrop-filter: blur(4px);
     width: fit-content;
-    /* Only as wide as content */
 }
 
 .service-list li:hover {
     background: #fff;
     transform: translateX(8px) scale(1.02);
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
-    /* Lift effect */
     color: var(--accent-color);
 }
 
-
-/* Icon Styles */
 .service-list li svg {
     font-size: 1.25rem;
     flex-shrink: 0;
     color: var(--accent-color);
-    /* Always colored */
     filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.1));
-}
-
-
-/* Specs Label - Floating tag style */
-.spec-overlay {
-    position: absolute;
-    bottom: 24px;
-    right: 24px;
-    background: var(--bg-gradient);
-    color: #fff;
-    padding: 6px 16px;
-    border-radius: 20px;
-    font-family: 'JetBrains Mono', monospace;
-    font-size: 0.7rem;
-    font-weight: 700;
-    letter-spacing: 0.05em;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
-    z-index: 10;
-    transform: translateY(0);
-    /* Always visible */
-    opacity: 0.8;
-    transition: all 0.3s ease;
-}
-
-.service-bento-card:hover .spec-overlay {
-    transform: scale(1.1);
-    opacity: 1;
 }
 
 /* Remove old decorative elements */
@@ -1649,29 +1608,27 @@
 }
 
 @media (max-width: 1024px) {
-    .ui-hero {
+    .uiux-hero {
         padding: 140px 0 80px;
+        min-height: auto;
     }
 
-    .ui-hero-title {
+    .uiux-hero-title {
         font-size: 3.5rem;
     }
 
-    .ui-hero-split {
-        flex-direction: column;
-        text-align: center;
-        gap: 60px;
-    }
-
-    .hero-content-ui {
+    .uiux-hero-content {
         display: flex;
         flex-direction: column;
         align-items: center;
+        text-align: center;
     }
 
-    .hero-visual-ui {
-        height: auto;
-        margin-top: 40px;
+    .uiux-hero-desc {
+        margin-left: auto;
+        margin-right: auto;
+        text-align: left;
+        /* Keep text left aligned inside centered container for better look */
     }
 
     .services-bento {
@@ -1691,44 +1648,38 @@
     .why-grid {
         grid-template-columns: repeat(2, 1fr);
     }
-
-    .faq-layout-grid {
-        grid-template-columns: 1fr;
-        gap: 60px;
-    }
-
-    .faq-creative-side {
-        position: static;
-        text-align: center;
-    }
-
-    .faq-intro-text {
-        margin-left: auto;
-        margin-right: auto;
-    }
-
-    .faq-visual-card {
-        max-width: 500px;
-        margin-left: auto;
-        margin-right: auto;
-    }
-
-    .visual-icon-row {
-        justify-content: center;
-    }
-
-    .decorative-dots {
-        margin: 20px auto;
-    }
 }
 
 @media (max-width: 768px) {
-    .ui-hero-title {
+    .uiux-hero-title {
         font-size: 2.8rem;
     }
 
-    .ui-hero-p {
+    .uiux-hero-desc {
         font-size: 1.1rem;
+        padding-left: 15px;
+    }
+
+    .hero-btns {
+        flex-direction: column;
+        width: 100%;
+        max-width: 400px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .hero-btns a {
+        justify-content: center;
+        width: 100%;
+    }
+
+    .section-title-wrap {
+        text-align: center;
+        margin-bottom: 50px;
+    }
+
+    .section-title {
+        font-size: 2.5rem;
     }
 
     .why-grid {
@@ -1741,16 +1692,30 @@
         align-items: center;
     }
 
-    .process-timeline {
+    .process-strip-container {
         flex-direction: column;
-        gap: 50px;
+        height: auto;
     }
 
-    .process-timeline::after {
-        display: none;
+    .process-strip {
+        min-height: auto;
     }
 
-    .portfolio-grid {
+    .strip-text p {
+        max-height: none;
+        opacity: 0.8;
+        transform: none;
+        filter: none;
+        margin-top: 10px;
+    }
+
+    .designer-cursor,
+    .design-ruler-h,
+    .comment-bubble {
+        display: none !important;
+    }
+
+    .case-studies-grid {
         grid-template-columns: 1fr;
     }
 
@@ -1761,6 +1726,7 @@
 
     .tools-flex {
         gap: 30px;
+        justify-content: center;
     }
 
     .faq-grid-side {
@@ -1768,31 +1734,74 @@
         border-radius: 20px;
     }
 
-    .answer-content {
-        padding-right: 0;
+    /* Counter-scale for MacbookScroll text on mobile (because parent is scale-50 now) */
+    .macbook-feature-title-wrap,
+    .macbook-feature-subtitle-wrap {
+        width: 180vw !important;
+        /* Compels approx 90vw on screen after 0.5x parent scale */
+        max-width: 180vw !important;
+        display: flex !important;
+        flex-direction: column !important;
+        align-items: center !important;
+        text-align: center !important;
     }
 
-    .btn-ui-group {
-        flex-direction: column;
+    .macbook-feature-subtitle-wrap {
+        margin-bottom: 80px !important;
+        /* Massive gap to prevent laptop overlap */
+    }
+
+    .macbook-feature-title-wrap .section-title,
+    .macbook-feature-subtitle-wrap .section-title {
+        font-size: 4.8rem !important;
+        /* Approx 2.4rem after 0.5x scale */
+        line-height: 1.1 !important;
+        margin-bottom: 25px !important;
         width: 100%;
-        max-width: 320px;
+    }
+
+    .macbook-feature-title-wrap p,
+    .macbook-feature-subtitle-wrap p {
+        font-size: 2.6rem !important;
+        /* Approx 1.3rem after 0.5x scale */
+        line-height: 1.6 !important;
+        width: 85%;
         margin-left: auto;
         margin-right: auto;
     }
 
-    .btn-ui {
-        width: 100%;
-    }
-
-    .designer-cursor {
-        display: none;
-        /* Hide fake cursor on touch devices */
+    .macbook-feature-title-wrap .section-label,
+    .macbook-feature-subtitle-wrap .section-label,
+    .macbook-feature-title-wrap span {
+        font-size: 1.6rem !important;
+        /* Approx 0.8rem after 0.5x scale */
+        margin-bottom: 20px !important;
     }
 }
 
 @media (max-width: 480px) {
-    .ui-hero-title {
+    .uiux-hero-title {
         font-size: 2.2rem;
+    }
+
+    .uiux-hero-desc {
+        font-size: 1rem;
+        padding-left: 15px;
+        margin-bottom: 30px;
+    }
+
+    .service-bento-card {
+        padding: 30px 20px;
+        min-height: auto;
+    }
+
+    .service-bento-card h3 {
+        font-size: 1.5rem;
+    }
+
+    .service-list li {
+        font-size: 0.9rem;
+        padding: 6px 10px;
     }
 
     .industries-grid {
@@ -1808,11 +1817,24 @@
     }
 
     .case-content h3 {
-        font-size: 1.2rem;
+        font-size: 1.25rem;
     }
 
     .metric-value {
         font-size: 1.4rem;
+    }
+
+    .case-metrics {
+        grid-template-columns: 1fr;
+        gap: 15px;
+    }
+
+    .section-title {
+        font-size: 2.2rem;
+    }
+
+    .ds-card {
+        padding: 20px;
     }
 }
 
