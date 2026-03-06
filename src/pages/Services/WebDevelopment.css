@@ -1203,7 +1203,15 @@
 
 @media (max-width: 768px) {
     .web-hero {
-        padding-top: 120px;
+        padding: 120px 0 60px;
+        min-height: auto;
+    }
+
+    .web-overview-section,
+    .web-stack-section,
+    .web-ecosystem-section,
+    .web-cta-section {
+        padding: 60px 0 !important;
     }
 
     .hero-title-web {

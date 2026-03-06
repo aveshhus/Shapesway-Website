@@ -1259,6 +1259,7 @@
         padding: 140px 0 80px;
     }
 
+    .soft-overview-section,
     .soft-pipeline-section,
     .telemetry-section {
         padding: 80px 0;
@@ -1311,6 +1312,13 @@
 
     .btn-soft {
         width: 100%;
+    }
+
+    .soft-overview-section,
+    .soft-pipeline-section,
+    .telemetry-section,
+    .soft-cta-section {
+        padding: 60px 0 !important;
     }
 }
 

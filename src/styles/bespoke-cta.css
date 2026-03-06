@@ -326,8 +326,12 @@
 }
 
 @media (max-width: 768px) {
+    .bespoke-cta-section {
+        padding: 60px 0 !important;
+    }
+
     .bespoke-cta-box {
-        padding: 60px 30px;
+        padding: 60px 24px !important;
     }
 
     .bespoke-cta-title {

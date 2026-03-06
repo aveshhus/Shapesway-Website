@@ -257,7 +257,7 @@
 
 @media (max-width: 768px) {
     .bento-section {
-        padding: 80px 0;
+        padding: 60px 0 !important;
     }
 
     .bento-grid {

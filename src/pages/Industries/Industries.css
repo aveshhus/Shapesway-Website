@@ -1125,3 +1125,16 @@
     background: #fff;
     color: #000;
 }
+
+@media (max-width: 768px) {
+
+    .ind-sect-bento,
+    .ind-sect-why,
+    .ind-sect-approach,
+    .ind-sect-software,
+    .ind-sect-trans,
+    .ind-sect-stack,
+    .ind-sect-partner {
+        padding: 60px 0 !important;
+    }
+}

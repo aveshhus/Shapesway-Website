@@ -1412,6 +1412,16 @@
     .tech-page-v2 .metrics-dashboard {
         grid-template-columns: repeat(2, 1fr);
     }
+
+    .tech-page-v2 .tech-hero-v2,
+    .tech-page-v2 .tech-powerhouse,
+    .tech-page-v2 .tech-stack-domination,
+    .tech-page-v2 .tech-framework-v3,
+    .tech-page-v2 .tech-vault-v3,
+    .tech-page-v2 .tech-innovation-v3,
+    .tech-page-v2 .tech-cta-final {
+        padding: 80px 0;
+    }
 }
 
 @media (max-width: 768px) {
@@ -1511,6 +1521,16 @@
         width: 100%;
         justify-content: center;
         padding: 18px 30px;
+    }
+
+    .tech-page-v2 .tech-hero-v2,
+    .tech-page-v2 .tech-powerhouse,
+    .tech-page-v2 .tech-stack-domination,
+    .tech-page-v2 .tech-framework-v3,
+    .tech-page-v2 .tech-vault-v3,
+    .tech-page-v2 .tech-innovation-v3,
+    .tech-page-v2 .tech-cta-final {
+        padding: 60px 0 !important;
     }
 }
 
