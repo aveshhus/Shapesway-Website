@@ -11,8 +11,8 @@ import {
 import { SiFigma, SiAdobexd, SiSketch, SiInvision, SiMiro, SiFramer, SiAdobeillustrator, SiAdobephotoshop, SiNotion } from 'react-icons/si';
 import BespokeCTA from '../../components/common/BespokeCTA';
 import MacbookScrollFeature from '../../components/MacbookScrollFeature';
-import fintechPortfolioImage from '../../assets/uiux_portfolio_fintech.png';
-import healthcarePortfolioImage from '../../assets/uiux_portfolio_healthcare.png';
+import fintechPortfolioImage from '../../assets/ux_fintech.png';
+import healthcarePortfolioImage from '../../assets/ux_healthcare.png';
 import './UIUXDesign.css';
 
 const MagneticButton = ({ children, className, style, to }) => {
