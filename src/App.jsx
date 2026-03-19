@@ -23,6 +23,7 @@ const CloudServices = lazy(() => import('./pages/Services/CloudServices'));
 const DigitalMarketing = lazy(() => import('./pages/Services/DigitalMarketing'));
 const OurWork = lazy(() => import('./pages/OurWork/OurWork'));
 const ProjectDetail = lazy(() => import('./pages/OurWork/ProjectDetail'));
+const PortfolioPage = lazy(() => import('./pages/Portfolio/PortfolioPage'));
 const Blog = lazy(() => import('./pages/Blog/Blog'));
 const BlogPost = lazy(() => import('./pages/Blog/BlogPost'));
 const PrivacyPolicy = lazy(() => import('./pages/Policy/SitePrivacy'));
@@ -70,6 +71,7 @@ function App() {
               <Route path="/ai-machine-learning" element={<AIMachineLearning />} />
               <Route path="/our-work" element={<OurWork />} />
               <Route path="/our-work/:id" element={<ProjectDetail />} />
+              <Route path="/portfolio" element={<PortfolioPage />} />
               <Route path="/blog" element={<Blog />} />
               <Route path="/blog/:slug" element={<BlogPost />} />
 
