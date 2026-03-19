@@ -3,7 +3,7 @@ import { MacbookScroll } from "@/components/ui/macbook-scroll.jsx";
 import { motion } from "framer-motion";
 import { PiChartPieSliceBold, PiLightbulbBold, PiLayoutBold, PiInfinityBold, PiCompassBold, PiSparkleBold } from "react-icons/pi";
 
-import laptopVisual from "../assets/UI Lpatop.png";
+import laptopVisual from "../assets/ui_laptop.png";
 
 export default function MacbookScrollFeature() {
     return (
