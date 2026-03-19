@@ -384,7 +384,7 @@ const WebDevelopment = () => {
                                 <MagneticButton to="/contact" className="btn btn-primary btn-web-hero" style={{ padding: '20px 48px', borderRadius: '100px', fontSize: '1.1rem', boxShadow: '0 20px 40px -10px rgba(13, 181, 164, 0.3)' }}>
                                     Start Project <PiArrowRightBold />
                                 </MagneticButton>
-                                <Link to="/portfolio" className="btn-secondary-web" style={{ color: 'var(--web-slate-deep)', fontWeight: 800, display: 'flex', alignItems: 'center', gap: '10px' }}>
+                                <Link to="/portfolio" className="btn-secondary-web">
                                     View Casestudies <FaArrowRight />
                                 </Link>
                             </div>

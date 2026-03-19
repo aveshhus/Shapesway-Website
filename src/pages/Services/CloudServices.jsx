@@ -139,7 +139,7 @@ const CloudServices = () => {
                                         Initialize Protocol <PiArrowRightBold />
                                     </Link>
                                 </motion.div>
-                                <Link to="/contact" className="btn-secondary-web" style={{ color: '#0f172a', fontSize: '1.1rem', fontWeight: 800, padding: '0 30px', display: 'flex', alignItems: 'center', gap: '12px' }}>
+                                <Link to="/contact" className="btn-secondary-web">
                                     Systems Audit <PiGraphBold />
                                 </Link>
                             </div>
